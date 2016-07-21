@@ -1,0 +1,96 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno,hyperref}
+\modulolinenumbers[5]
+
+\journal{Progress in Nuclear Energy}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{A Review of Molten Salt Reactor Kinetics}
+
+%% Group authors per affiliation:
+\author{Daniel Wooten}
+\address{4155 Etcheverry Hall, MC 1730, University of California, Berkeley,
+    Berkeley, CA 94720-1730}
+
+\author{Jeffrey Powers}
+\address{Oak Ridge}
+
+\begin{abstract}
+This template helps you to create a properly formatted \LaTeX\ manuscript.
+\end{abstract}
+
+\begin{keyword}
+\texttt{circulating fluid kinetics precurssor}
+\MSC[2010] 00-01\sep  99-00
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\section{Itroduction} \label{introduction}
+Standard stuff about MSRs.
+
+\section{Unique Physics of Circulating Fuel} \lable{physics}
+In comparison to solid fuel reactors circulating fuel reactors exhibit unique
+physics which affect all aspects of reactor kinetics. In the following
+sub-sections the key phenomonon unique to the kinetics of circulating fuel
+reactors are elaborated upon.
+
+\subsection{Neutron Flux} \lable{flux}
+
+
+The author names and affiliations could be formatted in two ways:
+\begin{enumerate}[(1)]
+\item Group the authors per affiliation.
+\item Use footnotes to indicate the affiliations.
+\end{enumerate}
+See the front matter of this document for examples. You are recommended to conform your choice to the journal you are submitting to.
+
+\section{Bibliography styles}
+
+There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
+
+Here are two sample references: \cite{Feynman1963118,Dirac1953888}.
+
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}
