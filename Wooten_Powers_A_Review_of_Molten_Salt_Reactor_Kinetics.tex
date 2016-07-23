@@ -89,29 +89,28 @@ discussed in the next sub-section. In \cite{zhang_development_2009-1} a steady
 state neutronics and coupled thermalhydraulics code, which includes convective
 fluid motion in the neutron flux, is used to investigate the effects of fluid
 flow on various quantities of interest related to circulating fuel reactors. In
-figure \ref{zhang_2d_flux} \cite{zhang_development_2009-1} show that the
-distribution of the neutron flux is not significantly shifted in the direction
-of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{axial_velocity_flux}
-, axially, and in figure \ref{radial_velocity_flux}, radially, how a greater fluid flow
- velocity supresses the magnitude of the fast, $\phi_{1}$, and thermal, $\phi_{2}$, neutron fluxes. This affect is
+figure \ref{zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
+distribution of the neutron flux, thermal is shown but the conclusions for the fast flux are the same, is not significantly shifted in the direction
+of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{zhang_axial_velocity_flux}
+, axially, and in figure \ref{zhang_radial_velocity_flux}, radially, how a greater fluid flow
+ velocity, $U_{in}$ in the figures, supresses the magnitude of the fast, $\phi_{1}$, and thermal, $\phi_{2}$, neutron fluxes. This affect is
  attributed to a larger transport of delayed neutron precursors outside of the core \cite{zhang_development_2009-1}. The reactor model
  utliized in \cite{zhang_development_2009-1} consists of an axially symetric
  open core type reactor with an outer graphite reflector. In the analyses which
- produced figures \ref{axial_velocity_flux} and \ref{radial_velocity_flux} the
+ produced figures \ref{zhang_axial_velocity_flux} and \ref{zhang_radial_velocity_flux} the
  out of core residence time for the fuel was held constant despite a changing
  fluid flow velocity.
 
 \begin{figure}[h]
    \label{zhang_2d_flux}
    \centering
-   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
-   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
-               Axial
-               values are taken at the center of the core.}
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_8_B}
+   \caption{Figure 8.b from \cite{zhang_development_2009-1}. Countour line
+    values are the neutron flux; no units were provided with these values. 
 \end{figure}
 
 \begin{figure}[h]
-   \label{axial_velocity_flux}
+   \label{zhang_axial_velocity_flux}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
    \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
@@ -120,9 +119,9 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
 \end{figure}
 
 \begin{figure}[h]
-   \label{radial_velocity_flux}
+   \label{zhang_radial_velocity_flux}
    \centering
-   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_B}
    \caption{Figure 15.b from \cite{zhang_development_2009-1}.
                Radial 
                values are taken at the center of the core.}
@@ -132,14 +131,87 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
 In contrast to solid fuel reactors where delayed neutron precursors (DNP) decay
  very close to the positions in which they were born, DNPs in CFRs are displaced
  from their originating positions by fluid flow effects; whether advective or
- diffusive. Furthermore, considering that the transit time through the entire core and flow loop system of many proposed CFRs is comparable to the decay constants of,
-at least, the longer DNP groups a signigicant fraction of these DNPs can be
+ diffusive. Furthermore, considering that the transit time through the entire
+ core and flow loop system of many proposed CFRs is comparable to the decay
+ constants of, 
+ at least, the longer DNP groups a signigicant fraction of these DNPs can be
 expected to decay outside of the core region; emitting their neutrons in areas
 of low or zero neutronic importance. As such $\betta_{eff}$, the reactivity
  introduced into a multiplying system by the neutrons emitted by DNPs
-is reduced. In the MSRE $\betta_{eff}^{static}$ 
+is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\betta_{eff}$ at
+zero power was 212 pcm \cite{delpech_benchmark_2003}.
+\subsubsection{Fluid Flow Velocity Effects}
+Not only do fluid flow effects dispalce DNPs from their originating positions,
+as shown in figure \ref{dulla_msre_dnp_displacement}, these effects also
+reduce the neutronic importance of DNPs as shown in figure
+\ref{dulla_msre_dnp_importance}. This importance reduction is due to two
+effects; the liklihood to decay out of core and the liklihood that, even if the
+DNP decays in-core, the emitted neutron will originate in a region of low
+importance. In \cite{dulla_models_2005} a multi-group
+diffusion scheme modeling the MSRE was used to produce the results in figures
+\ref{dulla_msre_dnp_displacement} and \ref{dulla_msre_dnp_importance}.
+The effects on DNP distributions, from \cite{zhang_development_2009-1}, caused
+by varrying flow velocity while holding out-of-core residence time constant are
+shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and 
+\ref{zhang_axial_velocity_dnp_2} and, radially, in figures
+\ref{zhang_radial_velocity_dnp_1} and \ref{zhang_radial_velocity_dnp_2}.
+
+\begin{figure}[h]
+   \label{dulla_msre_dnp_displacement}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_1_9}
+   \caption{Figure 1.9 from \cite{Dulla_Models_2005}. Dashed lines represent
+    solid fuel results while solid lines represent flowing fuel results. Values
+    are taken in the middle of the core. 
+\end{figure}
+
+\begin{figure}[h]
+   \label{dulla_msre_dnp_importance}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_4}
+   \caption{Figure 2.4 from \cite{Dulla_Models_2005}. Dashed lines represent
+    solid fuel results while solid lines represent flowing fuel results. Values
+    are taken in the middle of the core. 
+\end{figure}
+
+\begin{figure}[h]
+   \label{zhang_axial_velocity_dnp_1}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_A}
+   \caption{Figure 16.a from \cite{zhang_development_2009-1}. 
+               Axial
+               values are taken at the center of the core.}
+\end{figure}
+
+\begin{figure}[h]
+   \label{zhang_axial_velocity_dnp_2}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_C}
+   \caption{Figure 16.c from \cite{zhang_development_2009-1}. 
+               Axial
+               values are taken at the center of the core.}
+\end{figure}
+
+\begin{figure}[h]
+   \label{zhang_radial_velocity_dnp_1}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_B}
+   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
+               Radial 
+               values are taken at the center of the core.}
+\end{figure}
+
+\begin{figure}[h]
+   \label{zhang_radial_velocity_dnp_2}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_D}
+   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
+               Radial
+               values are taken at the center of the core.}
+\end{figure}
 
 \section{Bibliography styles}
+
 
 There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
 
