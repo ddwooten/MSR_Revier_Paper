@@ -9,6 +9,9 @@
 %For isotope notation
 \usepackage{mhchem}
 
+%For equation formatting
+\usepackage{amsmath}
+
 \journal{Progress in Nuclear Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -73,7 +76,7 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 \section{Itroduction} \label{introduction}
 Standard stuff about MSRs.
 
-\section{Unique Physics of Circulating Fuel} \label{physics}
+\section{Physics of Circulating Fuel} \label{physics}
 In comparison to solid fuel reactors circulating fuel reactors exhibit unique
 physics which affect all aspects of reactor kinetics. In the following
 sub-sections the key phenomonon unique to the kinetics of circulating fuel
@@ -106,7 +109,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_8_B}
    \caption{Figure 8.b from \cite{zhang_development_2009-1}. Countour line
-    values are the neutron flux; no units were provided with these values. 
+    values are the neutron flux; no units were provided with these values.} 
 \end{figure}
 
 \begin{figure}[h]
@@ -140,7 +143,8 @@ of low or zero neutronic importance. As such $\betta_{eff}$, the reactivity
  introduced into a multiplying system by the neutrons emitted by DNPs
 is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\betta_{eff}$ at
 zero power was 212 pcm \cite{delpech_benchmark_2003}.
-\subsubsection{Fluid Flow Velocity Effects}
+
+\subsubsection{Fluid Flow Velocity Effects} \label{velocity effects}
 Not only do fluid flow effects dispalce DNPs from their originating positions,
 as shown in figure \ref{dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs as shown in figure
@@ -154,7 +158,7 @@ The effects on DNP distributions, from \cite{zhang_development_2009-1}, caused
 by varrying flow velocity while holding out-of-core residence time constant are
 shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and 
 \ref{zhang_axial_velocity_dnp_2} and, radially, in figures
-\ref{zhang_radial_velocity_dnp_1} and \ref{zhang_radial_velocity_dnp_2}.
+\ref{zhang_radial_velocity_dnp_1} and \ref{zhang_radial_velocity_dnp_2}. 
 
 \begin{figure}[h]
    \label{dulla_msre_dnp_displacement}
@@ -162,7 +166,8 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_1_9}
    \caption{Figure 1.9 from \cite{Dulla_Models_2005}. Dashed lines represent
     solid fuel results while solid lines represent flowing fuel results. Values
-    are taken in the middle of the core. 
+    are taken in the middle of the core. $C_{n}$ are DNP group concentrations. No
+    units were given. Higher n indicates shorter decay half-life.}
 \end{figure}
 
 \begin{figure}[h]
@@ -171,7 +176,8 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_4}
    \caption{Figure 2.4 from \cite{Dulla_Models_2005}. Dashed lines represent
     solid fuel results while solid lines represent flowing fuel results. Values
-    are taken in the middle of the core. 
+    are taken in the middle of the core. $C_{n}^{+}$ are DNP group importance values. 
+    No units were given. Higher n indicates shorter decay half-life.}
 \end{figure}
 
 \begin{figure}[h]
@@ -180,7 +186,9 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_A}
    \caption{Figure 16.a from \cite{zhang_development_2009-1}. 
                Axial
-               values are taken at the center of the core.}
+               values are taken at the center of the core. $C_{n}$ are DNP
+               group concentrations. No units were given. Higher n inidicates
+               shorter decay half-life.
 \end{figure}
 
 \begin{figure}[h]
@@ -189,7 +197,9 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_C}
    \caption{Figure 16.c from \cite{zhang_development_2009-1}. 
                Axial
-               values are taken at the center of the core.}
+               values are taken at the center of the core. $C_{n}$ are DNP
+               group concentrations. No units were given. Higher n inidicates
+               shorter decay half-life.
 \end{figure}
 
 \begin{figure}[h]
@@ -198,7 +208,9 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_B}
    \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
                Radial 
-               values are taken at the center of the core.}
+               values are taken at the center of the core. $C_{n}$ are DNP
+               group concentrations. No units were given. Higher n inidicates
+               shorter decay half-life.
 \end{figure}
 
 \begin{figure}[h]
@@ -207,7 +219,9 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_D}
    \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
                Radial
-               values are taken at the center of the core.}
+               values are taken at the center of the core. $C_{n}$ are DNP
+               group concentrations. No units were given. Higher n inidicates
+               shorter decay half-life.
 \end{figure}
 
 \section{Bibliography styles}
