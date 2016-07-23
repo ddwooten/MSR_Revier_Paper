@@ -144,8 +144,7 @@ of low or zero neutronic importance. As such $\betta_{eff}$, the reactivity
 is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\betta_{eff}$ at
 zero power was 212 pcm \cite{delpech_benchmark_2003}.
 
-\subsubsection{Fluid Flow Velocity Effects} \label{velocity effects}
-Not only do fluid flow effects dispalce DNPs from their originating positions,
+\\Not only do fluid flow effects dispalce DNPs from their originating positions,
 as shown in figure \ref{dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs as shown in figure
 \ref{dulla_msre_dnp_importance}. This importance reduction is due to two
@@ -158,7 +157,15 @@ The effects on DNP distributions, from \cite{zhang_development_2009-1}, caused
 by varrying flow velocity while holding out-of-core residence time constant are
 shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and 
 \ref{zhang_axial_velocity_dnp_2} and, radially, in figures
-\ref{zhang_radial_velocity_dnp_1} and \ref{zhang_radial_velocity_dnp_2}. 
+\ref{zhang_radial_velocity_dnp_1} and \ref{zhang_radial_velocity_dnp_2}.
+It is seen that the DNP groups with longer half-lives are most affected as the
+fluid flow has sufficient time to displace them before they decay. For all
+affected groups it is seen that a higher fluid velocity reduces DNP group
+concentration in the core; more DNPs being moved out of the core where they
+eventually decay. In figure \ref{yamamoto_transit_time}, while holding fluid flow velocity constant, the effect of
+out-of-core residence time on DNP group concentration
+in core is shown. It is seen that with increasing transit time the concentration
+of DNP groups in core decreases as more DNPs decay out of core.   
 
 \begin{figure}[h]
    \label{dulla_msre_dnp_displacement}
@@ -188,7 +195,7 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
                Axial
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
-               shorter decay half-life.
+               shorter decay half-life.}
 \end{figure}
 
 \begin{figure}[h]
@@ -199,7 +206,7 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
                Axial
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
-               shorter decay half-life.
+               shorter decay half-life.}
 \end{figure}
 
 \begin{figure}[h]
@@ -210,7 +217,7 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
                Radial 
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
-               shorter decay half-life.
+               shorter decay half-life.}
 \end{figure}
 
 \begin{figure}[h]
@@ -221,7 +228,17 @@ shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and
                Radial
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
-               shorter decay half-life.
+               shorter decay half-life.}
+\end{figure}
+
+\begin{figure}[h]
+   \label{yamamoto_transit_time}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Yamamoto_Steady_2005_Fig_8}
+   \caption{Figure 8 from \cite{yamamoto_steady_2005}. Values were produced for
+    a graphite moderated MSR of core length 4 m and radius 2 m with 0.7 m long 
+    plenums at either end and a 0.6 m thick axial reflector using a
+    multigroup diffusion approach.}
 \end{figure}
 
 \section{Bibliography styles}
