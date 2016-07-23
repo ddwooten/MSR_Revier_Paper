@@ -41,3 +41,5 @@ sss2
 *.spl
 *.bst
 *.sty
+*.bbl
+*.bbg
