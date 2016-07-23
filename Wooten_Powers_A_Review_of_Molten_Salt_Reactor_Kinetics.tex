@@ -139,9 +139,9 @@ In contrast to solid fuel reactors where delayed neutron precursors (DNP) decay
  constants of, 
  at least, the longer DNP groups a signigicant fraction of these DNPs can be
 expected to decay outside of the core region; emitting their neutrons in areas
-of low or zero neutronic importance. As such $\betta_{eff}$, the reactivity
+of low or zero neutronic importance. As such $\beta_{eff}$, the reactivity
  introduced into a multiplying system by the neutrons emitted by DNPs
-is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\betta_{eff}$ at
+is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\beta_{eff}$ at
 zero power was 212 pcm \cite{delpech_benchmark_2003}.
 
 \\Not only do fluid flow effects dispalce DNPs from their originating positions,
@@ -241,10 +241,43 @@ of DNP groups in core decreases as more DNPs decay out of core.
     multigroup diffusion approach.}
 \end{figure}
 
-\section{Bibliography styles}
+\subsection{$\beta_{eff}$} \label{beta}
+Just as DNP concentrations in-core are reduced by fuel flow so too is their
+contribution to the reactivity of multiplying systems, $\beta_{eff}$.
+Table \ref{mattioda_beta_reduction} shows, just as for DNP concentrations
+in-core, that $\beta_{eff}$ is reduced both by a higher fluid flow velocity and
+by a longer out of core residence time.
 
+\begin{table}[h]
+    \label{mattioda_beta_reduction}
+    \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
+        core residence time, $\tau_{l}$,
+        and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
+        the last two rows of table 5
+        in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
+        modeled with a 3 group neutron diffusion approach is used to generate
+        the given data.} 
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $\tau_{l}$\[s\]\rightarrow & 0 & 5 & 10 & 15 \\
+            \hline
+            $v_{fluid} = 60$ & 0.843 & 0.539 & 0.468 & 0.440 \\
+            \hline
+            $v_{fluid} = 100$ & 0.834 & 0.420 & 0.352 & 0.329 \\
+            \hline
+        \end{tablular}
+    \end{center}
+\end{table}
 
-There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
+However,
+this reduction in $\beta_{eff}$ does not act equally upon all DNP groups. In table
+\ref{dulla_flow_regimes_beta}, regardless of flow regime chosen, it is seen
+that the reactivity contribution of longer half-life DNP groups is
+reduced more than that of shorter half-life DNP groups. In the case of slug
+flow in a MOSART like system the longest lived DNP group experiences a 68\%
+reduction in reactivity contribution while the shortest lived DNP group
+experiences less than a 1\% reduction. 
 
 \section*{References}
 
