@@ -3,7 +3,11 @@
 \usepackage{lineno,hyperref}
 \modulolinenumbers[5]
 
+%For inclusion of figures
 \usepackage{graphicx}
+
+%For isotope notation
+\usepackage{mhchem}
 
 \journal{Progress in Nuclear Energy}
 
@@ -97,40 +101,50 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
  out of core residence time for the fuel was held constant despite a changing
  fluid flow velocity.
 
-%Insert Figures here
-%\begin{figure}[h]
-%   \label{axial_velocity_flux}
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
-%   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
-%               Axial
-%               values are taken at the center of the core.}
-%\end{figure}
+\begin{figure}[h]
+   \label{zhang_2d_flux}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
+   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
+               Axial
+               values are taken at the center of the core.}
+\end{figure}
 
-%Insert Figures here
-%\begin{figure}[h]
-%   \label{radial_velocity_flux}
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_B}
-%   \caption{Figure 15.b from \cite{zhang_development_2009-1}.
-%               Radial 
-%               values are taken at the center of the core.}
-%\end{figure}
+\begin{figure}[h]
+   \label{axial_velocity_flux}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
+   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
+               Axial
+               values are taken at the center of the core.}
+\end{figure}
+
+\begin{figure}[h]
+   \label{radial_velocity_flux}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
+   \caption{Figure 15.b from \cite{zhang_development_2009-1}.
+               Radial 
+               values are taken at the center of the core.}
+\end{figure}
 
 \subsection{Delayed Neutron Precursor Distribution} \label{dnpd}
 In contrast to solid fuel reactors where delayed neutron precursors (DNP) decay
  very close to the positions in which they were born, DNPs in CFRs are displaced
  from their originating positions by fluid flow effects; whether advective or
- diffusive. Considering that the transit time through the entire core and flow loop system of many proposed CFRs is comparable to the decay constants of,
-at least, the longer DNP groups 
+ diffusive. Furthermore, considering that the transit time through the entire core and flow loop system of many proposed CFRs is comparable to the decay constants of,
+at least, the longer DNP groups a signigicant fraction of these DNPs can be
+expected to decay outside of the core region; emitting their neutrons in areas
+of low or zero neutronic importance. As such $\betta_{eff}$, the reactivity
+ introduced into a multiplying system by the neutrons emitted by DNPs
+is reduced. In the MSRE $\betta_{eff}^{static}$ 
+
 \section{Bibliography styles}
 
 There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
 
-Here are two sample references: \cite{Feynman1963118,Dirac1953888}.
-
 \section*{References}
 
-\bibliography{mybibfile}
+\bibliography{Kinetics}
 
 \end{document}
