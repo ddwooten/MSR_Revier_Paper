@@ -53,12 +53,14 @@
 \title{A Review of Molten Salt Reactor Kinetics Models}
 
 %% Group authors per affiliation:
-\author{Daniel Wooten}\footnote{Corresponding author: danieldavidwooten@gmail.com}
-\address{4155 Etcheverry Hall, MC 1730, University of California, Berkeley,
+\author[ucb]{Daniel Wooten\corref{cor1}}
+\ead{danieldavidwooten@gmail.com}
+\address[ucb]{4155 Etcheverry Hall, MC 1730, University of California, Berkeley,
     Berkeley, CA 94720-1730}
+\cortext[cor1]{Corresponding Author}
 
-\author{Jeffrey Powers}
-\address{Oak Ridge}
+\author[ornl]{Jeffrey Powers}
+\address[ornl]{Oak Ridge}
 
 \begin{abstract}
 This template helps you to create a properly formatted \LaTeX\ manuscript.
@@ -94,8 +96,7 @@ fluid motion in the neutron flux, is used to investigate the effects of fluid
 flow on various quantities of interest related to circulating fuel reactors. In
 figure \ref{zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
 distribution of the neutron flux, thermal is shown but the conclusions for the fast flux are the same, is not significantly shifted in the direction
-of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{zhang_axial_velocity_flux}
-, axially, and in figure \ref{zhang_radial_velocity_flux}, radially, how a greater fluid flow
+of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{zhang_axial_velocity_flux}, axially, and in figure \ref{zhang_radial_velocity_flux}, radially, how a greater fluid flow
  velocity, $U_{in}$ in the figures, supresses the magnitude of the fast, $\phi_{1}$, and thermal, $\phi_{2}$, neutron fluxes. This affect is
  attributed to a larger transport of delayed neutron precursors outside of the core \cite{zhang_development_2009-1}. The reactor model
  utliized in \cite{zhang_development_2009-1} consists of an axially symetric
@@ -105,29 +106,29 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
  fluid flow velocity.
 
 \begin{figure}[h]
-   \label{zhang_2d_flux}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_8_B}
    \caption{Figure 8.b from \cite{zhang_development_2009-1}. Countour line
     values are the neutron flux; no units were provided with these values.} 
+   \label{zhang_2d_flux}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_axial_velocity_flux}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
    \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
                Axial
                values are taken at the center of the core.}
+   \label{zhang_axial_velocity_flux}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_radial_velocity_flux}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_B}
    \caption{Figure 15.b from \cite{zhang_development_2009-1}.
                Radial 
                values are taken at the center of the core.}
+   \label{zhang_radial_velocity_flux}
 \end{figure}
 
 \subsection{Delayed Neutron Precursor Distribution} \label{dnpd}
@@ -168,27 +169,26 @@ in core is shown. It is seen that with increasing transit time the concentration
 of DNP groups in core decreases as more DNPs decay out of core.   
 
 \begin{figure}[h]
-   \label{dulla_msre_dnp_displacement}
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_1_9}
    \caption{Figure 1.9 from \cite{dulla_models_2005}. Dashed lines represent
     solid fuel results while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}$ are DNP group concentrations. No
     units were given. Higher n indicates shorter decay half-life.}
+   \label{dulla_msre_dnp_displacement}
 \end{figure}
 
 \begin{figure}[h]
-   \label{dulla_msre_dnp_importance}
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_4}
    \caption{Figure 2.4 from \cite{dulla_models_2005}. Dashed lines represent
     solid fuel results while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}^{+}$ are DNP group importance values. 
     No units were given. Higher n indicates shorter decay half-life.}
+   \label{dulla_msre_dnp_importance}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_axial_velocity_dnp_1}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_A}
    \caption{Figure 16.a from \cite{zhang_development_2009-1}. 
@@ -196,10 +196,10 @@ of DNP groups in core decreases as more DNPs decay out of core.
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
+   \label{zhang_axial_velocity_dnp_1}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_axial_velocity_dnp_2}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_C}
    \caption{Figure 16.c from \cite{zhang_development_2009-1}. 
@@ -207,38 +207,39 @@ of DNP groups in core decreases as more DNPs decay out of core.
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
+   \label{zhang_axial_velocity_dnp_2}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_radial_velocity_dnp_1}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_B}
-   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
+   \caption{Figure 16.b from \cite{zhang_development_2009-1}. 
                Radial 
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
+   \label{zhang_radial_velocity_dnp_1}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_radial_velocity_dnp_2}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_D}
-   \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
+   \caption{Figure 16.d from \cite{zhang_development_2009-1}. 
                Radial
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
+   \label{zhang_radial_velocity_dnp_2}
 \end{figure}
 
 \begin{figure}[h]
-   \label{yamamoto_transit_time}
    \centering
    \includegraphics[width=0.8\textwidth]{Yamamoto_Steady_2005_Fig_8}
    \caption{Figure 8 from \cite{yamamoto_steady_2005}. Values were produced for
     a graphite moderated MSR of core length 4 m and radius 2 m with 0.7 m long 
     plenums at either end and a 0.6 m thick axial reflector using a
     multigroup diffusion approach.}
+   \label{yamamoto_transit_time}
 \end{figure}
 
 \subsection{$\beta_{eff}$} \label{beta}
@@ -249,7 +250,6 @@ in-core, that $\beta_{eff}$ is reduced both by a higher fluid flow velocity and
 by a longer out of core residence time.
 
 \begin{table}[h]
-    \label{mattioda_beta_reduction}
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
         core residence time, $\tau_{l}$, in seconds, 
         and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
@@ -257,6 +257,7 @@ by a longer out of core residence time.
         in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
         modeled with a 3 group neutron diffusion approach is used to generate
         the given data.} 
+    \label{mattioda_beta_reduction}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
@@ -291,7 +292,7 @@ multiplication factor of the system described in \cite{zhang_development_2009-1}
 increases with increasing flow velocity in the presense of a fixed inlet temperature and out-of-core
 residence time. \cite{zhang_development_2009-1} attributes
 this phenomenon to increased cooling of the core, given the higher fluid flow 
-velocity and subsequent doppler reactivity feedback with this effect
+velocity, and subsequent doppler reactivity feedback with this effect
 having a greater reactivity contribution than the increased loss of DNPs. That
 said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
  velocity and inlet temperature are held constant, the expected reduction of
@@ -299,17 +300,17 @@ said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
 
 
 \begin{figure}[h]
-   \label{zhang_velocity_keff}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_14}
    \caption{Figure 14 from \cite{zhang_development_2009-1}.}
+   \label{zhang_velocity_keff}
 \end{figure}
 
 \begin{figure}[h]
-   \label{zhang_residence_time_keff}
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_18}
-   \caption{Figure 15.a from \cite{zhang_development_2009-1}.} 
+   \caption{Figure 18 from \cite{zhang_development_2009-1}.} 
+   \label{zhang_residence_time_keff}
 \end{figure}
 
 \section{Models}
@@ -334,7 +335,6 @@ systems.
 
 
 \begin{table}[h]
-    \label{dulla_flow_regimes_beta}
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
         core residence time, $\tau_{l}$, in seconds,
         and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
@@ -342,6 +342,7 @@ systems.
         in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
         modeled with a 3 group neutron diffusion approach is used to generate
         the given data.} 
+    \label{dulla_flow_regimes_beta}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
