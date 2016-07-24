@@ -419,7 +419,23 @@ miss the reactivity oscilations later in the transient.
 \end{figure}
 
 \subsubsection{fast system} \label{sssec:mgd_fs}
+Representing MGD approaches for the evaluation of fast systems an unamed code
+from Politecnico di Milano (Polimi), as presented in \cite{fiorina_modelling_2004}, is
+chosen. It should be noted that in the implementation of the ULOF transient for
+the MSFR in \cite{fiorina_modelling_2004} no other flows, other than the primary
+loop flow, are lost. Additionally the pumps in the primary loop are assumed to
+coast down exponentially with a time constant of 5 s. The simulated transient is
+seen in figure \ref{fig:fiorina_msfr_ulof} along with the results from another
+code, this one from the Technical University of Delft (TUDelft) with an uknown relation to
+the code from \cite{kophazi_development_2009} though both do state the use of a
+modified version of DALTON as the neutronics solver. 
 
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Fiorina_Modelling_2014_Fig_11}
+   \caption{Figure 9 from \cite{fiorina_modelling_2004}.} 
+   \label{fig:fiorina_msfr_ulof}
+\end{figure}
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
@@ -430,6 +446,28 @@ miss the reactivity oscilations later in the transient.
         modeled with a 3 group neutron diffusion approach is used to generate
         the given data.} 
     \label{tbl:dulla_flow_regimes_beta}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $\tau_{l}\rightarrow$ & 0 & 5 & 10 & 15 \\
+            \hline
+            $v_{fluid} = 60$ & 0.843 & 0.539 & 0.468 & 0.440 \\
+            \hline
+            $v_{fluid} = 100$ & 0.834 & 0.420 & 0.352 & 0.329 \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{table}[h]
+    \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
+        core residence time, $\tau_{l}$, in seconds,
+        and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
+        the last two rows of table 5
+        in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
+        modeled with a 3 group neutron diffusion approach is used to generate
+        the given data.} 
+    \label{tbl:codes}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
