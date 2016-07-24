@@ -87,7 +87,7 @@ physics which affect all aspects of reactor kinetics. In the following
 sub-sections the key phenomonon unique to the kinetics of circulating fuel
 reactors are elaborated upon.
 
-\subsection{Neutron Flux} \label{ssec:flux}
+\subsection{Neutron flux} \label{ssec:flux}
 While the speed of neutrons, fast or thermal, is typically many orders of magnitude greater than
 the flow velocity of the fluid fuel the neutron flux can still experience
 perturbations due to this fluid velocity field. These perturbations are always
@@ -134,7 +134,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
    \label{fig:zhang_radial_velocity_flux}
 \end{figure}
 
-\subsection{Delayed Neutron Precursor Distribution} \label{ssec:dnpd}
+\subsection{Delayed neutron precursor distribution} \label{ssec:dnpd}
 In contrast to solid fuel reactors where delayed neutron precursors (DNP) decay
  very close to the positions in which they were born, DNPs in CFRs are displaced
  from their originating positions by fluid flow effects; whether advective or
@@ -326,46 +326,86 @@ fluid-flow-velocity field coupled multi-group, time-resolved, neutron diffusion;
 modified point reactor kinetics; and quasi-statics. Recently
 \cite{laureau_coupled_2015} has proposed a new method based upon a modified
 fission matrix approach using Monte Carlo simulations feeding into
-computational fluid dynamics (CFD) simulations. In the following subsections
-each approach will be introduced as will two transient simulations; one for
-a thermal reactor system and one for a fast reactor system. As mentioned in
+computational fluid dynamics (CFD) simulations. Table \ref{tbl:codes} details
+the various implementations of these approaches throughout literature.
+In the following subsections
+each approach will be introduced as will two transient simulations; the pump-start
+experiment for the MSRE representing a thermal system - this transient having
+the added advantage of a wealth of experimental data - and an unprotected loss
+of flow (ULOF) transient in the proposed MSFR representing a fast system.
+As mentioned in
 section \ref{sec:intro} the effects of the fluid flow velocity on the DNPs in each
 system have noticable differences due to the channel type flow found in many
 thermal systems and the typically non-structured flow found in many fast
 systems.
+It should be noted that the use of a particular code as an example of an
+approach does not single that code out as being "better" than its peers; codes
+were selected as examples based on both the quality and detail of the selected
+transient as it was presented in the code's debut paper and a desire for bredth in the number of codes covered. The suitability of any given code to any given task
+is a determination that must be made on a case by case basis. Details pertaining
+to a code used for a transient example may be found in table \ref{tbl:codes} as
+well as the relevant literature.
+\par With regards to the pump start up transient for the MSRE it is worth noting
+that the tranisent occurs at zero power, the fuel is initially molten and
+stationary, the fuel's fluid flow velocity is brought to its nominal value in
+10 s by the pump start up, and that the removal of control rods was used to
+compensate for the increasing loss of DNPs from the core. It is this inserted
+reactivity, or amount of removal of the control rods, that the codes simulating
+this transient attempt to match.
 
-\subsection{Multi-Group Diffusion} \label{ssec:mgd}
+\subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
 work, multi-group diffusion (MGD) approaches are the gold standard in that they
 make the fewest assumptions and simplifications out of any of the models.
 This does increase their computational cost, however, making these methods
 the most computationally expensive of all the approaches considered - at least
 those with computational cost data available. However the multi-group
-diffusion problem is solved its structure allows for the direct incorporation
+diffusion problem is solved its structure allows, though not all implementations
+include all the physics, for the direct incorporation
 of fluid flow effects on both the neutron flux and the DNP concentration as
-see in equation \ref{eq:mgd}, including advective effects on the neutron flux,
+see in equation \ref{eq:mgd}, including advective effects, the third and
+fourth terms, on the neutron flux,
  and equation \ref{eq:mgd_dnp}, including advective and diffusive effects on
- the DNP distribution.
+ the DNP distribution, the left hand side. In equation \ref{eq:mgd_dnp}
+ $Sc_{T}$ is the turbulent Schmidt number and $nu_{T}$ is the eddy viscosity. 
 
 \begin{equation}
-\frac{1}{v_{g} \cdot \frac{\partial \phi_{g}}{\partial t} + \nabla \cdot
-    (\phi u\rightharpoon) = \nabla \cdot D_{g} \nabla \phi_{g} 
+\label{eq:mgd}
+\begin{split}
+\frac{1}{v_{g}} \cdot \frac{\partial \phi_{g}}{\partial t} + \nabla \cdot
+    (\phi_{g} \overset{\rightharpoonup}u) = & \nabla \cdot D_{g} \nabla \phi_{g}
     + \mathlarger{\sum}_{g \prime \not= g} \Sigma_{s,g \prime \rightarrow g}
     \phi_{g \prime} + (1-\beta)\chi_{p,g}
     \mathlarger{\sum}_{g \prime = 1}^{G}\frac{1}{k_{eff}}
     (\nu \Sigma_{f})_{g \prime}\phi_{g\prime} +
-    \mathlarger{\sum}_{i = 1}^{I}\chi_{d,g}\lambda_{i}C_{i}
-    - \Sigma_{a,g}\phi_{g} - \mathlarger{\sum}_{g \prime \not= g} 
+    \mathlarger{\sum}_{i = 1}^{I}\chi_{d,g}\lambda_{i}C_{i} \\
+    & - \Sigma_{a,g}\phi_{g} - \mathlarger{\sum}_{g \prime \not= g} 
     \Sigma_{s,g \rightarrow g \prime} \phi_{g} 
-\label{eq:mgd}
+\end{split}
 \end{equation}
 
 \begin{equation}
-\nabla(C_{i} u\rightharpoon) - \nabla \cdot \frac{\nu_{T}}{Sc_{T}}\nabla C_{i}
+\label{eq:mgd_dnp}
+\nabla \cdot (C_{i} \overset{\rightharpoonup}u) - 
+    \nabla \cdot \frac{\nu_{T}}{Sc_{T}}\nabla C_{i}
     = \beta_{i} \mathlarger{\sum}_{g = 1}^{G} \frac{1}{k_{eff}} 
     (\nu \Sigma_{f})_{g} \phi_{g} - \lambda_{i} C_{i}
-\label{eq:mgd_dnp}
 \end{equation}
+
+\subsubsection{thermal system} \label{sssec:mgd_ts}
+Representing MGD approaches for the evaulation of thermal systems the DYN3D-MSR
+code, as presented in \cite{krepel_dyn3d-msr_2007}, is chosen. While DYN3D-MSR is
+capable of modelling DNP distributions in 3D the authors in
+\cite{krepel_dyn3d-msr_2007} note that, owing to the MSRE's channel guided flow,
+the radial DNP distribution is assumed to be constant for their modeling of the
+MSRE. 
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Krepel_DYN3D_2007_Fig_9}
+   \caption{Figure 9 from \cite{krepel_dyn3d-msr_2007}.} 
+   \label{fig:zhang_residence_time_keff}
+\end{figure}
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
