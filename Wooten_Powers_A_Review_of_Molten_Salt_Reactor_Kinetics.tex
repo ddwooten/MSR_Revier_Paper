@@ -75,16 +75,16 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 
 \linenumbers
 
-\section{Itroduction} \label{intro}
+\section{Itroduction} \label{sec:intro}
 Standard stuff about MSRs.
 
-\section{Physics of Circulating Fuel} \label{physics}
+\section{Physics of Circulating Fuel} \label{sec:physics}
 In comparison to solid fuel reactors circulating fuel reactors exhibit unique
 physics which affect all aspects of reactor kinetics. In the following
 sub-sections the key phenomonon unique to the kinetics of circulating fuel
 reactors are elaborated upon.
 
-\subsection{Neutron Flux} \label{flux}
+\subsection{Neutron Flux} \label{ssec:flux}
 While the speed of neutrons, fast or thermal, is typically many orders of magnitude greater than
 the flow velocity of the fluid fuel the neutron flux can still experience
 perturbations due to this fluid velocity field. These perturbations are always
@@ -94,14 +94,14 @@ discussed in the next sub-section. In \cite{zhang_development_2009-1} a steady
 state neutronics and coupled thermalhydraulics code, which includes convective
 fluid motion in the neutron flux, is used to investigate the effects of fluid
 flow on various quantities of interest related to circulating fuel reactors. In
-figure \ref{zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
+figure \ref{fig:zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
 distribution of the neutron flux, thermal is shown but the conclusions for the fast flux are the same, is not significantly shifted in the direction
-of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{zhang_axial_velocity_flux}, axially, and in figure \ref{zhang_radial_velocity_flux}, radially, how a greater fluid flow
+of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{fig:zhang_axial_velocity_flux}, axially, and in figure \ref{fig:zhang_radial_velocity_flux}, radially, how a greater fluid flow
  velocity, $U_{in}$ in the figures, supresses the magnitude of the fast, $\phi_{1}$, and thermal, $\phi_{2}$, neutron fluxes. This affect is
  attributed to a larger transport of delayed neutron precursors outside of the core \cite{zhang_development_2009-1}. The reactor model
  utliized in \cite{zhang_development_2009-1} consists of an axially symetric
  open core type reactor with an outer graphite reflector. In the analyses which
- produced figures \ref{zhang_axial_velocity_flux} and \ref{zhang_radial_velocity_flux} the
+ produced figures \ref{fig:zhang_axial_velocity_flux} and \ref{fig:zhang_radial_velocity_flux} the
  out-of-core residence time for the fuel was held constant despite a changing
  fluid flow velocity.
 
@@ -110,7 +110,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_8_B}
    \caption{Figure 8.b from \cite{zhang_development_2009-1}. Countour line
     values are the neutron flux; no units were provided with these values.} 
-   \label{zhang_2d_flux}
+   \label{fig:zhang_2d_flux}
 \end{figure}
 
 \begin{figure}[h]
@@ -119,7 +119,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
    \caption{Figure 15.a from \cite{zhang_development_2009-1}. 
                Axial
                values are taken at the center of the core.}
-   \label{zhang_axial_velocity_flux}
+   \label{fig:zhang_axial_velocity_flux}
 \end{figure}
 
 \begin{figure}[h]
@@ -128,10 +128,10 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
    \caption{Figure 15.b from \cite{zhang_development_2009-1}.
                Radial 
                values are taken at the center of the core.}
-   \label{zhang_radial_velocity_flux}
+   \label{fig:zhang_radial_velocity_flux}
 \end{figure}
 
-\subsection{Delayed Neutron Precursor Distribution} \label{dnpd}
+\subsection{Delayed Neutron Precursor Distribution} \label{ssec:dnpd}
 In contrast to solid fuel reactors where delayed neutron precursors (DNP) decay
  very close to the positions in which they were born, DNPs in CFRs are displaced
  from their originating positions by fluid flow effects; whether advective or
@@ -146,24 +146,24 @@ is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\beta_{eff}$ at
 zero power was 212 pcm \cite{delpech_benchmark_2003}.
 
 \par Not only do fluid flow effects dispalce DNPs from their originating positions,
-as shown in figure \ref{dulla_msre_dnp_displacement}, these effects also
+as shown in figure \ref{fig:dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs as shown in figure
-\ref{dulla_msre_dnp_importance}. This importance reduction is due to two
+\ref{fig:dulla_msre_dnp_importance}. This importance reduction is due to two
 effects; the liklihood to decay out of core and the liklihood that, even if the
 DNP decays in-core, the emitted neutron will originate in a region of low
 importance. In \cite{dulla_models_2005} a multi-group
 diffusion scheme modeling the MSRE was used to produce the results in figures
-\ref{dulla_msre_dnp_displacement} and \ref{dulla_msre_dnp_importance}.
+\ref{fig:dulla_msre_dnp_displacement} and \ref{fig:dulla_msre_dnp_importance}.
 The effects on DNP distributions, from \cite{zhang_development_2009-1}, caused
 by varrying flow velocity while holding out-of-core residence time constant are
-shown, axially, in figures \ref{zhang_axial_velocity_dnp_1} and 
-\ref{zhang_axial_velocity_dnp_2} and, radially, in figures
-\ref{zhang_radial_velocity_dnp_1} and \ref{zhang_radial_velocity_dnp_2}.
+shown, axially, in figures \ref{fig:zhang_axial_velocity_dnp_1} and 
+\ref{fig:zhang_axial_velocity_dnp_2} and, radially, in figures
+\ref{fig:zhang_radial_velocity_dnp_1} and \ref{fig:zhang_radial_velocity_dnp_2}.
 It is seen that the DNP groups with longer half-lives are most affected as the
 fluid flow has sufficient time to displace them before they decay. For all
 affected groups it is seen that a higher fluid velocity reduces DNP group
 concentration in the core; more DNPs being moved out of the core where they
-eventually decay. In figure \ref{yamamoto_transit_time}, while holding fluid flow velocity constant, the effect of
+eventually decay. In figure \ref{fig:yamamoto_transit_time}, while holding fluid flow velocity constant, the effect of
 out-of-core residence time on DNP group concentration
 in core is shown. It is seen that with increasing transit time the concentration
 of DNP groups in core decreases as more DNPs decay out of core.   
@@ -175,7 +175,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
     solid fuel results while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}$ are DNP group concentrations. No
     units were given. Higher n indicates shorter decay half-life.}
-   \label{dulla_msre_dnp_displacement}
+   \label{fig:dulla_msre_dnp_displacement}
 \end{figure}
 
 \begin{figure}[h]
@@ -185,7 +185,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
     solid fuel results while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}^{+}$ are DNP group importance values. 
     No units were given. Higher n indicates shorter decay half-life.}
-   \label{dulla_msre_dnp_importance}
+   \label{fig:dulla_msre_dnp_importance}
 \end{figure}
 
 \begin{figure}[h]
@@ -196,7 +196,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
-   \label{zhang_axial_velocity_dnp_1}
+   \label{fig:zhang_axial_velocity_dnp_1}
 \end{figure}
 
 \begin{figure}[h]
@@ -207,7 +207,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
-   \label{zhang_axial_velocity_dnp_2}
+   \label{fig:zhang_axial_velocity_dnp_2}
 \end{figure}
 
 \begin{figure}[h]
@@ -218,7 +218,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
-   \label{zhang_radial_velocity_dnp_1}
+   \label{fig:zhang_radial_velocity_dnp_1}
 \end{figure}
 
 \begin{figure}[h]
@@ -229,7 +229,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
                values are taken at the center of the core. $C_{n}$ are DNP
                group concentrations. No units were given. Higher n inidicates
                shorter decay half-life.}
-   \label{zhang_radial_velocity_dnp_2}
+   \label{fig:zhang_radial_velocity_dnp_2}
 \end{figure}
 
 \begin{figure}[h]
@@ -239,13 +239,13 @@ of DNP groups in core decreases as more DNPs decay out of core.
     a graphite moderated MSR of core length 4 m and radius 2 m with 0.7 m long 
     plenums at either end and a 0.6 m thick axial reflector using a
     multigroup diffusion approach.}
-   \label{yamamoto_transit_time}
+   \label{fig:yamamoto_transit_time}
 \end{figure}
 
-\subsection{$\beta_{eff}$} \label{beta}
+\subsection{$\beta_{eff}$} \label{ssec:beta}
 Just as DNP concentrations in-core are reduced by fuel flow so too is their
 contribution to the reactivity of multiplying systems, $\beta_{eff}$.
-Table \ref{mattioda_beta_reduction} shows, just as for DNP concentrations
+Table \ref{tbl:mattioda_beta_reduction} shows, just as for DNP concentrations
 in-core, that $\beta_{eff}$ is reduced both by a higher fluid flow velocity and
 by a longer out of core residence time.
 
@@ -257,7 +257,7 @@ by a longer out of core residence time.
         in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
         modeled with a 3 group neutron diffusion approach is used to generate
         the given data.} 
-    \label{mattioda_beta_reduction}
+    \label{tbl:mattioda_beta_reduction}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
@@ -273,7 +273,7 @@ by a longer out of core residence time.
 
 However,
 this reduction in $\beta_{eff}$ does not act equally upon all DNP groups. In table
-\ref{dulla_flow_regimes_beta}, regardless of flow regime chosen, it is seen
+\ref{tbl:dulla_flow_regimes_beta}, regardless of flow regime chosen, it is seen
 that the reactivity contribution of longer half-life DNP groups is
 reduced more than that of shorter half-life DNP groups. In the case of slug
 flow in a MOSART like system the longest lived DNP group experiences a 68\%
@@ -283,18 +283,18 @@ chance a long lived DNP has of being swept into the primary loop before it can
 decay in core whereas a short lived DNP is much more likeley to decay in core
 before it even has the chance to leave.
 
-\subsection{$k_{eff}$} \label{keff}
+\subsection{$k_{eff}$} \label{ssec:keff}
 Given that there is a reactivity reduction associated with increased fluid flow
-velocity in CFRs, as discussed in section \ref{beta}, it would seem to follow
+velocity in CFRs, as discussed in section \ref{ssec:beta}, it would seem to follow
 that there would be a commensurate reduction in the multiplication factor of
-the system. However, in figure \ref{zhang_velocity_keff} it is seen that the
+the system. However, in figure \ref{fig:zhang_velocity_keff} it is seen that the
 multiplication factor of the system described in \cite{zhang_development_2009-1}
 increases with increasing flow velocity in the presense of a fixed inlet temperature and out-of-core
 residence time. \cite{zhang_development_2009-1} attributes
 this phenomenon to increased cooling of the core, given the higher fluid flow 
 velocity, and subsequent doppler reactivity feedback with this effect
 having a greater reactivity contribution than the increased loss of DNPs. That
-said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
+said, looking at figure \ref{fig:zhang_residence_time_keff}, in which inflow
  velocity and inlet temperature are held constant, the expected reduction of
  $k_{eff}$ with increasing out-of-core residence time is seen.
 
@@ -303,18 +303,18 @@ said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_14}
    \caption{Figure 14 from \cite{zhang_development_2009-1}.}
-   \label{zhang_velocity_keff}
+   \label{fig:zhang_velocity_keff}
 \end{figure}
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_18}
    \caption{Figure 18 from \cite{zhang_development_2009-1}.} 
-   \label{zhang_residence_time_keff}
+   \label{fig:zhang_residence_time_keff}
 \end{figure}
 
 \section{Models}
-As seen in section \ref{physics} the neutronic behavior of CFRs is tightly
+As seen in section \ref{sec:physics} the neutronic behavior of CFRs is tightly
 coupled to the thermalhydraulics of the overall system. This presents unique
 challenges to traditional methods for reactor kinetics modeling; particuarly
 point-kinetics approaches which assume a constant value for $\beta_{eff}$. In
@@ -326,13 +326,21 @@ fission matrix approach using Monte Carlo simulations feeding into
 computational fluid dynamics (CFD) simulations. In the following subsections
 each approach will be introduced as will two transient simulations; one for
 a thermal reactor system and one for a fast reactor system. As mentioned in
-section \ref{intro} the effects of the fluid flow velocity on the DNPs in each
+section \ref{sec:intro} the effects of the fluid flow velocity on the DNPs in each
 system have noticable differences due to the channel type flow found in many
 thermal systems and the typically non-structured flow found in many fast
 systems.
 
-\subsection{Multi-Group Diffusion} \label{mgd}
-
+\subsection{Multi-Group Diffusion} \label{ssec:mgd}
+In terms of fidelity, within the modelling approaches considered for this
+work, multi-group diffusion (MGD) approaches are the gold standard in that they
+make the fewest assumptions and simplifications out of any of the models.
+This does increase their computational cost, however, making these methods
+the most computationally expensive of all the approaches considered - at least
+those with computational cost data available. However the multi-group
+diffusion problem is solved its structure allows for the direct incorporation
+of fluid flow effects on both the neutron flux and the DNP concentration as
+see in equation \ref{eq:mgd}
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
@@ -342,7 +350,7 @@ systems.
         in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
         modeled with a 3 group neutron diffusion approach is used to generate
         the given data.} 
-    \label{dulla_flow_regimes_beta}
+    \label{tbl:dulla_flow_regimes_beta}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
