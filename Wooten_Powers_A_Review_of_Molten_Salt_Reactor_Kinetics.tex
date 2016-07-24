@@ -349,15 +349,22 @@ see in equation \ref{eq:mgd}, including advective effects on the neutron flux,
 
 \begin{equation}
 \frac{1}{v_{g} \cdot \frac{\partial \phi_{g}}{\partial t} + \nabla \cdot
-    (\phi u\rightharpoon) = \nabla \cdot D_{g}\nabla\phi_{g} 
-    + \mathlarger{\sum}_{g\prime \not= g} \Sigma_{s,g\prime \rightarrow g}
-    \phi_{g\prime} + (1-\beta)\chi_{p,g}
-    \mathlarger{\sum}_{g\prime = 1}^{G}\frac{1}{k_{eff}}
-    (\nu\Sigma_{f})_{g\prime}\phi_{g\prime} +
+    (\phi u\rightharpoon) = \nabla \cdot D_{g} \nabla \phi_{g} 
+    + \mathlarger{\sum}_{g \prime \not= g} \Sigma_{s,g \prime \rightarrow g}
+    \phi_{g \prime} + (1-\beta)\chi_{p,g}
+    \mathlarger{\sum}_{g \prime = 1}^{G}\frac{1}{k_{eff}}
+    (\nu \Sigma_{f})_{g \prime}\phi_{g\prime} +
     \mathlarger{\sum}_{i = 1}^{I}\chi_{d,g}\lambda_{i}C_{i}
-    - \Sigma_{a,g}\phi_{g} - \mathlarger{\sum}_{g\prime \not= g} 
-    \Sigma_{s,g \rightarrow g\prime} \phi_{g} 
+    - \Sigma_{a,g}\phi_{g} - \mathlarger{\sum}_{g \prime \not= g} 
+    \Sigma_{s,g \rightarrow g \prime} \phi_{g} 
 \label{eq:mgd}
+\end{equation}
+
+\begin{equation}
+\nabla(C_{i} u\rightharpoon) - \nabla \cdot \frac{\nu_{T}}{Sc_{T}}\nabla C_{i}
+    = \beta_{i} \mathlarger{\sum}_{g = 1}^{G} \frac{1}{k_{eff}} 
+    (\nu \Sigma_{f})_{g} \phi_{g} - \lambda_{i} C_{i}
+\label{eq:mgd_dnp}
 \end{equation}
 
 \begin{table}[h]
