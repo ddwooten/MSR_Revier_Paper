@@ -50,10 +50,10 @@
 
 \begin{frontmatter}
 
-\title{A Review of Molten Salt Reactor Kinetics}
+\title{A Review of Molten Salt Reactor Kinetics Models}
 
 %% Group authors per affiliation:
-\author{Daniel Wooten}
+\author{Daniel Wooten}\footnote{Corresponding author: danieldavidwooten@gmail.com}
 \address{4155 Etcheverry Hall, MC 1730, University of California, Berkeley,
     Berkeley, CA 94720-1730}
 
@@ -73,7 +73,7 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 
 \linenumbers
 
-\section{Itroduction} \label{introduction}
+\section{Itroduction} \label{intro}
 Standard stuff about MSRs.
 
 \section{Physics of Circulating Fuel} \label{physics}
@@ -311,6 +311,26 @@ said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_20}
    \caption{Figure 15.a from \cite{zhang_development_2009-1}.} 
 \end{figure}
+
+\section{Models}
+As seen in section \ref{physics} the neutronic behavior of CFRs is tightly
+coupled to the thermalhydraulics of the overall system. This presents unique
+challenges to traditional methods for reactor kinetics modeling; particuarly
+point-kinetics approaches which assume a constant value for $\beta_{eff}$. In
+response to these challenges three dominant approaches have arrisen; 
+fluid-flow-velocity field coupled multi-group, time-resolved, neutron diffusion;
+modified point reactor kinetics; and quasi-statics. Recently
+\cite{laureau_coupled_2015} has proposed a new method based upon a modified
+fission matrix approach using Monte Carlo simulations feeding into
+computational fluid dynamics (CFD) simulations. In the following subsections
+each approach will be introduced as will two transient simulations; one for
+a thermal reactor system and one for a fast reactor system. As mentioned in
+section \ref{intro} the effects of the fluid flow velocity on the DNPs in each
+system have noticable differences due to the channel type flow found in many
+thermal systems and the typically non-structured flow found in many fast
+systems.
+
+\subsection{Multi-Group Diffusion} \label{mgd}
 
 \section*{References}
 
