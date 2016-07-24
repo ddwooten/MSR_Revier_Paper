@@ -101,7 +101,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
  utliized in \cite{zhang_development_2009-1} consists of an axially symetric
  open core type reactor with an outer graphite reflector. In the analyses which
  produced figures \ref{zhang_axial_velocity_flux} and \ref{zhang_radial_velocity_flux} the
- out of core residence time for the fuel was held constant despite a changing
+ out-of-core residence time for the fuel was held constant despite a changing
  fluid flow velocity.
 
 \begin{figure}[h]
@@ -281,6 +281,36 @@ experiences less than a 1\% reduction. These affects are driven by the increased
 chance a long lived DNP has of being swept into the primary loop before it can
 decay in core whereas a short lived DNP is much more likeley to decay in core
 before it even has the chance to leave.
+
+\subsection{$k_{eff}$} \label{keff}
+Given that there is a reactivity reduction associated with increased fluid flow
+velocity in CFRs, as discussed in section \ref{beta}, it would seem to follow
+that there would be a commensurate reduction in the multiplication factor of
+the system. However, in figure \ref{zhang_velocity_keff} it is seen that the
+multiplication factor of the system described in \cite{zhang_development_2009-1}
+increases with increasing flow velocity in the presense of a fixed inlet temperature and out-of-core
+residence time. \cite{zhang_development_2009-1} attributes
+this phenomenon to increased cooling of the core, given the higher fluid flow 
+velocity and subsequent doppler reactivity feedback with this effect
+having a greater reactivity contribution than the increased loss of DNPs. That
+said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
+ velocity and inlet temperature are held constant, the expected reduction of
+ $k_{eff}$ with increasing out-of-core residence time is seen.
+
+
+\begin{figure}[h]
+   \label{zhang_velocity_keff}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_14}
+   \caption{Figure 14 from \cite{zhang_development_2009-1}.}
+\end{figure}
+
+\begin{figure}[h]
+   \label{zhang_residence_time_keff}
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_20}
+   \caption{Figure 15.a from \cite{zhang_development_2009-1}.} 
+\end{figure}
 
 \section*{References}
 
