@@ -12,6 +12,9 @@
 %For equation formatting
 \usepackage{amsmath}
 
+%For sizing summations properly
+\usepackage{relsize}
+
 \journal{Progress in Nuclear Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -340,7 +343,22 @@ the most computationally expensive of all the approaches considered - at least
 those with computational cost data available. However the multi-group
 diffusion problem is solved its structure allows for the direct incorporation
 of fluid flow effects on both the neutron flux and the DNP concentration as
-see in equation \ref{eq:mgd}
+see in equation \ref{eq:mgd}, including advective effects on the neutron flux,
+ and equation \ref{eq:mgd_dnp}, including advective and diffusive effects on
+ the DNP distribution.
+
+\begin{equation}
+\frac{1}{v_{g} \cdot \frac{\partial \phi_{g}}{\partial t} + \nabla \cdot
+    (\phi u\rightharpoon) = \nabla \cdot D_{g}\nabla\phi_{g} 
+    + \mathlarger{\sum}_{g\prime \not= g} \Sigma_{s,g\prime \rightarrow g}
+    \phi_{g\prime} + (1-\beta)\chi_{p,g}
+    \mathlarger{\sum}_{g\prime = 1}^{G}\frac{1}{k_{eff}}
+    (\nu\Sigma_{f})_{g\prime}\phi_{g\prime} +
+    \mathlarger{\sum}_{i = 1}^{I}\chi_{d,g}\lambda_{i}C_{i}
+    - \Sigma_{a,g}\phi_{g} - \mathlarger{\sum}_{g\prime \not= g} 
+    \Sigma_{s,g \rightarrow g\prime} \phi_{g} 
+\label{eq:mgd}
+\end{equation}
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
