@@ -144,7 +144,7 @@ of low or zero neutronic importance. As such $\beta_{eff}$, the reactivity
 is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\beta_{eff}$ at
 zero power was 212 pcm \cite{delpech_benchmark_2003}.
 
-\\Not only do fluid flow effects dispalce DNPs from their originating positions,
+\par Not only do fluid flow effects dispalce DNPs from their originating positions,
 as shown in figure \ref{dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs as shown in figure
 \ref{dulla_msre_dnp_importance}. This importance reduction is due to two
@@ -171,7 +171,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{dulla_msre_dnp_displacement}
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_1_9}
-   \caption{Figure 1.9 from \cite{Dulla_Models_2005}. Dashed lines represent
+   \caption{Figure 1.9 from \cite{dulla_models_2005}. Dashed lines represent
     solid fuel results while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}$ are DNP group concentrations. No
     units were given. Higher n indicates shorter decay half-life.}
@@ -181,7 +181,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{dulla_msre_dnp_importance}
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_4}
-   \caption{Figure 2.4 from \cite{Dulla_Models_2005}. Dashed lines represent
+   \caption{Figure 2.4 from \cite{dulla_models_2005}. Dashed lines represent
     solid fuel results while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}^{+}$ are DNP group importance values. 
     No units were given. Higher n indicates shorter decay half-life.}
@@ -251,7 +251,7 @@ by a longer out of core residence time.
 \begin{table}[h]
     \label{mattioda_beta_reduction}
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
-        core residence time, $\tau_{l}$,
+        core residence time, $\tau_{l}$, in seconds, 
         and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
         the last two rows of table 5
         in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
@@ -260,13 +260,13 @@ by a longer out of core residence time.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
-            $\tau_{l}$\[s\]\rightarrow & 0 & 5 & 10 & 15 \\
+            $\tau_{l}\rightarrow$ & 0 & 5 & 10 & 15 \\
             \hline
             $v_{fluid} = 60$ & 0.843 & 0.539 & 0.468 & 0.440 \\
             \hline
             $v_{fluid} = 100$ & 0.834 & 0.420 & 0.352 & 0.329 \\
             \hline
-        \end{tablular}
+        \end{tabular}
     \end{center}
 \end{table}
 
@@ -308,7 +308,7 @@ said, looking at figure \ref{zhang_residence_time_keff}, in which inflow
 \begin{figure}[h]
    \label{zhang_residence_time_keff}
    \centering
-   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_20}
+   \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_18}
    \caption{Figure 15.a from \cite{zhang_development_2009-1}.} 
 \end{figure}
 
@@ -331,6 +331,29 @@ thermal systems and the typically non-structured flow found in many fast
 systems.
 
 \subsection{Multi-Group Diffusion} \label{mgd}
+
+
+\begin{table}[h]
+    \label{dulla_flow_regimes_beta}
+    \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
+        core residence time, $\tau_{l}$, in seconds,
+        and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
+        the last two rows of table 5
+        in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
+        modeled with a 3 group neutron diffusion approach is used to generate
+        the given data.} 
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $\tau_{l}\rightarrow$ & 0 & 5 & 10 & 15 \\
+            \hline
+            $v_{fluid} = 60$ & 0.843 & 0.539 & 0.468 & 0.440 \\
+            \hline
+            $v_{fluid} = 100$ & 0.834 & 0.420 & 0.352 & 0.329 \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 
 \section*{References}
 
