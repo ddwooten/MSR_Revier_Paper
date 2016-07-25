@@ -420,9 +420,9 @@ miss the reactivity oscilations later in the transient.
 
 \subsubsection{fast system} \label{sssec:mgd_fs}
 Representing MGD approaches for the evaluation of fast systems an unamed code
-from Politecnico di Milano (Polimi), as presented in \cite{fiorina_modelling_2004}, is
+from Politecnico di Milano (Polimi), as presented in \cite{fiorina_modelling_2014}, is
 chosen. It should be noted that in the implementation of the ULOF transient for
-the MSFR in \cite{fiorina_modelling_2004} no other flows, other than the primary
+the MSFR in \cite{fiorina_modelling_2014} no other flows, other than the primary
 loop flow, are lost. Additionally the pumps in the primary loop are assumed to
 coast down exponentially with a time constant of 5 s. The simulated transient is
 seen in figure \ref{fig:fiorina_msfr_ulof} along with the results from another
@@ -433,8 +433,65 @@ modified version of DALTON as the neutronics solver.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Fiorina_Modelling_2014_Fig_11}
-   \caption{Figure 9 from \cite{fiorina_modelling_2004}.} 
+   \caption{Figure 9 from \cite{fiorina_modelling_2014}.} 
    \label{fig:fiorina_msfr_ulof}
+\end{figure}
+
+\subsection{Point reactor kinetics} \label{ssec:prk}
+Point reactor kinetics (PRK) is arguably the most well known and most widespread
+method for modelling the kinetics of multiplying systems. Traditionally PRK
+has used a fixed value for $\beta_{eff}$ and precursor concentration equations
+that do not allow for moving prcursors, equations \ref{eq:prk} and \ref{eq:prk_dnp}
+.
+
+\begin{equation}
+    \label{eq:prk}
+    \frac{dn(t)}{dt} = \frac{\rho(t) - \beta_{eff}}{\Lambda} n(t) +
+     \sum_{i = 1}^{I} \lambda_{i} C_{i}(t)
+\end{equation}
+
+\begin{equation}
+    \label{eq:prk_dnp}
+    \frac{dC_{i}(t)}{dt} = \frac{\beta_{eff}^{i}}{\Lambda} n(t) -
+        \lambda_{i} C_{i}(t)
+\end{equation}
+
+ Neither of these assumptions connect well
+with the physics of CFRs. In response to this disconnect several methods have been
+proposed to adjust the PRK equations or its implementation. In the following
+sections these methods will be elaborated on; while differing researchers
+tend to implement each given method in a slightly different way, methods are
+grouped by similar characteristics to avoid a meaningless proliferation of
+approaches.
+
+\subsubsection{delayed point reactor kinetics} \label{sssec:dpk}
+What are termed as
+decay point reactor kinetics (DPK) in this paper are those implementations
+which aim to account for the movement of DNPs through source and sink terms
+in the DNP concentration equation as seen in equation \ref{eq:dpk_dnp}
+where $\tau_{c}$ is the fuel residence time in the core and $\tau_{l}$ is the
+fuel residence time in the primary loop.
+JEFF, THIS IS A PRETTY COMMON EQUATION AT THIS POINT,
+DO I NEED TO CITE ONE OF THE 10+ PAPERS WHICH USES THIS THING?
+
+\begin{equation}
+    \label{eq:dpk_dnp}
+    \frac{dC_{i}(t)}{dt} = \frac{\beta_{eff}^{i}}{\Lambda} n(t) -
+        \lamda_{i} C_{i}(t) - \frac{C_{i}(t)}{\tau_{c} +
+        \frac{C_{i}(t - \tau_{l} e^{-\lambda_{i} \tau_{l}}}{\tau_{c}}
+\end{equation}
+
+
+
+  the kinetics of CFRs, several methods have been developed to adjust PRK for use
+in CFR kinetics analysis. \ldots However, in figure \ref{fig:zhang_comparison_pk} a
+direct comparison between two modified PRK schemes, MPM represeting 
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_3}
+   \caption{Figure 9 from \cite{zhang_comparison_2009}.} 
+   \label{fig:zhang_comparison_pk}
 \end{figure}
 
 \begin{table}[h]
