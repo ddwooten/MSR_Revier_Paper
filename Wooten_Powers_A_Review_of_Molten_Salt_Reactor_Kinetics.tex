@@ -441,8 +441,8 @@ modified version of DALTON as the neutronics solver.
 Point reactor kinetics (PRK) is arguably the most well known and most widespread
 method for modelling the kinetics of multiplying systems. Traditionally PRK
 has used a fixed value for $\beta_{eff}$ and precursor concentration equations
-that do not allow for moving prcursors, equations \ref{eq:prk} and \ref{eq:prk_dnp}
-.
+that do not allow for moving prcursors, equations \ref{eq:prk} and
+\ref{eq:prk_dnp}.
 
 \begin{equation}
     \label{eq:prk}
@@ -456,10 +456,51 @@ that do not allow for moving prcursors, equations \ref{eq:prk} and \ref{eq:prk_d
         \lambda_{i} C_{i}(t)
 \end{equation}
 
- Neither of these assumptions connect well
-with the physics of CFRs. In response to this disconnect several methods have been
-proposed to adjust the PRK equations or its implementation. In the following
-sections these methods will be elaborated on; while differing researchers
+While these assumptions would not seem to connect well
+with the physics of CFRs, their approximation is not far off from the
+predictions of more rigerous models.This is well illustrated by figures
+\ref{fig:zhang_prk_flow}, \ref{zhang_prk_temp}, and \ref{zhang_prk_reac}. In
+the aforementioned figures from \cite{zhang_comparison_2009} "SM" refers
+to the SIMMER-III code as seen in table \ref{tbl:codes} from
+\cite{rineiski_kinetics_2005}; "MPM" refers to a delayed point reactor kinetics
+model, discussed in section \ref{sssec:dpk}, but particuarly from
+\cite{suzuki_reactivity-initiated-accident_2008}; and "PM0" and "PM1" both
+refer to traditional point reactor kinetics models with PM0 using an
+uncorrected $\beta_{eff}$ and PM1 using a corrected $\beta_{eff}$ taken from
+the first time-step of the SM method - it is unkown if the subseqent
+$\beta_{eff}^{i}$s were adjusted commensureately with the overall $\beta_{eff}$.
+While a discussion of the differences between these methods, and other point
+reactor kinetics based methods, will be differed to section \ref{sssec:prk_dis}
+it is worth noting for the sake of traditional point reactor kinetics that
+while PM0 overshot and PM1 undershot the power and temperature peak values, and
+while both undershot the final value for the fuel salt temperature, both methods
+predicted the same evolution of the transient as the other, more detailed,
+methods.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_1}
+   \caption{Figure 1 from \cite{zhang_comparison_2009}.} 
+   \label{fig:zhang_prk_flow}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_2}
+   \caption{Figure 9 from \cite{zhang_comparison_2009}.} 
+   \label{fig:zhang_prk_temp}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_3}
+   \caption{Figure 9 from \cite{zhang_comparison_2009}.} 
+   \label{fig:zhang_prk_reac}
+\end{figure}
+
+In the following
+sections various point reactor kinetics based methods will be elaborated on;
+ while differing researchers
 tend to implement each given method in a slightly different way, methods are
 grouped by similar characteristics to avoid a meaningless proliferation of
 approaches.
