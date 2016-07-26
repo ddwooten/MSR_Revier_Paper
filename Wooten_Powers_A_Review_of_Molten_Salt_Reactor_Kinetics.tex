@@ -508,7 +508,7 @@ tend to implement each given method in a slightly different way, methods are
 grouped by similar characteristics to avoid a meaningless proliferation of
 approaches.
 
-\subsubsection{delayed point reactor kinetics} \label{sssec:dpk}
+\subsubsection{decay point reactor kinetics} \label{sssec:dpk}
 What are termed as
 decay point reactor kinetics (DPK) in this paper are those implementations
 which aim to account for the movement of DNPs through source and sink terms
@@ -551,16 +551,25 @@ modeled the ULOF transient in the MSFR. The evolution of this transient can be
 seen in figures \ref{zhang_prk_flow}, \ref{zhang_prk_temp}, and
 \ref{zhang_prk_reac}; all of which refer to the DPK approach as "MPM".
 
-
-  he kinetics of CFRs, several methods have been developed to adjust PRK for use
-in CFR kinetics analysis. \ldots However, in figure \ref{fig:zhang_comparison_pk} a
-direct comparison between two modified PRK schemes, MPM represeting 
+\subsubsection{"I" point kinetics} \label{sssec:spk}
+"IPK", no meaning for the "I" was given in \cite{merle-lucotte_physical_2015},
+are those point reactor kinetics based methods which seek to address the
+movement of DNPs through the use of a moving mesh. In
+\cite{merle-lucotte_physical_2015} a fixed mesh is used on which parameters
+such as reactivity and fission power are calculated while a moving mesh is
+used to track DNPs and the temperature of the flowing fluid with the two
+meshes exchanging information to update one another. Details of the method and
+the governing equations can be found in \cite{merle-lucotte_physical_2015} while
+two transients, each changing the extracted power on the secondary side by
+50\% - one less and one more - each simulated with the IPK method and with a
+standard PRK method using a flow-informed corrected $\beta_{eff}$ are seen
+in figure \ref{fig:lucotte_ipk}.
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_3}
-   \caption{Figure 9 from \cite{zhang_comparison_2009}.} 
-   \label{fig:zhang_comparison_pk}
+   \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3}
+   \caption{Figure 3 from \cite{merle-lucotte_physical_2015}.} 
+   \label{fig:lucotte_ipk}
 \end{figure}
 
 \begin{table}[h]
