@@ -567,10 +567,7 @@ compositions for the MSFR.
    \label{fig:guerrieri_msfr_ulof}
 \end{figure}
 
-\subsubsection{modified point kinetics} \label{sssec:mpk}
-What are termed as
-modified point reactor kinetics (MPK) in this paper are those implementations
-which aim to account for the movement of DNPs through source and sink terms
+
 \subsubsection{"I" point kinetics} \label{sssec:spk}
 "IPK", no meaning for the "I" was given in \cite{merle-lucotte_physical_2015},
 are those point reactor kinetics based methods which seek to address the
@@ -590,6 +587,29 @@ in figure \ref{fig:lucotte_ipk}.
    \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3}
    \caption{Figure 3 from \cite{merle-lucotte_physical_2015}.} 
    \label{fig:lucotte_ipk}
+\end{figure}
+
+\subsubsection{modified point kinetics} \label{sssec:mpk}
+What are termed as
+modified point reactor kinetics (MPK) in this paper are those implementations
+which use a point reactor kinetics model derived in the presense of fuel motion
+and weighted with some weighting function. A complete derivation of such a
+model using the adjoint flux and adjoint delayed-neutron-emmissivities can be
+found in \cite{dulla_models_2005}. Transients employing such a model were found
+only for thermal systems and an example of such can be seen in figure 
+\ref{fig:dulla_4x_flow} in which the fluid flow velocity is increased by a factor
+of four in an MSRE model. In figure \ref{fig:dulla_4x_flow} "standard pk (a)" refers
+to a DPK model in which the parameters have been adjoint weighted without fuel
+flow, "standard pk (b)" refers to a DPK model in which the parameters have
+been adjoint weighted with fuel flow, "reformulated pk" refers to the re-derived
+point kinetics model found in \cite{dulla_models_2005}, and "reference" refers
+to an MGD solution.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_17}
+   \caption{Figure 3 from \cite{dulla_models_2005}.} 
+   \label{fig:dulla_4x_flow}
 \end{figure}
 
 \begin{table}[h]
