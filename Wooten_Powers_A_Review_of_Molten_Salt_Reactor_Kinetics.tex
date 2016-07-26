@@ -458,8 +458,11 @@ that do not allow for moving prcursors, equations \ref{eq:prk} and
 
 While these assumptions would not seem to connect well
 with the physics of CFRs, their approximation is not far off from the
-predictions of more rigerous models.This is well illustrated by figures
-\ref{fig:zhang_prk_flow}, \ref{zhang_prk_temp}, and \ref{zhang_prk_reac}. In
+predictions of more rigerous models. This is well illustrated by figures
+\ref{fig:zhang_prk_flow}, \ref{zhang_prk_temp}, and \ref{zhang_prk_reac};
+the transient dipicted is a ULOF transient but in the MOSART reactor with the
+flow being reduced to 4\% of its nominal value in 7 seconds from the start
+of the transient. In
 the aforementioned figures from \cite{zhang_comparison_2009} "SM" refers
 to the SIMMER-III code as seen in table \ref{tbl:codes} from
 \cite{rineiski_kinetics_2005}; "MPM" refers to a delayed point reactor kinetics
@@ -487,14 +490,14 @@ methods.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_2}
-   \caption{Figure 9 from \cite{zhang_comparison_2009}.} 
+   \caption{Figure 2 from \cite{zhang_comparison_2009}.} 
    \label{fig:zhang_prk_temp}
 \end{figure}
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_3}
-   \caption{Figure 9 from \cite{zhang_comparison_2009}.} 
+   \caption{Figure 3 from \cite{zhang_comparison_2009}.} 
    \label{fig:zhang_prk_reac}
 \end{figure}
 
@@ -522,9 +525,34 @@ DO I NEED TO CITE ONE OF THE 10+ PAPERS WHICH USES THIS THING?
         \frac{C_{i}(t - \tau_{l} e^{-\lambda_{i} \tau_{l}}}{\tau_{c}}
 \end{equation}
 
+In addition to approximating the loss of DNPs from the core due to fluid
+flow effects all DNP implementations presented in this paper also include
+a bias reactivity, subtracted from the numerator in the first right-hand-side
+term of equation \ref{eq:prk}, or a one-time corrected $\beta_{eff}$ to account
+for the reduction of the contribution of DNPs to reactivity.
+
+\par Thermal System: Representing DPK approaches for the evaluation of thermal
+systems is a modified version of RELAP5 from \cite{shi_development_2016} in
+which both the reactor kinetics and thermalhydraulics moduels were modified
+to better model CFRs. The MSRE pump start transient as evaluated by
+\cite{shi_development_2016} is seen in figure \ref{shi_msre_ps}.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Shi_Development_2016_Fig_3}
+   \caption{Figure 3 from \cite{shi_development_2016}.} 
+   \label{fig:shi_msre_ps}
+\end{figure}
+
+\par Fast System: Representing DPK approaches for the evaluation of fast
+systems is a DPK implementation from \cite{zhang_comparison_2009} modelling the
+ULOF transient in the MOSART reactor - no DPK approaches were found which
+modeled the ULOF transient in the MSFR. The evolution of this transient can be
+seen in figures \ref{zhang_prk_flow}, \ref{zhang_prk_temp}, and
+\ref{zhang_prk_reac}; all of which refer to the DPK approach as "MPM".
 
 
-  the kinetics of CFRs, several methods have been developed to adjust PRK for use
+  he kinetics of CFRs, several methods have been developed to adjust PRK for use
 in CFR kinetics analysis. \ldots However, in figure \ref{fig:zhang_comparison_pk} a
 direct comparison between two modified PRK schemes, MPM represeting 
 
