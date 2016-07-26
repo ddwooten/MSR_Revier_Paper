@@ -472,6 +472,10 @@ refer to traditional point reactor kinetics models with PM0 using an
 uncorrected $\beta_{eff}$ and PM1 using a corrected $\beta_{eff}$ taken from
 the first time-step of the SM method - it is unkown if the subseqent
 $\beta_{eff}^{i}$s were adjusted commensureately with the overall $\beta_{eff}$.
+PM1 represents a sub-class of PRK methods refered to in this paper as
+corrected point kinetics (CPK) or those PRK approaches which use a one-time, or
+flow dependent, adjusted $\beta_{eff}$ to in some way account for the
+displacement of DNPs.
 While a discussion of the differences between these methods, and other point
 reactor kinetics based methods, will be differed to section \ref{sssec:prk_dis}
 it is worth noting for the sake of traditional point reactor kinetics that
@@ -545,12 +549,28 @@ to better model CFRs. The MSRE pump start transient as evaluated by
 \end{figure}
 
 \par Fast System: Representing DPK approaches for the evaluation of fast
-systems is a DPK implementation from \cite{zhang_comparison_2009} modelling the
-ULOF transient in the MOSART reactor - no DPK approaches were found which
-modeled the ULOF transient in the MSFR. The evolution of this transient can be
-seen in figures \ref{zhang_prk_flow}, \ref{zhang_prk_temp}, and
-\ref{zhang_prk_reac}; all of which refer to the DPK approach as "MPM".
+systems is a DPK implementation from \cite{guerrieri_investigation_2013}
+modelling the ULOF transient in the MSFR. The evolution of this transient is
+seen in figure \ref{guerrieri_msfr_ulof} in which the primary pumps are
+assumed to coast down exponentially with a time constant of 2 seconds to 5\%
+ of their nominal flow - as natural circulation can not be modeled in
+\cite{guerrieri_investigation_2013}'s set-up. In figure 
+\ref{guerrieri_msfr_ulof} 
+EQL refers to the equilibrium fuel composition of the
+MSFR while the various BOL indicators refer to postulated start-up fuel
+compositions for the MSFR. 
 
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Guerrieri_Investigation_2013_Fig_3_18_A}
+   \caption{Figure 3.18 from \cite{guerrieri_investigation_2013}.} 
+   \label{fig:guerrieri_msfr_ulof}
+\end{figure}
+
+\subsubsection{modified point kinetics} \label{sssec:mpk}
+What are termed as
+modified point reactor kinetics (MPK) in this paper are those implementations
+which aim to account for the movement of DNPs through source and sink terms
 \subsubsection{"I" point kinetics} \label{sssec:spk}
 "IPK", no meaning for the "I" was given in \cite{merle-lucotte_physical_2015},
 are those point reactor kinetics based methods which seek to address the
