@@ -477,7 +477,7 @@ corrected point kinetics (CPK) or those PRK approaches which use a one-time, or
 flow dependent, adjusted $\beta_{eff}$ to in some way account for the
 displacement of DNPs.
 While a discussion of the differences between these methods, and other point
-reactor kinetics based methods, will be differed to section \ref{sssec:prk_dis}
+reactor kinetics based methods, will be differed to section \ref{sec:comp}
 it is worth noting for the sake of traditional point reactor kinetics that
 while PM0 overshot and PM1 undershot the power and temperature peak values, and
 while both undershot the final value for the fuel salt temperature, both methods
@@ -539,7 +539,7 @@ for the reduction of the contribution of DNPs to reactivity.
 systems is a modified version of RELAP5 from \cite{shi_development_2016} in
 which both the reactor kinetics and thermalhydraulics moduels were modified
 to better model CFRs. The MSRE pump start transient as evaluated by
-\cite{shi_development_2016} is seen in figure \ref{shi_msre_ps}.
+\cite{shi_development_2016} is seen in figure \ref{fig:shi_msre_ps}.
 
 \begin{figure}[h]
    \centering
@@ -584,8 +584,8 @@ in figure \ref{fig:lucotte_ipk}.
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3}
-   \caption{Figure 3 from \cite{merle-lucotte_physical_2015}.} 
+   \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3_Bottom}
+   \caption{Figure 3 (Bottom) from \cite{merle-lucotte_physical_2015}.} 
    \label{fig:lucotte_ipk}
 \end{figure}
 
@@ -702,17 +702,6 @@ recirculation from the initial power spike.
    \label{fig:laureau_msfr}
 \end{figure}
 
-\subsubsection{comparisons of point reactor kinetics methods}
-\label{sssec:prk_comp}
-With so many variations on the point reactor kinetics approach, and with such
-variation in the degree of detail, the question must be asked, 
-fuel salt from the start of the transient re-enters the core. This same
-distinction can be seen again in figure \ref{fig:lucotte_ipk} in which the
-CPK scheme matches much more closely with the IPK scheme at a lower power though
-the IPK scheme does show the oscilations typical of CFR transients very clearly
-in both transient evolutions which the CPK scheme misses entirely.
-\par A point made in \cite{dulla_models_2005} is well evidenced in figures
-
 \section{Comparisons of the Various Kinetics Methods}
 \label{sec:comp}
 In terms of suitability for the kinetics analyses of CFRs there should be no
@@ -722,13 +711,13 @@ produce transient simulations with the highest degree of accuracy amoung the
 approaches presented so far; MGD approaches also tend to be had with the highest
 degree of computational effort. Quasi-static approaches on the other hand
 show comparable simulation capability to MGD approaches, 
-figure \ref{reneiski_msre_ps},  while promising, at
+figure \ref{fig:reneiski_msre_ps},  while promising, at
 least, modest computational cost savings. \cite{dulla_models_2005} showcases
 a variety of transients in a critical and sub-critical MSRE configuration with
 differing numbers of shape recalculations used in \cite{dulla_models_2005}'s
 quasi-static scheme, all the while providing relative computational costs
  as compared to the MGD method
-also employed in the same work. In figure \ref{dulla_4x_qs} the same factor
+also employed in the same work. In figure \ref{fig:dulla_4x_qs} the same factor
 of four increase in flow velocity transient as described in section
 \ref{sssec:mpk} is modeled with the quasi-static scheme from
 \cite{dulla_models_2005} using differing numbers of shape, or MGD,
@@ -778,32 +767,68 @@ effects are attributable to the lower fraction of delayed neutrons present
 in the PM1 model. With a lower fraction from the outset of the transient there
 is a lessened positive reactivity introduction in the earlier parts of the
 transient from DNPs which would have been built up in higher numbers during
-a time of higher reactor power. On the other hand the PM0 model has almost
-opposite behavior which can largely be attributed to its having the
-highest fraction of delayed neutrons out of all the models. The larger
+a time of higher reactor power; ultimately leading to a lower power peak.
+On the other hand the PM0 model has almost
+the opposite behavior which can largely be attributed to its having the
+highest fraction of delayed neutrons out of all the models; its $\beta_{eff}$
+has no accounting for flow induced effects on DNPs. The larger
 $\beta_{eff}$ in the PM0 model leads to increased reactivity introduction
-in the begining of the transient as DNPs built up during periods of higher
-reactor power decay. NEED AN EXPLANATION FOR FINAL TEMPERATURES. 
-\par While PM0 and PM1 bound the other two methods a compelling takeaway from
+in the begining of the transient as more DNPs are able to decay.
+ NEED AN EXPLANATION FOR FINAL TEMPERATURES. 
+\par While PM0 and PM1 bound the other two methods an additional takeaway from
 these same figures is the closeness of the performance of the DPK and
 quasi-static models. For the most part they both predict the same transient
 behaviors and outcomes; the peak temperature they each predict is effectively
-the same and with DPK splitting the differnce in final averaged fuel salt
-temperature between SM and the PM methods almost exactly in half. In a similar
-story  
-A point made in other works, \cite{zanetti_development_2016} for example, is
-that accounting for fluid flow effects on DNP distributions matters more at
-zero power than at power for transient simulation. This is clearly evidenced by
-figures \ref{fig:shi_msre_ps} and \ref{fig:guerrieri_msfr_ulof}. In figure
-\ref{fig:shi_msre_ps} a DNP model is used to simulate the MSRE pump start up
-experiment and while the overall trend of the transient is captured well
-the peak is underestimated and the oscilations are largely missed. Whereas in
-figure \ref{fig:guerrieri_msfr_ulof} where a DNP scheme was used as well,
- comparing it with figure 
-\ref{fig:fiorina_msfr_ulof} in which an MGD scheme was used, both agree on
-the overall evolution of the transient, in which each used a different time
-constant for the coast down of the pumps, with both showing a rapid drop off
-in the reactor power accompanied by a small power peak when the DNP rich
+the same and with DPK splitting the differnce in the final averaged fuel salt
+temperature between SM and the PM methods roughtly in half. Displaying
+a similar trend of precision relative to more detailed methods, the DPK method
+ used by \cite{guerrieri_investigation_2013} to produce
+the transient simulation seen in figure \ref{fig:guerrieri_msfr_ulof}, though
+differing pump coast down time constants were used, produces similar transient
+behavior as seen in figure \ref{fig:fiorina_msfr_ulof} for which
+\cite{fiorina_modelling_2014} used an MGD method to produce.
+\par DPK methods may capture well transient evolutions at power and with a loss
+of flow but as evidenced in figure \ref{fig:shi_msre_ps} they may fail to
+capture well reactivity oscilations in transients occuring at low or zero power
+and with increases in flow rate. PRK methods in general struggle to capture
+transients with strong spatial effects, including flow variations, notes 
+\cite{dulla_models_2005}. Figure \ref{fig:dulla_4x_flow} backs this statement
+up well and lends further backing to the struggle many PRK methods have
+in capturing flow induced DNP reactivity oscilations. The DNP methods fail
+to capture the behavior of the transient entirely missing the reactivity
+reduction caused by the increase in flow. Even the MPK method employed by
+\cite{dulla_models_2005}, while capturing the overall direction of the
+transient, fails to caputre the strong oscilations in power caused by
+recirculation of DNP rich or poor fuel salt. The IPK method, on the other hand,
+seems to capture DNP induced reactivity oscilations well, even at nominal
+power levels. While figure \ref{fig:lucotte_ipk} shows the oscilations the
+IPK method is capable of capturing at higher powers, because of scale effects
+it misses the more dramatic oscilations that IPK captures at the low power
+version of the same transient. These oscilations can be seen in figure
+\ref{fig:lucotte_ipk_reac} where the extracted power reduction transient shows
+even greater reactivity oscilations than the mirror transient with increased
+power extraction which is in line with the general knowledge, echoed in
+\cite{zanetti_development_2016}, that DNP recirculation effects impact
+transient behavior more at lower powers.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_Fig_3_Top}
+   \caption{Figure 3 (Top) from \cite{merle-lucotte_physical_2015}.} 
+   \label{fig:lucotte_ipk_reac}
+\end{figure}
+
+\par Overall what can be said for methods with which to model CFR kinetics
+is that more studies are needed to establish the power ranges and transient
+types in which the various PRK approaches capture well the reactor behavior.
+In the likely event that even the most rigerous PRK approaches fail to capture
+specific transient responses of interest the implementation of time adaptive
+quasi-static schemes into system codes will be necessary to allow for future
+risk informed transient analysis of CFRs in which many hundreds to thousands
+of transient calculations will be needed to be run. In the mean time MGD
+approaches will continue to be the first method with which any investigation
+into CFR kinetics should look to, from which an appropriate quasi-static or
+PRK method can be compared to and accepted for use.
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
