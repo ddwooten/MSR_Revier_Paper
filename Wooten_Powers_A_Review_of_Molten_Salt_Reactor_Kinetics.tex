@@ -316,7 +316,7 @@ said, looking at figure \ref{fig:zhang_residence_time_keff}, in which inflow
    \label{fig:zhang_residence_time_keff}
 \end{figure}
 
-\section{Models}
+\section{Models} \label{sec:models}
 As seen in section \ref{sec:physics} the neutronic behavior of CFRs is tightly
 coupled to the thermalhydraulics of the overall system. This presents unique
 challenges to traditional methods for reactor kinetics modeling; particuarly
@@ -424,7 +424,7 @@ from Politecnico di Milano (Polimi), as presented in \cite{fiorina_modelling_201
 chosen. It should be noted that in the implementation of the ULOF transient for
 the MSFR in \cite{fiorina_modelling_2014} no other flows, other than the primary
 loop flow, are lost. Additionally the pumps in the primary loop are assumed to
-coast down exponentially with a time constant of 5 s. The simulated transient is
+coast down exponentially with a time constant of 5 seconds. The simulated transient is
 seen in figure \ref{fig:fiorina_msfr_ulof} along with the results from another
 code, this one from the Technical University of Delft (TUDelft) with an uknown relation to
 the code from \cite{kophazi_development_2009} though both do state the use of a
@@ -525,8 +525,8 @@ DO I NEED TO CITE ONE OF THE 10+ PAPERS WHICH USES THIS THING?
 \begin{equation}
     \label{eq:dpk_dnp}
     \frac{dC_{i}(t)}{dt} = \frac{\beta_{eff}^{i}}{\Lambda} n(t) -
-        \lamda_{i} C_{i}(t) - \frac{C_{i}(t)}{\tau_{c} +
-        \frac{C_{i}(t - \tau_{l} e^{-\lambda_{i} \tau_{l}}}{\tau_{c}}
+        \lambda_{i} C_{i}(t) - \frac{C_{i}(t)}{\tau_{c}} +
+        \frac{C_{i}(t - \tau_{l}) e^{-\lambda_{i} \tau_{l}}}{\tau_{c}}
 \end{equation}
 
 In addition to approximating the loss of DNPs from the core due to fluid
@@ -551,11 +551,11 @@ to better model CFRs. The MSRE pump start transient as evaluated by
 \par Fast System: Representing DPK approaches for the evaluation of fast
 systems is a DPK implementation from \cite{guerrieri_investigation_2013}
 modelling the ULOF transient in the MSFR. The evolution of this transient is
-seen in figure \ref{guerrieri_msfr_ulof} in which the primary pumps are
+seen in figure \ref{fig:guerrieri_msfr_ulof} in which the primary pumps are
 assumed to coast down exponentially with a time constant of 2 seconds to 5\%
  of their nominal flow - as natural circulation can not be modeled in
 \cite{guerrieri_investigation_2013}'s set-up. In figure 
-\ref{guerrieri_msfr_ulof} 
+\ref{fig:guerrieri_msfr_ulof} 
 EQL refers to the equilibrium fuel composition of the
 MSFR while the various BOL indicators refer to postulated start-up fuel
 compositions for the MSFR. 
@@ -598,7 +598,8 @@ model using the adjoint flux and adjoint delayed-neutron-emmissivities can be
 found in \cite{dulla_models_2005}. Transients employing such a model were found
 only for thermal systems and an example of such can be seen in figure 
 \ref{fig:dulla_4x_flow} in which the fluid flow velocity is increased by a factor
-of four in an MSRE model. In figure \ref{fig:dulla_4x_flow} "standard pk (a)" refers
+of four in an MSRE model begining at nominal power.
+In figure \ref{fig:dulla_4x_flow} "standard pk (a)" refers
 to a DPK model in which the parameters have been adjoint weighted without fuel
 flow, "standard pk (b)" refers to a DPK model in which the parameters have
 been adjoint weighted with fuel flow, "reformulated pk" refers to the re-derived
@@ -608,9 +609,129 @@ to an MGD solution.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_17}
-   \caption{Figure 3 from \cite{dulla_models_2005}.} 
+   \caption{Figure 2.17 from \cite{dulla_models_2005}.} 
    \label{fig:dulla_4x_flow}
 \end{figure}
+
+\subsection{Quasi-statics} \label{ssec:qs}
+Quasi-statics is less of a method on its own and more of an attempt to
+reach a comprimise between MGD and the various implementations of PRK. Whereas
+MGD makes many fewer approximations than does PRK and is more able to better
+capture shape or flow dependant transients, figure \ref{fig:dulla_4x_flow},
+it is much more computationally intensive than PRK. In quasi-static
+implementations, of which there are three mentioned in table \ref{tbl:codes},
+computational cost savings are sought while striving to maintain the accuracy
+of the solution. This is accomplished by updating the PRK parameters, in
+whichever implementation of PRK is used, perodically throughout the simulation
+by running a full MGD calculation of the system at the corresponding points
+in time. In this manner changes in the flux shape and DNP distribution can
+be caught in greater detail and used to update the PRK method which then 
+simulates the transient until the next MGD update.
+\par When these updates occur is key to the computational cost savings of
+quasi-statics. As \cite{dulla_models_2005} points out, transients which induce
+large shape perturbations on the flux will likeley require many more MGD
+updates, or at least in the presense of the perturbation. Without an addaptive
+updating scheme the requirement of frequent shape updates through an MGD
+calculation can strongly reduce the computational savings offered by
+quasi-statics.
+
+\subsubsection{thermal system} \label{sssec:qs_therm}
+Representing quasi-static approaches for the evaulation of thermal systems
+is the modified SIMMER-III code, as presented in \cite{rineiski_kinetics_2005}.
+Worth noting is the PRK scheme, termed seperable point kinetic (SPK) in this
+paper, used in the SIMMER-III code. The DNPs are split into two types;
+static DNPs represented by equation \ref{eq:spk_static} in which N is the
+neutron
+population amount, $\beta$ is the delayed neutron fraction, F is the fission
+source operator and $\Psi(x,t)$ is the neutron flux shape function;
+ movable DNPs represented by
+equation \ref{eq:spk_move}; and a unifying equation seen in \ref{eq:spk_uni}.
+Additional details can be found in \cite{rineiski_kinetics_2005}. The transient
+seen in figure \ref{fig:rineiski_msre_ps} is the same MSRE pump start transient
+described in section \ref{sec:models}.
+
+\begin{equation}
+    \label{eq:spk_uni}
+    C(x,t) = C_{s}(x,t) + C_{m}(x,t)
+\end{equation}
+
+\begin{equation}
+    \label{eq:spk_static}
+    \frac{\partial C_{s}(x,t)}{\partial t} = N \beta F \Psi(x,t) -
+        \lambda C_{s}(x,t)
+\end{equation}
+ 
+\begin{equation}
+    \label{eq:spk_move}
+    \frac{\partial C_{m}(x,t)}{\partial t} = - \nabla (u(x,t) C_{s}(x,t)) -
+        \lambda C_{m}(x,t) - \nabla(u(x,t) C_{m}(x,t))
+\end{equation}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Rineiski_Kinetics_2005_Fig_2}
+   \caption{Figure 2 from \cite{rineiski_kinetics_2005}.} 
+   \label{fig:rinesiki_mre_ps}
+\end{figure}
+
+\subsubsection{fast system} \label{sssec:qs_fast}
+No published examples of a quasi-static scheme employed to analyze a fast
+CFR sysem were found. This fact certainly does not indicate, however, that
+quasi-statics are illsuited for fast CFR kinetics analysis.
+
+\subsection{Fission matrix}
+Typically fission matrices are thought of as tools to accelerate the fission
+source convergence in Monte Carlo codes. However, in 
+\cite{laureau_coupled_2015} a method is proposed and demonstrated which uses
+fission matrices as the neutronic dirver in a transient simulation. While a
+replication and explanation of the derivation for this method is beyond the
+scope of this work the underlying principle is to pre-compute the necessary
+fission matrices for a given transient through a steady state Monte Carlo
+simulation. These matrices are then passed into a CFD code which uses them
+to update the neutron flux and power distribution in the modeled system. At
+this time there exists no published data concerning the computational cost
+of such an approach. In figure \ref{fig:laureau_msfr} a 300pcm reactivity
+insertion transient in the MSFR can be seen as modeled by this new approach; the
+slight bump in power seen at about 3 seconds is due to DNP rich fuel salt
+recirculation from the initial power spike.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Laureau_Coupled_2015_Fig_3}
+   \caption{Figure 3 (middle) from \cite{laureau_coupled_2015}.} 
+   \label{fig:laureau_msfr}
+\end{figure}
+
+\par It is undisputed that quasi-static implementations which are addaptive in
+their selection of when to update the PRK parameters are better than those 
+which simply update at a fixed number of time steps. This feature is of
+particular merrit 
+\subsubsection{comparisons of point reactor kinetics methods}
+\label{sssec:prk_comp}
+With so many variations on the point reactor kinetics approach, and with such
+variation in the degree of detail, the question must be asked, 
+fuel salt from the start of the transient re-enters the core. This same
+distinction can be seen again in figure \ref{fig:lucotte_ipk} in which the
+CPK scheme matches much more closely with the IPK scheme at a lower power though
+the IPK scheme does show the oscilations typical of CFR transients very clearly
+in both transient evolutions which the CPK scheme misses entirely.
+\par A point made in \cite{dulla_models_2005} is well evidenced in figures
+
+\section{Comparisons of the Various Kinetics Methods}
+\label{sec:comp}
+A point made in other works, \cite{zanetti_development_2016} for example, is
+that accounting for fluid flow effects on DNP distributions matters more at
+zero power than at power for transient simulation. This is clearly evidenced by
+figures \ref{fig:shi_msre_ps} and \ref{fig:guerrieri_msfr_ulof}. In figure
+\ref{fig:shi_msre_ps} a DNP model is used to simulate the MSRE pump start up
+experiment and while the overall trend of the transient is captured well
+the peak is underestimated and the oscilations are largely missed. Whereas in
+figure \ref{fig:guerrieri_msfr_ulof} where a DNP scheme was used as well,
+ comparing it with figure 
+\ref{fig:fiorina_msfr_ulof} in which an MGD scheme was used, both agree on
+the overall evolution of the transient, in which each used a different time
+constant for the coast down of the pumps, with both showing a rapid drop off
+in the reactor power accompanied by a small power peak when the DNP rich
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
