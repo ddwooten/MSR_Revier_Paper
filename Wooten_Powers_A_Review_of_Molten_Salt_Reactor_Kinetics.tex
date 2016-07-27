@@ -323,7 +323,7 @@ challenges to traditional methods for reactor kinetics modeling; particuarly
 point-kinetics approaches which assume a constant value for $\beta_{eff}$. In
 response to these challenges three dominant approaches have arrisen; 
 fluid-flow-velocity field coupled multi-group, time-resolved, neutron diffusion;
-modified point reactor kinetics; and quasi-statics; generally all coupled, tightly
+new point reactor kinetics schemes; and quasi-statics; generally all coupled, tightly
 or loosley, to a thermalhydrualics solver. Recently
 \cite{laureau_coupled_2015} has proposed a new method based upon a modified
 fission matrix approach using Monte Carlo simulations feeding into
@@ -702,10 +702,6 @@ recirculation from the initial power spike.
    \label{fig:laureau_msfr}
 \end{figure}
 
-\par It is undisputed that quasi-static implementations which are addaptive in
-their selection of when to update the PRK parameters are better than those 
-which simply update at a fixed number of time steps. This feature is of
-particular merrit 
 \subsubsection{comparisons of point reactor kinetics methods}
 \label{sssec:prk_comp}
 With so many variations on the point reactor kinetics approach, and with such
@@ -719,6 +715,82 @@ in both transient evolutions which the CPK scheme misses entirely.
 
 \section{Comparisons of the Various Kinetics Methods}
 \label{sec:comp}
+In terms of suitability for the kinetics analyses of CFRs there should be no
+question that time resolved MGD approaches, including appropriate treatment
+for the DNPs which usually includes coupling to a thermalhydraulics code, will
+produce transient simulations with the highest degree of accuracy amoung the
+approaches presented so far; MGD approaches also tend to be had with the highest
+degree of computational effort. Quasi-static approaches on the other hand
+show comparable simulation capability to MGD approaches, 
+figure \ref{reneiski_msre_ps},  while promising, at
+least, modest computational cost savings. \cite{dulla_models_2005} showcases
+a variety of transients in a critical and sub-critical MSRE configuration with
+differing numbers of shape recalculations used in \cite{dulla_models_2005}'s
+quasi-static scheme, all the while providing relative computational costs
+ as compared to the MGD method
+also employed in the same work. In figure \ref{dulla_4x_qs} the same factor
+of four increase in flow velocity transient as described in section
+\ref{sssec:mpk} is modeled with the quasi-static scheme from
+\cite{dulla_models_2005} using differing numbers of shape, or MGD,
+recalculations; noted by "k". In table \ref{tbl:dulla_costs}
+\cite{dulla_models_2005} reports relative computational costs, as compared to
+MGD, for the quasi-static method using differnt numbers of shape recalculations.
+
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_18}
+   \caption{Figure 2.18 from \cite{dulla_models_2005}.} 
+   \label{fig:dulla_4x_qs}
+\end{figure}
+
+\begin{table}[h]
+    \caption{From table 2.VI in \cite{dulla_models_2005}. Computational cost
+        of the quasi-static method with differing numbers of shape
+        recalculations relative to the MGD method.}
+    \label{tbl:dulla_costs}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            \# shape recalculations & 1 & 2 & 10 & 50 & 100 & 1000 & MGD \\
+            \hline
+            relative time & 0.001 & 0.024 & 0.172 & 0.458 & 0.822 & 1.102 &
+                1.000 \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+It is evident that while quasi-statics can save computational cost with some
+degree of lost accuracy, if implemented poorly it can actually cost more than
+a full MGD simulation.
+
+\par Considering PRK perhaps the most telling figures are figures
+\ref{fig:zhang_prk_flow}, \ref{fig:zhang_prk_temp}, and 
+\ref{fig:zhang_prk_reac}. In these figures it is seen how PM0 and PM1,
+standard PRK models excepting that PM1 uses a one time corrected $\beta_{eff}$,
+compare to DPK and quasi-static models; at least when modelling a ULOF in
+the MOSART reactor. PM1, with its decreased $\beta_{eff}$ and lack of correction
+for flow effects predicts a faster decrease in both power and flow, a lower
+peak averaged fuel salt temperature, and generally lower reactivity
+contributions from both DNPs and temperature feedback mechanisms. These
+effects are attributable to the lower fraction of delayed neutrons present
+in the PM1 model. With a lower fraction from the outset of the transient there
+is a lessened positive reactivity introduction in the earlier parts of the
+transient from DNPs which would have been built up in higher numbers during
+a time of higher reactor power. On the other hand the PM0 model has almost
+opposite behavior which can largely be attributed to its having the
+highest fraction of delayed neutrons out of all the models. The larger
+$\beta_{eff}$ in the PM0 model leads to increased reactivity introduction
+in the begining of the transient as DNPs built up during periods of higher
+reactor power decay. NEED AN EXPLANATION FOR FINAL TEMPERATURES. 
+\par While PM0 and PM1 bound the other two methods a compelling takeaway from
+these same figures is the closeness of the performance of the DPK and
+quasi-static models. For the most part they both predict the same transient
+behaviors and outcomes; the peak temperature they each predict is effectively
+the same and with DPK splitting the differnce in final averaged fuel salt
+temperature between SM and the PM methods almost exactly in half. In a similar
+story  
 A point made in other works, \cite{zanetti_development_2016} for example, is
 that accounting for fluid flow effects on DNP distributions matters more at
 zero power than at power for transient simulation. This is clearly evidenced by
