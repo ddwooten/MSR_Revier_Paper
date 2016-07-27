@@ -830,7 +830,7 @@ approaches will continue to be the first method with which any investigation
 into CFR kinetics should look to, from which an appropriate quasi-static or
 PRK method can be compared to and accepted for use.
 
-\section{Assumptions} \label{sec:assumptions}
+\section{Assumptions} \label{sec:asm}
 While the choice of a particular model to simulate CFR kinetics with brings
 with it a set of benefits and limitations beyond the choice of a modelling
 method the selection and use of specific assumptions can certainly have an
@@ -840,7 +840,7 @@ assumptions will be broken down into two main groups, those that affect the
 modelling of the DNP distributions and those which affect the thermalhydraulics
 modeling of a system.
 
-\subsection{DNP related assumptions}
+\subsection{DNP related assumptions} \label{ssec:dnp_asm}
 One of the most notable assumptions
 that the body of work examined in this paper collectivley agreed upon was the
 avoidance of 1D flow models for tracking DNPs in open core fast systems. Looking
@@ -882,24 +882,87 @@ is mollecular diffusion, however, both \cite{aufiero_calculating_2014} and
 than turbulen diffusion and advective flow effects on DNP distrubtions that it
 can be ignored all together.
 
+\subsection{Thermalhydraulics related assumptions} \label{th_asm}
+Just as there is a choice of assumptions to be made with respect to the
+modelling of DNP distributions in CFRs there are choices, more choices, to be
+made with respect to the modelling of the thermalhydraulics. One of the most
+common assumptions made in many of the works examined in this paper was that
+of slug flow for the velocity profile in the channel type CFRs. This was a
+particuarly common assumption for those approaches which did not explicitly
+model the fuel salt flow in the core but rather ignored thermalhydraulics
+all together or employed an energy balance to account for temperature effects
+on reactivity. In \cite{dulla_interactions_2007} an exhaustive evaluation
+of this assumption, as compared with other flow profiles, was undertaken.
+The power evolution through an average velocity change, whose profile is found
+in the upper right hand corner, can be seen in figure 
+\ref{fig:dulla_flow_regimes}
+in which it is seen that the power evolution for this transient is 
+influenced by the flow regime assumed. The effect of differing flow regimes
+on $\beta_{eff}$ and $\beta_{eff}^{i}$ in the MSRE can be seen in table
+\ref{tbl:dulla_flow_regimes}. The flow regimes refered to in figure
+\ref{fig:dulla_flow_regimes} and table \ref{tbl:dulla_flow_regimes} are best
+summarized by figures \ref{fig:dulla_flow_map} and \ref{dulla_flow_adf}.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_A}
+   \caption{Figure 1.a from \cite{dulla_interactions_2007}. Circles correspond
+    to a "parabolic" flow regime, stars to a "step constant outward decreasing"
+    (SOD) flow regime, and squares to a "step constant outward increasing" (SOI)
+    flow regime.} 
+   \label{fig:dulla_flow_map}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_B}
+   \caption{Figure 1.b from \cite{dulla_interactions_2007}. This figure dipicts
+   the radial profile of flow velocity for several reactor core heights
+   corresponding to an "axially developing field" (ADF) flow regime} 
+   \label{fig:dulla_flow_adf}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_12}
+   \caption{Figure 12 from \cite{dulla_interactions_2007}. Please refer to
+   figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf} for an
+   explanation of the flow regimes seen here. In this figure circles correspond
+   to a "slug" (flat) flow regime, asterisks to a "parabolic" flow regime, stars to an
+   "ADF" flow regime, squares to an "SOD" flow regime, and triangles to an
+   "SOI" flow regime. 
+   \label{fig:dulla_flow_regimes}
+\end{figure}
+
 \begin{table}[h]
-    \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
-        core residence time, $\tau_{l}$, in seconds,
-        and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
-        the last two rows of table 5
-        in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
-        modeled with a 3 group neutron diffusion approach is used to generate
-        the given data.} 
+    \caption{Reproduced from Table III of \cite{dulla_interactions_2007}. "Slug"
+        refers to a uniform velocity profile across the reactor core.
+        The other flow regimes seen in this table are explained in
+        figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}. 
     \label{tbl:dulla_flow_regimes_beta}
     \begin{center}
-        \begin{tabular}{|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+            \multirow{2}{*}{Flow Regime} & \multirow{2}{*}{$\delta \rho$(pcm)
+            & $\lambda(s^{-1}$ & 1 & 2 & 3 & 4 & 5 & 6 & \multirow{2}{*}{Total} \\
+            \cline{4 - 9}
+            & & & 0.0127 & 0.0317 & 0.116 & 0.311 & 1.4 & 3.87 & \\
             \hline
-            $\tau_{l}\rightarrow$ & 0 & 5 & 10 & 15 \\
-            \hline
-            $v_{fluid} = 60$ & 0.843 & 0.539 & 0.468 & 0.440 \\
-            \hline
-            $v_{fluid} = 100$ & 0.834 & 0.420 & 0.352 & 0.329 \\
-            \hline
+            No flow & 0 & $\beta$ (pcm) & 23.7 & 122.7 & 117.1 & 262.7 & 107.9 &
+                45.1 & 679.2 \\
+            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) & 7.5 & 41.8 & 52.7 & 178.2
+                & 103.5 & 44.9 & 428.6 \\
+            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.318 & 0.341 & 0.450 & 0.678 &
+                0.959 & 0.995 & 0.631 \\
+            Parabolic & -299.6 & $\beta_{eff}^{i}$ (pcm) & 7.4 & 39.6 & 44.2 &
+                146.5 & 98.8 & 44.5 & 381.0 \\
+            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.313 & 0.323 & 0.378 & 0.558 &
+                0.916 & 0.986 & 0.561 \\
+            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) &
+            & & $\beta_{eff}^{i}/\beta^{i}$ &
+            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) &
+            & & $\beta_{eff}^{i}/\beta^{i}$ &
+            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) &
+            & & $\beta_{eff}^{i}/\beta^{i}$ &
         \end{tabular}
     \end{center}
 \end{table}
