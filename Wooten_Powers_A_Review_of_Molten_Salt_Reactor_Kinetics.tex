@@ -15,6 +15,9 @@
 %For sizing summations properly
 \usepackage{relsize}
 
+%For tables
+\usepackage{multirow}
+
 \journal{Progress in Nuclear Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -853,18 +856,23 @@ fast systems have been called into question as noted in
 to create their full 3D code. Concerning the effects of 1D versus 3D modelling
 of DNPs in channel type CFRs the authors of this paper could find no works
 which modeled both the DNP distributions in 3D and the thermalhydraulics of
-the system in question.
+the system in question. Overall more studies are needed to investigate the
+impact, both in channel type and open cores, of reduced dimensionality
+modelling with particular attention to the flux and DNP distribution treatment.
 \par In many CFRs, particuarly open core fast systems, the fuel salt flow is
 turbulent in nature. In these systems DNPs are not only displaced by the
 bulk movement of the fluid but may also be affected by turbulent diffusion.
 Indeed, figure \ref{fig:cheng_diffusion} shows some perturbations of the DNP
 distribution for the fourth group of DNPs when including turbulent diffusion
-in the DNP modeling.
+in the DNP modeling for the MOSART reactor.
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Cheng_Development_2014_Fig_19}
-   \caption{Figure 19 from \cite{cheng_development_2014}.} 
+   \caption{Figure 19 from \cite{cheng_development_2014}. Left is the fourth
+   DNP group concentration in core without any fluid flow effects. Middle
+   includes advective flow and right includes both advective flow and
+   turbulent diffusion.} 
    \label{fig:cheng_diffusion}
 \end{figure}
 
@@ -899,9 +907,10 @@ in the upper right hand corner, can be seen in figure
 in which it is seen that the power evolution for this transient is 
 influenced by the flow regime assumed. The effect of differing flow regimes
 on $\beta_{eff}$ and $\beta_{eff}^{i}$ in the MSRE can be seen in table
-\ref{tbl:dulla_flow_regimes}. The flow regimes refered to in figure
-\ref{fig:dulla_flow_regimes} and table \ref{tbl:dulla_flow_regimes} are best
-summarized by figures \ref{fig:dulla_flow_map} and \ref{dulla_flow_adf}.
+\ref{tbl:dulla_flow_regimes_beta}. The flow regimes refered to in figure
+\ref{fig:dulla_flow_regimes} and table \ref{tbl:dulla_flow_regimes_beta} are
+best 
+summarized by figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
 
 \begin{figure}[h]
    \centering
@@ -930,7 +939,7 @@ summarized by figures \ref{fig:dulla_flow_map} and \ref{dulla_flow_adf}.
    explanation of the flow regimes seen here. In this figure circles correspond
    to a "slug" (flat) flow regime, asterisks to a "parabolic" flow regime, stars to an
    "ADF" flow regime, squares to an "SOD" flow regime, and triangles to an
-   "SOI" flow regime. 
+   "SOI" flow regime.} 
    \label{fig:dulla_flow_regimes}
 \end{figure}
 
@@ -938,33 +947,40 @@ summarized by figures \ref{fig:dulla_flow_map} and \ref{dulla_flow_adf}.
     \caption{Reproduced from Table III of \cite{dulla_interactions_2007}. "Slug"
         refers to a uniform velocity profile across the reactor core.
         The other flow regimes seen in this table are explained in
-        figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}. 
+        figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.} 
     \label{tbl:dulla_flow_regimes_beta}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-            \multirow{2}{*}{Flow Regime} & \multirow{2}{*}{$\delta \rho$(pcm)
-            & $\lambda(s^{-1}$ & 1 & 2 & 3 & 4 & 5 & 6 & \multirow{2}{*}{Total} \\
+            \hline
+            \multirow{2}{*}{Flow Regime} & \multirow{2}{*}{$\Delta \rho$(pcm)}
+            &\multirow{2}{*}{$\lambda(s^{-1})$}&1 & 2 & 3 & 4 & 5 & 6 &
+             \multirow{2}{*}{Total} \\
             \cline{4 - 9}
             & & & 0.0127 & 0.0317 & 0.116 & 0.311 & 1.4 & 3.87 & \\
             \hline
             No flow & 0 & $\beta$ (pcm) & 23.7 & 122.7 & 117.1 & 262.7 & 107.9 &
                 45.1 & 679.2 \\
-            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) & 7.5 & 41.8 & 52.7 & 178.2
-                & 103.5 & 44.9 & 428.6 \\
+            \hline
+            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) & 7.5 & 41.8 & 52.7 & 178.2&
+                 103.5 & 44.9 & 428.6 \\
             & & $\beta_{eff}^{i}/\beta^{i}$ & 0.318 & 0.341 & 0.450 & 0.678 &
                 0.959 & 0.995 & 0.631 \\
+            \hline
             Parabolic & -299.6 & $\beta_{eff}^{i}$ (pcm) & 7.4 & 39.6 & 44.2 &
                 146.5 & 98.8 & 44.5 & 381.0 \\
             & & $\beta_{eff}^{i}/\beta^{i}$ & 0.313 & 0.323 & 0.378 & 0.558 &
                 0.916 & 0.986 & 0.561 \\
-            ADF & -310.4 & $\beta_{eff}^{i}$ (pcm) & 5.8 & 33.5 & 41.9 & 145.8
-                & 98.7 & 44.5 & 370.2 \\
+            \hline
+            ADF & -310.4 & $\beta_{eff}^{i}$ (pcm) & 5.8 & 33.5 & 41.9 & 145.8 &
+                 98.7 & 44.5 & 370.2 \\
             & & $\beta_{eff}^{i}/\beta^{i}$ & 0.246 & 0.273 & 0.358 & 0.555 &
                 0.915 & 0.986 & 0.545 \\
+            \hline
             SOD & -281.2 & $\beta_{eff}^{i}$ (pcm) & 8.0 & 40.9 & 47.0 & 157.9 &
                 100.8 & 44.7 & 399.3 \\
             & & $\beta_{eff}^{i}/\beta^{i}$ & 0.336 & 0.334 & 0.402 & 0.601 &
                 0.934 & 0.990 & 0.588 \\
+            \hline
             SOI & -251.5 & $\beta_{eff}^{i}$ (pcm) & 7.5 & 42.9 & 56.6 & 188.9 &
                 104.4 & 45.0 & 445.3 \\
             & & $\beta_{eff}^{i}/\beta^{i}$ & 0.315 & 0.350 & 0.483 & 0.719 &
@@ -973,6 +989,42 @@ summarized by figures \ref{fig:dulla_flow_map} and \ref{dulla_flow_adf}.
         \end{tabular}
     \end{center}
 \end{table}
+
+\par Less of an assumption and more of a level of detail in the modeling scheme,
+but the question remains, what impact does the inclusion of a secondary loop
+have on CFR transient modelling? With respect to channel type CFRs, and
+particuarly the MSRE, this question can be directly answered thanks to the work
+of \cite{zanetti_development_2016}. Figures \ref{fig:zanetti_sec_1mw},
+\ref{fig:zanetti_sec_5mw}, and \ref{fig:zanetti_sec_8mw} 
+depict reactivity insertion
+transients in the MSRE at 1 MW, 5 MW, and 8 MW operating power, repsectivley,
+with reactivity insertions of 24 pcm, 19 pcm, and 13 pcm,
+respectivley. In all three of these transients inclusion of the secondary loop
+increases the power peak and decreases the power minimum. It is clear to see
+that when modeling CFR transients exclusion of any additional heat transfer
+loops is not a conservative assumption and leads to less accurate simulation
+results.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_5_A}
+   \caption{Figure 2.5a from \cite{zanetti_development_2016}.} 
+   \label{fig:zanetti_sec_1mw}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_6_A}
+   \caption{Figure 2.6a from \cite{zanetti_development_2016}.} 
+   \label{fig:zanetti_sec_5mw}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_7_A}
+   \caption{Figure 2.5a from \cite{zanetti_development_2016}.} 
+   \label{fig:zanetti_sec_8mw}
+\end{figure}
 
 \begin{table}[h]
     \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
