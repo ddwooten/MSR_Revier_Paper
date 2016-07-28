@@ -146,6 +146,39 @@ kinetics analysis will be given along with sample transient simulations for
 both fast and thermal systems using representative codes from each of the main
 simulation method groups. Lastly, common assumptions and their affects on CFR
 kinetics modelling will be investigated.
+\par A list of abbreviations used in this paper can be found in table
+\ref{tbl:nomen} while a summarization of all computational tools analyzed
+in this work can be found in table \ref{tbl:codes} with a description of said
+table in section \ref{sec:models}.
+
+\begin{table}[h]
+    \caption{A listing of key acronyms used in this paper}.
+    \label{tbl:nomen}
+    \begin{center}
+        \begin{tabular}{|c c|}
+            \hline
+            CPK & Corrected Point Reactor Kinetics \\
+            DNP & Delayed Neutron Precursor \\
+            DPK & Delayed Point Reactor Kinetics \\
+            FDM & Finite Differences Method \\
+            FED & Finite Element Discritization \\
+            FEM & Finite Element Method \\
+            FVM & Finite Volume Method \\
+            IPK & "I" Point Reactor Kinetics \\
+            MGD & Multi-Group Neutron Diffusion \\
+            MOSART & Molten Salt Actinide Recycler and Transumter \\
+            MPK & Modified Point Reactor Kinetics \\
+            MSFR & Molten Salt Fast Reactor \\
+            MSRE & Molten Salt Reactor Experiment \\
+            NEM & Nodal Expansion Method \\
+            PRK & Point Reactor Kinetics \\
+            SPK & Seperated Point Reactor Kinetics \\
+            Uk & Unknown
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
 
 \section{Physics of Circulating Fuel} \label{sec:physics}
 In comparison to solid fuel reactors circulating fuel reactors exhibit unique
@@ -417,10 +450,46 @@ that the transient occurs at zero power, the fuel is initially molten and
 stationary, the fuel's fluid flow velocity is brought to its nominal value in
 10 s by the pump start up, and that the removal of control rods was used to
 compensate for the increasing loss of DNPs from the core, though unlike the
-instantaneous control rod movement assumed in many codes, the control rods in the
+instantaneous control rod movement assumed in many codes, 
+the control rods in the
 MSRE were speed limited \cite{krepel_dyn3d-msr_2007}. It is this inserted
 reactivity, or amount of removal of the control rods, that the codes simulating
 this transient attempt to match.
+\par Concerning table \ref{tbl:codes}, this table summarizes all computational
+tools for modelling CFR kinetics which were
+found in the literature and dated later than 1990. Tools are grouped by the
+work they were found in. If tools were mentioned in multiple works the
+work which appeared to be most about their development is considered
+the primary work with others found in the "Used In" column. The
+"Reactor" column indicates reactor design(s) which were modeled in
+the primary work. The "Reactor Model" column indicates, to the best
+of the author's knowledge, what reactor models the particular tool is
+capable of modelling - some are reactor specific, some are arbitrary.
+The "Precursor Treatment" column indcates what methods were used to
+treat the precursor drift; whether that was a varient of the PRK models
+or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement.
+The "Precursor Disc." column indicates what kind of spatial
+discritization scheme was employed for the modelling of the DNP distribution.
+The "Precursor Diff." column indicates if turbulent diffusion was included in
+the modeling of the DNP distrubiton. The "Xs(T)" indicates what treatment, if
+any, was used for temperature effects on nuclear cross sections. The
+"Thermal Method" column indicates what treatment, if any, was taken for the
+thermohydraulics modelling of the system. The "Turbulence Model" column
+indicates which model, if any, was used for modelling turbulent flow in the
+thermohydraulics model; this is not realted to the "Precursor Diff." column.
+
+\begin{table}[h]
+    \caption{A listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table.}
+    \label{tbl:codes}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 
 \subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
@@ -1089,27 +1158,6 @@ results.
    \label{fig:zanetti_sec_8mw}
 \end{figure}
 
-\begin{table}[h]
-    \caption{Value of $\beta_{eff}^{flow}/\beta_{eff}^{static}$ given out of
-        core residence time, $\tau_{l}$, in seconds,
-        and fluid flow velocity, $v_{fluid}$ in [cm/s]. Data taken from
-        the last two rows of table 5
-        in \cite{mattioda_effective_2000}. A 1D reactor model with height of 3 m
-        modeled with a 3 group neutron diffusion approach is used to generate
-        the given data.} 
-    \label{tbl:codes}
-    \begin{center}
-        \begin{tabular}{|c|c|c|c|c|}
-            \hline
-            $\tau_{l}\rightarrow$ & 0 & 5 & 10 & 15 \\
-            \hline
-            $v_{fluid} = 60$ & 0.843 & 0.539 & 0.468 & 0.440 \\
-            \hline
-            $v_{fluid} = 100$ & 0.834 & 0.420 & 0.352 & 0.329 \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
 
 \section{Conclusion} \label{sec:conc}
 In this paper an overview of the key physical phenomenon affected by fluid fuel
