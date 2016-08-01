@@ -21,6 +21,9 @@
 %For signalling my co-author
 \usepackage{xcolor}
 
+%For landscape tables
+\usepackage{pdflscape}
+
 \journal{Progress in Nuclear Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -491,19 +494,41 @@ thermohydraulics modelling of the system. The "Turbulence Model" column
 indicates which model, if any, was used for modelling turbulent flow in the
 thermohydraulics model; this is not realted to the "Precursor Diff." column.
 
+\begin{landscape}
 \begin{table}[h]
     \caption{A listing of all computational tools for CFR kinetics modelling
         found in the literature dated later than 1990. Please see section
         \ref{sec:models} for an explanation of this table.}
     \label{tbl:codes}
     \begin{center}
-        \begin{tabular}{|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
             \hline
-            stuff & stuff & stuff & stuff & stuff \\
+            \multirow{2}{*}{Paper} &
+                \multirow{2}{*}{Used In} &
+                \multirow{2}{*}{Code Name} &
+                \multirow{2}{*}{Reactor} &
+                \multirow{2}{*}{Reactor Specific} &
+                \multirow{2}{*}{Precursor Treatment} &
+                \multirow{2}{*}{Precursor Dimensionality} &
+                \multirow{2}{*}{Precursor Diffusion} &
+                \multirow{2}{*}{Neutronics Method} &
+                \multirow{2}{*}{Neutronics Dimensionality} &
+                \multirow{2}{*}{Neutronics Energy Discritization} &
+                \multirow{2}{*}{Xs(T)} &
+                \multirow{2}{*}{Thermohydraulics Mass Equation} &
+                \multirow{2}{*}{Thermohydraulics Energy Equation} &
+                \multirow{2}{*}{Thermohydraulics Momentum Equation} &
+                \multirow{2}{*}{Thermohydraulics Turbulence Treatment} &
+                \multirow{2}{*}{Primary Loop Model} &
+                \multirow{2}{*}{Secondary Loop Model} &
+                \multirow{2}{*}{Spatial Discritization} &
+                \multirow{2}{*}{Time Discritization} &
+                \multirow{2}{*}{Validation} &
             \hline
         \end{tabular}
     \end{center}
 \end{table}
+\end{landscape}
 
 \subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
