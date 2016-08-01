@@ -494,41 +494,62 @@ thermohydraulics modelling of the system. The "Turbulence Model" column
 indicates which model, if any, was used for modelling turbulent flow in the
 thermohydraulics model; this is not realted to the "Precursor Diff." column.
 
-\begin{landscape}
 \begin{table}[h]
     \caption{A listing of all computational tools for CFR kinetics modelling
         found in the literature dated later than 1990. Please see section
         \ref{sec:models} for an explanation of this table.}
     \label{tbl:codes}
     \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \begin{tabular}{|c c c c c c c c c c c c c c c c c c c c c c c c c c c|}
             \hline
-            \multirow{2}{*}{Paper} &
-                \multirow{2}{*}{Used In} &
-                \multirow{2}{*}{Code Name} &
-                \multirow{2}{*}{Reactor} &
-                \multirow{2}{1.1cm}{Reactor Specific} &
-                \multirow{2}{1.5cm}{Precursor Treatment} &
-                \multirow{2}{2.3cm}{Precursor Dimensionality} &
-                \multirow{2}{1.5cm}{Precursor Diffusion} &
-                \multirow{2}{1.5cm}{Neutronics Method} &
-                \multirow{2}{2.3cm}{Neutronics Dimensionality} &
-                \multirow{2}{2.0cm}{Neutronics Energy Discritization} &
-                \multirow{2}{*}{Xs(T)} &
-                \multirow{2}{2cm}{Thermohydraulics Mass Equation} &
-                \multirow{2}{2cm}{Thermohydraulics Energy Equation} &
-                \multirow{2}{2cm}{Thermohydraulics Momentum Equation} &
-                \multirow{2}{2cm}{Thermohydraulics Turbulence Treatment} &
-                \multirow{2}{1.5cm}{Primary Loop Model} &
-                \multirow{2}{1.5cm}{Secondary Loop Model} &
-                \multirow{2}{1.5cm}{Spatial Discritization} &
-                \multirow{2}{2cm}{Time Discritization} &
-                \multirow{2}{*}{Validation} \\
+            Reference &
+                \cite{aufiero_development_2014} &
+                \cite{cammi_dimensional_2012} &
+                \cite{dulla_models_2005} &
+                \cite{fiorina_modelling_2014} &
+                \cite{guo_simulations_2013} &
+                \cite{guerrieri_investigation_2013} &
+                \cite{kophazi_development_2009} &
+                \cite{kophazi_mcnp_2003} &
+                \cite{krepel_dyn1d-msr_2005} &
+                \cite{krepel_dyn3d-msr_2007} &
+                \cite{lapenta_point_2001} &
+                \cite{laureau_coupled_2015} &
+                \cite{lecarpentier_neutronic_2003} &
+                \cite{merle-lucotte_physical_2015} &
+                \cite{nicolino_coupled_2008} &
+                \cite{qiu_coupled_2016} &
+                \cite{rineiski_kinetics_2005} &
+                \cite{shi_development_2016} &
+                \cite{suzuki_reactivity-initiated-accident_2008} &
+                \cite{wang_development_2003} &
+                \cite{wu_coupled_2016} &
+                \cite{yamamoto_transient_2006} &
+                \cite{zanetti_development_2016} &
+                \cite{zanetti_extension_2015} &
+                \cite{zhang_development_2009-1} &
+                \cite{zhuang_studies_2015} \\
+                Used In \\
+                Code Name \\
+                Reactor Analyzed \\
+                Reactor Specific \\
+                Precursor Treatment \\
+                Precursor Diffusion \\
+                Precursor Groups \\
+                N. Method\\
+                N. Dimension\\
+                N. Energy Dim.\\
+                Xs(T)\\
+                TH Mass Eq\\
+                TH Energy Eq\\
+                TH Momentum Eq\\
+                Turbulence Treatment\\
+                Density Treatment\\
+                Validation\\
             \hline
         \end{tabular}
     \end{center}
 \end{table}
-\end{landscape}
 
 \subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
