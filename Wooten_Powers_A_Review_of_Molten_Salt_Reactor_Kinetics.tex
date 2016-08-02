@@ -535,31 +535,49 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 Used In & \cite{aufiero_calculating_2014} &
                     \cite{dulla_dynamics_2008}, \cite{dulla_interactions_2007},
                     \cite{dulla_neutron_2004}, \cite{dulla_quasi-static_2003},
-                    \cite{dulla_quasi-static_2008} & \\
-                Code Name & None & None & DYNAMOSS\tablefootnote{While the
+                    \cite{dulla_quasi-static_2008} & &
+                    \cite{zhang_development_2009} &
+                    \cite{guerrieri_approach_2013},
+                    \cite{cammi_dimensional_2012},
+                    \cite{guerrieri_multi-physics_2010},
+                    \cite{guerrieri_preliminary_2012},
+                    \cite{cammi_transfer_2011} &  \\
+                Code Name & None & DYNAMOSS\tablefootnote{While the
                     author cites \cite{dulla_models_2005} as the source of
                     this name is appears nowhere in \cite{dulla_models_2005}.
-                    Rather, the code is named in later works.} & \\
-                Reactor Analyzed & MSFR & MSRE, MSBR & \\
-                Reactor Specific & Yes & Yes & \\
-                Precursor Treatment & Full Flow & MPK & \\
-                Precursor Diffusion & Yes & No & \\
-                Precursor Groups & 8 & 6 & \\
-                N. Method & MGD & Quasi-Statics \\
-                N. Dimension & 3D & 2D, r-z & \\
-                N. Energy Dim. & 6G & MG & \\
+                    Rather, the code is named in later works.} & None 
+                    \tablefootnote{Code detailed is the PoliMi version} &
+                    None & None\tablefootnote{In the reference and the other
+                    works cited the authors develop several computational
+                    tools of differing dimensionality. Not all are reported
+                    here but rather the 0D-0D and multi-physics approaches,
+                    in that order. Please refer to the cited works for
+                    additional details as the authors provide an extensive
+                    analysis of all their models.} & \\
+                Reactor Analyzed & MSFR & MSRE, MSBR & MSFR & MSRE, MOSART & \\
+                Reactor Specific & Yes & Yes & Yes & No & MSRE, MSBR, MSFR & \\
+                Precursor Treatment & Full Flow & MPK \tablefootnote{
+                    \label{ft:imp}Importance Weighted Parameters} & 2D, r-z &
+                    DPK & DPK, Full Flow & \\
+                Precursor Diffusion & Yes & No & Yes & No & No, Yes & \\
+                Precursor Groups & 8 & 6 & 8 & 6 & 6, 8 & \\
+                N. Method & MGD & Quasi-Statics & MGD & PRK & PRK, MGD & \\
+                N. Dimension & 3D & 2D, r-z & 2D, r-z & 0D & 0D, 3D & \\
+                N. Energy Dim. & 6G & MG & 6G & 0 & 0, MG & \\
                 Xs(T) & Log & None\tablefootnote{\label{ft:*}To the best of
-                    the author's knowledge} \\
-                TH Mass Eq & Yes & No & \\
-                TH Energy Eq & Yes & No & \\
-                TH Momentum Eq & Yes & No & \\
+                    the author's knowledge} & Log & Uk & Various & \\
+                TH Mass Eq & Yes & No & Yes & No & No, Yes & \\
+                TH Energy Eq & Yes & No & Yes & Yes & Yes, Yes & \\
+                TH Momentum Eq & Yes & No & Yes & No & No, Yes & \\
                 Turbulence Treatment & RANS, realizable k - $\epsilon$ & N/A &
-                    \\
-                Density Treatment & Boussinesq & N/A & \\
-                Spatial Discritization & FVM & FVM & \\
-                Time Discritization & ESDIRK & IDE & \\
+                   RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$ & \\
+                Density Treatment & Boussinesq & N/A & Compressible & N/A &
+                   N/A, Compressible & \\
+                Spatial Discritization & FVM & FVM & Uk & N/A & N/A, FVM & \\
+                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk, Uk & \\
                 Validation & Verified\tablefootnote{Against the codes found in
-                    \cite{fiorina_modelling_2014}} & Benchmark-MSRE & \\
+                    \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
+                    MSRE & MSRE & \\
    
             \hline
         \end{tabular}
