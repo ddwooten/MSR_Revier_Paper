@@ -24,6 +24,9 @@
 %For landscape tables
 \usepackage{pdflscape}
 
+%For footnotes in tables
+\usepackage{tablefootnote}
+
 \journal{Progress in Nuclear Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -494,11 +497,82 @@ thermohydraulics modelling of the system. The "Turbulence Model" column
 indicates which model, if any, was used for modelling turbulent flow in the
 thermohydraulics model; this is not realted to the "Precursor Diff." column.
 
+\begin{landscape}
 \begin{table}[h]
     \caption{A listing of all computational tools for CFR kinetics modelling
         found in the literature dated later than 1990. Please see section
         \ref{sec:models} for an explanation of this table.}
     \label{tbl:codes}
+    \begin{center}
+        \begin{tabular}{|c c c c c c c c c c c c c c c c c c c c c c c c c c c|}
+            \hline
+            Reference &
+                \cite{aufiero_development_2014} &
+                \cite{dulla_models_2005} &
+                \cite{fiorina_modelling_2014} &
+                \cite{guo_simulations_2013} &
+                \cite{guerrieri_investigation_2013} &
+                \cite{kophazi_development_2009} &
+                \cite{kophazi_mcnp_2003} &
+                \cite{krepel_dyn1d-msr_2005} &
+                \cite{krepel_dyn3d-msr_2007} &
+                \cite{lapenta_point_2001} &
+                \cite{laureau_coupled_2015} &
+                \cite{lecarpentier_neutronic_2003} &
+                \cite{merle-lucotte_physical_2015} &
+                \cite{nicolino_coupled_2008} &
+                \cite{qiu_coupled_2016} &
+                \cite{rineiski_kinetics_2005} &
+                \cite{shi_development_2016} &
+                \cite{suzuki_reactivity-initiated-accident_2008} &
+                \cite{wang_development_2003} &
+                \cite{wu_coupled_2016} &
+                \cite{yamamoto_transient_2006} &
+                \cite{zanetti_development_2016} &
+                \cite{zanetti_extension_2015} &
+                \cite{zhang_development_2009-1} &
+                \cite{zhuang_studies_2015} \\
+                Used In & \cite{aufiero_calculating_2014} &
+                    \cite{dulla_dynamics_2008}, \cite{dulla_interactions_2007},
+                    \cite{dulla_neutron_2004}, \cite{dulla_quasi-static_2003},
+                    \cite{dulla_quasi-static_2008} & \\
+                Code Name & None & None & DYNAMOSS\tablefootnote{While the
+                    author cites \cite{dulla_models_2005} as the source of
+                    this name is appears nowhere in \cite{dulla_models_2005}.
+                    Rather, the code is named in later works.} & \\
+                Reactor Analyzed & MSFR & MSRE, MSBR & \\
+                Reactor Specific & Yes & Yes & \\
+                Precursor Treatment & Full Flow & MPK & \\
+                Precursor Diffusion & Yes & No & \\
+                Precursor Groups & 8 & 6 & \\
+                N. Method & MGD & Quasi-Statics \\
+                N. Dimension & 3D & 2D, r-z & \\
+                N. Energy Dim. & 6G & MG & \\
+                Xs(T) & Log & None\tablefootnote{\label{ft:*}To the best of
+                    the author's knowledge} \\
+                TH Mass Eq & Yes & No & \\
+                TH Energy Eq & Yes & No & \\
+                TH Momentum Eq & Yes & No & \\
+                Turbulence Treatment & RANS, realizable k - $\epsilon$ & N/A &
+                    \\
+                Density Treatment & Boussinesq & N/A & \\
+                Spatial Discritization & FVM & FVM & \\
+                Time Discritization & ESDIRK & IDE & \\
+                Validation & Verified\tablefootnote{Against the codes found in
+                    \cite{fiorina_modelling_2014}} & Benchmark-MSRE & \\
+   
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[h]
+    \caption{A listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table.}
+    \label{tbl:codes2}
     \begin{center}
         \begin{tabular}{|c c c c c c c c c c c c c c c c c c c c c c c c c c c|}
             \hline
@@ -550,6 +624,7 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
         \end{tabular}
     \end{center}
 \end{table}
+\end{landscape}
 
 \subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
