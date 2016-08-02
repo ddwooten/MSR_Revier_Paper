@@ -580,7 +580,6 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
             \hline
             Reference &
                 \cite{kophazi_development_2009} &
-                \cite{kophazi_mcnp_2003} &
                 \cite{krepel_dyn1d-msr_2005} &
                 \cite{krepel_dyn3d-msr_2007} &
                 \cite{lapenta_point_2001} &
@@ -599,23 +598,26 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{zanetti_extension_2015} &
                 \cite{zhang_development_2009-1} &
                 \cite{zhuang_studies_2015} \\
-                Used In \\
-                Code Name \\
-                Reactor Analyzed \\
-                General Reactor Input \\
-                Precursor Treatment \\
-                Precursor Diffusion \\
-                Precursor Groups \\
-                N. Method\\
-                N. Dimension\\
-                N. Energy Dim.\\
-                Xs(T)\\
-                TH Mass Eq\\
-                TH Energy Eq\\
-                TH Momentum Eq\\
-                Turbulence Treatment\\
-                Density Treatment\\
-                Validation\\
+                Used In & & \cite{krepel_development_2004} & 
+                    \cite{krepel_dynamics_2007} & \\
+                Code Name & DT-MSR & DYN1D-MSR & DYN3D-MSR & \\
+                Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & \\
+                General Reactor Input & Yes & Yes & Yes & \\
+                Precursor Treatment & Axial Flow & Axial Flow &
+                    Full Flow\tablefootnotemark[\ref{ft:*}] \\
+                Precursor Diffusion & No & No & No & \\
+                Precursor Groups & 6 & Arbitrary & Arbitrary & \\
+                N. Method & MGD & MGD & MGD & \\
+                N. Dimension & 3D & 1D & 3D & \\
+                N. Energy Dim. & 8G & 2G & 2G & \\
+                Xs(T) & Interpolation & Interpolation & Uk & \\
+                TH Mass Eq & Yes & Yes & Yes & \\
+                TH Energy Eq & Yes & Yes & Yes & \\
+                TH Momentum Eq & Yes & No & Yes & \\
+                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & \\
+                Density Treatment & Boussinesq & Uk & Uk & \\
+                Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
+                \\
             \hline
         \end{tabular}
     \end{center}
