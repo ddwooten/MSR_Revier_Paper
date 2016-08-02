@@ -550,14 +550,14 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 Xs(T) & Log & None\tablefootnote{To the best of
                     the author's knowledge} & Log & Uk & Various\\
                 TH Mass Eq & Yes & No & Yes & No & No, Yes\\
-                TH Energy Eq & Yes & No & Yes & Yes & Yes, Yes\\
+                TH Energy Eq & Yes & No & Yes & Yes & Yes\\
                 TH Momentum Eq & Yes & No & Yes & No & No, Yes\\
                 Turbulence Treatment & RANS, realizable k - $\epsilon$ & N/A &
                    RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
                 Density Treatment & Boussinesq & N/A & Compressible & N/A &
                    N/A, Compressible\\
                 Spatial Discritization & FVM & FVM & Uk & N/A & N/A, FVM\\
-                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk, Uk\\
+                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk\\
                 Validation & Verified\tablefootnote{Against the codes found in
                     \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
                     MSRE & MSRE\\
@@ -600,18 +600,18 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                     Transient Fission Matrix \\
                 N. Dimension & 3D & 1D & 3D & 0D, 1D & 3D \\
                 N. Energy Dim. & 8G & 2G & 2G & 0D, 3G & CE \\
-                Xs(T) & Interpolation & Interpolation & Uk & Uk, Uk & OTFDB \\
-                TH Mass Eq & Yes & Yes & Yes & No, No & Yes \\
-                TH Energy Eq & Yes & Yes & Yes & No, No & Yes \\
-                TH Momentum Eq & Yes & No & Yes & No, No & Yes \\
-                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A, N/A&
+                Xs(T) & Interpolation & Interpolation & Uk & Uk & OTFDB \\
+                TH Mass Eq & Yes & Yes & Yes & No & Yes \\
+                TH Energy Eq & Yes & Yes & Yes & No & Yes \\
+                TH Momentum Eq & Yes & No & Yes & No & Yes \\
+                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A&
                     RANS, k-$\epsilon$\\
-                Density Treatment & Boussinesq & Uk & Uk & N/A, N/A & Boussinesq
+                Density Treatment & Boussinesq & Uk & Uk & N/A & Boussinesq
                     \\
-                Spatial Discritization & FEM & NEM & NEM & Uk, Uk & Uk\\
-                Time Discritization & IEM & Uk & Uk & Uk, Uk & Uk\\
+                Spatial Discritization & FEM & NEM & NEM & Uk & Uk\\
+                Time Discritization & IEM & Uk & Uk & Uk & Uk\\
                 Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
-                No, No & No\\
+                No & No\\
             \hline
         \end{tabular}
     \end{center}
@@ -636,25 +636,32 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{nicolino_coupled_2008} &
                 \cite{qiu_coupled_2016} &
                 \cite{rineiski_kinetics_2005} \\
-                Used In \\
-                Code Name \\
-                Reactor Analyzed \\
-                General Reactor Input \\
-                Precursor Treatment \\
-                Precursor Diffusion \\
-                Precursor Groups \\
-                N. Method\\
-                N. Dimension\\
-                N. Energy Dim.\\
-                Xs(T)\\
-                TH Mass Eq\\
-                TH Energy Eq\\
-                TH Momentum Eq\\
-                Turbulence Treatment\\
-                Density Treatment\\
-                Spatial Discritization\\
-                Time Discritization\\
-                Validation\\
+                Used In & & & & \cite{zhang_coupled_2016} &  \\
+                Code Name & Cinsf1D & None\tablefootnote{The authors provide
+                    two PRK based approaches. Both are detailed here, one
+                    after the other} & None & COUPLE \tablefootnote{COUPLE
+                    has both an MGD solver and a PRK solver, both methods
+                    are detailed here} & SIMMER-III \\
+                Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
+                General Reactor Input & Uk & Uk & No & Yes & Yes \\
+                Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
+                   Full Flow, MPK\textsuperscript{4} & Full Flow \\
+                Precursor Diffusion & No & No, No & No & No & No \\
+                Precursor Groups 6 & 7, 7 &  Uk & Arbitrary & 1 \\
+                N. Method & MGD & PRK, PRK & MGD & MGD & Quasi-Statics \\
+                N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
+                N. Energy Dim. & 2G & 0, 0 & Uk & MG & MG \\
+                Xs(T) & Interpolation & Uk & Uk & Uk & Uk\\
+                TH Mass Eq & No & Uk & Yes & Yes & Yes\\
+                TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
+                TH Momentum Eq & No & Uk & Yes & Yes & Yes\\
+                Turbulence Treatment & N/A & Uk & Stream Function/Vorticity &
+                    RANKS, k-$\epsilon$ & Uk\\
+                Density Treatment & N/A & Uk & Boussinesq & Uk & Uk\\
+                Spatial Discritization & FDM & Uk & FVM & FMV
+                    \textsuperscript{5} & Uk\\
+                Time Discritization & Uk & Uk & IEM & FID & Uk\\
+                Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
             \hline
         \end{tabular}
     \end{center}
