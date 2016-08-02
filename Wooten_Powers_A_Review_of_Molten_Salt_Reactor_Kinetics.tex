@@ -599,25 +599,33 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{zhang_development_2009-1} &
                 \cite{zhuang_studies_2015} \\
                 Used In & & \cite{krepel_development_2004} & 
-                    \cite{krepel_dynamics_2008} & \\
-                Code Name & DT-MSR & DYN1D-MSR & DYN3D-MSR & \\
-                Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & \\
-                General Reactor Input & Yes & Yes & Yes & \\
+                    \cite{krepel_dynamics_2008} & & & \\
+                Code Name & DT-MSR & DYN1D-MSR & DYN3D-MSR &
+                    None\tablefootnote{The author compares an MPK and MGD
+                    approach. Both are presented in that order} & None \\
+                Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & Slab & MSFR \\
+                General Reactor Input & Yes & Yes & Yes & Yes & No \\
                 Precursor Treatment & Axial Flow & Axial Flow &
-                    Full Flow\textsuperscript{5} \\
-                Precursor Diffusion & No & No & No & \\
-                Precursor Groups & 6 & Arbitrary & Arbitrary & \\
-                N. Method & MGD & MGD & MGD & \\
-                N. Dimension & 3D & 1D & 3D & \\
-                N. Energy Dim. & 8G & 2G & 2G & \\
-                Xs(T) & Interpolation & Interpolation & Uk & \\
-                TH Mass Eq & Yes & Yes & Yes & \\
-                TH Energy Eq & Yes & Yes & Yes & \\
-                TH Momentum Eq & Yes & No & Yes & \\
-                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & \\
-                Density Treatment & Boussinesq & Uk & Uk & \\
+                    Full Flow\textsuperscript{5} & MPK\textsuperscript{4}, MGD &
+                    FUll Flow\\
+                Precursor Diffusion & No & No & No & No, No & Uk \\
+                Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
+                N. Method & MGD & MGD & MGD & PRK, MGD &
+                    Transient Fission Matrix \\
+                N. Dimension & 3D & 1D & 3D & 0D, 1D & 3D \\
+                N. Energy Dim. & 8G & 2G & 2G & 0D, 3G & CE \\
+                Xs(T) & Interpolation & Interpolation & Uk & Uk, Uk & OTFDB \\
+                TH Mass Eq & Yes & Yes & Yes & No, No & Yes \\
+                TH Energy Eq & Yes & Yes & Yes & No, No & Yes \\
+                TH Momentum Eq & Yes & No & Yes & No, No & Yes \\
+                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A, N/A&
+                    RANS, k-$\epsilon$\\
+                Density Treatment & Boussinesq & Uk & Uk & N/A, N/A & Boussinesq
+                    \\
+                Spatial Discritization & FEM & NEM & NEM & Uk, Uk & Uk\\
+                Time Discritization & IEM & Uk & Uk & Uk, Uk & Uk\\
                 Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
-                \\
+                No, No & No\\
             \hline
         \end{tabular}
     \end{center}
@@ -672,6 +680,8 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 TH Momentum Eq\\
                 Turbulence Treatment\\
                 Density Treatment\\
+                Spatial Discritization\\
+                Time Discritization\\
                 Validation\\
             \hline
         \end{tabular}
