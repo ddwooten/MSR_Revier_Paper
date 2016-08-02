@@ -540,7 +540,10 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                     MSRE, MSBR, MSFR\\
                 General Reactor Input & No & Uk & No & Uk & No\\
                 Precursor Treatment & Full Flow & MPK \tablefootnote{
-                    Importance weighted parameters} & 2D, r-z &
+                    Importance weighted parameters} \tablefootnote{Quasi-Static
+                    schemes are given two precursor treatments, first their
+                    MGD treatment is given, second their PRK treatment is given}
+                    & 2D, r-z &
                     DPK & DPK, Full Flow\\
                 Precursor Diffusion & Yes & No & Yes & No & No, Yes\\
                 Precursor Groups & 8 & 6 & 8 & 6 & 6, 8\\
@@ -636,7 +639,9 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{nicolino_coupled_2008} &
                 \cite{qiu_coupled_2016} &
                 \cite{rineiski_kinetics_2005} \\
-                Used In & & & & \cite{zhang_coupled_2016} &  \\
+                Used In & & & & \cite{zhang_coupled_2016} &
+                    \cite{wang_development_2003}, \cite{rineiski_kinetics_2005},
+                    \cite{wang_molten_2006}, \cite{rineiski_safety_2006} \\
                 Code Name & Cinsf1D & None\tablefootnote{The authors provide
                     two PRK based approaches. Both are detailed here, one
                     after the other} & None & COUPLE \tablefootnote{COUPLE
@@ -645,7 +650,8 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
                 General Reactor Input & Uk & Uk & No & Yes & Yes \\
                 Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
-                   Full Flow, MPK\textsuperscript{4} & Full Flow \\
+                   Full Flow, MPK\textsuperscript{4} & Full Flow,
+                   MPK\textsuperscript{4} \\
                 Precursor Diffusion & No & No, No & No & No & No \\
                 Precursor Groups 6 & 7, 7 &  Uk & Arbitrary & 1 \\
                 N. Method & MGD & PRK, PRK & MGD & MGD & Quasi-Statics \\
@@ -677,33 +683,33 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
         \ref{tbl:codes5}.
     \label{tbl:codes4}
     \begin{center}
-        \begin{tabular}{|c c c c c c|}
+        \begin{tabular}{|c c c c c|}
             \hline
             Reference &
                 \cite{shi_development_2016} &
                 \cite{suzuki_reactivity-initiated-accident_2008} &
-                \cite{wang_development_2003} &
                 \cite{wu_coupled_2016} &
                 \cite{yamamoto_transient_2006} \\
-                Used In \\
-                Code Name \\
-                Reactor Analyzed \\
-                General Reactor Input \\
-                Precursor Treatment \\
-                Precursor Diffusion \\
-                Precursor Groups \\
-                N. Method\\
-                N. Dimension\\
-                N. Energy Dim.\\
-                Xs(T)\\
-                TH Mass Eq\\
-                TH Energy Eq\\
-                TH Momentum Eq\\
-                Turbulence Treatment\\
-                Density Treatment\\
-                Spatial Discritization\\
-                Time Discritization\\
-                Validation\\
+                Used In & & & & & \\
+                Code Name & RELAP5 & None & VIOLET\_MSR & None \\
+                Reactor Analyzed & MSRE, MSBR, TMSR-LF & FUJI-12 & MSRE &
+                    Cylinder \\
+                General Reactor Input & Yes & No & Yes & No \\
+                Precursor Treatment & DPK & DPK & Full Flow, Uk & Full Flow \\
+                Precursor Diffusion & No & No & No & No & No \\
+                Precursor Groups & Arbitrary & 6 & 6 & 6 & Uk\\
+                N. Method & PRK & PRK & Quasi-Statics & MGD \\
+                N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
+                N. Energy Dim. & 0 & 0 & Uk & 2G\\
+                Xs(T) & Uk & Interpolation & Uk & Uk & Uk\\
+                TH Mass Eq & Yes & Uk & Yes & Yes \\
+                TH Energy Eq & Yes & Uk & Yes & Yes\\
+                TH Momentum Eq Yes & Uk & Yes & Yes\\
+                Turbulence Treatment & None & Uk & Uk & Uk\\
+                Density Treatment & Uk & Uk & Uk & Compressible\\
+                Spatial Discritization & Uk & Uk & VNM & CVM\\
+                Time Discritization & Uk & Uk & Uk & Uk\\
+                Validation & MSRE & No & MSRE & No\\
             \hline
         \end{tabular}
     \end{center}
