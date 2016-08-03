@@ -732,24 +732,26 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{zanetti_extension_2015} &
                 \cite{zhang_development_2009-1} &
                 \cite{zhuang_studies_2015} \\
-                Used In \\
-                Code Name \\
-                Reactor Analyzed \\
-                General Reactor Input \\
-                Precursor Treatment \\
-                Precursor Diffusion \\
-                Precursor Groups \\
-                N. Method\\
-                N. Dimension\\
-                N. Energy Dim.\\
-                Xs(T)\\
-                TH Mass Eq\\
-                TH Energy Eq\\
-                TH Momentum Eq\\
-                Turbulence Treatment\\
-                Density Treatment\\
-                Spatial Discritization\\
-                Time Discritization\\
+                Used In & & & \cite{zhang_analysis_2009} &
+                    \cite{zheng_development_2014} \\
+                Code Name & None & TRACE & None & MOREL\\
+                Reactor Analyzed & MSRE & MSRE & Cylinder & MSRE, TMSR-LF\\
+                General Reactor Input & No & Yes & Yes & Yes \\
+                Precursor Treatment & Full Flow & Full Flow & Full Flow &
+                    Full Flow \\
+                Precursor Diffusion & No & No & No & No \\
+                Precursor Groups & 1 & Arbitrary & 6 & UK \\
+                N. Method & PRK & PRK & MGD & MGD\\
+                N. Dimension & 0D & 0D & 2D, r-z & 3D\\
+                N. Energy Dim. & 0D & 0D & 2G & MG\\
+                Xs(T) & Uk & Yes & Polynomial & Interpolation\\
+                TH Mass Eq & Yes & Yes & Yes & No\\
+                TH Energy Eq & Yes & Yes & Yes & No\\
+                TH Momentum Eq & Yes & Yes & Yes & No\\
+                Turbulence Treatment & Uk & Uk & RANS, k-$\epislon$ & Uk\\
+                Density Treatment & Boussinesq & Uk & Compressible & N/A\\
+                Spatial Discritization & FEM & Uk & FVM & Uk\\
+                Time Discritization & Uk & Uk & Uk & IFD\\
                 Validation\\
             \hline
         \end{tabular}
