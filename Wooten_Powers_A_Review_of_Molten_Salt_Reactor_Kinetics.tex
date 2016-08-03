@@ -588,7 +588,7 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{lapenta_point_2001} &
                 \cite{laureau_coupled_2015} \\
                 Used In & & \cite{krepel_development_2004} & 
-                    \cite{krepel_dynamics_2008} & & & \\
+                    \cite{krepel_dynamics_2008} & &\\
                 Code Name & DT-MSR & DYN1D-MSR & DYN3D-MSR &
                     None\tablefootnote{The author compares an MPK and MGD
                     approach. Both are presented in that order} & None \\
@@ -639,9 +639,10 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{nicolino_coupled_2008} &
                 \cite{qiu_coupled_2016} &
                 \cite{rineiski_kinetics_2005} \\
-                Used In & & & & \cite{zhang_coupled_2016} &
+                Used In & & & & \cite{zhang_couple_2014} &
                     \cite{wang_development_2003}, \cite{rineiski_kinetics_2005},
-                    \cite{wang_molten_2006}, \cite{rineiski_safety_2006} \\
+                    \cite{wang_molten_2006},
+                    \cite{rineiski_safety-related_2006} \\
                 Code Name & Cinsf1D & None\tablefootnote{The authors provide
                     two PRK based approaches. Both are detailed here, one
                     after the other} & None & COUPLE \tablefootnote{COUPLE
@@ -680,7 +681,7 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
         found in the literature dated later than 1990. Please see section
         \ref{sec:models} for an explanation of this table as well as tables
         \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
-        \ref{tbl:codes5}.
+        \ref{tbl:codes5} for details on additional computational tools.}
     \label{tbl:codes4}
     \begin{center}
         \begin{tabular}{|c c c c c|}
@@ -690,18 +691,18 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 \cite{suzuki_reactivity-initiated-accident_2008} &
                 \cite{wu_coupled_2016} &
                 \cite{yamamoto_transient_2006} \\
-                Used In & & & & & \\
+                Used In & & & & \\
                 Code Name & RELAP5 & None & VIOLET\_MSR & None \\
                 Reactor Analyzed & MSRE, MSBR, TMSR-LF & FUJI-12 & MSRE &
                     Cylinder \\
                 General Reactor Input & Yes & No & Yes & No \\
                 Precursor Treatment & DPK & DPK & Full Flow, Uk & Full Flow \\
-                Precursor Diffusion & No & No & No & No & No \\
-                Precursor Groups & Arbitrary & 6 & 6 & 6 & Uk\\
+                Precursor Diffusion & No & No & No & No \\
+                Precursor Groups & Arbitrary & 6 & 6 & 6 \\
                 N. Method & PRK & PRK & Quasi-Statics & MGD \\
                 N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
                 N. Energy Dim. & 0 & 0 & Uk & 2G\\
-                Xs(T) & Uk & Interpolation & Uk & Uk & Uk\\
+                Xs(T) & Uk & Interpolation & Uk & Uk \\
                 TH Mass Eq & Yes & Uk & Yes & Yes \\
                 TH Energy Eq & Yes & Uk & Yes & Yes\\
                 TH Momentum Eq Yes & Uk & Yes & Yes\\
@@ -722,7 +723,7 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
         found in the literature dated later than 1990. Please see section
         \ref{sec:models} for an explanation of this table as well as tables
         \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
-        \ref{tbl:codes4}.
+        \ref{tbl:codes4} for details on additional computational tools.}.
     \label{tbl:codes5}
     \begin{center}
         \begin{tabular}{|c c c c c|}
@@ -748,7 +749,7 @@ thermohydraulics model; this is not realted to the "Precursor Diff." column.
                 TH Mass Eq & Yes & Yes & Yes & No\\
                 TH Energy Eq & Yes & Yes & Yes & No\\
                 TH Momentum Eq & Yes & Yes & Yes & No\\
-                Turbulence Treatment & Uk & Uk & RANS, k-$\epislon$ & Uk\\
+                Turbulence Treatment & Uk & Uk & RANS, k-$\epsilon$ & Uk\\
                 Density Treatment & Boussinesq & Uk & Compressible & N/A\\
                 Spatial Discritization & FEM & Uk & FVM & Uk\\
                 Time Discritization & Uk & Uk & Uk & IFD\\
