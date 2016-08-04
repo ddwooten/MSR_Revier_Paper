@@ -187,7 +187,7 @@ tables in \ref{app:tools}.
             IFP & Iterated Fission Probability \\
             IPK & ``I" Point Reactor Kinetics \\
             MGD & Multi-Group Neutron Diffusion \\
-            MMC & Modfied Monte Carlo ( accounting for DNP drift ) \\
+            MMC & Modified Monte Carlo ( accounting for DNP drift ) \\
             MOSART & Molten Salt Actinide Recycler and Transumter \\
             MPK & Modified Point Reactor Kinetics \\
             MSBR & Molten Salt Breeder Reactor \\
@@ -198,7 +198,7 @@ tables in \ref{app:tools}.
             OTFDB & On The Fly Doppler Broadening \\
             PRK & Point Reactor Kinetics \\
             RANS & Reynolds-Averaged Navier-Stokes \\
-            SPK & Seperated Point Reactor Kinetics \\
+            SPK & Separated Point Reactor Kinetics \\
             TH & Thermohydraulics \\
             TMSR-LF & Thorium Molten Salt Reactor - Liquid Fuel \\
             Uk & Unknown \\
@@ -1208,25 +1208,25 @@ the primary work. The ``General Reactor Input" row indicates, to the best
 of the author's knowledge, if the computational tool has a generic modelling
 capability or is reactor specific; tools which in theory could be used for
 any reactor but do not have a general meshing tool are not considered generic.
-The ``Precursor Treatment" row indcates what methods were used to
-treat the precursor drift; whether that was a varient of the PRK models
+The ``Precursor Treatment" row indicates what methods were used to
+treat the precursor drift; whether that was a variant of the PRK models
 or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement.
 The ``Precursor Diffusion" row indicates if turbulent diffusion was included in
-the modeling of the DNP distrubiton.
+the modeling of the DNP distributing.
 The ``N.Method" row indicates the computational method used to perform the
 kinetics modelling. The ``N.Dimension" row indicates the spatial dimension that
 the neutronics method has while the ``Energy Dim." row indicates the energy
 discritization used.
 The ``Xs(T)" row indicates if any treatment was used to account for temperature
 effects on nuclear cross sections, and what treatment if known. 
-The ``TH X Eq" rows indicate wheather or not an equation governing ``X" was
+The ``TH X Eq" rows indicate whether or not an equation governing ``X" was
 included in the kinetics modelling.
 The ``Turbulence Treatment" row 
 indicates which model, if any, was used for modelling turbulent flow in the
-thermohydraulics model; this is not realted to the ``Precursor Diffusion." row.
+thermohydraulics model; this is not related to the ``Precursor Diffusion." row.
 The ``Density Treatment" row indicates what treatment, if any, was used for the
 density term in the TH equations. The ``Spatial Discritization" and ``Time
-Discritization" rows indicate what type of, if any, discriziation scheme was
+Discritization" rows indicate what type of, if any, discritization scheme was
 used for each variable. The ``Validation" row indicates any known verification
 or validation efforts taken for the given tool. An ``MSRE" entry indicates
 that a simulation of an MSRE experiment was compared to the actual experimental
@@ -1333,7 +1333,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 General Reactor Input & Yes & Yes & Yes & Yes & No \\
                 Precursor Treatment & Axial Flow & Axial Flow &
                     Full Flow\textsuperscript{6} & MPK\textsuperscript{4}, MGD &
-                    FUll Flow\\
+                    Full Flow\\
                 Precursor Diffusion & No & No & No & No, No & Uk \\
                 Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
                 N. Method & MGD & MGD & MGD & PRK, MGD &
@@ -1402,7 +1402,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 Turbulence Treatment & N/A & Uk & Stream Function/Vorticity &
                     RANKS, k-$\epsilon$ & Uk\\
                 Density Treatment & N/A & Uk & Boussinesq & Uk & Uk\\
-                Spatial Discritization & FDM & Uk & FVM & FMV
+                Spatial Discritization & FDM & Uk & FVM & FVM
                     \textsuperscript{5} & Uk\\
                 Time Discritization & Uk & Uk & IEM & FID & Uk\\
                 Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
