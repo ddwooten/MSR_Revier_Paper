@@ -185,7 +185,7 @@ tables in \ref{app:tools}.
             IEM & Implicit Euler Method \\
             IFD & Implicit Finite Difference \\
             IFP & Iterated Fission Probability \\
-            IPK & "I" Point Reactor Kinetics \\
+            IPK & ``I" Point Reactor Kinetics \\
             MGD & Multi-Group Neutron Diffusion \\
             MMC & Modfied Monte Carlo ( accounting for DNP drift ) \\
             MOSART & Molten Salt Actinide Recycler and Transumter \\
@@ -1202,43 +1202,43 @@ tools for modelling CFR kinetics which were
 found in the literature and dated later than 1990. Tools are listed by the
 work they were found in. If tools were mentioned in multiple works the
 work which appeared to be most about their development is considered
-the primary work with others found in the ''Used In" row. The
-''Reactor" row indicates reactor design(s) which were modeled in
-the primary work. The ''General Reactor Input" row indicates, to the best
+the primary work with others found in the ``Used In" row. The
+``Reactor" row indicates reactor design(s) which were modeled in
+the primary work. The ``General Reactor Input" row indicates, to the best
 of the author's knowledge, if the computational tool has a generic modelling
 capability or is reactor specific; tools which in theory could be used for
 any reactor but do not have a general meshing tool are not considered generic.
-The ''Precursor Treatment" row indcates what methods were used to
+The ``Precursor Treatment" row indcates what methods were used to
 treat the precursor drift; whether that was a varient of the PRK models
 or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement.
-The ''Precursor Diffusion" row indicates if turbulent diffusion was included in
+The ``Precursor Diffusion" row indicates if turbulent diffusion was included in
 the modeling of the DNP distrubiton.
-The ''N.Method" row indicates the computational method used to perform the
-kinetics modelling. The ''N.Dimension" row indicates the spatial dimension that
-the neutronics method has while the ''Energy Dim." row indicates the energy
+The ``N.Method" row indicates the computational method used to perform the
+kinetics modelling. The ``N.Dimension" row indicates the spatial dimension that
+the neutronics method has while the ``Energy Dim." row indicates the energy
 discritization used.
-The ''Xs(T)" row indicates if any treatment was used to account for temperature
+The ``Xs(T)" row indicates if any treatment was used to account for temperature
 effects on nuclear cross sections, and what treatment if known. 
-The ''TH X Eq" rows indicate wheather or not an equation governing ''X" was
+The ``TH X Eq" rows indicate wheather or not an equation governing ``X" was
 included in the kinetics modelling.
-The ''Turbulence Treatment" row 
+The ``Turbulence Treatment" row 
 indicates which model, if any, was used for modelling turbulent flow in the
-thermohydraulics model; this is not realted to the ''Precursor Diffusion." row.
-The ''Density Treatment" row indicates what treatment, if any, was used for the
-density term in the TH equations. The ''Spatial Discritization" and ''Time
+thermohydraulics model; this is not realted to the ``Precursor Diffusion." row.
+The ``Density Treatment" row indicates what treatment, if any, was used for the
+density term in the TH equations. The ``Spatial Discritization" and ``Time
 Discritization" rows indicate what type of, if any, discriziation scheme was
-used for each variable. The ''Validation" row indicates any known verification
-or validation efforts taken for the given tool. An ''MSRE" entry indicates
+used for each variable. The ``Validation" row indicates any known verification
+or validation efforts taken for the given tool. An ``MSRE" entry indicates
 that a simulation of an MSRE experiment was compared to the actual experimental
-data while a ''Benchmark-MSRE" entry indicates that the respective tool was
+data while a ``Benchmark-MSRE" entry indicates that the respective tool was
 evaluated by the European MOST project who's validation efforts are best
 summarized by \cite{delpech_benchmark_2003}.
 
 \begin{landscape}
 \begin{table}[H]
     \caption{A partial listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table and tables
+        found in the literature dated later than 1990. Please see appendix 
+        \ref{app:tools} for an explanation of this table and tables
         \ref{tbl:codes2} through \ref{tbl:codes2} for the continuations of this
         table.}
     \label{tbl:codes1}
@@ -1310,8 +1310,8 @@ summarized by \cite{delpech_benchmark_2003}.
 \begin{landscape}
 \begin{table}[H]
     \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as table
+        found in the literature dated later than 1990. Please see appendix
+        \ref{app:tools} for an explanation of this table as well as table
         \ref{tbl:codes1} and tables \ref{tbl:codes3} through \ref{tbl:codes5}
         for the balance of the computational tools data.}
     \label{tbl:codes2}
@@ -1332,7 +1332,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & Slab & MSFR \\
                 General Reactor Input & Yes & Yes & Yes & Yes & No \\
                 Precursor Treatment & Axial Flow & Axial Flow &
-                    Full Flow\textsuperscript{5} & MPK\textsuperscript{4}, MGD &
+                    Full Flow\textsuperscript{6} & MPK\textsuperscript{4}, MGD &
                     FUll Flow\\
                 Precursor Diffusion & No & No & No & No, No & Uk \\
                 Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
@@ -1361,8 +1361,8 @@ summarized by \cite{delpech_benchmark_2003}.
 \begin{landscape}
 \begin{table}[H]
     \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as tables
+        found in the literature dated later than 1990. Please see appendix
+        \ref{app:tools} for an explanation of this table as well as tables
         \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes4}, and
         \ref{tbl:codes5}.
         for the balance of the computational tools data.}
@@ -1392,9 +1392,9 @@ summarized by \cite{delpech_benchmark_2003}.
                    MPK\textsuperscript{4} \\
                 Precursor Diffusion & No & No, No & No & No & No \\
                 Precursor Groups & 6 & 7, 7 &  Uk & Arbitrary & 1 \\
-                N. Method & MGD & PRK, PRK & MGD & MGD & Quasi-Statics \\
+                N. Method & MGD & PRK, PRK & MGD & MGD, PRK & Quasi-Statics \\
                 N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
-                N. Energy Dim. & 2G & 0, 0 & Uk & MG & MG \\
+                N. Energy Dim. & 2G & 0, 0 & Uk & MG, 0 & MG \\
                 Xs(T) & Interpolation & Uk & Uk & Uk & Uk\\
                 TH Mass Eq & No & Uk & Yes & Yes & Yes\\
                 TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
@@ -1415,10 +1415,10 @@ summarized by \cite{delpech_benchmark_2003}.
 \begin{landscape}
 \begin{table}[H]
     \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as tables
+        found in the literature dated later than 1990. Please see appendix 
+        \ref{app:tools} for an explanation of this table as well as tables
         \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
-        \ref{tbl:codes5} for details on additional computational tools.}
+        \ref{tbl:codes5} for the balance of the computational tools data.}
     \label{tbl:codes4}
     \begin{center}
         \begin{tabular}{|c c c c c|}
@@ -1457,10 +1457,10 @@ summarized by \cite{delpech_benchmark_2003}.
 \begin{landscape}
 \begin{table}[H]
     \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as tables
+        found in the literature dated later than 1990. Please see appendix
+        \ref{app:tools} for an explanation of this table as well as tables
         \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
-        \ref{tbl:codes4} for details on additional computational tools.}.
+        \ref{tbl:codes4} for the balance of the computational tools data.}
     \label{tbl:codes5}
     \begin{center}
         \begin{tabular}{|c c c c c|}
@@ -1493,7 +1493,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 Validation & No & MSRE & TWIGL\tablefootnote{See
                     \cite{zhang_development_2009} for an explanation} &
                     2D TWIGL\tablefootnote{See \cite{zhuang_studies_2015} for
-                    and explanation}, 3D LMW\textsuperscript{99}, MSRE\\
+                    an explanation}, 3D LMW\textsuperscript{12}, MSRE\\
             \hline
         \end{tabular}
     \end{center}
