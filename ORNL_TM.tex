@@ -1,0 +1,450 @@
+\documentclass[11pt,letterpaper,twoside,english,final]{article} 
+
+\input{ornlmacro}
+
+%Formatting for bibliography
+\bibliographystyle{elsarticle-num}
+
+\begin{document} 
+
+\begin{titlepage}
+
+%NOTICE about prelim document
+%delete NOTICE when document become final
+\vspace{-1.75in}
+\hspace{-1in}
+\par
+\footnotesize
+\vspace{-.8in} 
+  \fbox{
+  \begin{minipage}{0.55\textwidth}
+   \raggedright
+ \textsf{\textbf{NOTICE: This document contains information of a preliminary nature and is not intended for release.  It is subject to revision or correction and therefore does not represent a final report.}}
+  \end{minipage}
+  }
+
+\URCornerWallPaper{1.0}{Graybar.png}
+\ThisURCornerWallPaper{1.0}{Graybar.png} 
+\ClearWallPaper 
+
+
+\begin{flushright}{\textsf{\bfseries{\large{ORNL/TM-XXXX/XXX}}}}\\ 
+\end{flushright}
+
+\vspace{.15in} 
+
+\noindent
+\begin{shaded}
+\Huge{\textsf{\bfseries\color{white}{Oak Ridge National Laboratory \\
+Official TM Cover
+}}}
+\end{shaded}
+
+\begin{figure}[H]
+\flushright
+\includegraphics[width=4.88in, height=3.47in]{Officiallogo.png} 
+\end{figure}
+
+
+\def\author#1{\large{\textsf{#1}}\\ }
+
+\def\date#1{{\vspace{.25 in}
+
+\large{\bfseries{\textsf{#1}}}\\ }}
+
+\def\authordate#1{
+
+\noindent
+\vskip 6.8pt
+\vtop to0pt{
+\setlength{\parindent}{112mm}
+
+#1\vss}}
+
+\authordate{
+\author{Daniel Wooten}
+\author{Author}
+\author{Author}
+\date{Date} August 5\textsuperscript{th}, 2016}
+
+% delete NOTICE when document become final
+\DraftBox                    % command for Draft. Not for public release.
+%\ApprovedBox             % command for Approved for public release.
+%\BusSenBox                 % command for Business Sensitive.
+%\OUOBox                    % command for Official Use Only. To add item, open ORNLmacro.tex, make change, and save
+%\ECIBox                      % command for Export Controlled Information
+%\OUOECIBox               % command for OUO and ECI
+%\OUOATBox                % command for Official Use Only and Applied Technology
+%\OUOECIATBox           % command for Official Use Only, Export Controlled Information, and Applied Technology
+%\UCNIBox                   % command for Unclassified Controlled Nuclear Information
+%\CRADABox                % command for CRADA final.
+
+
+\setlength{\parindent}{0pt}
+
+\bigskip
+\noindent
+
+\thispagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[L]{\includegraphics[width=3.72in]{textlogo.png}}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\footskip}{0.3in}
+
+
+\end{titlepage}
+
+\newpage
+
+
+ \newpage 
+
+\thispagestyle{empty}
+%\thispagestyle{mypagestyleempty}    % Use for OUO in footer with no page numbers 
+\vspace*{\fill}
+
+
+  \par
+
+  \par
+  \begin{center}
+    \fbox{
+      \parbox{5.61in}{
+        \small
+        \begin{center}
+
+         {\bf\textsf{ DOCUMENT AVAILABILITY}}
+        \end{center}
+    \textsf{Reports produced after January 1, 1996, are generally available free via US Department of Energy (DOE) SciTech Connect. }
+          \\
+          ~
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{ Website:}}}} \textsf{\url{ http://www.osti.gov/scitech/ }}
+          \\
+          ~
+          \\
+            \textsf{Reports produced before January 1, 1996, may be purchased by members of the public from the following source:}
+          \\  
+          ~
+
+          \hspace{0.5in}   \textsf{National Technical Information Service }
+
+          \hspace{0.5in}   \textsf{5285 Port Royal Road }
+
+          \hspace{0.5in}   \textsf{Springfield, VA 22161 }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{Telephone:}}}}   \textsf{703-605-6000  (1-800-553-6847) }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{TDD:}}}}   \textsf{703-487-4639 }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{Fax:}}}}   \textsf{703-605-6900 }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{E-mail:}}}}   \textsf{\href{mailto:info@ntis.fedworld.gov}{info@ntis.fedworld.gov}}
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{Website:}}}}   \textsf{\url{http://www.ntis.gov/help/ordermethods.aspx}} 
+          \\
+          ~
+          \\
+          \textsf{Reports are available to DOE employees, DOE contractors, Energy Technology Data Exchange representatives, and International Nuclear Information System representatives from the following source: }
+          \\
+          ~
+
+          \hspace{0.5in}\textsf{Office of Scientific and Technical Information}
+
+          \hspace{0.5in}\textsf{PO Box 62}
+
+          \hspace{0.5in}\textsf{Oak Ridge, TN  37831}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{Telephone:}}}}\textsf{ 865-576-8401}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{Fax:}}}}\textsf{ 865-576-5728}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{E-mail:}}}} \textsf{\href{mailto:reports@osti.gov}{report@osti.gov}}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{Website:}}}} \textsf{\url{http://www.osti.gov/contact.html}}
+           
+         }
+      }
+  \end{center}
+  \par
+  \vspace{0.1in}
+  \par
+  \begin{center}
+   \small
+    \fbox{\parbox{4in}{
+        
+       \textsf{This report was prepared as an account of work sponsored by an agency of the United States Government. Neither the United States Government nor any agency thereof, nor any of their employees, makes any warranty, express or implied, or assumes any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, or represents that its use would not infringe privately owned rights. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof. The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof. }}}
+
+  \end{center}
+
+
+\vspace*{\fill}
+
+\newpage
+
+\begin{titlepage}
+
+%  \thispagestyle{mypagestyleempty} % % Use for OUO in footer with no page numbers 
+
+\begin{flushright}{\textsf{\bfseries{\large{ORNL/TM-XXXX/XXX}}}}\\ 
+\end{flushright}
+
+\vspace{0.5in}
+
+\begin{center}
+Reactor and Nuclear Systems Division
+\end{center}
+
+\vspace{1.25in}
+
+\begin{center}
+{\bf{\large{CURRENT STATUS OF CIRCULATING FUEL REACTOR KINETICS MODELING
+    ABILITY}}}\\
+\vspace{0.5in}
+
+Daniel Wooten
+
+\vspace{1.35in}
+
+Date Published: August, 2016 
+
+\vspace{1.35in}
+
+Prepared by \\
+OAK RIDGE NATIONAL LABORATORY \\
+Oak Ridge, TN 37831-6283 \\
+managed by \\
+UT-Battelle, LLC \\
+for the \\
+US DEPARTMENT OF ENERGY \\
+under contract DE-AC05-00OR22725
+
+\end{center}
+
+\end{titlepage}
+
+
+\clearemptydoublepage 
+\begin{centering}
+\tableofcontents 
+\end{centering}
+
+%\pagestyle{mypagestyle}              % Use for OUO in footer
+
+\pagenumbering{roman}
+
+\setcounter{page}{3}
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection 
+\begin{centering}
+\listoffigures 
+\end{centering}
+
+\addcontentsline{toc}{section}{LIST OF FIGURES} 
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection 
+\begin{centering}
+\listoftables 
+\end{centering}
+
+\addcontentsline{toc}{section}{LIST OF TABLES} 
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection
+\addcontentsline{toc}{section}{ACRONYMS} 
+\begin{center}
+{\bf{ACRONYMS}}
+\end{center}
+
+\begin{table}[h]
+\vspace{-6pt}
+\begin{tabular}{l l} 
+CFD & Computational Fluid Dynamics \\
+CFR & Circulating Fuel Reactor \\
+DNP & Delayed Neutron Precursor \\
+MSR & Molten Salt Reactor \\
+MSRE & Molten Salt Reactor Experiment \\
+ORNL & Oak Ridge National Laboratory \\
+\end{tabular}
+\end{table}
+
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection
+\addcontentsline{toc}{section}{ADDITIONAL FRONT MATERIAL}
+\begin{center}
+{\bf{ADDITIONAL FRONT MATERIAL}}
+\end{center}
+
+Material after the Contents, List of Figures, List of Tables, and the Acronym list may include any or all of the following sections and should begin on an odd-numbered page in the order listed below:
+
+\noindent{FOREWORD {\color{blue}{\emph {[Note: Spelling is not ``FORWARD.'']}}}\\
+\noindent{PREFACE}\\
+\noindent{ACKNOWLEDGMENTS}\\
+\noindent{EXECUTIVE SUMMARY OR SUMMARY}\\
+\noindent{ABSTRACT}
+
+Each section of the front material begins on an odd-numbered page. The abstract, if very brief, may begin on page 1 inserted above the introduction section.
+
+\def\thefootnote{\fnsymbol{ctr}} 
+\long\def\symbolfootnote[#1]#2{\begingroup
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\bigskip
+\phantomsection
+\addcontentsline{toc}{section}{GENERAL INFORMATION}
+\begin{center}
+{\bf{GENERAL INFORMATION}}
+\end{center}
+
+Document margins are 1 in. all around.
+
+Text footnotes are 9 pt., TNR with no space between notes.\symbolfootnote[1]{Footnotes are 9pt., TNR with no space between notes. Footnotes are 9 pt., TNR with no space between notes.} Footnote indicators in text are superscript symbols and should appear in the following order: $\ast$, $\dagger$, $\ddagger$, $\S$, $\ast\ast$, $\dagger\dagger$, $\ddagger\ddagger$. Symbols {\underline {are not}} used as table footnote indicators (see page 4).
+
+Footnotes may be used in addition to the author-date citation method, in which case, the footnotes provide additional information to the text, not bibliographic citations.
+
+\newpage
+
+\clearemptydoublepage
+%\pagestyle{mypagestyle}                % Use for OUO in footer 
+\pagenumbering{arabic}
+
+\setcounter{page}{1}
+
+\phantomsection
+\addcontentsline{toc}{section}{ABSTRACT}
+\begin{center}
+{\bf{ABSTRACT}}
+\end{center}
+
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+Recently interest has grown in the ability to model circulating fuel reactors
+(CFRs) in all aspects. Kinetics modeling is essential to the evaluation of any
+reactor or reactor design and therefore such capability is sought for CFRs.
+CFRs present unique challenges to kinetics models developed for solid fuel
+reactors; primarily that the delayed neutron precursors (DNPs) are displaced
+from their originating positions by the fluid fuel flow and the case that
+the flowing fluid fuel tends to cool the moderator if any is present. The
+displacement of DNPs strongly couples thermalhydraulics to neutronics in ways
+beyond density and doppler related effects. As such it is an open question
+of whether or not traditional kinetics models and tools are suitable for
+CFR kinetics evaluation. A review article titled \textit{A Review of Molten Salt
+Reactor Kinetics Models} by Daniel Wooten and Jeffery Powers is soon to be
+published which largely details the current state of kinetics modelling for
+CFRs. In this report the author's un-published opinions and tentative findings
+are detailed. \textbf{It is assumed that readers will be familiar with the
+review article}.
+
+\addcontentsline{toc}{section}{Conclusions}
+\begin{center}
+{\bf{CONCLUSIONS}}
+\end{center}
+
+\begin{center}
+\section{Un-Published Conclusions - Neutronics}
+\end{center}
+
+The question of CFR kinetics modelling largely revolves around how much
+detail is needed in the modelling of the DNP distribution. Methods shown in
+the review article range from no accounting of DNP drift at all to full
+computational fluid dynamics (CFD) modelling of DNP advective and diffusive movement. Additional degrees
+of freedom are introduced in the question of how to account for changing
+flow patterns. Is an approximate accounting of DNP drift, using just one
+flow pattern, sufficient for all flow patterns, or must each one be treated
+individually. Perhaps the most comprehensive analysis of these questions can be
+found in \cite{dulla_models_2005} and \cite{dulla_interactions_2007}. With
+regards to actual answers the fact of the matter is that no conclusions as to
+the suitability of reduced computational cost methods, such as quasi-statics or
+variations of point reactor kinetics, can be made for a given system unless
+first compared to results provided by time resolved deterministic methods,
+either diffusion or transport based, which
+include fluid fuel flow effects into the DNP distribution equations. Several
+studies in the review article do highlight that fluid fuel flow effects have
+negligible impact on the prompt neutron flux and do not need to be incorporated
+for accurate modelling. Additionally a parametric study in
+\cite{aufiero_development_2014} demonstrates that turbulent diffusion can
+largely be ignored from DNP distribution calculations as a 2 order of magnitude
+change in the governing parameter produced a 20 pcm shift in reactivity. 
+Additionally, as highlighted in \cite{delpech_benchmark_2003}, many models
+which do not include DNP turbulent diffusion are easily validated against
+MSRE experimental data. To be fair, however, MSRE flow conditions were largely
+laminar in the core and turbulent diffusion was not a significant phenomenon.
+One conclusion that all authors cited in the review paper agreed upon was that
+molecular diffusion of the DNPs was not necessary to model.
+\par With regards to suggested directions and methods for CFR kinetics analysis
+it is clear that solely relying on deterministic methods is not only overkill
+for the problem at hand but is too computationally expensive for reactor
+safety analysis. While the speed of point reactor kinetics approaches is
+desirable \cite{dulla_models_2005} does show that in transients for which there
+are strong perturbations to the flow speed point reactor kinetics models,
+even those re-derived in the context of a flowing fluid fuel, may fail to 
+accurately capture transient behavior. The conclusions of that study, however,
+should be evaluated in light of the fact that both doppler and density effects
+on reactivity were neglected in the models used. As such the conclusions are
+more pertienent for low power operational conditions rather than accident ones in which
+temperature driven effects may damp the importance of the DNP distribution.
+ Point reactor kinetic approaches, as
+shown in \cite{zhang_comparison_2009}, do model transients well at nominal
+operating powers, when the DNP contribution to reactivity is small compared
+to thermal effects, and in situations where fluid fuel flows slow to a stop.
+This conclusion, that point reactor kinetics models capture well transients in
+CFRs at non-zero power levels is supported by other works found in the
+review article. This said, these approaches are certainly not appropriate
+for all transients. An approach which shows promise for being universally
+applicable to CFR transients is quasi-statics. In quasi-statics a deterministic
+method is used to update point reactor kinetics parameters on a coarser time
+mesh than that used for the point reactor kinetics modelling which is used
+in between deterministic time steps. In this way some computational savings
+can be realized without much loss in transient accuracy as seen in
+\cite{dulla_models_2005} and \cite{rineiski_kinetics_2005}.
+\par A final note should be made to steady state calculations of CFR
+criticality. Those calculations, deterministic or Monte Carlo, which do not
+account for DNP drift will overestimate CFR k-eigenvalues to amounts as high
+as the static delayed neutron fraction or about 600 pcm in thermal Uranium-235
+based systems; though this value is typically much lower at around 200 pcm.
+
+\section{Un-published Conclusions - Thermalhydraulics}
+With regards to the fidelity of thermalhydraulics modelling the conclusions
+are less debated. In \cite{dulla_interactions_2007} is is conclusively shown that
+even in laminar systems such as the MSRE assuming a flat velocity profile
+through the core for the fluid flow velocity leads to non-negligible errors
+in transient simulations though it is unlikely that CFD simulations of channel
+guided cores are necessary. However, it has been shown in a myriad of papers
+that simplistic assumptions for the fluid flow velocity profile in can type
+molten salt reactors (MSRs), such as the European Molten Salt Fast Reactor or
+the Russian Molten Salt Actinide Transmuter and Recycler, is insufficient for
+modelling the kinetics of such systems largely due naturally occurring flow
+structures within the core such as eddies and re-circulation zones. In such
+cases CFD modelling of the flows in these cores, throughout a transient, will
+likely be required.
+
+\newpage
+\clearemptydoublepage
+
+\begin{center}
+\section*{REFERENCES}
+\end{center}
+
+\bibliography{Kinetics.bib}
+
+\clearemptydoublepage
+
+\newpage
+
+\renewcommand{\thepage}{A-\arabic{page}} 
+\setcounter{page}{1}
+%  \thispagestyle{mypagestyleempty}        % Use for OUO in footer with no page numbers 
+\thispagestyle{empty}
+
+\end{document}
