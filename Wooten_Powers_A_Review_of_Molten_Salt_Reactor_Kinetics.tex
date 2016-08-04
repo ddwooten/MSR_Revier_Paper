@@ -27,6 +27,12 @@
 %For footnotes in tables
 \usepackage{tablefootnote}
 
+%For appendicies
+\usepackage[page]{appendix}
+
+%For fixing floats in place
+\usepackage{float}
+
 \journal{Progress in Nuclear Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -154,8 +160,9 @@ simulation method groups. Lastly, common assumptions and their affects on CFR
 kinetics modelling will be investigated.
 \par A list of abbreviations used in this paper can be found in table
 \ref{tbl:nomen} while a summarization of all computational tools analyzed
-in this work can be found in table \ref{tbl:codes1} with a description of said
-table in section \ref{sec:models}.
+in this work can be found in tables \ref{tbl:codes1} through \ref{tbl:codes5}
+ with a description of said
+tables in \ref{app:tools}.
 
 \begin{table}[h]
     \caption{A listing of key acronyms used in this paper}.
@@ -186,11 +193,13 @@ table in section \ref{sec:models}.
             MSBR & Molten Salt Breeder Reactor \\
             MSFR & Molten Salt Fast Reactor \\
             MSRE & Molten Salt Reactor Experiment \\
+            N & Neutronics \\
             NEM & Nodal Expansion Method \\
             OTFDB & On The Fly Doppler Broadening \\
             PRK & Point Reactor Kinetics \\
             RANS & Reynolds-Averaged Navier-Stokes \\
             SPK & Seperated Point Reactor Kinetics \\
+            TH & Thermohydraulics \\
             TMSR-LF & Thorium Molten Salt Reactor - Liquid Fuel \\
             Uk & Unknown \\
             VNM & Variational Nodal Method \\
@@ -445,7 +454,8 @@ new point reactor kinetics schemes; and quasi-statics; generally all coupled, ti
 or loosely, to a thermohydraulics solver. Recently
 \cite{laureau_coupled_2015} has proposed a new method based upon a modified
 fission matrix approach using Monte Carlo simulations feeding into
-computational fluid dynamics (CFD) simulations. Table \ref{tbl:codes1} details
+computational fluid dynamics (CFD) simulations. Tables \ref{tbl:codes1}
+through \ref{tbl:codes5} detail
 the various implementations of these approaches throughout literature.
 In the following subsections
 each approach will be introduced as will two transient simulations; the pump-start
@@ -462,7 +472,8 @@ approach does not single that code out as being "better" than its peers; codes
 were selected as examples based on both the quality and detail of the selected
 transient as it was presented in the code's debut paper and a desire for breadth in the number of codes covered. The suitability of any given code to any given task
 is a determination that must be made on a case by case basis. Details pertaining
-to a code used for a transient example may be found in table \ref{tbl:codes1} as
+to a code used for a transient example may be found in tables \ref{tbl:codes1}
+through \ref{tbl:codes5} as
 well as the relevant literature.
 \par With regards to the pump start up transient for the MSRE it is worth noting
 that the transient occurs at zero power, the fuel is initially molten and
@@ -474,291 +485,6 @@ the control rods in the
 MSRE were speed limited \cite{krepel_dyn3d-msr_2007}. It is this inserted
 reactivity, or amount of removal of the control rods, that the codes simulating
 this transient attempt to match.
-\par Concerning table \ref{tbl:codes1}, this table summarizes all computational
-tools for modelling CFR kinetics which were
-found in the literature and dated later than 1990. Tools are grouped by the
-work they were found in. If tools were mentioned in multiple works the
-work which appeared to be most about their development is considered
-the primary work with others found in the "Used In" column. The
-"Reactor" column indicates reactor design(s) which were modeled in
-the primary work. The "Reactor Model" column indicates, to the best
-of the author's knowledge, what reactor models the particular tool is
-capable of modelling - some are reactor specific, some are arbitrary.
-The "Precursor Treatment" column indcates what methods were used to
-treat the precursor drift; whether that was a varient of the PRK models
-or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement.
-The "Precursor Disc." column indicates what kind of spatial
-discritization scheme was employed for the modelling of the DNP distribution.
-The "Precursor Diff." column indicates if turbulent diffusion was included in
-the modeling of the DNP distrubiton. The "Xs(T)" indicates what treatment, if
-any, was used for temperature effects on nuclear cross sections. The
-"Thermal Method" column indicates what treatment, if any, was taken for the
-thermohydraulics modelling of the system. The "Turbulence Model" column
-indicates which model, if any, was used for modelling turbulent flow in the
-thermohydraulics model; this is not realted to the "Precursor Diff." column.
-
-\begin{landscape}
-\begin{table}[h]
-    \caption{A partial listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table and tables
-        \ref{tbl:codes2} through \ref{tbl:codes2} for the continuations of this
-        table.}
-    \label{tbl:codes1}
-    \begin{center}
-        \begin{tabular}{|c c c c c c|}
-            \hline
-            Reference &
-                \cite{aufiero_development_2014} &
-                \cite{dulla_models_2005} &
-                \cite{fiorina_modelling_2014} &
-                \cite{guo_simulations_2013} &
-                \cite{guerrieri_investigation_2013} \\
-                Used In & \cite{aufiero_calculating_2014} &
-                    \cite{dulla_dynamics_2008}, \cite{dulla_interactions_2007},
-                    \cite{dulla_neutron_2004}, \cite{dulla_quasi-static_2003},
-                    \cite{dulla_quasi-static_2008} & &
-                    \cite{zhang_development_2009} &
-                    \cite{guerrieri_approach_2013},
-                    \cite{cammi_dimensional_2012},
-                    \cite{guerrieri_multi-physics_2010},
-                    \cite{guerrieri_preliminary_2012},
-                    \cite{cammi_transfer_2011}\\
-                Code Name & None & DYNAMOSS\tablefootnote{While the
-                    author cites \cite{dulla_models_2005} as the source of
-                    this name is appears nowhere in \cite{dulla_models_2005}.
-                    Rather, the code is named in later works.} & None 
-                    \tablefootnote{Code detailed is the PoliMi version} &
-                    None & None\tablefootnote{In the reference and the other
-                    works cited the authors develop several computational
-                    tools of differing dimensionality. Not all are reported
-                    here but rather the 0D-0D and multi-physics approaches,
-                    in that order. Please refer to the cited works for
-                    additional details as the authors provide an extensive
-                    analysis of all their models.}\\
-                Reactor Analyzed & MSFR & MSRE, MSBR & MSFR & MSRE, MOSART &
-                    MSRE, MSBR, MSFR\\
-                General Reactor Input & No & Uk & No & Uk & No\\
-                Precursor Treatment & Full Flow & MPK \tablefootnote{
-                    Importance weighted parameters} \tablefootnote{Quasi-Static
-                    schemes are given two precursor treatments, first their
-                    MGD treatment is given, second their PRK treatment is given}
-                    & 2D, r-z &
-                    DPK & DPK, Full Flow\\
-                Precursor Diffusion & Yes & No & Yes & No & No, Yes\\
-                Precursor Groups & 8 & 6 & 8 & 6 & 6, 8\\
-                N. Method & MGD & Quasi-Statics & MGD & PRK & PRK, MGD\\
-                N. Dimension & 3D & 2D, r-z & 2D, r-z & 0D & 0D, 3D\\
-                N. Energy Dim. & 6G & MG & 6G & 0 & 0, MG\\
-                Xs(T) & Log & None\tablefootnote{To the best of
-                    the author's knowledge} & Log & Uk & Various\\
-                TH Mass Eq & Yes & No & Yes & No & No, Yes\\
-                TH Energy Eq & Yes & No & Yes & Yes & Yes\\
-                TH Momentum Eq & Yes & No & Yes & No & No, Yes\\
-                Turbulence Treatment & RANS, realizable k - $\epsilon$ & N/A &
-                   RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
-                Density Treatment & Boussinesq & N/A & Compressible & N/A &
-                   N/A, Compressible\\
-                Spatial Discritization & FVM & FVM & Uk & N/A & N/A, FVM\\
-                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk\\
-                Validation & Verified\tablefootnote{Against the codes found in
-                    \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
-                    MSRE & MSRE\\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-\begin{table}[h]
-    \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as table
-        \ref{tbl:codes1} and tables \ref{tbl:codes3} through \ref{tbl:codes5}
-        for the balance of the computational tools data.}
-    \label{tbl:codes2}
-    \begin{center}
-        \begin{tabular}{|c c c c c c|}
-            \hline
-            Reference &
-                \cite{kophazi_development_2009} &
-                \cite{krepel_dyn1d-msr_2005} &
-                \cite{krepel_dyn3d-msr_2007} &
-                \cite{lapenta_point_2001} &
-                \cite{laureau_coupled_2015} \\
-                Used In & & \cite{krepel_development_2004} & 
-                    \cite{krepel_dynamics_2008} & &\\
-                Code Name & DT-MSR & DYN1D-MSR & DYN3D-MSR &
-                    None\tablefootnote{The author compares an MPK and MGD
-                    approach. Both are presented in that order} & None \\
-                Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & Slab & MSFR \\
-                General Reactor Input & Yes & Yes & Yes & Yes & No \\
-                Precursor Treatment & Axial Flow & Axial Flow &
-                    Full Flow\textsuperscript{5} & MPK\textsuperscript{4}, MGD &
-                    FUll Flow\\
-                Precursor Diffusion & No & No & No & No, No & Uk \\
-                Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
-                N. Method & MGD & MGD & MGD & PRK, MGD &
-                    Transient Fission Matrix \\
-                N. Dimension & 3D & 1D & 3D & 0D, 1D & 3D \\
-                N. Energy Dim. & 8G & 2G & 2G & 0D, 3G & CE \\
-                Xs(T) & Interpolation & Interpolation & Uk & Uk & OTFDB \\
-                TH Mass Eq & Yes & Yes & Yes & No & Yes \\
-                TH Energy Eq & Yes & Yes & Yes & No & Yes \\
-                TH Momentum Eq & Yes & No & Yes & No & Yes \\
-                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A&
-                    RANS, k-$\epsilon$\\
-                Density Treatment & Boussinesq & Uk & Uk & N/A & Boussinesq
-                    \\
-                Spatial Discritization & FEM & NEM & NEM & Uk & Uk\\
-                Time Discritization & IEM & Uk & Uk & Uk & Uk\\
-                Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
-                No & No\\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-\begin{table}[h]
-    \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as tables
-        \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes4}, and
-        \ref{tbl:codes5}.
-        for the balance of the computational tools data.}
-    \label{tbl:codes3}
-    \begin{center}
-        \begin{tabular}{|c c c c c c|}
-            \hline
-            Reference &
-                \cite{lecarpentier_neutronic_2003} &
-                \cite{merle-lucotte_physical_2015} &
-                \cite{nicolino_coupled_2008} &
-                \cite{qiu_coupled_2016} &
-                \cite{rineiski_kinetics_2005} \\
-                Used In & & & & \cite{zhang_couple_2014} &
-                    \cite{wang_development_2003}, \cite{rineiski_kinetics_2005},
-                    \cite{wang_molten_2006},
-                    \cite{rineiski_safety-related_2006} \\
-                Code Name & Cinsf1D & None\tablefootnote{The authors provide
-                    two PRK based approaches. Both are detailed here, one
-                    after the other} & None & COUPLE \tablefootnote{COUPLE
-                    has both an MGD solver and a PRK solver, both methods
-                    are detailed here} & SIMMER-III \\
-                Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
-                General Reactor Input & Uk & Uk & No & Yes & Yes \\
-                Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
-                   Full Flow, MPK\textsuperscript{4} & Full Flow,
-                   MPK\textsuperscript{4} \\
-                Precursor Diffusion & No & No, No & No & No & No \\
-                Precursor Groups 6 & 7, 7 &  Uk & Arbitrary & 1 \\
-                N. Method & MGD & PRK, PRK & MGD & MGD & Quasi-Statics \\
-                N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
-                N. Energy Dim. & 2G & 0, 0 & Uk & MG & MG \\
-                Xs(T) & Interpolation & Uk & Uk & Uk & Uk\\
-                TH Mass Eq & No & Uk & Yes & Yes & Yes\\
-                TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
-                TH Momentum Eq & No & Uk & Yes & Yes & Yes\\
-                Turbulence Treatment & N/A & Uk & Stream Function/Vorticity &
-                    RANKS, k-$\epsilon$ & Uk\\
-                Density Treatment & N/A & Uk & Boussinesq & Uk & Uk\\
-                Spatial Discritization & FDM & Uk & FVM & FMV
-                    \textsuperscript{5} & Uk\\
-                Time Discritization & Uk & Uk & IEM & FID & Uk\\
-                Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-\begin{table}[h]
-    \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as tables
-        \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
-        \ref{tbl:codes5} for details on additional computational tools.}
-    \label{tbl:codes4}
-    \begin{center}
-        \begin{tabular}{|c c c c c|}
-            \hline
-            Reference &
-                \cite{shi_development_2016} &
-                \cite{suzuki_reactivity-initiated-accident_2008} &
-                \cite{wu_coupled_2016} &
-                \cite{yamamoto_transient_2006} \\
-                Used In & & & & \\
-                Code Name & RELAP5 & None & VIOLET\_MSR & None \\
-                Reactor Analyzed & MSRE, MSBR, TMSR-LF & FUJI-12 & MSRE &
-                    Cylinder \\
-                General Reactor Input & Yes & No & Yes & No \\
-                Precursor Treatment & DPK & DPK & Full Flow, Uk & Full Flow \\
-                Precursor Diffusion & No & No & No & No \\
-                Precursor Groups & Arbitrary & 6 & 6 & 6 \\
-                N. Method & PRK & PRK & Quasi-Statics & MGD \\
-                N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
-                N. Energy Dim. & 0 & 0 & Uk & 2G\\
-                Xs(T) & Uk & Interpolation & Uk & Uk \\
-                TH Mass Eq & Yes & Uk & Yes & Yes \\
-                TH Energy Eq & Yes & Uk & Yes & Yes\\
-                TH Momentum Eq Yes & Uk & Yes & Yes\\
-                Turbulence Treatment & None & Uk & Uk & Uk\\
-                Density Treatment & Uk & Uk & Uk & Compressible\\
-                Spatial Discritization & Uk & Uk & VNM & CVM\\
-                Time Discritization & Uk & Uk & Uk & Uk\\
-                Validation & MSRE & No & MSRE & No\\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-\begin{table}[h]
-    \caption{A continued listing of all computational tools for CFR kinetics modelling
-        found in the literature dated later than 1990. Please see section
-        \ref{sec:models} for an explanation of this table as well as tables
-        \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
-        \ref{tbl:codes4} for details on additional computational tools.}.
-    \label{tbl:codes5}
-    \begin{center}
-        \begin{tabular}{|c c c c c|}
-            \hline
-            Reference &
-                \cite{zanetti_development_2016} &
-                \cite{zanetti_extension_2015} &
-                \cite{zhang_development_2009-1} &
-                \cite{zhuang_studies_2015} \\
-                Used In & & & \cite{zhang_analysis_2009} &
-                    \cite{zheng_development_2014} \\
-                Code Name & None & TRACE & None & MOREL\\
-                Reactor Analyzed & MSRE & MSRE & Cylinder & MSRE, TMSR-LF\\
-                General Reactor Input & No & Yes & Yes & Yes \\
-                Precursor Treatment & Full Flow & Full Flow & Full Flow &
-                    Full Flow \\
-                Precursor Diffusion & No & No & No & No \\
-                Precursor Groups & 1 & Arbitrary & 6 & UK \\
-                N. Method & PRK & PRK & MGD & MGD\\
-                N. Dimension & 0D & 0D & 2D, r-z & 3D\\
-                N. Energy Dim. & 0D & 0D & 2G & MG\\
-                Xs(T) & Uk & Yes & Polynomial & Interpolation\\
-                TH Mass Eq & Yes & Yes & Yes & No\\
-                TH Energy Eq & Yes & Yes & Yes & No\\
-                TH Momentum Eq & Yes & Yes & Yes & No\\
-                Turbulence Treatment & Uk & Uk & RANS, k-$\epsilon$ & Uk\\
-                Density Treatment & Boussinesq & Uk & Compressible & N/A\\
-                Spatial Discritization & FEM & Uk & FVM & Uk\\
-                Time Discritization & Uk & Uk & Uk & IFD\\
-                Validation\\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-\end{landscape}
 
 \subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
@@ -868,7 +594,7 @@ the transient depicted is a ULOF transient but in the MOSART reactor with the
 flow being reduced to 4\% of its nominal value in 7 seconds from the start
 of the transient. In
 the aforementioned figures from \cite{zhang_comparison_2009} "SM" refers
-to the SIMMER-III code as seen in table \ref{tbl:codes1} from
+to the SIMMER-III code as seen in table \ref{tbl:codes3} from
 \cite{rineiski_kinetics_2005}; "MPM" refers to a delayed point reactor kinetics
 model, discussed in section \ref{sssec:dpk}, but particularly from
 \cite{suzuki_reactivity-initiated-accident_2008}; and "PM0" and "PM1" both
@@ -1023,7 +749,8 @@ reach a compromise between MGD and the various implementations of PRK. Whereas
 MGD makes many fewer approximations than does PRK and is more able to better
 capture shape or flow dependant transients, figure \ref{fig:dulla_4x_flow},
 it is much more computationally intensive than PRK. In quasi-static
-implementations, of which there are three mentioned in table \ref{tbl:codes1},
+implementations, of which there are three mentioned in tables \ref{tbl:codes1}
+through \ref{tbl:codes5},
 computational cost savings are sought while striving to maintain the accuracy
 of the solution. This is accomplished by updating the PRK parameters, in
 whichever implementation of PRK is used, periodically throughout the simulation
@@ -1248,7 +975,8 @@ modeling of a system.
 One of the most notable assumptions
 that the body of work examined in this paper collectively agreed upon was the
 avoidance of 1D flow models for tracking DNPs in open core fast systems. Looking
-at table \ref{tbl:codes1} it can be seen that while many evaluations performed
+at tables \ref{tbl:codes1} through \ref{tbl:codes5}
+ it can be seen that while many evaluations performed
 for channel type thermal systems used 1D, axial approximations of the DNP
 flow, no such 1D approximation was made for an open core type fast system.
 Indeed, even the widely used 2D, rotationally symmetric models used for many
@@ -1464,5 +1192,314 @@ materials.
 \section*{References}
 
 \bibliography{Kinetics}
+
+\begin{appendices}
+
+\section{Computational Tools} \label{app:tools}
+Concerning tables \ref{tbl:codes1} through \ref{tbl:codes5}, these tables
+ summarizes all computational
+tools for modelling CFR kinetics which were
+found in the literature and dated later than 1990. Tools are listed by the
+work they were found in. If tools were mentioned in multiple works the
+work which appeared to be most about their development is considered
+the primary work with others found in the ''Used In" row. The
+''Reactor" row indicates reactor design(s) which were modeled in
+the primary work. The ''General Reactor Input" row indicates, to the best
+of the author's knowledge, if the computational tool has a generic modelling
+capability or is reactor specific; tools which in theory could be used for
+any reactor but do not have a general meshing tool are not considered generic.
+The ''Precursor Treatment" row indcates what methods were used to
+treat the precursor drift; whether that was a varient of the PRK models
+or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement.
+The ''Precursor Diffusion" row indicates if turbulent diffusion was included in
+the modeling of the DNP distrubiton.
+The ''N.Method" row indicates the computational method used to perform the
+kinetics modelling. The ''N.Dimension" row indicates the spatial dimension that
+the neutronics method has while the ''Energy Dim." row indicates the energy
+discritization used.
+The ''Xs(T)" row indicates if any treatment was used to account for temperature
+effects on nuclear cross sections, and what treatment if known. 
+The ''TH X Eq" rows indicate wheather or not an equation governing ''X" was
+included in the kinetics modelling.
+The ''Turbulence Treatment" row 
+indicates which model, if any, was used for modelling turbulent flow in the
+thermohydraulics model; this is not realted to the ''Precursor Diffusion." row.
+The ''Density Treatment" row indicates what treatment, if any, was used for the
+density term in the TH equations. The ''Spatial Discritization" and ''Time
+Discritization" rows indicate what type of, if any, discriziation scheme was
+used for each variable. The ''Validation" row indicates any known verification
+or validation efforts taken for the given tool. An ''MSRE" entry indicates
+that a simulation of an MSRE experiment was compared to the actual experimental
+data while a ''Benchmark-MSRE" entry indicates that the respective tool was
+evaluated by the European MOST project who's validation efforts are best
+summarized by \cite{delpech_benchmark_2003}.
+
+\begin{landscape}
+\begin{table}[H]
+    \caption{A partial listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table and tables
+        \ref{tbl:codes2} through \ref{tbl:codes2} for the continuations of this
+        table.}
+    \label{tbl:codes1}
+    \begin{center}
+        \begin{tabular}{|c c c c c c|}
+            \hline
+            Reference &
+                \cite{aufiero_development_2014} &
+                \cite{dulla_models_2005} &
+                \cite{fiorina_modelling_2014} &
+                \cite{guo_simulations_2013} &
+                \cite{guerrieri_investigation_2013} \\
+                Used In & \cite{aufiero_calculating_2014} &
+                    \cite{dulla_dynamics_2008}, \cite{dulla_interactions_2007},
+                    \cite{dulla_neutron_2004}, \cite{dulla_quasi-static_2003},
+                    \cite{dulla_quasi-static_2008} & &
+                    \cite{zhang_development_2009} &
+                    \cite{guerrieri_approach_2013},
+                    \cite{cammi_dimensional_2012},
+                    \cite{guerrieri_multi-physics_2010},
+                    \cite{guerrieri_preliminary_2012},
+                    \cite{cammi_transfer_2011}\\
+                Code Name & None & DYNAMOSS\tablefootnote{While the
+                    author cites \cite{dulla_models_2005} as the source of
+                    this name is appears nowhere in \cite{dulla_models_2005}.
+                    Rather, the code is named in later works.} & None 
+                    \tablefootnote{Code detailed is the PoliMi version} &
+                    None & None\tablefootnote{In the reference and the other
+                    works cited the authors develop several computational
+                    tools of differing dimensionality. Not all are reported
+                    here but rather the 0D-0D and multi-physics approaches,
+                    in that order. Please refer to the cited works for
+                    additional details as the authors provide an extensive
+                    analysis of all their models.}\\
+                Reactor Analyzed & MSFR & MSRE, MSBR & MSFR & MSRE, MOSART &
+                    MSRE, MSBR, MSFR\\
+                General Reactor Input & No & Uk & No & Uk & No\\
+                Precursor Treatment & Full Flow & MPK \tablefootnote{
+                    Importance weighted parameters} \tablefootnote{Quasi-Static
+                    schemes are given two precursor treatments, first their
+                    MGD treatment is given, second their PRK treatment is given}
+                    & 2D, r-z &
+                    DPK & DPK, Full Flow\\
+                Precursor Diffusion & Yes & No & Yes & No & No, Yes\\
+                Precursor Groups & 8 & 6 & 8 & 6 & 6, 8\\
+                N. Method & MGD & Quasi-Statics & MGD & PRK & PRK, MGD\\
+                N. Dimension & 3D & 2D, r-z & 2D, r-z & 0D & 0D, 3D\\
+                N. Energy Dim. & 6G & MG & 6G & 0 & 0, MG\\
+                Xs(T) & Log & None\tablefootnote{To the best of
+                    the author's knowledge} & Log & Uk & Various\\
+                TH Mass Eq & Yes & No & Yes & No & No, Yes\\
+                TH Energy Eq & Yes & No & Yes & Yes & Yes\\
+                TH Momentum Eq & Yes & No & Yes & No & No, Yes\\
+                Turbulence Treatment & RANS, realizable k - $\epsilon$ & N/A &
+                   RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
+                Density Treatment & Boussinesq & N/A & Compressible & N/A &
+                   N/A, Compressible\\
+                Spatial Discritization & FVM & FVM & Uk & N/A & N/A, FVM\\
+                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk\\
+                Validation & Verified\tablefootnote{Against the codes found in
+                    \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
+                    MSRE & MSRE\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[H]
+    \caption{A continued listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table as well as table
+        \ref{tbl:codes1} and tables \ref{tbl:codes3} through \ref{tbl:codes5}
+        for the balance of the computational tools data.}
+    \label{tbl:codes2}
+    \begin{center}
+        \begin{tabular}{|c c c c c c|}
+            \hline
+            Reference &
+                \cite{kophazi_development_2009} &
+                \cite{krepel_dyn1d-msr_2005} &
+                \cite{krepel_dyn3d-msr_2007} &
+                \cite{lapenta_point_2001} &
+                \cite{laureau_coupled_2015} \\
+                Used In & & \cite{krepel_development_2004} & 
+                    \cite{krepel_dynamics_2008} & &\\
+                Code Name & DT-MSR & DYN1D-MSR & DYN3D-MSR &
+                    None\tablefootnote{The author compares an MPK and MGD
+                    approach. Both are presented in that order} & None \\
+                Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & Slab & MSFR \\
+                General Reactor Input & Yes & Yes & Yes & Yes & No \\
+                Precursor Treatment & Axial Flow & Axial Flow &
+                    Full Flow\textsuperscript{5} & MPK\textsuperscript{4}, MGD &
+                    FUll Flow\\
+                Precursor Diffusion & No & No & No & No, No & Uk \\
+                Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
+                N. Method & MGD & MGD & MGD & PRK, MGD &
+                    Transient Fission Matrix \\
+                N. Dimension & 3D & 1D & 3D & 0D, 1D & 3D \\
+                N. Energy Dim. & 8G & 2G & 2G & 0D, 3G & CE \\
+                Xs(T) & Interpolation & Interpolation & Uk & Uk & OTFDB \\
+                TH Mass Eq & Yes & Yes & Yes & No & Yes \\
+                TH Energy Eq & Yes & Yes & Yes & No & Yes \\
+                TH Momentum Eq & Yes & No & Yes & No & Yes \\
+                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A&
+                    RANS, k-$\epsilon$\\
+                Density Treatment & Boussinesq & Uk & Uk & N/A & Boussinesq
+                    \\
+                Spatial Discritization & FEM & NEM & NEM & Uk & Uk\\
+                Time Discritization & IEM & Uk & Uk & Uk & Uk\\
+                Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
+                No & No\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[H]
+    \caption{A continued listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table as well as tables
+        \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes4}, and
+        \ref{tbl:codes5}.
+        for the balance of the computational tools data.}
+    \label{tbl:codes3}
+    \begin{center}
+        \begin{tabular}{|c c c c c c|}
+            \hline
+            Reference &
+                \cite{lecarpentier_neutronic_2003} &
+                \cite{merle-lucotte_physical_2015} &
+                \cite{nicolino_coupled_2008} &
+                \cite{qiu_coupled_2016} &
+                \cite{rineiski_kinetics_2005} \\
+                Used In & & & & \cite{zhang_couple_2014} &
+                    \cite{wang_development_2003}, \cite{rineiski_kinetics_2005},
+                    \cite{wang_molten_2006},
+                    \cite{rineiski_safety-related_2006} \\
+                Code Name & Cinsf1D & None\tablefootnote{The authors provide
+                    two PRK based approaches. Both are detailed here, one
+                    after the other} & None & COUPLE \tablefootnote{COUPLE
+                    has both an MGD solver and a PRK solver, both methods
+                    are detailed here} & SIMMER-III \\
+                Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
+                General Reactor Input & Uk & Uk & No & Yes & Yes \\
+                Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
+                   Full Flow, MPK\textsuperscript{4} & Full Flow,
+                   MPK\textsuperscript{4} \\
+                Precursor Diffusion & No & No, No & No & No & No \\
+                Precursor Groups & 6 & 7, 7 &  Uk & Arbitrary & 1 \\
+                N. Method & MGD & PRK, PRK & MGD & MGD & Quasi-Statics \\
+                N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
+                N. Energy Dim. & 2G & 0, 0 & Uk & MG & MG \\
+                Xs(T) & Interpolation & Uk & Uk & Uk & Uk\\
+                TH Mass Eq & No & Uk & Yes & Yes & Yes\\
+                TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
+                TH Momentum Eq & No & Uk & Yes & Yes & Yes\\
+                Turbulence Treatment & N/A & Uk & Stream Function/Vorticity &
+                    RANKS, k-$\epsilon$ & Uk\\
+                Density Treatment & N/A & Uk & Boussinesq & Uk & Uk\\
+                Spatial Discritization & FDM & Uk & FVM & FMV
+                    \textsuperscript{5} & Uk\\
+                Time Discritization & Uk & Uk & IEM & FID & Uk\\
+                Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[H]
+    \caption{A continued listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table as well as tables
+        \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
+        \ref{tbl:codes5} for details on additional computational tools.}
+    \label{tbl:codes4}
+    \begin{center}
+        \begin{tabular}{|c c c c c|}
+            \hline
+            Reference &
+                \cite{shi_development_2016} &
+                \cite{suzuki_reactivity-initiated-accident_2008} &
+                \cite{wu_coupled_2016} &
+                \cite{yamamoto_transient_2006} \\
+                Used In & & & & \\
+                Code Name & RELAP5 & None & VIOLET\_MSR & None \\
+                Reactor Analyzed & MSRE, MSBR, TMSR-LF & FUJI-12 & MSRE &
+                    Cylinder \\
+                General Reactor Input & Yes & No & Yes & No \\
+                Precursor Treatment & DPK & DPK & Full Flow, Uk & Full Flow \\
+                Precursor Diffusion & No & No & No & No \\
+                Precursor Groups & Arbitrary & 6 & 6 & 6 \\
+                N. Method & PRK & PRK & Quasi-Statics & MGD \\
+                N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
+                N. Energy Dim. & 0 & 0 & Uk & 2G\\
+                Xs(T) & Uk & Interpolation & Uk & Uk \\
+                TH Mass Eq & Yes & Uk & Yes & Yes \\
+                TH Energy Eq & Yes & Uk & Yes & Yes\\
+                TH Momentum Eq & Yes & Uk & Yes & Yes\\
+                Turbulence Treatment & None & Uk & Uk & Uk\\
+                Density Treatment & Uk & Uk & Uk & Compressible\\
+                Spatial Discritization & Uk & Uk & VNM & CVM\\
+                Time Discritization & Uk & Uk & Uk & Uk\\
+                Validation & MSRE & No & MSRE & No\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[H]
+    \caption{A continued listing of all computational tools for CFR kinetics modelling
+        found in the literature dated later than 1990. Please see section
+        \ref{sec:models} for an explanation of this table as well as tables
+        \ref{tbl:codes1}, \ref{tbl:codes2}, \ref{tbl:codes3}, and
+        \ref{tbl:codes4} for details on additional computational tools.}.
+    \label{tbl:codes5}
+    \begin{center}
+        \begin{tabular}{|c c c c c|}
+            \hline
+            Reference &
+                \cite{zanetti_development_2016} &
+                \cite{zanetti_extension_2015} &
+                \cite{zhang_development_2009-1} &
+                \cite{zhuang_studies_2015} \\
+                Used In & & & \cite{zhang_analysis_2009} &
+                    \cite{zheng_development_2014} \\
+                Code Name & None & TRACE & None & MOREL\\
+                Reactor Analyzed & MSRE & MSRE & Cylinder & MSRE, TMSR-LF\\
+                General Reactor Input & No & Yes & Yes & Yes \\
+                Precursor Treatment & Full Flow & Full Flow & Full Flow &
+                    Full Flow \\
+                Precursor Diffusion & No & No & No & No \\
+                Precursor Groups & 1 & Arbitrary & 6 & UK \\
+                N. Method & PRK & PRK & MGD & MGD\\
+                N. Dimension & 0D & 0D & 2D, r-z & 3D\\
+                N. Energy Dim. & 0D & 0D & 2G & MG\\
+                Xs(T) & Uk & Yes & Polynomial & Interpolation\\
+                TH Mass Eq & Yes & Yes & Yes & No\\
+                TH Energy Eq & Yes & Yes & Yes & No\\
+                TH Momentum Eq & Yes & Yes & Yes & No\\
+                Turbulence Treatment & Uk & Uk & RANS, k-$\epsilon$ & Uk\\
+                Density Treatment & Boussinesq & Uk & Compressible & N/A\\
+                Spatial Discritization & FEM & Uk & FVM & Uk\\
+                Time Discritization & Uk & Uk & Uk & IFD\\
+                Validation & No & MSRE & TWIGL\tablefootnote{See
+                    \cite{zhang_development_2009} for an explanation} &
+                    2D TWIGL\tablefootnote{See \cite{zhuang_studies_2015} for
+                    and explanation}, 3D LMW\textsuperscript{99}, MSRE\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
+\end{appendices}
 
 \end{document}
