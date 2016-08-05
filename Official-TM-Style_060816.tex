@@ -1,0 +1,632 @@
+\documentclass[11pt,letterpaper,twoside,english,final]{article} 
+
+\input{ornlmacro}
+
+
+\begin{document} 
+
+\bibliographystyle{plain} 
+\begin{titlepage}
+
+%NOTICE about prelim document
+%delete NOTICE when document become final
+\vspace{-1.75in}
+\hspace{-1in}
+\par
+\footnotesize
+\vspace{-.8in} 
+  \fbox{
+  \begin{minipage}{0.55\textwidth}
+   \raggedright
+ \textsf{\textbf{NOTICE: This document contains information of a preliminary nature and is not intended for release.  It is subject to revision or correction and therefore does not represent a final report.}}
+  \end{minipage}
+  }
+
+\URCornerWallPaper{1.0}{Graybar.png}
+\ThisURCornerWallPaper{1.0}{Graybar.png} 
+\ClearWallPaper 
+
+
+\begin{flushright}{\textsf{\bfseries{\large{ORNL/TM-XXXX/XXX}}}}\\ 
+\end{flushright}
+
+\vspace{.15in} 
+
+\noindent
+\begin{shaded}
+\Huge{\textsf{\bfseries\color{white}{Oak Ridge National Laboratory \\
+Official TM Cover
+}}}
+\end{shaded}
+
+\begin{figure}[H]
+\flushright
+\includegraphics[width=4.88in, height=3.47in]{Officiallogo.png} 
+\end{figure}
+
+
+\def\author#1{\large{\textsf{#1}}\\ }
+
+\def\date#1{{\vspace{.25 in}
+
+\large{\bfseries{\textsf{#1}}}\\ }}
+
+\def\authordate#1{
+
+\noindent
+\vskip 6.8pt
+\vtop to0pt{
+\setlength{\parindent}{112mm}
+
+#1\vss}}
+
+\authordate{
+\author{Author}
+\author{Author}
+\author{Author}
+\date{Date}}
+
+% delete NOTICE when document become final
+\DraftBox                    % command for Draft. Not for public release.
+%\ApprovedBox             % command for Approved for public release.
+%\BusSenBox                 % command for Business Sensitive.
+%\OUOBox                    % command for Official Use Only. To add item, open ORNLmacro.tex, make change, and save
+%\ECIBox                      % command for Export Controlled Information
+%\OUOECIBox               % command for OUO and ECI
+%\OUOATBox                % command for Official Use Only and Applied Technology
+%\OUOECIATBox           % command for Official Use Only, Export Controlled Information, and Applied Technology
+%\UCNIBox                   % command for Unclassified Controlled Nuclear Information
+%\CRADABox                % command for CRADA final.
+
+
+\setlength{\parindent}{0pt}
+
+\bigskip
+\noindent
+
+\thispagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[L]{\includegraphics[width=3.72in]{textlogo.png}}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\footskip}{0.3in}
+
+
+\end{titlepage}
+
+\newpage
+
+
+ \newpage 
+
+\thispagestyle{empty}
+%\thispagestyle{mypagestyleempty}    % Use for OUO in footer with no page numbers 
+\vspace*{\fill}
+
+
+  \par
+
+  \par
+  \begin{center}
+    \fbox{
+      \parbox{5.61in}{
+        \small
+        \begin{center}
+
+         {\bf\textsf{ DOCUMENT AVAILABILITY}}
+        \end{center}
+    \textsf{Reports produced after January 1, 1996, are generally available free via US Department of Energy (DOE) SciTech Connect. }
+          \\
+          ~
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{ Website:}}}} \textsf{\url{ http://www.osti.gov/scitech/ }}
+          \\
+          ~
+          \\
+            \textsf{Reports produced before January 1, 1996, may be purchased by members of the public from the following source:}
+          \\  
+          ~
+
+          \hspace{0.5in}   \textsf{National Technical Information Service }
+
+          \hspace{0.5in}   \textsf{5285 Port Royal Road }
+
+          \hspace{0.5in}   \textsf{Springfield, VA 22161 }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{Telephone:}}}}   \textsf{703-605-6000  (1-800-553-6847) }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{TDD:}}}}   \textsf{703-487-4639 }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{Fax:}}}}   \textsf{703-605-6900 }
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{E-mail:}}}}   \textsf{\href{mailto:info@ntis.fedworld.gov}{info@ntis.fedworld.gov}}
+
+          \hspace{0.5in} {\textsf{\textbf{\emph{Website:}}}}   \textsf{\url{http://www.ntis.gov/help/ordermethods.aspx}} 
+          \\
+          ~
+          \\
+          \textsf{Reports are available to DOE employees, DOE contractors, Energy Technology Data Exchange representatives, and International Nuclear Information System representatives from the following source: }
+          \\
+          ~
+
+          \hspace{0.5in}\textsf{Office of Scientific and Technical Information}
+
+          \hspace{0.5in}\textsf{PO Box 62}
+
+          \hspace{0.5in}\textsf{Oak Ridge, TN  37831}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{Telephone:}}}}\textsf{ 865-576-8401}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{Fax:}}}}\textsf{ 865-576-5728}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{E-mail:}}}} \textsf{\href{mailto:reports@osti.gov}{report@osti.gov}}
+
+          \hspace{0.5in}{\textsf{\textbf{\emph{Website:}}}} \textsf{\url{http://www.osti.gov/contact.html}}
+           
+         }
+      }
+  \end{center}
+  \par
+  \vspace{0.1in}
+  \par
+  \begin{center}
+   \small
+    \fbox{\parbox{4in}{
+        
+       \textsf{This report was prepared as an account of work sponsored by an agency of the United States Government. Neither the United States Government nor any agency thereof, nor any of their employees, makes any warranty, express or implied, or assumes any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, or represents that its use would not infringe privately owned rights. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof. The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof. }}}
+
+  \end{center}
+
+
+\vspace*{\fill}
+
+\newpage
+
+\begin{titlepage}
+
+%  \thispagestyle{mypagestyleempty} % % Use for OUO in footer with no page numbers 
+
+\begin{flushright}{\textsf{\bfseries{\large{ORNL/TM-XXXX/XXX}}}}\\ 
+\end{flushright}
+
+\vspace{0.5in}
+
+\begin{center}
+Division or Program Name
+\end{center}
+
+\vspace{1.25in}
+
+\begin{center}
+{\bf{\large{REPORT TITLE}}}\\
+\vspace{0.5in}
+
+Author(s)
+
+\vspace{1.35in}
+
+Date Published: Add Month and Year 
+
+\vspace{1.35in}
+
+Prepared by \\
+OAK RIDGE NATIONAL LABORATORY \\
+Oak Ridge, TN 37831-6283 \\
+managed by \\
+UT-Battelle, LLC \\
+for the \\
+US DEPARTMENT OF ENERGY \\
+under contract DE-AC05-00OR22725
+
+\end{center}
+
+\end{titlepage}
+
+
+\clearemptydoublepage 
+\begin{centering}
+\tableofcontents 
+\end{centering}
+
+%\pagestyle{mypagestyle}              % Use for OUO in footer
+
+\pagenumbering{roman}
+
+\setcounter{page}{3}
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection 
+\begin{centering}
+\listoffigures 
+\end{centering}
+
+\addcontentsline{toc}{section}{LIST OF FIGURES} 
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection 
+\begin{centering}
+\listoftables 
+\end{centering}
+
+\addcontentsline{toc}{section}{LIST OF TABLES} 
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection
+\addcontentsline{toc}{section}{ACRONYMS} 
+\begin{center}
+{\bf{ACRONYMS}}
+\end{center}
+
+\begin{table}[h]
+\vspace{-6pt}
+\begin{tabular}{l l} 
+ORNL & Oak Ridge National Laboratory \\
+TNR & Times New Roman  \\
+\end{tabular}
+\end{table}
+
+
+\newpage
+
+\clearemptydoublepage
+\phantomsection
+\addcontentsline{toc}{section}{ADDITIONAL FRONT MATERIAL}
+\begin{center}
+{\bf{ADDITIONAL FRONT MATERIAL}}
+\end{center}
+
+Material after the Contents, List of Figures, List of Tables, and the Acronym list may include any or all of the following sections and should begin on an odd-numbered page in the order listed below:
+
+\noindent{FOREWORD {\color{blue}{\emph {[Note: Spelling is not ``FORWARD.'']}}}\\
+\noindent{PREFACE}\\
+\noindent{ACKNOWLEDGMENTS}\\
+\noindent{EXECUTIVE SUMMARY OR SUMMARY}\\
+\noindent{ABSTRACT}
+
+Each section of the front material begins on an odd-numbered page. The abstract, if very brief, may begin on page 1 inserted above the introduction section.
+
+\def\thefootnote{\fnsymbol{ctr}} 
+\long\def\symbolfootnote[#1]#2{\begingroup
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\bigskip
+\phantomsection
+\addcontentsline{toc}{section}{GENERAL INFORMATION}
+\begin{center}
+{\bf{GENERAL INFORMATION}}
+\end{center}
+
+Document margins are 1 in. all around.
+
+Text footnotes are 9 pt., TNR with no space between notes.\symbolfootnote[1]{Footnotes are 9pt., TNR with no space between notes. Footnotes are 9 pt., TNR with no space between notes.} Footnote indicators in text are superscript symbols and should appear in the following order: $\ast$, $\dagger$, $\ddagger$, $\S$, $\ast\ast$, $\dagger\dagger$, $\ddagger\ddagger$. Symbols {\underline {are not}} used as table footnote indicators (see page 4).
+
+Footnotes may be used in addition to the author-date citation method, in which case, the footnotes provide additional information to the text, not bibliographic citations.
+
+\newpage
+
+\clearemptydoublepage
+%\pagestyle{mypagestyle}                % Use for OUO in footer 
+\pagenumbering{arabic}
+
+\setcounter{page}{1}
+
+\phantomsection
+\addcontentsline{toc}{section}{ABSTRACT}
+\begin{center}
+{\bf{ABSTRACT}}
+\end{center}
+
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+The abstract, if short, is inserted here before the introduction section. If the abstract is long, it should be inserted with the front material and page numbered as such, then this page would begin with the introduction section.
+
+\begin{center}
+\section{FIRST-ORDER HEADING}
+\end{center}
+
+Begin text here.  
+
+The body of the document is paginated consecutively (i.e., 1, 2, 3) or by section (i.e., 1-1, 2-1, 3-1) using Arabic numbers centered at the bottom of each page. Blank backup pages are not numbered.
+
+\subsection{SECOND-ORDER HEADING}
+
+Begin text here. 
+
+\subsubsection{Third-Order Heading}
+
+Begin text. 
+
+\myparagraph{Fourth-order heading}
+
+Begin text here. 
+
+{\noindent \bf\emph {Unnumbered fifth-order heading.}} 
+
+Begin text here. 
+
+{\noindent \bf {Unnumbered sixth-order heading.}}  
+
+Begin text here. 
+
+{\noindent \emph {Unnumbered seventh-order heading.}}  
+
+Begin text here. 
+
+{\noindent \underline {Unnumbered eigth-order heading.}}  
+
+Begin text here. 
+
+
+\newpage
+\clearemptydoublepage
+
+\begin{center}
+\section{FIGURE PLACEMENT}
+\end{center}
+
+\subsection{FIGURES}
+
+Insert figures after the text callout but as close to the call out as possible. (They always have a caption describing them and they are always numbered . LaTeX automatically floats Tables and Figures, depending on how much space is left on the page at the point that they are processed. If there is not enough room on the current page, the float is moved to the top of the next page.) Figures are numbered consecutively (i.e., Figure 1, Figure 2) except in large reports, where they may be numbered consecutively by section (i.e., Figure 1.1, Figure 1.2). 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5.5in, height=2.5in]{Fig1.jpg} 
+\vspace{-.1in}
+
+\flushleft\caption[All figure captions are 10 pt, bold, Times New Roman.]{All figure captions are 10 pt, bold, Times New Roman. \textmd{If you have a two-line or more figure caption it is flush left. Only the first sentence of a figure caption is bolded.}}
+\end{figure}
+
+%Begin text here.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6.2in, height=2.75in, keepaspectratio=true]{Fig1.jpg}  
+\vspace{-.1in}
+\caption{One-line figure captions are centered.}
+\end{figure}
+\begin{center}
+\end{center}
+
+
+\newpage
+\clearemptydoublepage
+
+\begin{center}
+\section{TABLES}
+
+\end{center}
+
+As with figures, tables are numbered consecutively, or consecutively by section, and should follow their call out (see {\color{green} Table \ref{tab:1}}) in the text as closely as possible.  (LaTeX automatically floats Tables and Figures, depending on how much space is left on the page at the point that they are processed. If there is not enough room on the current page, the float is moved to the top of the next page.) Tables are formatted using small TNR. To accommodate large tables, the font size can be decreased and, if necessary, landscaped. 
+
+\begin{table}[h]
+\caption{Table caption is bold, centered, and initial cap with no period at end of title}\label{tab:1}
+\small
+\vspace{-6pt}
+\begin{center}
+\begin{threeparttable}
+\begin{tabular}{c c c c c c}
+\hline
+\bf \multirow{2}{*}{EM projects$^{a}$} & \bf Recycling & \bf Amount & \bf \multirow{2}{*}{Recycling} & \bf \multirow{2}{*}{Disposal}
+& \bf \multirow{2}{*}{Storage} \\
+& \bf method & \bf recycled (lb) & & &  \\ \hline
+Metals recycle & Smelting & 1,072,000 & 1,565,763 & 1,338,447 & 1,608,000 \\
+Cooling tower$^{b}$ & Decontamination & 459,000 & 605,880 & 573,120 & 688,500  \\
+Totals &   & 1,601,150 & 2,266,491 & 2,004,973 & 2,401,725 \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item {{\emph Note:} A general note to the table as a whole is not linked to a superscript letter. It is formatted like}
+{this note. Table footnotes are 9 pt., or as with larger tables, 1 pt. smaller than the table body text.}
+\item {${}^{(a)}$\small Footnote call-outs are lowercase, italic, superscript letters in sequence from left to right, then}
+{\small top to bottom.}
+\item {${}^{(b)}$\small For multipage tables, the footnote appears only on the last page of the table. Beginning on }
+{\small the second page and following pages of a multipage table, {\bf use Table ?.  (continued)} as the table caption.}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function (see {\color{green}Table 2}). Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed (see {\color{green}Table 3}).
+
+\begin{table}[h]
+\centering
+\caption{Table caption is bold, centered, and initial cap with no period at end of title}
+\begin{tabular}{|r|ccccccc|c|c|}\hline 
+\begin{sideways}Paper\end{sideways} &\begin{sideways}Static\end{sideways} 
+&\begin{sideways}Heterogeneous\end{sideways} &\begin{sideways}Preemptive\end{sideways} 
+&\begin{sideways}Task sizes known\end{sideways} &\begin{sideways}Comms costs known\end{sideways} &\begin{sideways}Platform independent\end{sideways} &\begin{sideways}Year\end{sideways} &\begin{sideways}Pub type\end{sideways}\\
+\hline
+HAR1994j &x & & &x &x & &1994 & Journal \\
+SWRT1996c &x &x & &x &x & &1996 & Conference \\
+GRA1999c &x &x &- &x &x & &1999 & Conference \\
+CFR1999j &x & & &x &x &x &1999 & Journal \\
+TBS2001b &x &x & &x &x &x &2001 & Book Chapter \\
+DAYA2002j &x &x &- &x &x &x &2002 & Journal \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{sidewaystable}[p]
+\caption{Table caption is bold, centered, and initial cap with no period at end of title}\label{tab:1}
+\small
+\vspace{-6pt}
+\begin{center}
+\begin{threeparttable}
+\begin{tabular}{c c c c c c}
+\hline
+\bf \multirow{2}{*}{EM projects$^{a}$} & \bf Recycling & \bf Amount & \bf \multirow{2}{*}{Recycling} & \bf \multirow{2}{*}{Disposal}
+& \bf \multirow{2}{*}{Storage} \\
+& \bf method & \bf recycled (lb) & & &  \\ \hline
+Metals recycle & Smelting & 1,072,000 & 1,565,763 & 1,338,447 & 1,608,000 \\
+Cooling tower$^{b}$ & Decontamination & 459,000 & 605,880 & 573,120 & 688,500  \\
+Totals &   & 1,601,150 & 2,266,491 & 2,004,973 & 2,401,725 \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item {{\emph Note:} A general note to the table as a whole is not linked to a superscript letter. It is formatted like}
+{this note. Table footnotes are 9 pt., or as with larger tables, 1 pt. smaller than the table body text.}
+\item {${}^{(a)}$\small Footnote call-outs are lowercase, italic, superscript letters in sequence from left to right, then}
+{\small top to bottom.}
+\item {${}^{(b)}$\small For multipage tables, the footnote appears only on the last page of the table. Beginning on }
+{\small the second page and following pages of a multipage table, {\bf use Table ?.  (continued)} as the table caption.}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{sidewaystable}
+
+
+\newpage
+\subsection{SECOND-ORDER HEADING} 
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\subsection{SECOND-ORDER HEADING}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\newpage
+\subsubsection{Third-Order Heading}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\newpage
+\clearemptydoublepage
+
+\begin{center}
+\section{FIRST-ORDER HEADING}
+\end{center}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+\vspace{12pt}
+
+\begin{itemize}
+\item{\bf Apply itemize to format a bullet list.} {\emph Add extra space between items if preferred.} Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+\begin{itemize}
+\item {\bf Apply second itemize to format a sub-dashed list.} Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+\end{itemize}
+\item {\bf Apply itemize for format ``Bullet (last item)'' to format the ending item.} Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\end{itemize}
+
+\subsection{SECOND-ORDER HEADING}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\subsubsection{Third-Order Heading}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\myparagraph{Fourth-order heading}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+\myparagraph{Fourth-order heading}
+
+Flanges used in ultra-high vacuum service are commonly closed with metallic gaskets or seals. The geometry of the seal interface is critical for proper function. Experience has shown that flanges subjected to conventional welding techniques distort beyond a point that they can be sealed.
+
+
+
+\newpage
+\clearemptydoublepage
+
+\begin{center}
+\section{REFERENCES}
+\end{center}
+
+\subsection*{EXAMPLES OF NUMBERED REFERENCES} 
+
+{\bfseries Numbered}
+
+\begin{enumerate}
+\item D. A. Baker and J. K. Soldat, Methods for Estimating Doses to Organisms from Radioactive Materials Released into the Aquatic Environment, PNL 8150, Pacific Northwest Laboratories, Richland, Wash., 1993.\\
+
+\item National Council on Radiation Protection and Measurements, 1989 Exposure of the US Population from Diagnostic Medical Radiation, NCRP Report No. 100, Bethesda, Md., 1989.\\
+\end{enumerate}
+
+\subsection*{EXAMPLES OF AUTHOR-DATE REFERENCES}
+
+\begin{flushleft}
+\hangindent=.25in{Adams, J. W., B. S. Bowerman, and P. D. Kalb. 2001. ``Sulfur Polymer Stabilization/Solidification (SPSS) Treatability of Simulated Mixed-Waste Mercury-Contaminated Sludge.'' Draft Report. Upton, N.Y.: Brookhaven National Laboratory, October.}
+
+ATG (Allied Technology Group). 1998. ``Demonstration of the Stabilization Process for Treatment of Radioactively Contaminated Wastes Containing <260 ppm Mercury.'' MER02 Final Report: Report to the Mercury Working Group, Mixed Waste Focus Area, December.
+
+ATG (Allied Technology Group). 2000a. MER03--Demonstration of the Stabilization Process for Treatment of Radioactively Contaminated Wastes Containing >260 PPM Mercury. Fremont, Calif.: Allied Technology Group, July.
+
+ATG (Allied Technology Group). 2000b. ``MER04--Demonstration of the Stabilization Process for Treatment of Mercury Sludge Wastes Containing >260 ppm Mercury.'' MER04 Final Report. Hayward, Calif.: Allied Technology Group, September.
+
+Conley, T. B., M. I. Morris, I. W. Osborne-Lee, and G. A. Hulet. 1998. ``Mixed Waste Focus Area Mercury Working Group: An Integrated Approach to Mercury Waste Treatment and Disposal.'' Paper presented at Waste Management '8, Tucson, Ariz., March.
+
+Davis, J. D. 1998. ``Mercury Mixed Waste Treatment.'' Paper presented at the Annual Meeting of the American Institute of Chemical Engineers, New Orleans, March 9.
+\end{flushleft}
+
+\clearemptydoublepage
+
+\newpage
+
+\renewcommand{\thepage}{A-\arabic{page}} 
+\setcounter{page}{1}
+%  \thispagestyle{mypagestyleempty}        % Use for OUO in footer with no page numbers 
+\thispagestyle{empty}
+
+\vspace*{4in}
+\phantomsection
+\addcontentsline{toc}{section}{APPENDIX A. ADD TITLE FOR APPENDIX A}
+\begin{center}
+{\bf\Large{APPENDIX A. ADD TITLE FOR APPENDIX A}}
+\end{center}
+
+\clearemptydoublepage
+
+\newpage
+
+\renewcommand{\thepage}{A-\arabic{page}} 
+\setcounter{page}{3}
+
+\begin{center}
+{\bf\large {APPENDIX A.  TITLE}}
+\end{center}
+
+If each appendix contains similarly formatted text as the body of the document (i.e., first-order headings) then flysheets are not necessary. If first-order headings cannot be used, such as with computer data or forms, a flysheet should be used.
+
+
+\end{document}
