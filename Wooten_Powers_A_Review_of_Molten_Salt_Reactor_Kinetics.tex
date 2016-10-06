@@ -172,6 +172,7 @@ tables in appendix \ref{app:tools}.
     \begin{center}
         \begin{tabular}{|c c|}
             \hline
+            BOL & Begining of Life \\
             CFR & Circulating Fuel Reactor \\
             CPK & Corrected Point Reactor Kinetics \\
             CVM & Control Volume Method \\
@@ -243,7 +244,9 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure 
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_8_B}
    \caption{Figure 8.b from \cite{zhang_development_2009-1}. Contour line
-    values are the thermal neutron flux in a hypothetical MSR with a 0.5 $\frac{m}{s}$ fluid flow
+    values are the thermal neutron flux in a hypothetical MSR of height 3.8 m, diameter 3.4 m,
+    radial reflector thickness of 0.5 m, core power of 2.4 GWth, inflow temperature of 873 K,
+    0.5 $\frac{m}{s}$ fluid flow
     velocity and a 10 s out-of-core residence time; no units were provided with these values.} 
    \label{fig:zhang_2d_flux}
 \end{figure}
@@ -448,14 +451,16 @@ said, looking at figure \ref{fig:zhang_residence_time_keff}, in which inflow
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_14}
-   \caption{Figure 14 from \cite{zhang_development_2009-1}.}
+   \caption{Figure 14 from \cite{zhang_development_2009-1}. Values produced for a hypotheical
+   MSR as described in \ref{fig:zhang_2d_flux}.}
    \label{fig:zhang_velocity_keff}
 \end{figure}
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_18}
-   \caption{Figure 18 from \cite{zhang_development_2009-1}.} 
+   \caption{Figure 18 from \cite{zhang_development_2009-1}. Values produced for a hypotheical MSR
+   as described in \ref{fig:zhang_2d_flux}.} 
    \label{fig:zhang_residence_time_keff}
 \end{figure}
 
@@ -560,7 +565,10 @@ miss the reactivity oscillations later in the transient.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Krepel_DYN3D_2007_Fig_9}
-   \caption{Figure 9 from \cite{krepel_dyn3d-msr_2007}.} 
+   \caption{Figure 9 from \cite{krepel_dyn3d-msr_2007} showing both the experimental MSRE data
+   and the simulated data from the DYN1D and DYN3D codes, using both the JEF and ORNL DNP data, for
+   the MSRE pump start transient with "Reactivity" refering to the change in reactivity introduced
+   by the control rod motion used to keep the MSRE at a steady state power level.} 
    \label{fig:krepel_dyn3d_msre_pump_start}
 \end{figure}
 
@@ -579,7 +587,8 @@ modified version of DALTON as the neutronics solver.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Fiorina_Modelling_2014_Fig_11}
-   \caption{Figure 9 from \cite{fiorina_modelling_2014}.} 
+   \caption{Figure 11 from \cite{fiorina_modelling_2014} showing the power and temperature
+   response of the MSFR during a ULOF transient as simulated by the Polimi and TUDelft codes.} 
    \label{fig:fiorina_msfr_ulof}
 \end{figure}
 
@@ -634,21 +643,24 @@ methods.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_1}
-   \caption{Figure 1 from \cite{zhang_comparison_2009}.} 
+   \caption{Figure 1 from \cite{zhang_comparison_2009} showing relative power and flow for a 
+   ULOF transient in the MOSART reactor as simulated using differing kinetics methods.} 
    \label{fig:zhang_prk_flow}
 \end{figure}
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_2}
-   \caption{Figure 2 from \cite{zhang_comparison_2009}.} 
+   \caption{Figure 2 from \cite{zhang_comparison_2009} showing average fuel salt temperature for a
+   ULOF transient in the MOSART reactor as simulated using differing kinetics methods.} 
    \label{fig:zhang_prk_temp}
 \end{figure}
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_3}
-   \caption{Figure 3 from \cite{zhang_comparison_2009}.} 
+   \caption{Figure 3 from \cite{zhang_comparison_2009} showing reactivity contributions for a
+   ULOF transient in the MOSART reactor as simulated using differing kinetics methods.} 
    \label{fig:zhang_prk_reac}
 \end{figure}
 
@@ -691,7 +703,9 @@ to better model CFRs. The MSRE pump start transient as evaluated by
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Shi_Development_2016_Fig_3}
-   \caption{Figure 3 from \cite{shi_development_2016}.} 
+   \caption{Figure 3 from \cite{shi_development_2016} showing measured and simulated, by a modified
+   RELAP5 code, compensative control rod reactivity inserted during the MSRE pump start
+   transient.} 
    \label{fig:shi_msre_ps}
 \end{figure}
 
@@ -710,7 +724,9 @@ compositions for the MSFR.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Guerrieri_Investigation_2013_Fig_3_18_A}
-   \caption{Figure 3.18 from \cite{guerrieri_investigation_2013}.} 
+   \caption{Figure 3.18.a from \cite{guerrieri_investigation_2013} showing the simulated MSFR
+   response to a ULOF transient under differing begining-of-life (BOL) scenarios as well as the
+   expected equilibrium condiition of the reactor.} 
    \label{fig:guerrieri_msfr_ulof}
 \end{figure}
 
