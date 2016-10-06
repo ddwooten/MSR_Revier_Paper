@@ -84,7 +84,7 @@
 \address[ornl]{Oak Ridge}
 
 \begin{abstract}
-Interest in circulating fuel reactors, particularly molten salt reactors (MSR)
+Interest in circulating fuel reactors, particularly molten salt reactors
  of the
 fluid fuel type, has been growing in the last two decades starting with a
 resurgence of interest in Europe. Since this time there have been a growing
@@ -110,13 +110,15 @@ evaluation of their impact on model performance.
 
 \section{Introduction} \label{sec:intro}
 \textcolor{red}{JEFF, COULD YOU INCLUDE SOMETHING ABOUT THE AQUEOUS REACTOR IN HERE? Also, I'm not particularly gifted with intros, so please do have at this}
-Circulating fuel reactors (CFRs) have a long and somewhat quiet history.
+Circulating fuel reactors (CFRs), of which liquid fueled molten salt reactors
+ (MSRs) are a subclass, have had a long and somewhat quiet history.
 This history began with the Aircraft Reactor Experiment at Oak Ridge National
 Laboratories in the late 50s and grew with the Molten Salt Reactor Experiment
 (MSRE) which successfully built and operated an 8 MW molten salt reactor (MSR) for 
-more than 1000 hours with both \ce{^{233}U} and \ce{^{235}U} fuel at different
+more than 13,000 equivalent full-power hours with both \ce{^{233}U} and \ce{^{235}U} fuel at different
 points in time. With the closing of the MSRE project in the late 60s the world
-saw very little interest in and development of CFRs or MSRs. This changed in
+saw very little interest in and development of CFRs, including MSRs, 
+through the following decades. This changed in
 the late 90s as interest began growing throughout Europe. This momentum
 grew with the MOST project and continued through ALISIA and EVOL resulting in
 the pre-conceptual Molten Salt Fast Reactor (MSFR). The Molten Salt Actinide
@@ -170,6 +172,7 @@ tables in \ref{app:tools}.
     \begin{center}
         \begin{tabular}{|c c|}
             \hline
+            CFR & Circulating Fuel Reactor \\
             CPK & Corrected Point Reactor Kinetics \\
             CVM & Control Volume Method \\
             DNP & Delayed Neutron Precursor \\
@@ -192,6 +195,7 @@ tables in \ref{app:tools}.
             MPK & Modified Point Reactor Kinetics \\
             MSBR & Molten Salt Breeder Reactor \\
             MSFR & Molten Salt Fast Reactor \\
+            MSR & Molten Salt Reactor \\
             MSRE & Molten Salt Reactor Experiment \\
             N & Neutronics \\
             NEM & Nodal Expansion Method \\
@@ -201,7 +205,7 @@ tables in \ref{app:tools}.
             SPK & Separated Point Reactor Kinetics \\
             TH & Thermohydraulics \\
             TMSR-LF & Thorium Molten Salt Reactor - Liquid Fuel \\
-            Uk & Unknown \\
+            Uk. & Unknown \\
             VNM & Variational Nodal Method \\
             \hline
         \end{tabular}
@@ -589,7 +593,8 @@ that do not allow for moving precursors, equations \ref{eq:prk} and
 While these assumptions would not seem to connect well
 with the physics of CFRs, their approximation is not far off from the
 predictions of more rigorous models. This is well illustrated by figures
-\ref{fig:zhang_prk_flow}, \ref{zhang_prk_temp}, and \ref{zhang_prk_reac};
+\ref{fig:zhang_prk_flow}, \ref{fig:zhang_prk_temp}, and 
+\ref{fig:zhang_prk_reac};
 the transient depicted is a ULOF transient but in the MOSART reactor with the
 flow being reduced to 4\% of its nominal value in 7 seconds from the start
 of the transient. In
@@ -802,7 +807,7 @@ described in section \ref{sec:models}.
    \centering
    \includegraphics[width=0.8\textwidth]{Rineiski_Kinetics_2005_Fig_2}
    \caption{Figure 2 from \cite{rineiski_kinetics_2005}.} 
-   \label{fig:rinesiki_mre_ps}
+   \label{fig:rineiski_msre_ps}
 \end{figure}
 
 \subsubsection{fast system} \label{sssec:qs_fast}
@@ -842,7 +847,7 @@ produce transient simulations with the highest degree of accuracy among the
 approaches presented so far; MGD approaches also tend to be had with the highest
 degree of computational effort. Quasi-static approaches on the other hand
 show comparable simulation capability to MGD approaches, 
-figure \ref{fig:reneiski_msre_ps},  while promising, at
+figure \ref{fig:rineiski_msre_ps},  while promising, at
 least, modest computational cost savings. \cite{dulla_models_2005} showcases
 a variety of transients in a critical and sub-critical MSRE configuration with
 differing numbers of shape recalculations used in \cite{dulla_models_2005}'s
@@ -905,7 +910,6 @@ highest fraction of delayed neutrons out of all the models; its $\beta_{eff}$
 has no accounting for flow induced effects on DNPs. The larger
 $\beta_{eff}$ in the PM0 model leads to increased reactivity introduction
 in the beginning of the transient as more DNPs are able to decay.
- NEED AN EXPLANATION FOR FINAL TEMPERATURES. 
 \par While PM0 and PM1 bound the other two methods an additional takeaway from
 these same figures is the closeness of the performance of the DPK and
 quasi-static models. For the most part they both predict the same transient
@@ -1009,7 +1013,7 @@ Turbulent diffusion is typically modeled by inclusion of the second term in
 equation \ref{eq:mgd_dnp}. However, as \cite{aufiero_calculating_2014} notes,
 there exists very little data on turbulent mass transport in many common
 CFR fuel fluids - mostly molten fluoride or chloride salts - thus leaving the
-actual value of $Sc_{T}$ quite uncertain. In figure \ref{aufiero_sc}
+actual value of $Sc_{T}$ quite uncertain. In figure \ref{fig:aufiero_sc}
 \cite{aufiero_calculating_2014} does a parametric analysis of the impact of the
 turbulent Schmidt number on $\beta_{eff}$ for the MSFR. The takeaway from this
 figure being that over 2 orders of magnitude for $Sc_{T}$ $\beta_{eff}$ only
@@ -1018,6 +1022,13 @@ is molecular diffusion, however, both \cite{aufiero_calculating_2014} and
 \cite{cheng_development_2014} agree that molecular diffusion is so much smaller
 than turbulent diffusion and advective flow effects on DNP distributions that it
 can be ignored all together.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Aufiero_Calculating_2014_Fig_9}
+   \caption{Figure 9 from \cite{aufiero_calculating_2014}.}
+   \label{fig:aufiero_sc}
+\end{figure}
 
 \subsection{Thermohydraulics related assumptions} \label{th_asm}
 Just as there is a choice of assumptions to be made with respect to the
@@ -1275,7 +1286,7 @@ summarized by \cite{delpech_benchmark_2003}.
                     analysis of all their models.}\\
                 Reactor Analyzed & MSFR & MSRE, MSBR & MSFR & MSRE, MOSART &
                     MSRE, MSBR, MSFR\\
-                General Reactor Input & No & Uk & No & Uk & No\\
+                General Reactor Input & No & Uk. & No & Uk. & No\\
                 Precursor Treatment & Full Flow & MPK \tablefootnote{
                     Importance weighted parameters} \tablefootnote{Quasi-Static
                     schemes are given two precursor treatments, first their
@@ -1288,7 +1299,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 N. Dimension & 3D & 2D, r-z & 2D, r-z & 0D & 0D, 3D\\
                 N. Energy Dim. & 6G & MG & 6G & 0 & 0, MG\\
                 Xs(T) & Log & None\tablefootnote{To the best of
-                    the author's knowledge} & Log & Uk & Various\\
+                    the author's knowledge} & Log & Uk. & Various\\
                 TH Mass Eq & Yes & No & Yes & No & No, Yes\\
                 TH Energy Eq & Yes & No & Yes & Yes & Yes\\
                 TH Momentum Eq & Yes & No & Yes & No & No, Yes\\
@@ -1296,8 +1307,8 @@ summarized by \cite{delpech_benchmark_2003}.
                    RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
                 Density Treatment & Boussinesq & N/A & Compressible & N/A &
                    N/A, Compressible\\
-                Spatial Discritization & FVM & FVM & Uk & N/A & N/A, FVM\\
-                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk\\
+                Spatial Discritization & FVM & FVM & Uk. & N/A & N/A, FVM\\
+                Time Discritization & ESDIRK & IDE & Uk. & Uk. & Uk.\\
                 Validation & Verified\tablefootnote{Against the codes found in
                     \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
                     MSRE & MSRE\\
@@ -1334,22 +1345,22 @@ summarized by \cite{delpech_benchmark_2003}.
                 Precursor Treatment & Axial Flow & Axial Flow &
                     Full Flow\textsuperscript{6} & MPK\textsuperscript{4}, MGD &
                     Full Flow\\
-                Precursor Diffusion & No & No & No & No, No & Uk \\
+                Precursor Diffusion & No & No & No & No, No & Uk. \\
                 Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
                 N. Method & MGD & MGD & MGD & PRK, MGD &
                     Transient Fission Matrix \\
                 N. Dimension & 3D & 1D & 3D & 0D, 1D & 3D \\
                 N. Energy Dim. & 8G & 2G & 2G & 0D, 3G & CE \\
-                Xs(T) & Interpolation & Interpolation & Uk & Uk & OTFDB \\
+                Xs(T) & Interpolation & Interpolation & Uk. & Uk. & OTFDB \\
                 TH Mass Eq & Yes & Yes & Yes & No & Yes \\
                 TH Energy Eq & Yes & Yes & Yes & No & Yes \\
                 TH Momentum Eq & Yes & No & Yes & No & Yes \\
-                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A&
+                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk. & N/A&
                     RANS, k-$\epsilon$\\
-                Density Treatment & Boussinesq & Uk & Uk & N/A & Boussinesq
+                Density Treatment & Boussinesq & Uk. & Uk. & N/A & Boussinesq
                     \\
-                Spatial Discritization & FEM & NEM & NEM & Uk & Uk\\
-                Time Discritization & IEM & Uk & Uk & Uk & Uk\\
+                Spatial Discritization & FEM & NEM & NEM & Uk. & Uk.\\
+                Time Discritization & IEM & Uk. & Uk. & Uk. & Uk.\\
                 Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
                 No & No\\
             \hline
@@ -1386,25 +1397,25 @@ summarized by \cite{delpech_benchmark_2003}.
                     has both an MGD solver and a PRK solver, both methods
                     are detailed here} & SIMMER-III \\
                 Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
-                General Reactor Input & Uk & Uk & No & Yes & Yes \\
+                General Reactor Input & Uk. & Uk. & No & Yes & Yes \\
                 Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
                    Full Flow, MPK\textsuperscript{4} & Full Flow,
                    MPK\textsuperscript{4} \\
                 Precursor Diffusion & No & No, No & No & No & No \\
-                Precursor Groups & 6 & 7, 7 &  Uk & Arbitrary & 1 \\
+                Precursor Groups & 6 & 7, 7 &  Uk. & Arbitrary & 1 \\
                 N. Method & MGD & PRK, PRK & MGD & MGD, PRK & Quasi-Statics \\
                 N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
-                N. Energy Dim. & 2G & 0, 0 & Uk & MG, 0 & MG \\
-                Xs(T) & Interpolation & Uk & Uk & Uk & Uk\\
-                TH Mass Eq & No & Uk & Yes & Yes & Yes\\
+                N. Energy Dim. & 2G & 0, 0 & Uk. & MG, 0 & MG \\
+                Xs(T) & Interpolation & Uk. & Uk. & Uk. & Uk.\\
+                TH Mass Eq & No & Uk. & Yes & Yes & Yes\\
                 TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
-                TH Momentum Eq & No & Uk & Yes & Yes & Yes\\
-                Turbulence Treatment & N/A & Uk & Stream Function/Vorticity &
-                    RANKS, k-$\epsilon$ & Uk\\
-                Density Treatment & N/A & Uk & Boussinesq & Uk & Uk\\
-                Spatial Discritization & FDM & Uk & FVM & FVM
-                    \textsuperscript{5} & Uk\\
-                Time Discritization & Uk & Uk & IEM & FID & Uk\\
+                TH Momentum Eq & No & Uk. & Yes & Yes & Yes\\
+                Turbulence Treatment & N/A & Uk. & Stream Function/Vorticity &
+                    RANKS, k-$\epsilon$ & Uk.\\
+                Density Treatment & N/A & Uk. & Boussinesq & Uk. & Uk.\\
+                Spatial Discritization & FDM & Uk. & FVM & FVM
+                    \textsuperscript{5} & Uk.\\
+                Time Discritization & Uk. & Uk. & IEM & FID & Uk.\\
                 Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
             \hline
         \end{tabular}
@@ -1433,20 +1444,20 @@ summarized by \cite{delpech_benchmark_2003}.
                 Reactor Analyzed & MSRE, MSBR, TMSR-LF & FUJI-12 & MSRE &
                     Cylinder \\
                 General Reactor Input & Yes & No & Yes & No \\
-                Precursor Treatment & DPK & DPK & Full Flow, Uk & Full Flow \\
+                Precursor Treatment & DPK & DPK & Full Flow, Uk. & Full Flow \\
                 Precursor Diffusion & No & No & No & No \\
                 Precursor Groups & Arbitrary & 6 & 6 & 6 \\
                 N. Method & PRK & PRK & Quasi-Statics & MGD \\
                 N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
-                N. Energy Dim. & 0 & 0 & Uk & 2G\\
-                Xs(T) & Uk & Interpolation & Uk & Uk \\
-                TH Mass Eq & Yes & Uk & Yes & Yes \\
-                TH Energy Eq & Yes & Uk & Yes & Yes\\
-                TH Momentum Eq & Yes & Uk & Yes & Yes\\
-                Turbulence Treatment & None & Uk & Uk & Uk\\
-                Density Treatment & Uk & Uk & Uk & Compressible\\
-                Spatial Discritization & Uk & Uk & VNM & CVM\\
-                Time Discritization & Uk & Uk & Uk & Uk\\
+                N. Energy Dim. & 0 & 0 & Uk. & 2G\\
+                Xs(T) & Uk. & Interpolation & Uk. & Uk. \\
+                TH Mass Eq & Yes & Uk. & Yes & Yes \\
+                TH Energy Eq & Yes & Uk. & Yes & Yes\\
+                TH Momentum Eq & Yes & Uk. & Yes & Yes\\
+                Turbulence Treatment & None & Uk. & Uk. & Uk.\\
+                Density Treatment & Uk. & Uk. & Uk. & Compressible\\
+                Spatial Discritization & Uk. & Uk. & VNM & CVM\\
+                Time Discritization & Uk. & Uk. & Uk. & Uk.\\
                 Validation & MSRE & No & MSRE & No\\
             \hline
         \end{tabular}
@@ -1482,14 +1493,14 @@ summarized by \cite{delpech_benchmark_2003}.
                 N. Method & PRK & PRK & MGD & MGD\\
                 N. Dimension & 0D & 0D & 2D, r-z & 3D\\
                 N. Energy Dim. & 0D & 0D & 2G & MG\\
-                Xs(T) & Uk & Yes & Polynomial & Interpolation\\
+                Xs(T) & Uk. & Yes & Polynomial & Interpolation\\
                 TH Mass Eq & Yes & Yes & Yes & No\\
                 TH Energy Eq & Yes & Yes & Yes & No\\
                 TH Momentum Eq & Yes & Yes & Yes & No\\
-                Turbulence Treatment & Uk & Uk & RANS, k-$\epsilon$ & Uk\\
-                Density Treatment & Boussinesq & Uk & Compressible & N/A\\
-                Spatial Discritization & FEM & Uk & FVM & Uk\\
-                Time Discritization & Uk & Uk & Uk & IFD\\
+                Turbulence Treatment & Uk. & Uk. & RANS, k-$\epsilon$ & Uk.\\
+                Density Treatment & Boussinesq & Uk. & Compressible & N/A\\
+                Spatial Discritization & FEM & Uk. & FVM & Uk.\\
+                Time Discritization & Uk. & Uk. & Uk. & IFD\\
                 Validation & No & MSRE & TWIGL\tablefootnote{See
                     \cite{zhang_development_2009} for an explanation} &
                     2D TWIGL\tablefootnote{See \cite{zhuang_studies_2015} for
