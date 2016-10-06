@@ -201,7 +201,7 @@ tables in \ref{app:tools}.
             SPK & Separated Point Reactor Kinetics \\
             TH & Thermohydraulics \\
             TMSR-LF & Thorium Molten Salt Reactor - Liquid Fuel \\
-            Uk & Unknown \\
+            Uk. & Unknown \\
             VNM & Variational Nodal Method \\
             \hline
         \end{tabular}
@@ -1282,7 +1282,7 @@ summarized by \cite{delpech_benchmark_2003}.
                     analysis of all their models.}\\
                 Reactor Analyzed & MSFR & MSRE, MSBR & MSFR & MSRE, MOSART &
                     MSRE, MSBR, MSFR\\
-                General Reactor Input & No & Uk & No & Uk & No\\
+                General Reactor Input & No & Uk. & No & Uk. & No\\
                 Precursor Treatment & Full Flow & MPK \tablefootnote{
                     Importance weighted parameters} \tablefootnote{Quasi-Static
                     schemes are given two precursor treatments, first their
@@ -1295,7 +1295,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 N. Dimension & 3D & 2D, r-z & 2D, r-z & 0D & 0D, 3D\\
                 N. Energy Dim. & 6G & MG & 6G & 0 & 0, MG\\
                 Xs(T) & Log & None\tablefootnote{To the best of
-                    the author's knowledge} & Log & Uk & Various\\
+                    the author's knowledge} & Log & Uk. & Various\\
                 TH Mass Eq & Yes & No & Yes & No & No, Yes\\
                 TH Energy Eq & Yes & No & Yes & Yes & Yes\\
                 TH Momentum Eq & Yes & No & Yes & No & No, Yes\\
@@ -1303,8 +1303,8 @@ summarized by \cite{delpech_benchmark_2003}.
                    RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
                 Density Treatment & Boussinesq & N/A & Compressible & N/A &
                    N/A, Compressible\\
-                Spatial Discritization & FVM & FVM & Uk & N/A & N/A, FVM\\
-                Time Discritization & ESDIRK & IDE & Uk & Uk & Uk\\
+                Spatial Discritization & FVM & FVM & Uk. & N/A & N/A, FVM\\
+                Time Discritization & ESDIRK & IDE & Uk. & Uk. & Uk.\\
                 Validation & Verified\tablefootnote{Against the codes found in
                     \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
                     MSRE & MSRE\\
@@ -1341,22 +1341,22 @@ summarized by \cite{delpech_benchmark_2003}.
                 Precursor Treatment & Axial Flow & Axial Flow &
                     Full Flow\textsuperscript{6} & MPK\textsuperscript{4}, MGD &
                     Full Flow\\
-                Precursor Diffusion & No & No & No & No, No & Uk \\
+                Precursor Diffusion & No & No & No & No, No & Uk. \\
                 Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
                 N. Method & MGD & MGD & MGD & PRK, MGD &
                     Transient Fission Matrix \\
                 N. Dimension & 3D & 1D & 3D & 0D, 1D & 3D \\
                 N. Energy Dim. & 8G & 2G & 2G & 0D, 3G & CE \\
-                Xs(T) & Interpolation & Interpolation & Uk & Uk & OTFDB \\
+                Xs(T) & Interpolation & Interpolation & Uk. & Uk. & OTFDB \\
                 TH Mass Eq & Yes & Yes & Yes & No & Yes \\
                 TH Energy Eq & Yes & Yes & Yes & No & Yes \\
                 TH Momentum Eq & Yes & No & Yes & No & Yes \\
-                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk & N/A&
+                Turbulence Treatment & RANS, k-$\epsilon$ & N/A & Uk. & N/A&
                     RANS, k-$\epsilon$\\
-                Density Treatment & Boussinesq & Uk & Uk & N/A & Boussinesq
+                Density Treatment & Boussinesq & Uk. & Uk. & N/A & Boussinesq
                     \\
-                Spatial Discritization & FEM & NEM & NEM & Uk & Uk\\
-                Time Discritization & IEM & Uk & Uk & Uk & Uk\\
+                Spatial Discritization & FEM & NEM & NEM & Uk. & Uk.\\
+                Time Discritization & IEM & Uk. & Uk. & Uk. & Uk.\\
                 Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
                 No & No\\
             \hline
@@ -1393,25 +1393,25 @@ summarized by \cite{delpech_benchmark_2003}.
                     has both an MGD solver and a PRK solver, both methods
                     are detailed here} & SIMMER-III \\
                 Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
-                General Reactor Input & Uk & Uk & No & Yes & Yes \\
+                General Reactor Input & Uk. & Uk. & No & Yes & Yes \\
                 Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
                    Full Flow, MPK\textsuperscript{4} & Full Flow,
                    MPK\textsuperscript{4} \\
                 Precursor Diffusion & No & No, No & No & No & No \\
-                Precursor Groups & 6 & 7, 7 &  Uk & Arbitrary & 1 \\
+                Precursor Groups & 6 & 7, 7 &  Uk. & Arbitrary & 1 \\
                 N. Method & MGD & PRK, PRK & MGD & MGD, PRK & Quasi-Statics \\
                 N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
-                N. Energy Dim. & 2G & 0, 0 & Uk & MG, 0 & MG \\
-                Xs(T) & Interpolation & Uk & Uk & Uk & Uk\\
-                TH Mass Eq & No & Uk & Yes & Yes & Yes\\
+                N. Energy Dim. & 2G & 0, 0 & Uk. & MG, 0 & MG \\
+                Xs(T) & Interpolation & Uk. & Uk. & Uk. & Uk.\\
+                TH Mass Eq & No & Uk. & Yes & Yes & Yes\\
                 TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
-                TH Momentum Eq & No & Uk & Yes & Yes & Yes\\
-                Turbulence Treatment & N/A & Uk & Stream Function/Vorticity &
-                    RANKS, k-$\epsilon$ & Uk\\
-                Density Treatment & N/A & Uk & Boussinesq & Uk & Uk\\
-                Spatial Discritization & FDM & Uk & FVM & FVM
-                    \textsuperscript{5} & Uk\\
-                Time Discritization & Uk & Uk & IEM & FID & Uk\\
+                TH Momentum Eq & No & Uk. & Yes & Yes & Yes\\
+                Turbulence Treatment & N/A & Uk. & Stream Function/Vorticity &
+                    RANKS, k-$\epsilon$ & Uk.\\
+                Density Treatment & N/A & Uk. & Boussinesq & Uk. & Uk.\\
+                Spatial Discritization & FDM & Uk. & FVM & FVM
+                    \textsuperscript{5} & Uk.\\
+                Time Discritization & Uk. & Uk. & IEM & FID & Uk.\\
                 Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
             \hline
         \end{tabular}
@@ -1440,20 +1440,20 @@ summarized by \cite{delpech_benchmark_2003}.
                 Reactor Analyzed & MSRE, MSBR, TMSR-LF & FUJI-12 & MSRE &
                     Cylinder \\
                 General Reactor Input & Yes & No & Yes & No \\
-                Precursor Treatment & DPK & DPK & Full Flow, Uk & Full Flow \\
+                Precursor Treatment & DPK & DPK & Full Flow, Uk. & Full Flow \\
                 Precursor Diffusion & No & No & No & No \\
                 Precursor Groups & Arbitrary & 6 & 6 & 6 \\
                 N. Method & PRK & PRK & Quasi-Statics & MGD \\
                 N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
-                N. Energy Dim. & 0 & 0 & Uk & 2G\\
-                Xs(T) & Uk & Interpolation & Uk & Uk \\
-                TH Mass Eq & Yes & Uk & Yes & Yes \\
-                TH Energy Eq & Yes & Uk & Yes & Yes\\
-                TH Momentum Eq & Yes & Uk & Yes & Yes\\
-                Turbulence Treatment & None & Uk & Uk & Uk\\
-                Density Treatment & Uk & Uk & Uk & Compressible\\
-                Spatial Discritization & Uk & Uk & VNM & CVM\\
-                Time Discritization & Uk & Uk & Uk & Uk\\
+                N. Energy Dim. & 0 & 0 & Uk. & 2G\\
+                Xs(T) & Uk. & Interpolation & Uk. & Uk. \\
+                TH Mass Eq & Yes & Uk. & Yes & Yes \\
+                TH Energy Eq & Yes & Uk. & Yes & Yes\\
+                TH Momentum Eq & Yes & Uk. & Yes & Yes\\
+                Turbulence Treatment & None & Uk. & Uk. & Uk.\\
+                Density Treatment & Uk. & Uk. & Uk. & Compressible\\
+                Spatial Discritization & Uk. & Uk. & VNM & CVM\\
+                Time Discritization & Uk. & Uk. & Uk. & Uk.\\
                 Validation & MSRE & No & MSRE & No\\
             \hline
         \end{tabular}
@@ -1489,14 +1489,14 @@ summarized by \cite{delpech_benchmark_2003}.
                 N. Method & PRK & PRK & MGD & MGD\\
                 N. Dimension & 0D & 0D & 2D, r-z & 3D\\
                 N. Energy Dim. & 0D & 0D & 2G & MG\\
-                Xs(T) & Uk & Yes & Polynomial & Interpolation\\
+                Xs(T) & Uk. & Yes & Polynomial & Interpolation\\
                 TH Mass Eq & Yes & Yes & Yes & No\\
                 TH Energy Eq & Yes & Yes & Yes & No\\
                 TH Momentum Eq & Yes & Yes & Yes & No\\
-                Turbulence Treatment & Uk & Uk & RANS, k-$\epsilon$ & Uk\\
-                Density Treatment & Boussinesq & Uk & Compressible & N/A\\
-                Spatial Discritization & FEM & Uk & FVM & Uk\\
-                Time Discritization & Uk & Uk & Uk & IFD\\
+                Turbulence Treatment & Uk. & Uk. & RANS, k-$\epsilon$ & Uk.\\
+                Density Treatment & Boussinesq & Uk. & Compressible & N/A\\
+                Spatial Discritization & FEM & Uk. & FVM & Uk.\\
+                Time Discritization & Uk. & Uk. & Uk. & IFD\\
                 Validation & No & MSRE & TWIGL\tablefootnote{See
                     \cite{zhang_development_2009} for an explanation} &
                     2D TWIGL\tablefootnote{See \cite{zhuang_studies_2015} for
