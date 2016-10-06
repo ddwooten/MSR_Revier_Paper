@@ -77,18 +77,17 @@
 \author[ucb]{Daniel Wooten\corref{cor1}}
 \ead{danieldavidwooten@gmail.com}
 \address[ucb]{4155 Etcheverry Hall, MC 1730, University of California, Berkeley,
-    Berkeley, CA 94720-1730}
+    Berkeley, CA 94720-1730, United States}
 \cortext[cor1]{Corresponding Author}
 
 \author[ornl]{Jeffrey Powers}
-\address[ornl]{Oak Ridge}
+\address[ornl]{Oak Ridge National Laboratory, Oak Ridge, TN 37831, United States }
 
 \begin{abstract}
-Interest in circulating fuel reactors, particularly molten salt reactors
- of the
-fluid fuel type, has been growing in the last two decades starting with a
+Interest in circulating fuel reactors (CFRs), particularly molten salt reactors
+ of the fluid fuel type, has been growing in the last two decades starting with a
 resurgence of interest in Europe. Since this time there have been a growing
-number of methods proposed and codes developed to model the kinetics of CFRs;
+number of methods proposed and codes developed to model the kinetics of CFRs, which is
 a capability essential to the design and evaluation of such reactors. This work
 first reviews the physical phenomenon unique to CFRs in the light of current
 research and how the kinetics of CFRs are impacted by these considerations.
@@ -100,7 +99,7 @@ evaluation of their impact on model performance.
 \end{abstract}
 
 \begin{keyword}
-\texttt{circulating fluid kinetics precursor}
+\texttt{circulating fluid kinetics precursor molten salt MSR CFR}
 \MSC[2010] 00-01\sep  99-00
 \end{keyword}
 
@@ -109,62 +108,69 @@ evaluation of their impact on model performance.
 \linenumbers
 
 \section{Introduction} \label{sec:intro}
-\textcolor{red}{JEFF, COULD YOU INCLUDE SOMETHING ABOUT THE AQUEOUS REACTOR IN HERE? Also, I'm not particularly gifted with intros, so please do have at this}
-Circulating fuel reactors (CFRs), of which liquid fueled molten salt reactors
- (MSRs) are a subclass, have had a long and somewhat quiet history.
-This history began with the Aircraft Reactor Experiment at Oak Ridge National
-Laboratories in the late 50s and grew with the Molten Salt Reactor Experiment
-(MSRE) which successfully built and operated an 8 MW molten salt reactor (MSR) for 
-more than 13,000 equivalent full-power hours with both \ce{^{233}U} and \ce{^{235}U} fuel at different
-points in time. With the closing of the MSRE project in the late 60s the world
-saw very little interest in and development of CFRs, including MSRs, 
-through the following decades. This changed in
-the late 90s as interest began growing throughout Europe. This momentum
+A circulating fuel reactor (CFR) is any reactor in which fuel is "circulated
+ through the reactor and then the heat exchanger" \cite{ergen_1954}.
+ Typically, CFRs have one of two subtypes: a fluid-fueled molten salt reactor
+ (MSR) in which molten fuel salt (typical a fluoride or chloride) is dissolved
+ in a molten coolant salt, or an aqueous homogeneous reactor (AHR) in which
+ a molten fuel salt (typically a nitrate or sulfate) is dissolved in water.
+ For the most part, this work will focus on MSRs rather than AHRs. However,
+ when possible, the term CFRs will be used when statements are more broadly
+ applicable to any reactor with circulating fuel rather than specific to MSRs.
+\par The history of MSRs began with the Aircraft Reactor Experiment at Oak Ridge National
+ Laboratory (ORNL) in the late 50s and grew with the Molten Salt Reactor Experiment
+ (MSRE) which was successfully built at ORNL and operated an 8 MW MSR for more than 13,000
+ equivalent full-power hours with both \ce{^{233}U} and \ce{^{235}U} fuel at different
+points in time. No other MSR has been built since the closing of the MSRE project
+ in the late 1960s, despite studies at ORNL including the Molten Salt Breeder
+ Reactor (MSBR) and Denatured Molten Salt Reactor (DMSR) as well as MSR studies
+ in the UK and in Switzerland. In general, there was very little interest in
+ developing CFRs, including MSRs, from the 1970s through the 1990s.  This
+ changed in the late 1990s as interest began growing throughout Europe. This momentum
 grew with the MOST project and continued through ALISIA and EVOL resulting in
 the pre-conceptual Molten Salt Fast Reactor (MSFR). The Molten Salt Actinide
 Recycler and Transmuter (MOSART), a design largely out of Russia, the
 Liquid Fueled Thorium Molten Salt Reactor (LFTMSR), a Chinese design, the
 FUJI series of reactors out of Japan, and a host of proposed privately designed
 reactors have all additionally come into the world view and driven demand for
-the simulation of CFRs. 
-\par The simulation of CFRs proves to not be a trivial task even with today's
-large spread of reactor simulation tools and models. This difficulty rests on
+modeling and simulation of CFRs. 
+\par Modeling CFRs proves to be a nontrivial task even with today's
+large spread of reactor simulation tools. This difficulty arises due to
 the many differences between solid fuel reactors, which have received the
-majority of global attention, and CFRs, namely; a liquid fuel which flows in
-the core, natural processes which remove specific elements from the liquid fuel,
-and the ability to perform online reprocessing of the liquid fuel. It is this
-first unique aspect, a flowing fuel, which this work, and the works it looks at,
-are primarily concerned with. Kinetics modelling, or the ability to predict
+majority of global attention, and CFRs. These differences include a liquid fuel
+ which flows in the core, natural processes which remove specific elements from
+ the liquid fuel (e.g., gaseous fission products coming out of solution),
+and the ability to perform online reprocessing and refueling of the liquid fuel.
+ This first unique aspect, a flowing fuel, forms the focal point of work and the
+  works reviewed. Kinetics modelling, or the ability to predict
 a reactor's response in time scales typically less than a few hours, is a key
-requirement to any reactor design effort. This modelling is challenged in CFRs
-specifically because of their flowing fuel which not only can act as a coolant
-for any moderator a design might have, but which displaces the delayed
-neutron precursors (DNPs) from their originating positions. In a solid fuel
-reactor DNPs are typically treated as simply a time-lagged source of neutrons.
-In CFRs DNPs are displaced from their originating position, most often locations
+requirement to any reactor design effort. This is challenging in CFRs
+because of their flowing fuel, which displaces the delayed neutron precursors
+ (DNPs) from their originating positions where fission occurs. In a solid fuel
+reactor, DNPs are typically treated as simply a time-lagged source of neutrons.
+In CFRs, DNPs are displaced from their originating position, most often locations
 of high neutronic importance, and moved throughout the reactor's primary loop
 where they may decay in any number of places with varying amounts of
 neutronic importance, perhaps even zero neutronic importance. 
-\par It is this movement of the DNPs which CFR kinetics models generally
+\par It is this movement of the DNPs that CFR kinetics models generally
 attempt to account for. Approaches for doing so range from solving the 
 time resolved multi-group neutron diffusion equations with advective and
 diffusive terms included on the DNP balance equations all the way to adding
 source and sink terms to the point reactor kinetics equations to account
 for out of core decay of DNPs. Considering the tight interplay between the
-fluid motion and the neutronic behavior in a CFR many CFR kinetics approaches
-include coupling, loose and tight, to thermohydraulics simulations. In the
-following sections a review and discussion, guided by recent research, of the
+fluid motion and the neutronic behavior in a CFR, many CFR kinetics approaches
+include coupling neutronics calculations with thermohydraulics simulations. In the
+following sections, a review and discussion of the
 unique physical phenomenon tied to CFR kinetics modeling will be given. 
-Following an extended discussion of the various and proposed models for CFR
+Afterwards, an extended discussion of the various proposed models for CFR
 kinetics analysis will be given along with sample transient simulations for
 both fast and thermal systems using representative codes from each of the main
 simulation method groups. Lastly, common assumptions and their affects on CFR
 kinetics modelling will be investigated.
-\par A list of abbreviations used in this paper can be found in table
-\ref{tbl:nomen} while a summarization of all computational tools analyzed
-in this work can be found in tables \ref{tbl:codes1} through \ref{tbl:codes5}
- with a description of said
-tables in appendix \ref{app:tools}.
+\par A list of abbreviations used in this paper can be found in Table
+\ref{tbl:nomen}. A summary of all computational tools analyzed
+in this work can be found in Tables \ref{tbl:codes1} through \ref{tbl:codes5},
+ with a description of those tables in Appendix \ref{app:tools}.
 
 \begin{table}[h]
     \caption{A listing of key acronyms used in this paper}.
@@ -214,24 +220,22 @@ tables in appendix \ref{app:tools}.
 \end{table}
 
 \section{Physics of Circulating Fuel} \label{sec:physics}
-In comparison to solid fuel reactors circulating fuel reactors exhibit unique
-physics which affect all aspects of reactor kinetics. In the following
-sub-sections the key phenomenon unique to the kinetics of circulating fuel
-reactors are elaborated upon.
+In comparison to solid fuel reactors, CFRs exhibit unique
+physics that affect many aspects of reactor kinetics. The sub-sections below 
+describe some of the key phenomena unique to the kinetics of CFRs.
 
 \subsection{Neutron flux} \label{ssec:flux}
-While the speed of neutrons, fast or thermal, is typically many orders of magnitude greater than
-the flow velocity of the fluid fuel the neutron flux can still experience
-perturbations due to this fluid velocity field. These perturbations are always
-due to second order effects; generally related to changes in fluid temperature
-and distributions of delayed neutron precursors - an affect which will be
-discussed in the next sub-section. In \cite{zhang_development_2009-1} a steady
-state neutronics and coupled thermohydraulics code, which includes convective
+While the speed of neutrons is typically many orders of magnitude greater than
+the flow velocity of the fluid fuel in CFRs, the neutron flux can still experience
+perturbations due to this fluid velocity field. These perturbations are due to
+second-order effects related to changes in fluid temperature and distributions of
+ delayed neutron precursors, as described below. In \cite{zhang_development_2009-1}
+ a steady-state  neutronics and coupled thermohydraulics code, which includes convective
 fluid motion in the neutron flux, is used to investigate the effects of fluid
-flow on various quantities of interest related to circulating fuel reactors. In
-figure \ref{fig:zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
+flow on various quantities of interest related to circulating fuel reactors. 
+Figure \ref{fig:zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
 distribution of the neutron flux, thermal is shown but the conclusions for the fast flux are the same, is not significantly shifted in the direction
-of the fluid flow. However, \cite{zhang_development_2009-1} does show in figure \ref{fig:zhang_axial_velocity_flux}, axially, and in figure \ref{fig:zhang_radial_velocity_flux}, radially, how a greater fluid flow
+of the fluid flow. However, \cite{zhang_development_2009-1} does show in Figure \ref{fig:zhang_axial_velocity_flux}, axially, and in Figure \ref{fig:zhang_radial_velocity_flux}, radially, how a greater fluid flow
  velocity, $U_{in}$ in the figures, suppresses the magnitude of the fast, $\phi_{1}$, and thermal, $\phi_{2}$, neutron fluxes. This affect is
  attributed to a larger transport of delayed neutron precursors outside of the core \cite{zhang_development_2009-1}. The reactor model
  utilized in \cite{zhang_development_2009-1} consists of an axially symmetric
@@ -278,20 +282,17 @@ In contrast to solid fuel reactors where delayed neutron precursors (DNP) decay
  from their originating positions by fluid flow effects; whether advective or
  diffusive. Furthermore, considering that the transit time through the entire
  core and flow loop system of many proposed CFRs is comparable to the decay
- constants of, 
- at least, the longer DNP groups, a significant fraction of these DNPs can be
-expected to decay outside of the core region; emitting their neutrons in areas
-of low or zero neutronic importance. As such $\beta_{eff}$, 
-the contribution to neutron multiplication by neutrons emitted from DNPs,  
-is reduced. In the \ce{^{235}U} fueled MSRE the reduction in $\beta_{eff}$ at
-zero power corresponded to a reactivity reduction of 212 pcm
- \cite{delpech_benchmark_2003}.
+ constants of the longer DNP groups, a significant fraction of these DNPs can be
+expected to decay outside of the core region and thus emit their neutrons in areas
+of low or zero neutronic importance. The effective delayed neutron fraction in the
+ core, $\beta_{eff}$, is reduced in this situation. In the \ce{^{235}U} fueled MSRE,
+ the flow-induced reduction in $\beta_{eff}$ at zero power was 0.00212 \cite{delpech_benchmark_2003}.
 
 \par Not only do fluid flow effects displace DNPs from their originating positions,
 as shown in figure \ref{fig:dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs as shown in figure
 \ref{fig:dulla_msre_dnp_importance}. This importance reduction is due to two
-effects; the likelihood to decay out of core and the likelihood that, even if the
+effects: the likelihood to decay out of core and the likelihood that, even if the
 DNP decays in-core, the emitted neutron will originate in a region of low
 importance. In \cite{dulla_models_2005} a multi-group
 diffusion scheme modeling the MSRE was used to produce the results in figures
@@ -301,9 +302,9 @@ by varying flow velocity while holding out-of-core residence time constant are
 shown, axially, in figures \ref{fig:zhang_axial_velocity_dnp_1} and 
 \ref{fig:zhang_axial_velocity_dnp_2} and, radially, in figures
 \ref{fig:zhang_radial_velocity_dnp_1} and \ref{fig:zhang_radial_velocity_dnp_2}.
-It is seen that the DNP groups with longer half-lives are most affected as the
+The DNP groups with longer half-lives are most affected because the
 fluid flow has sufficient time to displace them before they decay. For all
-affected groups it is seen that a higher fluid velocity reduces DNP group
+affected groups, it is seen that a higher fluid velocity reduces DNP group
 concentration in the core; more DNPs being moved out of the core where they
 eventually decay. In figure \ref{fig:yamamoto_transit_time}, while holding fluid flow velocity constant, the effect of
 out-of-core residence time on DNP group concentration
@@ -392,8 +393,8 @@ of DNP groups in core decreases as more DNPs decay out of core.
 \end{figure}
 
 \subsection{$\beta_{eff}$} \label{ssec:beta}
-Just as DNP concentrations in-core are reduced by fuel flow so too is their
-contribution to the neutron multiplication of systems, $\beta_{eff}$.
+Just as DNP concentrations in-core are reduced by fuel flow, so too is their
+contribution to the effective delayed neutron fraction, $\beta_{eff}$.
 Table \ref{tbl:mattioda_beta_reduction} shows, just as for DNP concentrations
 in-core, that $\beta_{eff}$ is reduced both by a higher fluid flow velocity and
 by a longer out-of-core residence time.
@@ -423,10 +424,10 @@ by a longer out-of-core residence time.
 However,
 this reduction in $\beta_{eff}$ does not act equally upon all DNP groups. In table
 \ref{tbl:dulla_flow_regimes_beta}, regardless of flow regime chosen, it is seen
-that the reactivity contribution of longer half-life DNP groups is
+that the \textcolor{red}{REACTIVITY CONTRIBUTION} of longer half-life DNP groups is
 reduced more than that of shorter half-life DNP groups. In the case of slug
-flow in a MOSART like system the longest lived DNP group experiences a 68\%
-reduction in reactivity contribution while the shortest lived DNP group
+flow in a MOSART-like system, the longest lived DNP group experiences a 68\%
+reduction in \textcolor{red}{REACTIVITY CONTRIBUTION} while the shortest lived DNP group
 experiences less than a 1\% reduction. These affects are driven by the increased
 chance a long lived DNP has of being swept into the primary loop before it can
 decay in core whereas a short lived DNP is much more likely to decay in core
@@ -546,7 +547,7 @@ fourth terms, on the neutron flux,
     (\nu \Sigma_{f})_{g} \phi_{g} - \lambda_{i} C_{i}
 \end{equation}
 
-\subsubsection{thermal system} \label{sssec:mgd_ts}
+\subsubsection{Thermal system} \label{sssec:mgd_ts}
 Representing MGD approaches for the evaluation of thermal systems the DYN3D-MSR
 code, as presented in \cite{krepel_dyn3d-msr_2007}, is chosen. While DYN3D-MSR is
 capable of modelling DNP distributions in 3D the authors in
@@ -572,7 +573,7 @@ miss the reactivity oscillations later in the transient.
    \label{fig:krepel_dyn3d_msre_pump_start}
 \end{figure}
 
-\subsubsection{fast system} \label{sssec:mgd_fs}
+\subsubsection{Fast system} \label{sssec:mgd_fs}
 Representing MGD approaches for the evaluation of fast systems an unnamed code
 from Politecnico di Milano (Polimi), as presented in \cite{fiorina_modelling_2014}, is
 chosen. It should be noted that in the implementation of the ULOF transient for
@@ -671,15 +672,13 @@ tend to implement each given method in a slightly different way, methods are
 grouped by similar characteristics to avoid a meaningless proliferation of
 approaches.
 
-\subsubsection{decay point reactor kinetics} \label{sssec:dpk}
+\subsubsection{Decay point reactor kinetics} \label{sssec:dpk}
 What are termed as
 decay point reactor kinetics (DPK) in this paper are those implementations
 which aim to account for the movement of DNPs through source and sink terms
 in the DNP concentration equation as seen in equation \ref{eq:dpk_dnp}
 where $\tau_{c}$ is the fuel residence time in the core and $\tau_{l}$ is the
 fuel residence time in the primary loop.
-\textcolor{red}{JEFF, THIS IS A PRETTY COMMON EQUATION AT THIS POINT,
-DO I NEED TO CITE ONE OF THE 10+ PAPERS WHICH USES THIS THING?}
 
 \begin{equation}
     \label{eq:dpk_dnp}
@@ -732,7 +731,7 @@ compositions for the MSFR.
 
 
 \subsubsection{"I" point kinetics} \label{sssec:spk}
-"IPK", no meaning for the "I" was given in \cite{merle-lucotte_physical_2015},
+"IPK", \textcolor{red}{no meaning for the "I" was given in \cite{merle-lucotte_physical_2015}},
 are those point reactor kinetics based methods which seek to address the
 movement of DNPs through the use of a moving mesh. In
 \cite{merle-lucotte_physical_2015} a fixed mesh is used on which parameters
@@ -753,7 +752,7 @@ in figure \ref{fig:lucotte_ipk}.
    \label{fig:lucotte_ipk}
 \end{figure}
 
-\subsubsection{modified point kinetics} \label{sssec:mpk}
+\subsubsection{Modified point kinetics} \label{sssec:mpk}
 What are termed as
 modified point reactor kinetics (MPK) in this paper are those implementations
 which use a point reactor kinetics model derived in the presence of fuel motion
@@ -801,7 +800,7 @@ updating scheme the requirement of frequent shape updates through an MGD
 calculation can strongly reduce the computational savings offered by
 quasi-statics.
 
-\subsubsection{thermal system} \label{sssec:qs_therm}
+\subsubsection{Thermal system} \label{sssec:qs_therm}
 Representing quasi-static approaches for the evaluation of thermal systems
 is the modified SIMMER-III code, as presented in \cite{rineiski_kinetics_2005}.
 Worth noting is the PRK scheme, termed separable point kinetic (SPK) in this
@@ -841,25 +840,25 @@ described in section \ref{sec:models}.
    \label{fig:rineiski_msre_ps}
 \end{figure}
 
-\subsubsection{fast system} \label{sssec:qs_fast}
+\subsubsection{Fast system} \label{sssec:qs_fast}
 No published examples of a quasi-static scheme employed to analyze a fast
-CFR system were found. This fact certainly does not indicate, however, that
-quasi-statics are ill suited for fast CFR kinetics analysis.
+CFR system were found. This fact  does not necessarily indicate, however, that
+quasi-statics are ill-suited for fast CFR kinetics analysis.
 
 \subsection{Fission matrix}
-Typically fission matrices are thought of as tools to accelerate the fission
+Typically, fission matrices are thought of as tools to accelerate the fission
 source convergence in Monte Carlo codes. However, in 
 \cite{laureau_coupled_2015} a method is proposed and demonstrated which uses
 fission matrices as the neutronic diver in a transient simulation. While a
 replication and explanation of the derivation for this method is beyond the
-scope of this work the underlying principle is to pre-compute the necessary
+scope of this work, the underlying principle is to pre-compute the necessary
 fission matrices for a given transient through a steady state Monte Carlo
-simulation. These matrices are then passed into a CFD code which uses them
+simulation. These matrices are then passed into a CFD code that uses them
 to update the neutron flux and power distribution in the modeled system. At
-this time there exists no published data concerning the computational cost
-of such an approach. In figure \ref{fig:laureau_msfr} a 300pcm reactivity
+this time, no published data exists concerning the computational cost
+of such an approach. In Figure \ref{fig:laureau_msfr}, a 300pcm reactivity
 insertion transient in the MSFR can be seen as modeled by this new approach; the
-slight bump in power seen at about 3 seconds is due to DNP rich fuel salt
+slight bump in power seen at about 3 seconds is due to DNP-rich fuel salt
 re-circulation from the initial power spike.
 
 \begin{figure}[h]
@@ -938,13 +937,13 @@ in the PM1 model. With a lower fraction from the outset of the transient there
 is a lessened positive reactivity introduction in the earlier parts of the
 transient from DNPs which would have been built up in higher numbers during
 a time of higher reactor power; ultimately leading to a lower power peak.
-On the other hand the PM0 model has almost
-the opposite behavior which can largely be attributed to its having the
+On the other hand, the PM0 model has almost
+the opposite behavior, which can largely be attributed to it having the
 highest fraction of delayed neutrons out of all the models; its $\beta_{eff}$
 has no accounting for flow induced effects on DNPs. The larger
 $\beta_{eff}$ in the PM0 model leads to increased reactivity introduction
 in the beginning of the transient as more DNPs are able to decay.
-\par While PM0 and PM1 bound the other two methods an additional takeaway from
+\par While PM0 and PM1 bound the other two methods, an additional takeaway from
 these same figures is the closeness of the performance of the DPK and
 quasi-static models. For the most part they both predict the same transient
 behaviors and outcomes; the peak temperature they each predict is effectively
@@ -987,17 +986,15 @@ transient behavior more at lower powers.
    \label{fig:lucotte_ipk_reac}
 \end{figure}
 
-\par Overall what can be said for methods with which to model CFR kinetics
-is that more studies are needed to establish the power ranges and transient
-types in which the various PRK approaches capture well the reactor behavior.
+\par Overall, methods for modeling CFR kinetics require more studies to establish the power ranges and transient
+types in which the various PRK approaches sufficiently capture the reactor behavior.
 In the likely event that even the most rigorous PRK approaches fail to capture
-specific transient responses of interest the implementation of time adaptive
+specific transient responses of interest, the implementation of time-adaptive
 quasi-static schemes into system codes will be necessary to allow for future
-risk informed transient analysis of CFRs in which many hundreds to thousands
-of transient calculations will be needed to be run. In the mean time MGD
-approaches will continue to be the first method with which any investigation
-into CFR kinetics should look to, from which an appropriate quasi-static or
-PRK method can be compared to and accepted for use.
+risk-informed transient analysis of CFRs in which many hundreds to thousands
+of transient calculations will be needed to be run. In the mean time, MGD
+approaches will likely be the first method that any investigation into CFR kinetics
+should turn to, from which an appropriate quasi-static or PRK method can be compared to and accepted for use.
 
 \section{Assumptions} \label{sec:asm}
 While the choice of a particular model to simulate CFR kinetics with brings
