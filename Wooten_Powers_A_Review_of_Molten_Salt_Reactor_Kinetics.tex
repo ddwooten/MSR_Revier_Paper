@@ -113,7 +113,7 @@ A circulating fuel reactor (CFR) is any reactor in which fuel is "circulated
  Typically, CFRs have one of two subtypes: a fluid-fueled molten salt reactor
  (MSR) in which molten fuel salt (typical a fluoride or chloride) is dissolved
  in a molten coolant salt, or an aqueous homogeneous reactor (AHR) in which
- a molten fuel salt (typically a nitrate or sulfate) is dissolved in water.
+ a fuel salt (typically a nitrate or sulfate) is dissolved in water.
  For the most part, this work will focus on MSRs rather than AHRs. However,
  when possible, the term CFRs will be used when statements are more broadly
  applicable to any reactor with circulating fuel rather than specific to MSRs.
@@ -187,9 +187,9 @@ in this work can be found in Tables \ref{tbl:codes1} through \ref{tbl:codes5},
             DVM & Discrete Volume Method \\
             ESDIRK & Explicit Singly Diagonally Implicit Runge-Kutta \\
             FDM & Finite Differences Method \\
-            FED & Finite Element Discritization \\
+            FED & Finite Element Discretization \\
             FEM & Finite Element Method \\
-            FID & Fully Implicit Discritization \\
+            FID & Fully Implicit Discretization \\
             FVM & Finite Volume Method \\
             IDE & Implicit Discrete Euler \\
             IEM & Implicit Euler Method \\
@@ -1275,8 +1275,8 @@ The ``Turbulence Treatment" row
 indicates which model, if any, was used for modelling turbulent flow in the
 thermohydraulics model; this is not related to the ``Precursor Diffusion." row.
 The ``Density Treatment" row indicates what treatment, if any, was used for the
-density term in the TH equations. The ``Spatial Discritization" and ``Time
-Discritization" rows indicate what type of, if any, discritization scheme was
+density term in the TH equations. The ``Spatial Discretization" and ``Time
+Discretization" rows indicate what type of, if any, discritization scheme was
 used for each variable. The ``Validation" row indicates any known verification
 or validation efforts taken for the given tool. An ``MSRE" entry indicates
 that a simulation of an MSRE experiment was compared to the actual experimental
@@ -1313,7 +1313,7 @@ summarized by \cite{delpech_benchmark_2003}.
                     \cite{cammi_transfer_2011}\\
                 Code Name & None & DYNAMOSS\tablefootnote{While the
                     author cites \cite{dulla_models_2005} as the source of
-                    this name is appears nowhere in \cite{dulla_models_2005}.
+                    this name it appears nowhere in \cite{dulla_models_2005}.
                     Rather, the code is named in later works.} & None 
                     \tablefootnote{Code detailed is the PoliMi version} &
                     None & None\tablefootnote{In the reference and the other
@@ -1346,8 +1346,8 @@ summarized by \cite{delpech_benchmark_2003}.
                    RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
                 Density Treatment & Boussinesq & N/A & Compressible & N/A &
                    N/A, Compressible\\
-                Spatial Discritization & FVM & FVM & Uk. & N/A & N/A, FVM\\
-                Time Discritization & ESDIRK & IDE & Uk. & Uk. & Uk.\\
+                Spatial Discretization & FVM & FVM & Uk. & N/A & N/A, FVM\\
+                Time Discretization & ESDIRK & IDE & Uk. & Uk. & Uk.\\
                 Validation & Verified\tablefootnote{Against the codes found in
                     \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
                     MSRE & MSRE\\
@@ -1398,8 +1398,8 @@ summarized by \cite{delpech_benchmark_2003}.
                     RANS, k-$\epsilon$\\
                 Density Treatment & Boussinesq & Uk. & Uk. & N/A & Boussinesq
                     \\
-                Spatial Discritization & FEM & NEM & NEM & Uk. & Uk.\\
-                Time Discritization & IEM & Uk. & Uk. & Uk. & Uk.\\
+                Spatial Discretization & FEM & NEM & NEM & Uk. & Uk.\\
+                Time Discretization & IEM & Uk. & Uk. & Uk. & Uk.\\
                 Validation & Benchmark-MSRE & Benchmark-MSRE & Benchmark-MSRE &
                 No & No\\
             \hline
@@ -1452,9 +1452,9 @@ summarized by \cite{delpech_benchmark_2003}.
                 Turbulence Treatment & N/A & Uk. & Stream Function/Vorticity &
                     RANKS, k-$\epsilon$ & Uk.\\
                 Density Treatment & N/A & Uk. & Boussinesq & Uk. & Uk.\\
-                Spatial Discritization & FDM & Uk. & FVM & FVM
+                Spatial Discretization & FDM & Uk. & FVM & FVM
                     \textsuperscript{5} & Uk.\\
-                Time Discritization & Uk. & Uk. & IEM & FID & Uk.\\
+                Time Discretization & Uk. & Uk. & IEM & FID & Uk.\\
                 Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
             \hline
         \end{tabular}
@@ -1495,8 +1495,8 @@ summarized by \cite{delpech_benchmark_2003}.
                 TH Momentum Eq & Yes & Uk. & Yes & Yes\\
                 Turbulence Treatment & None & Uk. & Uk. & Uk.\\
                 Density Treatment & Uk. & Uk. & Uk. & Compressible\\
-                Spatial Discritization & Uk. & Uk. & VNM & CVM\\
-                Time Discritization & Uk. & Uk. & Uk. & Uk.\\
+                Spatial Discretization & Uk. & Uk. & VNM & CVM\\
+                Time Discretization & Uk. & Uk. & Uk. & Uk.\\
                 Validation & MSRE & No & MSRE & No\\
             \hline
         \end{tabular}
@@ -1538,8 +1538,8 @@ summarized by \cite{delpech_benchmark_2003}.
                 TH Momentum Eq & Yes & Yes & Yes & No\\
                 Turbulence Treatment & Uk. & Uk. & RANS, k-$\epsilon$ & Uk.\\
                 Density Treatment & Boussinesq & Uk. & Compressible & N/A\\
-                Spatial Discritization & FEM & Uk. & FVM & Uk.\\
-                Time Discritization & Uk. & Uk. & Uk. & IFD\\
+                Spatial Discretization & FEM & Uk. & FVM & Uk.\\
+                Time Discretization & Uk. & Uk. & Uk. & IFD\\
                 Validation & No & MSRE & TWIGL\tablefootnote{See
                     \cite{zhang_development_2009} for an explanation} &
                     2D TWIGL\tablefootnote{See \cite{zhuang_studies_2015} for
