@@ -1054,7 +1054,7 @@ CFR fuel fluids - mostly molten fluoride or chloride salts - thus leaving the
 actual value of $Sc_{T}$ quite uncertain. In figure \ref{fig:aufiero_sc}
 \cite{aufiero_calculating_2014} does a parametric analysis of the impact of the
 turbulent Schmidt number on $\beta_{eff}$ for the MSFR. The takeaway from this
-figure being that over 2 orders of magnitude for $Sc_{T}$ $\beta_{eff}$ only
+figure being that over 2 orders of magnitude for $Sc_{T}$ the changes in $\beta_{eff}$ only
 changed reactivity by about 20 pcm.
 Another phenomenon that can affect DNP distributions
 is molecular diffusion, however, both \cite{aufiero_calculating_2014} and
@@ -1065,7 +1065,8 @@ can be ignored all together.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Aufiero_Calculating_2014_Fig_9}
-   \caption{Figure 9 from \cite{aufiero_calculating_2014}.}
+   \caption{Figure 9 from \cite{aufiero_calculating_2014} showing the effect of varrying
+   the turbulent Schmidt number on the calculation of $\beta_{eff}$ in the MSFR.}
    \label{fig:aufiero_sc}
 \end{figure}
 
@@ -1204,82 +1205,6 @@ results.
    \caption{Figure 2.5a from \cite{zanetti_development_2016}.} 
    \label{fig:zanetti_sec_8mw}
 \end{figure}
-
-
-\section{Conclusion} \label{sec:conc}
-            &\multirow{2}{*}{$\lambda(s^{-1})$}&1 & 2 & 3 & 4 & 5 & 6 &
-             \multirow{2}{*}{Total} \\
-            \cline{4 - 9}
-            & & & 0.0127 & 0.0317 & 0.116 & 0.311 & 1.4 & 3.87 & \\
-            \hline
-            No flow & 0 & $\beta$ (pcm) & 23.7 & 122.7 & 117.1 & 262.7 & 107.9 &
-                45.1 & 679.2 \\
-            \hline
-            Slug & -251.5 & $\beta_{eff}^{i}$ (pcm) & 7.5 & 41.8 & 52.7 & 178.2&
-                 103.5 & 44.9 & 428.6 \\
-            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.318 & 0.341 & 0.450 & 0.678 &
-                0.959 & 0.995 & 0.631 \\
-            \hline
-            Parabolic & -299.6 & $\beta_{eff}^{i}$ (pcm) & 7.4 & 39.6 & 44.2 &
-                146.5 & 98.8 & 44.5 & 381.0 \\
-            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.313 & 0.323 & 0.378 & 0.558 &
-                0.916 & 0.986 & 0.561 \\
-            \hline
-            ADF & -310.4 & $\beta_{eff}^{i}$ (pcm) & 5.8 & 33.5 & 41.9 & 145.8 &
-                 98.7 & 44.5 & 370.2 \\
-            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.246 & 0.273 & 0.358 & 0.555 &
-                0.915 & 0.986 & 0.545 \\
-            \hline
-            SOD & -281.2 & $\beta_{eff}^{i}$ (pcm) & 8.0 & 40.9 & 47.0 & 157.9 &
-                100.8 & 44.7 & 399.3 \\
-            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.336 & 0.334 & 0.402 & 0.601 &
-                0.934 & 0.990 & 0.588 \\
-            \hline
-            SOI & -251.5 & $\beta_{eff}^{i}$ (pcm) & 7.5 & 42.9 & 56.6 & 188.9 &
-                104.4 & 45.0 & 445.3 \\
-            & & $\beta_{eff}^{i}/\beta^{i}$ & 0.315 & 0.350 & 0.483 & 0.719 &
-                0.968 & 0.996 & 0.655 \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-
-\par Less of an assumption and more of a level of detail in the modeling scheme,
-but the question remains, what impact does the inclusion of a secondary loop
-have on CFR transient modelling? With respect to channel type CFRs, and
-particularly the MSRE, this question can be directly answered thanks to the work
-of \cite{zanetti_development_2016}. Figures \ref{fig:zanetti_sec_1mw},
-\ref{fig:zanetti_sec_5mw}, and \ref{fig:zanetti_sec_8mw} 
-depict reactivity insertion
-transients in the MSRE at 1 MW, 5 MW, and 8 MW operating power, respectively,
-with reactivity insertions of 24 pcm, 19 pcm, and 13 pcm,
-respectively. In all three of these transients inclusion of the secondary loop
-increases the power peak and decreases the power minimum. It is clear to see
-that when modeling CFR transients exclusion of any additional heat transfer
-loops is not a conservative assumption and leads to less accurate simulation
-results.
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_5_A}
-   \caption{Figure 2.5a from \cite{zanetti_development_2016}.} 
-   \label{fig:zanetti_sec_1mw}
-\end{figure}
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_6_A}
-   \caption{Figure 2.6a from \cite{zanetti_development_2016}.} 
-   \label{fig:zanetti_sec_5mw}
-\end{figure}
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_7_A}
-   \caption{Figure 2.5a from \cite{zanetti_development_2016}.} 
-   \label{fig:zanetti_sec_8mw}
-\end{figure}
-
 
 \section{Conclusion} \label{sec:conc}
 In this paper an overview of the key physical phenomenon affected by fluid fuel
