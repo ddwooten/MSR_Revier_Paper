@@ -982,7 +982,8 @@ transient behavior more at lower powers.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3_Top}
-   \caption{Figure 3 (top) from \cite{merle-lucotte_physical_2015}.} 
+   \caption{Figure 3 (top) from \cite{merle-lucotte_physical_2015} showing the simulated
+   MSFR response to an instantaneous change in the extracted power.} 
    \label{fig:lucotte_ipk_reac}
 \end{figure}
 
@@ -1033,7 +1034,10 @@ in the DNP modeling for the MOSART reactor.
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.8\textwidth]{Cheng_Development_2014_Fig_19}
-   \caption{Figure 19 from \cite{cheng_development_2014}. Left is the fourth
+   \caption{Figure 19 from \cite{cheng_development_2014} showing the DNP concentration in a
+   hypothetical MSR core with thermal power of 2.4 GW, inflow fluid flow velocity of 0.5
+   $\frac{m}{s}$, and residence time out-of-core of 3.94 s. Dimensions are given in the cited
+   paper. Left is the fourth
    DNP group concentration in core without any fluid flow effects. Middle
    includes advective flow and right includes both advective flow and
    turbulent diffusion.} 
@@ -1049,7 +1053,82 @@ actual value of $Sc_{T}$ quite uncertain. In figure \ref{fig:aufiero_sc}
 turbulent Schmidt number on $\beta_{eff}$ for the MSFR. The takeaway from this
 figure being that over 2 orders of magnitude for $Sc_{T}$ $\beta_{eff}$ only
 changed reactivity by about 20 pcm.
- Another phenomenon that can affect DNP distributions
+Another phenomenon that can affect DNP distributions
+is molecular diffusion, however, both \cite{aufiero_calculating_2014} and
+\cite{cheng_development_2014} agree that molecular diffusion is so much smaller
+than turbulent diffusion and advective flow effects on DNP distributions that it
+can be ignored all together.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Aufiero_Calculating_2014_Fig_9}
+   \caption{Figure 9 from \cite{aufiero_calculating_2014}.}
+   \label{fig:aufiero_sc}
+\end{figure}
+
+\subsection{Thermohydraulics related assumptions} \label{th_asm}
+Just as there is a choice of assumptions to be made with respect to the
+modelling of DNP distributions in CFRs there are choices, more choices, to be
+made with respect to the modelling of the thermohydraulics. One of the most
+common assumptions made in many of the works examined in this paper was that
+of slug flow for the velocity profile in the channel type CFRs. This was a
+particularly common assumption for those approaches which did not explicitly
+model the fuel salt flow in the core but rather ignored thermohydraulics
+all together or employed an energy balance to account for temperature effects
+on reactivity. In \cite{dulla_interactions_2007} an exhaustive evaluation
+of this assumption, as compared with other flow profiles, was undertaken.
+The power evolution through an average velocity change, whose profile is found
+in the upper right hand corner, can be seen in figure 
+\ref{fig:dulla_flow_regimes}
+in which it is seen that the power evolution for this transient is 
+influenced by the flow regime assumed. The effect of differing flow regimes
+on $\beta_{eff}$ and $\beta_{eff}^{i}$ in the MSRE can be seen in table
+\ref{tbl:dulla_flow_regimes_beta}. The flow regimes referred to in figure
+\ref{fig:dulla_flow_regimes} and table \ref{tbl:dulla_flow_regimes_beta} are
+best 
+summarized by figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_A}
+   \caption{Figure 1.a from \cite{dulla_interactions_2007}. Circles correspond
+    to a "parabolic" flow regime, stars to a "step constant outward decreasing"
+    (SOD) flow regime, and squares to a "step constant outward increasing" (SOI)
+    flow regime.} 
+   \label{fig:dulla_flow_map}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_B}
+   \caption{Figure 1.b from \cite{dulla_interactions_2007}. This figure depicts
+   the radial profile of flow velocity for several reactor core heights
+   corresponding to an "axially developing field" (ADF) flow regime} 
+   \label{fig:dulla_flow_adf}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_12}
+   \caption{Figure 12 from \cite{dulla_interactions_2007}. Please refer to
+   figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf} for an
+   explanation of the flow regimes seen here. In this figure circles correspond
+   to a "slug" (flat) flow regime, asterisks to a "parabolic" flow regime, stars to an
+   "ADF" flow regime, squares to an "SOD" flow regime, and triangles to an
+   "SOI" flow regime.} 
+   \label{fig:dulla_flow_regimes}
+\end{figure}
+
+\begin{table}[h]
+    \caption{Reproduced from Table III of \cite{dulla_interactions_2007}. "Slug"
+        refers to a uniform velocity profile across the reactor core.
+        The other flow regimes seen in this table are explained in
+        figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.} 
+    \label{tbl:dulla_flow_regimes_beta}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \multirow{2}{*}{Flow Regime} & \multirow{2}{*}{$\Delta \rho$(pcm)}
             &\multirow{2}{*}{$\lambda(s^{-1})$}&1 & 2 & 3 & 4 & 5 & 6 &
              \multirow{2}{*}{Total} \\
             \cline{4 - 9}
