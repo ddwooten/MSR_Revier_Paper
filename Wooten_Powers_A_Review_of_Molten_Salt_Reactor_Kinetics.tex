@@ -589,7 +589,8 @@ that do not allow for moving precursors, equations \ref{eq:prk} and
 While these assumptions would not seem to connect well
 with the physics of CFRs, their approximation is not far off from the
 predictions of more rigorous models. This is well illustrated by figures
-\ref{fig:zhang_prk_flow}, \ref{zhang_prk_temp}, and \ref{zhang_prk_reac};
+\ref{fig:zhang_prk_flow}, \ref{fig:zhang_prk_temp}, and 
+\ref{fig:zhang_prk_reac};
 the transient depicted is a ULOF transient but in the MOSART reactor with the
 flow being reduced to 4\% of its nominal value in 7 seconds from the start
 of the transient. In
@@ -802,7 +803,7 @@ described in section \ref{sec:models}.
    \centering
    \includegraphics[width=0.8\textwidth]{Rineiski_Kinetics_2005_Fig_2}
    \caption{Figure 2 from \cite{rineiski_kinetics_2005}.} 
-   \label{fig:rinesiki_mre_ps}
+   \label{fig:rineiski_msre_ps}
 \end{figure}
 
 \subsubsection{fast system} \label{sssec:qs_fast}
@@ -842,7 +843,7 @@ produce transient simulations with the highest degree of accuracy among the
 approaches presented so far; MGD approaches also tend to be had with the highest
 degree of computational effort. Quasi-static approaches on the other hand
 show comparable simulation capability to MGD approaches, 
-figure \ref{fig:reneiski_msre_ps},  while promising, at
+figure \ref{fig:rineiski_msre_ps},  while promising, at
 least, modest computational cost savings. \cite{dulla_models_2005} showcases
 a variety of transients in a critical and sub-critical MSRE configuration with
 differing numbers of shape recalculations used in \cite{dulla_models_2005}'s
@@ -1009,7 +1010,7 @@ Turbulent diffusion is typically modeled by inclusion of the second term in
 equation \ref{eq:mgd_dnp}. However, as \cite{aufiero_calculating_2014} notes,
 there exists very little data on turbulent mass transport in many common
 CFR fuel fluids - mostly molten fluoride or chloride salts - thus leaving the
-actual value of $Sc_{T}$ quite uncertain. In figure \ref{aufiero_sc}
+actual value of $Sc_{T}$ quite uncertain. In figure \ref{fig:aufiero_sc}
 \cite{aufiero_calculating_2014} does a parametric analysis of the impact of the
 turbulent Schmidt number on $\beta_{eff}$ for the MSFR. The takeaway from this
 figure being that over 2 orders of magnitude for $Sc_{T}$ $\beta_{eff}$ only
@@ -1018,6 +1019,13 @@ is molecular diffusion, however, both \cite{aufiero_calculating_2014} and
 \cite{cheng_development_2014} agree that molecular diffusion is so much smaller
 than turbulent diffusion and advective flow effects on DNP distributions that it
 can be ignored all together.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{Aufiero_Calculating_2014_Fig_9}
+   \caption{Figure 9 from \cite{aufiero_calculating_2014}.}
+   \label{fig:aufiero_sc}
+\end{figure}
 
 \subsection{Thermohydraulics related assumptions} \label{th_asm}
 Just as there is a choice of assumptions to be made with respect to the
