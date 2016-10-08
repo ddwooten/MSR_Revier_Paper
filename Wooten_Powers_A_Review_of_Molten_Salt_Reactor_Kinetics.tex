@@ -86,8 +86,8 @@
 \begin{abstract}
 Interest in circulating fuel reactors (CFRs), particularly molten salt reactors
  of the fluid fuel type, has been growing in the last two decades starting with a
-resurgence of interest in Europe. Since this time there have been a growing
-number of methods proposed and codes developed to model the kinetics of CFRs, which is
+resurgence of interest in Europe. Since then there have been a growing
+number of methods proposed and codes developed to model the kinetics of CFRs; which is
 a capability essential to the design and evaluation of such reactors. This work
 first reviews the physical phenomenon unique to CFRs in the light of current
 research and how the kinetics of CFRs are impacted by these considerations.
@@ -111,23 +111,23 @@ evaluation of their impact on model performance.
 A circulating fuel reactor (CFR) is any reactor in which fuel is "circulated
  through the reactor and then the heat exchanger" \cite{ergen_1954}.
  Typically, CFRs have one of two subtypes: a fluid-fueled molten salt reactor
- (MSR) in which molten fuel salt (typical a fluoride or chloride) is dissolved
+ (MSR) in which a fuel salt - typically a fluoride or chloride - is dissolved
  in a molten coolant salt, or an aqueous homogeneous reactor (AHR) in which
- a fuel salt (typically a nitrate or sulfate) is dissolved in water.
+ a fuel salt - typically a nitrate or sulfate - is dissolved in water.
  For the most part, this work will focus on MSRs rather than AHRs. However,
  when possible, the term CFRs will be used when statements are more broadly
- applicable to any reactor with circulating fuel rather than specific to MSRs.
+ applicable to any reactor with circulating fuel.
 \par The history of MSRs began with the Aircraft Reactor Experiment at Oak Ridge National
  Laboratory (ORNL) in the late 50s and grew with the Molten Salt Reactor Experiment
- (MSRE) which was successfully built at ORNL and operated an 8 MW MSR for more than 13,000
+ (MSRE) which was successfully operated, with a full power rating of 8 MW, for more than 13,000
  equivalent full-power hours with both \ce{^{233}U} and \ce{^{235}U} fuel at different
 points in time. No other MSR has been built since the closing of the MSRE project
  in the late 1960s, despite studies at ORNL including the Molten Salt Breeder
- Reactor (MSBR) and Denatured Molten Salt Reactor (DMSR) as well as MSR studies
- in the UK and in Switzerland. In general, there was very little interest in
+ Reactor (MSBR) and Denatured Molten Salt Reactor (DMSR) as well as other MSR studies
+ globally. In general, there was very little interest in
  developing CFRs, including MSRs, from the 1970s through the 1990s.  This
  changed in the late 1990s as interest began growing throughout Europe. This momentum
-grew with the MOST project and continued through ALISIA and EVOL resulting in
+grew with the MOST project and continued through ALISIA, EVOL and now SAMOFAR, resulting in
 the pre-conceptual Molten Salt Fast Reactor (MSFR). The Molten Salt Actinide
 Recycler and Transmuter (MOSART), a design largely out of Russia, the
 Liquid Fueled Thorium Molten Salt Reactor (LFTMSR), a Chinese design, the
@@ -139,18 +139,18 @@ large spread of reactor simulation tools. This difficulty arises due to
 the many differences between solid fuel reactors, which have received the
 majority of global attention, and CFRs. These differences include a liquid fuel
  which flows in the core, natural processes which remove specific elements from
- the liquid fuel (e.g., gaseous fission products coming out of solution),
+ the liquid fuel, e.g. gaseous fission products coming out of solution,
 and the ability to perform online reprocessing and refueling of the liquid fuel.
- This first unique aspect, a flowing fuel, forms the focal point of work and the
+ This first unique aspect, a flowing fuel, forms the focal point of this work and the
   works reviewed. Kinetics modelling, or the ability to predict
 a reactor's response in time scales typically less than a few hours, is a key
 requirement to any reactor design effort. This is challenging in CFRs
 because of their flowing fuel, which displaces the delayed neutron precursors
  (DNPs) from their originating positions where fission occurs. In a solid fuel
-reactor, DNPs are typically treated as simply a time-lagged source of neutrons.
+reactor, DNPs are typically treated as a time-lagged source of neutrons.
 In CFRs, DNPs are displaced from their originating position, most often locations
 of high neutronic importance, and moved throughout the reactor's primary loop
-where they may decay in any number of places with varying amounts of
+where they may decay in any number of places with varying degrees of
 neutronic importance, perhaps even zero neutronic importance. 
 \par It is this movement of the DNPs that CFR kinetics models generally
 attempt to account for. Approaches for doing so range from solving the 
@@ -178,10 +178,12 @@ in this work can be found in Tables \ref{tbl:codes1} through \ref{tbl:codes5},
     \begin{center}
         \begin{tabular}{|c c|}
             \hline
+            AHR & Aqueous Homoegenous Reactor \\
             BOL & Begining of Life \\
             CFR & Circulating Fuel Reactor \\
             CPK & Corrected Point Reactor Kinetics \\
             CVM & Control Volume Method \\
+            DMSR & Denatured Molten Salt Reactor \\ 
             DNP & Delayed Neutron Precursor \\
             DPK & Delayed Point Reactor Kinetics \\
             DVM & Discrete Volume Method \\
@@ -206,6 +208,7 @@ in this work can be found in Tables \ref{tbl:codes1} through \ref{tbl:codes5},
             MSRE & Molten Salt Reactor Experiment \\
             N & Neutronics \\
             NEM & Nodal Expansion Method \\
+            ORNL & Oak Ridge National Laboratories \\
             OTFDB & On The Fly Doppler Broadening \\
             PRK & Point Reactor Kinetics \\
             RANS & Reynolds-Averaged Navier-Stokes \\
