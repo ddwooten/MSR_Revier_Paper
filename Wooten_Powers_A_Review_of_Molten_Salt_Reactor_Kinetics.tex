@@ -67,11 +67,19 @@
 \bibliographystyle{elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand\blfootnote[1]{%
+ \begingroup
+ \renewcommand\thefootnote{}\footnote{#1}%
+ \addtocounter{footnote}{-1}%
+ \endgroup
+}
+
 \begin{document}
 
 \begin{frontmatter}
 
 \title{A Review of Molten Salt Reactor Kinetics Models}
+
 
 %% Group authors per affiliation:
 \author[ucb]{Daniel Wooten\corref{cor1}}
@@ -80,8 +88,10 @@
     Berkeley, CA 94720-1730, United States}
 \cortext[cor1]{Corresponding Author}
 
-\author[ornl]{Jeffrey Powers}
-\address[ornl]{Oak Ridge National Laboratory, Oak Ridge, TN 37831, United States }
+%\author[ornl]{Jeffrey Powers}
+\author[ornl]{Jeffrey Powers\fnref{fn1}}
+\fntext[fn1]{This manuscript has been authored by UT-Battelle, LLC, under Contract No. DE-AC0500OR22725 with the U.S. Department of Energy. The United States Government retains and the publisher, by accepting the article for publication, acknowledges that the United States Government retains a non-exclusive, paid-up, irrevocable, world-wide license to publish or reproduce the published form of this manuscript, or allow others to do so, for the United States Government purposes. The Department of Energy will provide public access to these results of federally sponsored research in accordance with the DOE Public Access Plan (http://energy.gov/downloads/doe-public-access-plan).}
+\address[ornl]{Oak Ridge National Laboratory, Oak Ridge, TN 37831, United States}
 
 \begin{abstract}
 Interest in circulating fuel reactors (CFRs), particularly molten salt reactors
@@ -247,7 +257,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in Figure 
  out-of-core residence time for the fuel was held constant despite a changing
  fluid flow velocity.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_8_B}
    \caption{Figure 8.b from \cite{zhang_development_2009-1}. Contour line
@@ -258,7 +268,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in Figure 
    \label{fig:zhang_2d_flux}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_A}
    \caption{Fast, 1, and thermal, 2, neutron fluxes in a hypothetical MSR, see figure 
@@ -269,7 +279,7 @@ of the fluid flow. However, \cite{zhang_development_2009-1} does show in Figure 
    \label{fig:zhang_axial_velocity_flux}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_15_B}
    \caption{Figure 15.b from \cite{zhang_development_2009-1}.
@@ -314,7 +324,7 @@ out-of-core residence time on DNP group concentration
 in core is shown. It is seen that with increasing transit time the concentration
 of DNP groups in core decreases as more DNPs decay out of core.   
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_1_9}
    \caption{Figure 1.9 from \cite{dulla_models_2005} showing simulated DNP concentrations in the
@@ -325,7 +335,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{fig:dulla_msre_dnp_displacement}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_4}
    \caption{Figure 2.4 from \cite{dulla_models_2005} showing simulated DNP importance values in the
@@ -336,7 +346,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{fig:dulla_msre_dnp_importance}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_A}
    \caption{Figure 16.a from \cite{zhang_development_2009-1} showing simulated DNP concentrations
@@ -348,7 +358,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{fig:zhang_axial_velocity_dnp_1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_C}
    \caption{Figure 16.c from \cite{zhang_development_2009-1} showing simulated DNP concentrations
@@ -360,7 +370,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{fig:zhang_axial_velocity_dnp_2}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_B}
    \caption{Figure 16.b from \cite{zhang_development_2009-1} showing simulated DNP concentrations
@@ -372,7 +382,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{fig:zhang_radial_velocity_dnp_1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_16_D}
    \caption{Figure 16.d from \cite{zhang_development_2009-1} showing simulated DNP concentrations
@@ -384,7 +394,7 @@ of DNP groups in core decreases as more DNPs decay out of core.
    \label{fig:zhang_radial_velocity_dnp_2}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Yamamoto_Steady_2005_Fig_8}
    \caption{Figure 8 from \cite{yamamoto_steady_2005} showing simulated DNP concentrations
@@ -452,7 +462,7 @@ said, looking at figure \ref{fig:zhang_residence_time_keff}, in which inflow
  $k_{eff}$ with increasing out-of-core residence time is seen.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_14}
    \caption{Figure 14 from \cite{zhang_development_2009-1}. Values produced for a hypothetical
@@ -460,7 +470,7 @@ said, looking at figure \ref{fig:zhang_residence_time_keff}, in which inflow
    \label{fig:zhang_velocity_keff}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_18}
    \caption{Figure 18 from \cite{zhang_development_2009-1}. Values produced for a hypothetical MSR
@@ -566,7 +576,7 @@ immediate takeaway is that when using the JEFF2.2 libraries, both DYN3D-MSR and
 DYN1D-MSR are able to closely match the experimental values though they appear to
 miss the reactivity oscillations later in the transient.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Krepel_DYN3D_2007_Fig_9}
    \caption{Figure 9 from \cite{krepel_dyn3d-msr_2007} showing both the experimental MSRE data
@@ -588,7 +598,7 @@ code, this one from the Technical University of Delft (TUDelft) with an unknown 
 the code from \cite{kophazi_development_2009} though both do state the use of a
 modified version of DALTON as the neutronics solver. 
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Fiorina_Modelling_2014_Fig_11}
    \caption{Figure 11 from \cite{fiorina_modelling_2014} showing the power and temperature
@@ -644,7 +654,7 @@ while both undershot the final value for the fuel salt temperature, both methods
 predicted the same evolution of the transient as the other, more detailed,
 methods.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_1}
    \caption{Figure 1 from \cite{zhang_comparison_2009} showing relative power and flow for a 
@@ -652,7 +662,7 @@ methods.
    \label{fig:zhang_prk_flow}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_2}
    \caption{Figure 2 from \cite{zhang_comparison_2009} showing average fuel salt temperature for a
@@ -660,7 +670,7 @@ methods.
    \label{fig:zhang_prk_temp}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Comparison_2009_Fig_3}
    \caption{Figure 3 from \cite{zhang_comparison_2009} showing reactivity contributions for a
@@ -702,7 +712,7 @@ which both the reactor kinetics and thermohydraulics modules were modified
 to better model CFRs. The MSRE pump start transient as evaluated by
 \cite{shi_development_2016} is seen in figure \ref{fig:shi_msre_ps}.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Shi_Development_2016_Fig_3}
    \caption{Figure 3 from \cite{shi_development_2016} showing measured and simulated, by a modified
@@ -723,7 +733,7 @@ EQL refers to the equilibrium fuel composition of the
 MSFR while the various BOL indicators refer to postulated start-up fuel
 compositions for the MSFR. 
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Guerrieri_Investigation_2013_Fig_3_18_A}
    \caption{Figure 3.18.a from \cite{guerrieri_investigation_2013} showing the simulated MSFR
@@ -747,7 +757,7 @@ two transients, each changing the extracted power on the secondary side by
 standard PRK method using a flow-informed corrected $\beta_{eff}$ are seen
 in figure \ref{fig:lucotte_ipk}.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3_Bottom}
    \caption{Figure 3 (bottom) from \cite{merle-lucotte_physical_2015} showing the simulated MSFR
@@ -772,7 +782,7 @@ been adjoint weighted with fuel flow, "reformulated pk" refers to the re-derived
 point kinetics model found in \cite{dulla_models_2005}, and "reference" refers
 to an MGD solution.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_17}
    \caption{Figure 2.17 from \cite{dulla_models_2005} showing the simulated response of the MSRE
@@ -835,7 +845,7 @@ described in section \ref{sec:models}.
         \lambda C_{m}(x,t) - \nabla(u(x,t) C_{m}(x,t))
 \end{equation}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Rineiski_Kinetics_2005_Fig_2}
    \caption{Figure 2 from \cite{rineiski_kinetics_2005} showing the experimental and simulated
@@ -864,7 +874,7 @@ insertion transient in the MSFR can be seen as modeled by this new approach; the
 slight bump in power seen at about 3 seconds is due to DNP-rich fuel salt
 re-circulation from the initial power spike.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Laureau_Coupled_2015_Fig_3}
    \caption{Figure 3 (middle) from \cite{laureau_coupled_2015} showing the simulated response of
@@ -896,7 +906,7 @@ recalculations; noted by "k". In table \ref{tbl:dulla_costs}
 MGD, for the quasi-static method using different numbers of shape recalculations.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Models_2005_Fig_2_18}
    \caption{Figure 2.18 from \cite{dulla_models_2005} showing different results of the
@@ -982,7 +992,7 @@ power extraction which is in line with the general knowledge, echoed in
 \cite{zanetti_development_2016}, that DNP re-circulation effects impact
 transient behavior more at lower powers.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Merle_Lucotte_Physical_2015_Fig_3_Top}
    \caption{Figure 3 (top) from \cite{merle-lucotte_physical_2015} showing the simulated
@@ -1034,7 +1044,7 @@ Indeed, figure \ref{fig:cheng_diffusion} shows some perturbations of the DNP
 distribution for the fourth group of DNPs when including turbulent diffusion
 in the DNP modeling for the MOSART reactor.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Cheng_Development_2014_Fig_19}
    \caption{Figure 19 from \cite{cheng_development_2014} showing the DNP concentration in a
@@ -1062,7 +1072,7 @@ is molecular diffusion, however, both \cite{aufiero_calculating_2014} and
 than turbulent diffusion and advective flow effects on DNP distributions that it
 can be ignored all together.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Aufiero_Calculating_2014_Fig_9}
    \caption{Figure 9 from \cite{aufiero_calculating_2014} showing the effect of varying
@@ -1092,7 +1102,7 @@ on $\beta_{eff}$ and $\beta_{eff}^{i}$ in the MSRE can be seen in table
 best 
 summarized by figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_A}
    \caption{Figure 1.a from \cite{dulla_interactions_2007} showing the radial profile of
@@ -1103,7 +1113,7 @@ summarized by figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
    \label{fig:dulla_flow_map}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_B}
    \caption{Figure 1.b from \cite{dulla_interactions_2007}.
@@ -1113,7 +1123,7 @@ summarized by figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
    \label{fig:dulla_flow_adf}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_12}
    \caption{Figure 12 from \cite{dulla_interactions_2007} showing the relative power in a
@@ -1189,7 +1199,7 @@ that when modeling CFR transients exclusion of any additional heat transfer
 loops is not a conservative assumption and leads to less accurate simulation
 results.
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_5_A}
    \caption{Figure 2.5a from \cite{zanetti_development_2016} showing the experimental and
@@ -1197,7 +1207,7 @@ results.
    \label{fig:zanetti_sec_1mw}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_6_A}
    \caption{Figure 2.6a from \cite{zanetti_development_2016} showing the experimental and
@@ -1205,7 +1215,7 @@ results.
    \label{fig:zanetti_sec_5mw}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_7_A}
    \caption{Figure 2.5a from \cite{zanetti_development_2016} showing the experimental and simulated
