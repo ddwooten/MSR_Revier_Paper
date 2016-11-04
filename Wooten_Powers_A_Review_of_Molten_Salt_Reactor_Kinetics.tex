@@ -119,7 +119,7 @@ evaluation of their impact on model performance.
 \linenumbers
 
 \section{Introduction} \label{sec:intro}
-A circulating fuel reactor (CFR) is any reactor in which fuel is ''circulated
+A circulating fuel reactor (CFR) is any reactor in which fuel is ``circulated
  through the reactor and then the heat exchanger" \cite{ergen_1954}.
  Typically, CFRs have one of two sub-types: a fluid-fueled molten salt reactor
  (MSR) in which a fuel salt, typically a fluoride or chloride, is dissolved
@@ -600,7 +600,7 @@ miss the reactivity oscillations later in the transient.
    \includegraphics[width=0.8\textwidth]{Krepel_DYN3D_2007_Fig_9}
    \caption{Figure 9 from \cite{krepel_dyn3d-msr_2007} showing both the experimental MSRE data
    and the simulated data from the DYN1D and DYN3D codes, using both the JEF and ORNL DNP data, for
-   the MSRE pump start transient with ''Reactivity" referring to the change in reactivity introduced
+   the MSRE pump start transient with ``Reactivity" referring to the change in reactivity introduced
    by the control rod motion used to keep the MSRE at a steady state power level.} 
    \label{fig:krepel_dyn3d_msre_pump_start}
 \end{figure}
@@ -652,17 +652,17 @@ predictions of more rigorous models. This is well illustrated by Figures
 the transient depicted is a ULOF transient, but in the MOSART reactor with the
 flow being reduced to 4\% of its nominal value in 7 seconds from the start
 of the transient. In
-the aforementioned figures from \cite{zhang_comparison_2009} ''SM" refers
+the aforementioned figures from \cite{zhang_comparison_2009} ``SM" refers
 to the SIMMER-III code as seen in Table \ref{tbl:codes3} from
-\cite{rineiski_kinetics_2005}; ''MPM" refers to a delayed point reactor kinetics
+\cite{rineiski_kinetics_2005}; ``MPM" refers to a delayed point reactor kinetics
 model as discussed in Section \ref{sssec:dpk}, but particularly from
-\cite{suzuki_reactivity-initiated-accident_2008}; ''PM0" and ''PM1" both
+\cite{suzuki_reactivity-initiated-accident_2008}; ``PM0" and ``PM1" both
 refer to traditional point reactor kinetics models with PM0 using an
 uncorrected $\beta_{eff}$, and PM1 using a corrected $\beta_{eff}$ taken from
 the first time-step of the SM method. It is unknown if the subsequent
 $\beta_{eff}^{i}$s were adjusted commensurately with the overall $\beta_{eff}$.
 PM1 represents a subclass of PRK methods referred to in this paper as
-''corrected point kinetics" (CPK) or those PRK approaches which use a one-time, or
+``corrected point kinetics" (CPK) or those PRK approaches which use a one-time, or
 flow dependent, adjusted $\beta_{eff}$ to account for
 displacement of DNPs.
 While a discussion of the differences between these methods and other 
@@ -748,8 +748,8 @@ assumed to coast down exponentially with a time constant of 2 seconds to 5\%
  of their nominal flow, as natural circulation cannot be modeled in the set-up
 of \cite{guerrieri_investigation_2013}. In Figure 
 \ref{fig:guerrieri_msfr_ulof} 
-''EQL" refers to the equilibrium fuel composition of the
-MSFR, while the various ''BOL" indicators refer to postulated start-up fuel
+``EQL" refers to the equilibrium fuel composition of the
+MSFR, while the various ``BOL" indicators refer to postulated start-up fuel
 compositions for the MSFR. 
 
 \begin{figure}[H]
@@ -762,8 +762,8 @@ compositions for the MSFR.
 \end{figure}
 
 
-\subsubsection{''I" point kinetics} \label{sssec:spk}
-''IPK", the term used in \cite{merle-lucotte_physical_2015},
+\subsubsection{``I" point kinetics} \label{sssec:spk}
+``IPK", the term used in \cite{merle-lucotte_physical_2015},
 are those PRK based methods developed to address the
 movement of DNPs through the use of a moving mesh. In
 \cite{merle-lucotte_physical_2015} a fixed mesh is used on which parameters
@@ -794,11 +794,11 @@ found in \cite{dulla_models_2005}. Transients employing such a model were found
 only for thermal systems, and an example is shown in Figure 
 \ref{fig:dulla_4x_flow} in which the fluid flow velocity is increased by a factor
 of four in an MSRE model beginning at nominal power.
-In Figure \ref{fig:dulla_4x_flow} ''standard pk (a)" refers
+In Figure \ref{fig:dulla_4x_flow} ``standard pk (a)" refers
 to a DPK model in which the parameters have been adjoint weighted without fuel
-flow, ''standard pk (b)" refers to a DPK model in which the parameters have
-been adjoint weighted with fuel flow, ''reformulated pk" refers to the re-derived
-point kinetics model found in \cite{dulla_models_2005}, and ''reference" refers
+flow, ``standard pk (b)" refers to a DPK model in which the parameters have
+been adjoint weighted with fuel flow, ``reformulated pk" refers to the re-derived
+point kinetics model found in \cite{dulla_models_2005}, and ``reference" refers
 to an MGD solution.
 
 \begin{figure}[H]
@@ -922,7 +922,7 @@ also employed in the same work. In Figure \ref{fig:dulla_4x_qs} the same factor
 of four increase in flow velocity transient as described in Section
 \ref{sssec:mpk} is modeled with the quasi-static scheme from
 \cite{dulla_models_2005} using differing numbers of shape, or MGD,
-recalculations, noted by ''k". In Table \ref{tbl:dulla_costs}
+recalculations, noted by ``k". In Table \ref{tbl:dulla_costs}
 \cite{dulla_models_2005} reports relative computational costs, as compared to
 MGD, for the quasi-static method using different numbers of shape recalculations.
 
@@ -1143,9 +1143,9 @@ summarized by Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
    \includegraphics[width=0.8\textwidth]{Dulla_Interactions_2007_Fig_1_A}
    \caption{Figure 1.a from \cite{dulla_interactions_2007} showing the radial profile of
    differing flow regimes used in the cited study. Circles correspond
-    to a ''parabolic" flow regime, stars to a ''step constant outward
+    to a ``parabolic" flow regime, stars to a ``step constant outward
      decreasing"
-    (SOD) flow regime, and squares to a ''step constant outward increasing"
+    (SOD) flow regime, and squares to a ``step constant outward increasing"
      (SOI)
     flow regime.} 
    \label{fig:dulla_flow_map}
@@ -1157,7 +1157,7 @@ summarized by Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
    \caption{Figure 1.b from \cite{dulla_interactions_2007}.
    This figure depicts
    the radial profile of flow velocity for several reactor core heights
-   corresponding to an ''axially developing field" (ADF) flow regime.} 
+   corresponding to an ``axially developing field" (ADF) flow regime.} 
    \label{fig:dulla_flow_adf}
 \end{figure}
 
@@ -1169,16 +1169,16 @@ summarized by Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
    shown in the upper right corner. Please refer to
    Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf} for an
    explanation of the flow regimes seen here. In this figure circles correspond
-   to a ''slug" (flat) flow regime, asterisks to a ''parabolic" flow regime,
+   to a ``slug" (flat) flow regime, asterisks to a ``parabolic" flow regime,
    stars to an
-   ''ADF" flow regime, squares to an ''SOD" flow regime, and triangles to an
-   ''SOI" flow regime.} 
+   ``ADF" flow regime, squares to an ``SOD" flow regime, and triangles to an
+   ``SOI" flow regime.} 
    \label{fig:dulla_flow_regimes}
 \end{figure}
 
 \begin{table}[h]
     \caption{Reproduced from Table III of \cite{dulla_interactions_2007}. 
-    ''Slug"
+    ``Slug"
         refers to a uniform velocity profile across the reactor core.
         The other flow regimes seen in this table are explained in
         Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.} 
