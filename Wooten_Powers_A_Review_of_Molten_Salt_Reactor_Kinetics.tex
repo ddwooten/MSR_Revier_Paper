@@ -909,8 +909,20 @@ In terms of suitability for the kinetics analyses of CFRs there should be no
 question that time-resolved MGD approaches, including appropriate treatment
 for the DNPs which usually includes coupling to a thermohydraulics code, will
 produce transient simulations with the highest degree of accuracy among the
-approaches presented so far. MGD approaches tend to require the highest
-degree of computational effort, while quasi-static approaches 
+approaches presented so far. However, this high degree of accuracy does not
+make MGD based methods the best methods to use in all situations. MGD based
+approaches suffer from high computational costs and a general complexity of
+user-input. In turn this makes MGD based approaches illsuited to tasks
+requiring a large number of transient simulations such as parametric safety
+analysis and parametric design space analysis.
+for tasks requring  MGD approaches tend to require the highest
+degree of computational effort, however, which makes them illsuited to
+tasks requiring many transient simulations, such as parametric safety analysis.
+Additionally, the complexity of the user-input for many MGD based approaches
+makes them poor choices for parametric design space analyses.
+This disadvantage is further compounded by the
+possibility of using MGD approaches to provide guidance on the usage of
+computationally faster PRK based approaches while quasi-static approaches 
 show simulation capability comparable to MGD approaches as seen in
 Figure \ref{fig:rineiski_msre_ps},  while promising at
 least modest computational cost savings. \cite{dulla_models_2005} showcases
