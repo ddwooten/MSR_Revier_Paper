@@ -276,7 +276,8 @@ second-order effects related to changes in fluid temperature and distributions o
  DNPs, as described below. In \cite{zhang_development_2009-1}
  a steady-state  neutronics and coupled thermohydraulics code, which includes convective
 fluid motion in the neutron flux, is used to investigate the effects of fluid
-flow on various quantities of interest related to circulating fuel reactors. 
+flow on various quantities of interest related to CFRs such as fast and thermal
+neutron flux and DNP concentration profiles. 
 Figure \ref{fig:zhang_2d_flux} \cite{zhang_development_2009-1} shows that the
 distribution of the neutron flux (thermal is shown but the conclusions for 
 the fast flux are the same) is not significantly shifted in the direction
@@ -300,7 +301,7 @@ Figure \ref{fig:zhang_radial_velocity_flux}, radially, how a greater fluid flow
     values are the thermal neutron flux in a hypothetical MSR of height 3.8 m, diameter 3.4 m,
     radial reflector thickness of 0.5 m, core power of 2.4 GWth, inflow temperature of 873 K,
     0.5 $\frac{m}{s}$ fluid flow
-    velocity and a 10 s out-of-core residence time; no units were provided with these values.} 
+    velocity and a 10 s out-of-core residence time; no units were provided with the flux.} 
    \label{fig:zhang_2d_flux}
 \end{figure}
 
@@ -340,7 +341,8 @@ of low or zero neutronic importance. The effective delayed neutron fraction in t
 \par Not only do fluid flow effects displace DNPs from their originating positions,
 as shown in Figure \ref{fig:dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs, as shown in Figure
-\ref{fig:dulla_msre_dnp_importance}. This importance reduction is due to two
+\ref{fig:dulla_msre_dnp_importance}. Again, a phenomenon which is difficult
+for PRK based approaches to capture. This importance reduction is due to two
 effects: the likelihood to decay out of core, and the likelihood that, even if the
 DNP decays in-core, the emitted neutron will originate in a region of low
 importance. In \cite{dulla_models_2005}, a multi-group
@@ -360,8 +362,13 @@ concentration in the core, and there are more DNPs being moved out of the
 eventually decay. In Figure \ref{fig:yamamoto_transit_time},
  while holding fluid flow velocity constant, the effect of
 out-of-core residence time on DNP group concentration
-in core is shown. With increasing transit time, the concentration
-of DNP groups in the core decreases as more DNPs decay out of the core.   
+in core is shown. With increasing primary loop transit time,
+the concentration
+of DNP groups in the core decreases as more DNPs decay out of the core.
+The necessity to track DNPs out-of-core is an aspect of CFR kinetics
+modelling which additionally increases the computational cost of
+MGD approaches as the size of the model is larger than just the
+core of the reactor.
 
 \begin{figure}[H]
    \centering
@@ -371,7 +378,8 @@ of DNP groups in the core decreases as more DNPs decay out of the core.
     MSRE. Dashed lines represent
     solid fuel results, while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}$ are DNP group concentrations. No
-    units were given. Higher n indicates shorter decay half-life.}
+    units for concentration were given. Higher values of n indicates shorter
+    decay half-life.}
    \label{fig:dulla_msre_dnp_displacement}
 \end{figure}
 
@@ -383,7 +391,8 @@ of DNP groups in the core decreases as more DNPs decay out of the core.
     MSRE. Dashed lines represent
     solid fuel results, while solid lines represent flowing fuel results. Values
     are taken in the middle of the core. $C_{n}^{+}$ are DNP group importance values. 
-    No units were given. Higher n indicates shorter decay half-life.}
+    No units for concentration were given. Higher values of n indicates shorter
+    decay half-life.}
    \label{fig:dulla_msre_dnp_importance}
 \end{figure}
 
@@ -395,7 +404,8 @@ of DNP groups in the core decreases as more DNPs decay out of the core.
                in a hypothetical MSR as described in Figure \ref{fig:zhang_2d_flux}.
                Axial
                values are taken at the center of the core. $C_{n}$ are DNP
-               group concentrations. No units were given. Higher n indicates
+               group concentrations. No units for concentration were given.
+                Higher values of n indicates
                shorter decay half-life.}
    \label{fig:zhang_axial_velocity_dnp_1}
 \end{figure}
@@ -407,8 +417,8 @@ of DNP groups in the core decreases as more DNPs decay out of the core.
                in a hypothetical MSR as described in Figure \ref{fig:zhang_2d_flux}.
                Axial
                values are taken at the center of the core. $C_{n}$ are DNP
-               group concentrations. No units were given. Higher n indicates
-               shorter decay half-life.}
+               group concentrations. No units for conentration were given.
+               Higher values of n indicates shorter decay half-life.}
    \label{fig:zhang_axial_velocity_dnp_2}
 \end{figure}
 
@@ -419,8 +429,8 @@ of DNP groups in the core decreases as more DNPs decay out of the core.
                in a hypothetical MSR as described in Figure \ref{fig:zhang_2d_flux}.
                Radial 
                values are taken at the center of the core. $C_{n}$ are DNP
-               group concentrations. No units were given. Higher n indicates
-               shorter decay half-life.}
+               group concentrations. No units for concentration were given.
+               Higher values of n indicates shorter decay half-life.}
    \label{fig:zhang_radial_velocity_dnp_1}
 \end{figure}
 
@@ -431,8 +441,8 @@ of DNP groups in the core decreases as more DNPs decay out of the core.
                in a hypothetical MSR as described in Figure \ref{fig:zhang_2d_flux}.
                Radial
                values are taken at the center of the core. $C_{n}$ are DNP
-               group concentrations. No units were given. Higher n indicates
-               shorter decay half-life.}
+               group concentrations. No units for concentration were given.
+               Higher values of n indicates shorter decay half-life.}
    \label{fig:zhang_radial_velocity_dnp_2}
 \end{figure}
 
@@ -488,24 +498,39 @@ flow in a MOSART-like system, the longest lived DNP group experiences a 68\%
 reduction in reactivity contribution, while the shortest lived DNP group
 experiences less than a 1\% reduction. These effects are driven by the increased
 chance a long-lived DNP has of being swept into the primary loop before it can
-decay in core whereas a short-lived DNP is much more likely to decay in core
+decay in core whereas a short-lived DNP is much more likely to decay in-core
 before it even has the chance to leave.
 
 \subsection{$k_{eff}$} \label{ssec:keff}
 Given that there is a reactivity reduction associated with increased fluid flow
 velocity in CFRs, as discussed in Section \ref{ssec:beta}, it would seem to follow
 that there would be a commensurate reduction in the multiplication factor of
-the system. However, in Figure \ref{fig:zhang_velocity_keff} it is seen that the
+the system. This is certainly the case as the neutron multiplication factor
+of a given CFR is reduced by a given amount given a fluid flow condition
+when compared against the multiplication factor for the static fuel case.
+This steady state reduction is easily accounted for in steady state
+criticality codes by adding a previously calculated reactivity
+reduction to the reported criticality value. As such, it may be expected
+that the multipilication factor of a given CFR would continue to decrease
+given an increasing flow rate. 
+However, in Figure \ref{fig:zhang_velocity_keff} it is seen that the
 multiplication factor of the system described in \cite{zhang_development_2009-1}
-increases with increasing flow velocity in the presence of a fixed inlet temperature and out-of-core
+increases with increasing flow velocity in the presence of a fixed inlet
+temperature and out-of-core
 residence time. \cite{zhang_development_2009-1} attributes
 this phenomenon to increased cooling of the core, given the higher fluid flow 
 velocity, as well as subsequent Doppler reactivity feedback with this effect
 having a greater reactivity contribution than the increased loss of DNPs.
-Figure \ref{fig:zhang_residence_time_keff} shows that inflow
- velocity and inlet temperature are held constant and illustrates
- the expected reduction of
- $k_{eff}$ with increasing out-of-core residence time.
+Figure \ref{fig:zhang_residence_time_keff} shows, while inflow
+velocity and inlet temperature are held constant, 
+the expected reduction of
+$k_{eff}$ with increasing out-of-core residence time. Together
+Figures \ref{fig:zhang_velocity_keff} and
+\ref{fig:zhang_residence_time_keff} together show that the
+effects of fluid fuel circulation on the multiplication factor
+of a CFR are primarily related to the time DNPs spend out of
+the core and to the thermal effects associated with increased
+fluid flow velocity. 
 
 \begin{figure}[H]
    \centering
