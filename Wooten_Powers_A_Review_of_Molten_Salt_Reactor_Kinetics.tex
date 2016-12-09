@@ -345,9 +345,12 @@ reduce the neutronic importance of DNPs, as shown in Figure
 for PRK based approaches to capture. This importance reduction is due to two
 effects: the likelihood to decay out of core, and the likelihood that, even if the
 DNP decays in-core, the emitted neutron will originate in a region of low
-importance. In \cite{dulla_models_2005}, a multi-group
+importance. In Figure \ref{fig:dulla_msre_dnp_displacement} the peaks in DNP
+distribution seen at the lower and upper axial regions of the reactor are
+due to fluid fuel holdup in the lower and upper plena respectively.
+In \cite{dulla_models_2005}, a multi-group
 diffusion scheme modeling the MSRE was used to produce the results shown
- in Figures
+in Figures
 \ref{fig:dulla_msre_dnp_displacement} and \ref{fig:dulla_msre_dnp_importance}.
 The effects on DNP distributions, from \cite{zhang_development_2009-1}, caused
 by varying flow velocity while holding out-of-core residence time constant are
@@ -550,10 +553,12 @@ fluid flow velocity.
 
 \section{Models} \label{sec:models}
 As seen in Section \ref{sec:physics} the neutronic behavior of CFRs is tightly
-coupled to the thermohydraulics of the overall system. This presents unique
+coupled to the thermohydraulics of the overall system in that the reactivity 
+contribution of DNPs is strongly influenced by fluid flow conditions.
+This presents unique
 challenges to traditional methods for reactor kinetics modeling, particularly
 point-kinetics approaches which assume a constant value for $\beta_{eff}$. In
-response to these challenges, three dominant approaches have arisen; 
+response to these challenges, three dominant approaches have arisen: 
 fluid-flow-velocity field coupled multi-group, time-resolved, neutron diffusion;
 new point reactor kinetics schemes; and quasi-statics; generally all coupled, tightly
 or loosely, to a thermohydraulics solver. Recently,
@@ -563,12 +568,12 @@ computational fluid dynamics (CFD) simulations. Tables \ref{tbl:codes1}
 through \ref{tbl:codes5} detail
 the various implementations of these approaches throughout literature.
 In the following subsections
-each approach is introduced, along with two transient simulations; the pump-start
+each approach is introduced, along with two transient simulations: the pump-start
 experiment for the MSRE representing a thermal system - this transient having
 the added advantage of a wealth of experimental data - and an unprotected loss
 of flow (ULOF) transient in the proposed MSFR representing a fast system.
 As mentioned in
-Section \ref{sec:intro} the effects of the fluid flow velocity on the DNPs in each
+Section \ref{sec:intro}, the effects of the fluid flow velocity on the DNPs in each
 system have noticeable differences due to the channel type flow found in many
 thermal systems and the typically unstructured flow found in many fast
 systems.
@@ -578,7 +583,9 @@ were selected as examples based on both the quality and detail of the selected
 transient as it was presented in the code's debut paper as well as
 a desire for breadth in the number of codes covered.
  The suitability of any given code to any given task
-is a determination that must be made on a case-by-case basis. Details pertaining
+is a determination that must be made on a case-by-case basis taking into account
+computational costs, user-input requirements, and the nature of the transients
+which are to be modelled. Details pertaining
 to a code used for a transient example may be found in Tables \ref{tbl:codes1}
 through \ref{tbl:codes5} as
 well as the relevant literature.
@@ -599,11 +606,15 @@ work, multi-group diffusion (MGD) approaches are the gold standard because they
 make the fewest assumptions and simplifications out of any of the models.
 This increases their computational cost, however, making these methods
 the most computationally expensive of all the approaches considered, at least
-those with computational cost data available. However the multi-group
+those with computational cost data available. In turn this makes MGD based
+approaches poor candidates for tasks involving large number of transient
+simulations, e.g. parametric safety analysis and parametric design space
+analysis. 
+\par Which ever way the multi-group
 diffusion problem is solved its structure allows, though not all implementations
-include all the physics, for the direct incorporation
+include all of the physics, for the direct incorporation
 of fluid flow effects on both the neutron flux and the DNP concentration as
-see in Equation \ref{eq:mgd} and \ref{eq:mgd_dnp}.
+seen in Equation \ref{eq:mgd} and \ref{eq:mgd_dnp}.
 This includes advective effects, the second term in the neutron flux equation 
  and the first term in the DNP distribution equation, and diffusive effects on
  the DNP distribution, the second term. In Equation \ref{eq:mgd_dnp}
@@ -637,13 +648,13 @@ Representing MGD approaches for the evaluation of thermal systems the DYN3D-MSR
 code, as presented in \cite{krepel_dyn3d-msr_2007}, is chosen. While DYN3D-MSR is
 capable of modelling DNP distributions in 3D the authors in
 \cite{krepel_dyn3d-msr_2007} note that, owing to the MSRE's channel guided flow,
-the radial DNP distribution is assumed to be constant for their modeling of the
-MSRE. For many of the codes used in the
-MOST project benchmark, \cite{delpech_benchmark_2003}, both the original data used
-by ORNL and the JEFF2.2 library were used to generate the DNP data.
+the radial DNP distribution is assumed to be constant for their modeling of the MSRE.
 The results of the DYN3D-MSR model of the MSRE pump start-up transient,
 along with the experimental values and those obtained using a similar 1D code,
-DYN1D-MSR, are presented in Figure \ref{fig:krepel_dyn3d_msre_pump_start}. The most
+DYN1D-MSR, are presented in Figure \ref{fig:krepel_dyn3d_msre_pump_start}.
+For many of the codes used in the
+MOST project benchmark, \cite{delpech_benchmark_2003}, both the original data used
+by ORNL and the JEFF2.2 library were used to generate the DNP data. The most
 immediate takeaway is that when using the JEFF2.2 libraries, both DYN3D-MSR and
 DYN1D-MSR are able to closely match the experimental values, though they appear to
 miss the reactivity oscillations later in the transient.
