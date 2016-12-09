@@ -100,11 +100,18 @@ with a
 resurgence of interest in Europe, there have been a growing
 number of methods proposed and codes developed to model the kinetics of CFRs;
 a capability essential to the design and evaluation of such reactors. This work
-first reviews the physical phenomenon unique to CFRs in the light of current
+first reviews the physical phenomena unique to CFRs in the light of current
 research and how CFR kinetics are impacted by these considerations.
  An extensive review of published models and methods for simulating CFR kinetics
 is presented, along with transient simulations in fast and thermal systems using
-representative codes from each of the main modelling categories. Finally, a
+representative codes from each of the main modelling categories. Comparisons
+between methods are presented as are recommendations for their use or non-use
+in various transient and work-flow scenarios. In general it is recommended
+that time-resolved, multi-group neutron diffusion ( MGD ) approaches be used to
+establish ranges of applicability for point reactor kinetics ( PRK ) based
+approaches which themselves may not be applicable for all modelling situations.
+In such cases it is suggested that quasi-static approaches be used where PRK
+based approaches can not. Finally, a
 review of common assumptions used in these models is presented, along with an
 evaluation of their impact on model performance. 
 \end{abstract}
@@ -910,19 +917,14 @@ question that time-resolved MGD approaches, including appropriate treatment
 for the DNPs which usually includes coupling to a thermohydraulics code, will
 produce transient simulations with the highest degree of accuracy among the
 approaches presented so far. However, this high degree of accuracy does not
-make MGD based methods the best methods to use in all situations. MGD based
+make MGD based approaches the best approaches to use in all situations.
+MGD based
 approaches suffer from high computational costs and a general complexity of
-user-input. In turn this makes MGD based approaches illsuited to tasks
+user-input. This in turn makes MGD based approaches illsuited to tasks
 requiring a large number of transient simulations such as parametric safety
 analysis and parametric design space analysis.
-for tasks requring  MGD approaches tend to require the highest
-degree of computational effort, however, which makes them illsuited to
-tasks requiring many transient simulations, such as parametric safety analysis.
-Additionally, the complexity of the user-input for many MGD based approaches
-makes them poor choices for parametric design space analyses.
-This disadvantage is further compounded by the
-possibility of using MGD approaches to provide guidance on the usage of
-computationally faster PRK based approaches while quasi-static approaches 
+For situations in which computational speed is necessary and the shortcomings
+of PRK based approaches are unacceptable, quasi-statics based approaches
 show simulation capability comparable to MGD approaches as seen in
 Figure \ref{fig:rineiski_msre_ps},  while promising at
 least modest computational cost savings. \cite{dulla_models_2005} showcases
@@ -965,11 +967,17 @@ MGD, for the quasi-static method using different numbers of shape recalculations
     \end{center}
 \end{table}
 
-It is evident that while quasi-statics can save computational cost with some
-degree of lost accuracy, if implemented poorly, it can actually cost more than
+It is evident that while quasi-statics based approaches can save computational
+ cost with some
+degree of lost accuracy, if implemented poorly, they can actually cost more than
 a full MGD simulation.
 
-\par Figures
+\par For situations in which a high degree of simulation accuracy is not needed,
+PRK based approaches offer a computationally inexpensive means with which to
+simulate transients in CFRs, at least those transients which do not occur at
+low powers or involve strong spatial effects, such as significant changes in
+fluid fuel circulation rate.
+Looking back to section \ref{ssec:prk}, Figures
 \ref{fig:zhang_prk_flow}, \ref{fig:zhang_prk_temp}, and 
 \ref{fig:zhang_prk_reac} illustrate how PM0 and PM1,
 standard PRK models excepting that PM1 uses a one-time corrected $\beta_{eff}$,
@@ -1042,10 +1050,14 @@ transient behavior more at lower powers.
 
 \par Overall, more studies are required of the methods for modeling CFR
 kinetics to establish the power ranges and transient
-types in which the various PRK approaches sufficiently capture the reactor behavior.
-In the likely event that even the most rigorous PRK approaches fail to capture
-specific transient responses of interest, implementation of time-adaptive
-quasi-static schemes into system codes will be necessary. This will allow for
+types in which the various PRK approaches sufficiently capture the reactor
+ behavior for a given design.
+Considering the high computational cost of MGD based approaches, in the likely
+ event that even the most rigorous PRK based approaches fail
+to capture
+specific transient responses of interest, the implementation of time-adaptive
+quasi-static schemes into system codes will be necessary for completion of tasks
+of a parametic nature. This will allow for
  future
 risk-informed transient analysis of CFRs in which many hundreds to thousands
 of transient calculations will be needed to be run. In the mean time, MGD
