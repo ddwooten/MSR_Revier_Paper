@@ -139,20 +139,22 @@ troughs.
 \section{Introduction} \label{sec:intro}
 A circulating fuel reactor (CFR) is any reactor in which fuel is ``circulated
  through the reactor and then the heat exchanger" \cite{ergen_1954}.
- Typically, CFRs have one of two sub-types: a fluid-fueled molten salt reactor
+ Typically, CFRs have one of three sub-types: a fluid-fueled molten salt reactor
  (MSR) in which a fuel salt, typically a fluoride or chloride, is dissolved
- in a molten coolant salt, or an aqueous homogeneous reactor (AHR) in which
- a fuel salt, typically a nitrate or sulfate, is dissolved in water.
- For the most part, this work will focus on MSRs rather than AHRs. However,
+ in a molten coolant salt, an aqueous homogeneous reactor (AHR) in which
+ a fuel salt, typically a nitrate or sulfate, is dissolved in water, or a
+ liquid metal fueled reactor (LMFR) in which a liquid metal containing the fuel
+ isotopes is used in the core of the reactor.
+ For the most part, this work will focus on MSRs rather than AHRs or LMFRs. However,
  when possible, the term CFR will be used when statements are more broadly
  applicable to any reactor with circulating fuel.
 \par The history of MSRs began with the Aircraft Reactor Experiment at Oak Ridge National
  Laboratory (ORNL) in the late 1950s and grew with the Molten Salt Reactor Experiment
- (MSRE), which was successfully operated, with a full power rating of 8 MWth, for more than 13,000
+ (MSRE), which was successfully operated, with a full power of 8 MWth, for more than 13,000
  equivalent full-power hours with both \ce{^{233}U} and \ce{^{235}U} fuels at different
 points in time. No other MSR has been built since the MSRE project was closed
- in the late 1960s,despite studies at ORNL including the Molten Salt Breeder
- Reactor (MSBR) and the Denatured Molten Salt Reactor (DMSR) as well as other MSR studies
+ in the late 1960s. Though studies continued at ORNL, including the Molten Salt Breeder
+ Reactor (MSBR) and the Denatured Molten Salt Reactor (DMSR), as well as other MSR studies
  globally. In general, there was very little interest in
  developing CFRs, including MSRs, from the 1970s through the 1990s.  This
  changed in the late 1990s, as interest in CFRs began growing throughout Europe. This momentum
@@ -163,7 +165,7 @@ Liquid Fueled Thorium Molten Salt Reactor (LFTMSR), a Chinese design, the
 FUJI series of reactors out of Japan, and a host of proposed privately designed
 reactors have all additionally driven demand for
 modeling and simulation of CFRs. 
-\par Modeling CFRs proves to be a significant task, even with today's
+\par Modeling CFRs proves to be a challenging task, even with today's
 large selection of reactor simulation tools. This difficulty arises due to
 the many differences between CFRs and solid fuel reactors, which have received the
 majority of global attention. These differences include a liquid fuel
@@ -171,7 +173,7 @@ majority of global attention. These differences include a liquid fuel
  the liquid fuel (e.g. gaseous fission products coming out of solution)
 and the ability to perform online reprocessing and refueling of the liquid fuel.
  This first unique aspect, a flowing fuel, forms the focal point of this work and the
-  works reviewed. Kinetics modelling which allows for predicting
+  works reviewed. Kinetics modelling, which allows for predicting
 a reactor's response in time scales typically less than a few hours, is a key
 requirement to any reactor design effort. Kinetics modeling is challenging in CFRs
 because of their flowing fuel, which displaces the delayed neutron precursors
@@ -181,22 +183,29 @@ In CFRs, DNPs are displaced from their originating position, which is
 most often in locations
 of high neutronic importance, and moved throughout the reactor's primary loop,
 where they may decay in any number of places with varying degrees of
-neutronic importance, perhaps even zero neutronic importance. 
+neutronic importance, perhaps even zero neutronic importance. This
+displacement is particuarly challenging for PRK based approaches
+in that PRK, by its nature, ignores spatial effects of the
+neutron flux on transient evolution. 
 \par It is this movement of the DNPs that CFR kinetics models generally
 attempt to account for. Approaches for doing so range from solving the 
 time-resolved multi-group neutron diffusion equations with advective and
-diffusive terms included on the DNP balance equations all the way to adding
+diffusive terms for fluid motion included on the DNP balance equations
+all the way to adding
 source and sink terms to the point reactor kinetics equations to account
 for out-of-core decay of DNPs. Considering the tight interplay between the
 fluid motion and the neutronic behavior in a CFR, many CFR kinetics approaches
 include coupling neutronics calculations, loosely or tightly, 
 with thermohydraulics simulations. The
 following sections present a review and discussion of the
-unique physical phenomenon tied to CFR kinetics modeling, 
+unique physical phenomena tied to CFR kinetics modeling, 
 followed by an extended discussion of the various proposed models for CFR
 kinetics analysis along with sample transient simulations for
 both fast and thermal systems using representative codes from each main
-simulation method group. Lastly, common assumptions and their effects on CFR
+simulation method group. Following, recommendations are made towards
+which models, or combinations of models, are best suited to various
+work-flows involving the modelling of various transients.
+ Lastly, common assumptions and their effects on CFR
 kinetics modelling will be investigated.
 \par A list of abbreviations used in this paper can be found in Table
 \ref{tbl:nomen}. A summary of all computational tools analyzed
@@ -229,6 +238,7 @@ in this work can be found in Tables \ref{tbl:codes1} through \ref{tbl:codes5},
             IFD & Implicit Finite Difference \\
             IFP & Iterated Fission Probability \\
             IPK & ``I" Point Reactor Kinetics \\
+            LMFR & Liquid Metal Fueled Reactor \\
             MGD & Multi-Group Neutron Diffusion \\
             MMC & Modified Monte Carlo ( accounting for DNP drift ) \\
             MOSART & Molten Salt Actinide Recycler and Transumter \\
