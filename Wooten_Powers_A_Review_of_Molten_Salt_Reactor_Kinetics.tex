@@ -1083,7 +1083,6 @@ It is evident that while quasi-statics based approaches can save computational
  cost with some
 degree of lost accuracy, if implemented poorly, they can actually cost more than
 a full MGD simulation.
-
 \par For situations in which a high degree of simulation accuracy is not needed,
 PRK based approaches offer a computationally inexpensive means with which to
 simulate transients in CFRs, at least those transients which do not occur at
@@ -1147,8 +1146,8 @@ it misses the more dramatic oscillations that IPK captures at the low power
 version of the same transient. These oscillations can be seen in Figure
 \ref{fig:lucotte_ipk_reac} where the extracted power reduction transient shows
 even greater reactivity oscillations than the mirror transient with increased
-power extraction which is in line with
-\cite{zanetti_development_2016}, that DNP re-circulation effects impact
+power extraction. An observation which is in line with what
+\cite{zanetti_development_2016} observed, that DNP re-circulation effects impact
 transient behavior more at lower powers.
 
 \begin{figure}[H]
@@ -1173,7 +1172,8 @@ of a parametic nature. This will allow for
 risk-informed transient analysis of CFRs in which many hundreds to thousands
 of transient calculations will be needed to be run. In the mean time, MGD
 approaches will likely be the first method that any investigation into CFR kinetics
-should turn to, from which an appropriate quasi-static or PRK method can be compared to and accepted for use.
+should turn to, from which an appropriate quasi-static or PRK method can be
+compared to and accepted for use.
 
 \section{Assumptions} \label{sec:asm}
 While the choice of a particular model to simulate CFR kinetics brings
@@ -1425,13 +1425,31 @@ in channel-type reactors are found to have non-negligible impacts on kinetics
 analysis and transient modeling, indicating that at least loose coupling with
 a thermohydraulics code may greatly improve the performance of kinetics models
 for CFRs currently employing the slug flow assumption for their velocity field.
+\par With respect to the applicability of the approaches presented to model
+kinetics analysis in CFRs it is recommended that MGD based approaches be used
+to establish the range of transients in which PRK based approaches can produce
+acceptable transient simulation results for similar reactor designs.
+For transients which lie outside the
+abilities of PRK based approaches, quasi-static schemes, those with time-adaptive
+stepping, can be used for modelling while carraying with them the added benefit
+of reduced computational cost. In this way parametric analysis of reactor operational
+and safety characteriscts can be carried out in a resonable timeframe.
+This, however, would require the existance of a
+user-friendly, time-adaptive, and general-purpose quasi-static code. It is 
+thus recommended that the academic community, perhaps in partnership with
+government labs and private organizations, create such a high quality quasi-static
+based code. This code would ideally be reactor agnostic, at least with respect to
+CFRs, feature more than one PRK based approach with the IPK based approach as an
+option, be open source, be written in a modern coding language such as C++, 
+be well documented, be verrified against existing MGD based approaches, and
+be validated against the available MSRE operational data.
 
 \section{Acknowledgements} \label{sec:ack}
 The corresponding author would like to state that: ``this material is based
 upon work supported under a Department of Energy, Office of Nuclear Energy,
 Integrated University Program Graduate Fellowship". The authors would also
-like to thank Dr. Aufiero, Dr. Brown, Dr. Fiorina, Dr. Fratoni, 
-Dr. K{\u r}epel, 
+like to thank Dr. Aufiero, Dr. Brown, Dr. Fiorina, Dr. Fratoni,
+Dr. K{\u r}epel, Ms. Rowland,
 Dr. Zanetti, and Dr. Zheng for helpful conversations, clarifications, and
 materials.  
 
