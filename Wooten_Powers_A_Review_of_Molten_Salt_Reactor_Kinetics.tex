@@ -102,7 +102,7 @@ number of methods proposed and codes developed to model the kinetics of CFRs;
 a capability essential to the design and evaluation of such reactors. This work
 first reviews the physical phenomena unique to CFRs in the light of current
 research and how CFR kinetics are impacted by these considerations. In general
-it is found that the movement of delayed neutron precurssors ( DNPs ) through
+it is found that the movement of delayed neutron precursors ( DNPs ) through
 the primary loop has significant impacts on transients at low
 reactor powers or those with significant spatial components such as
 a change in the primary loop mass flow rate. Effects on the neutron
@@ -184,7 +184,7 @@ most often in locations
 of high neutronic importance, and moved throughout the reactor's primary loop,
 where they may decay in any number of places with varying degrees of
 neutronic importance, perhaps even zero neutronic importance. This
-displacement is particuarly challenging for PRK based approaches
+displacement is particularly challenging for PRK based approaches
 in that PRK, by its nature, ignores spatial effects of the
 neutron flux on transient evolution. While MGD would then naturally
 seem a better choice for capturing the effects of DNP movement, not
@@ -351,7 +351,7 @@ effects: the likelihood to decay out of core, and the likelihood that, even if t
 DNP decays in-core, the emitted neutron will originate in a region of low
 importance. In Figure \ref{fig:dulla_msre_dnp_displacement} the peaks in DNP
 distribution seen at the lower and upper axial regions of the reactor are
-due to fluid fuel holdup in the lower and upper plena respectively.
+due to fluid fuel holdup in the lower and upper plenna respectively.
 In \cite{dulla_models_2005}, a multi-group
 diffusion scheme modeling the MSRE was used to produce the results shown
 in Figures
@@ -424,7 +424,7 @@ core of the reactor.
                in a hypothetical MSR as described in Figure \ref{fig:zhang_2d_flux}.
                Axial
                values are taken at the center of the core. $C_{n}$ are DNP
-               group concentrations. No units for conentration were given.
+               group concentrations. No units for concentration were given.
                Higher values of n indicates shorter decay half-life.}
    \label{fig:zhang_axial_velocity_dnp_2}
 \end{figure}
@@ -518,7 +518,7 @@ when compared against the multiplication factor for the static fuel case.
 This steady state reduction is easily accounted for in steady state
 criticality codes by adding a previously calculated reactivity
 reduction to the reported criticality value. As such, it may be expected
-that the multipilication factor of a given CFR would continue to decrease
+that the multiplication factor of a given CFR would continue to decrease
 given an increasing flow rate. 
 However, in Figure \ref{fig:zhang_velocity_keff} it is seen that the
 multiplication factor of the system described in \cite{zhang_development_2009-1}
@@ -716,7 +716,7 @@ that do not allow for moving precursors, Equations \ref{eq:prk} and
 
 While these assumptions would not seem to connect well
 with the physics of CFRs, their approximation is not far off from the
-predictions of more rigorous models for transients occuring at higher
+predictions of more rigorous models for transients occurring at higher
 reactor powers where thermal reactivity feedbacks are strongest.
 This is well illustrated by Figures
 \ref{fig:zhang_prk_flow}, \ref{fig:zhang_prk_temp}, and 
@@ -738,7 +738,7 @@ PM1 represents a subclass of PRK methods referred to in this paper as
 flow dependent, adjusted $\beta_{eff}$ to account for
 displacement of DNPs.
 While a discussion of the differences between these methods and other 
-PRK based methods will be defered to Section \ref{sec:comp}
+PRK based methods will be deferred to Section \ref{sec:comp}
 it is worth noting that
 while PM0 overshot and PM1 undershot the power and temperature peak values, and
 while both undershot the final value for the fuel salt temperature, both methods
@@ -803,9 +803,9 @@ systems is a modified version of RELAP5 from \cite{shi_development_2016} in
 which both the reactor kinetics and thermohydraulics modules were modified
 to better model CFRs. The MSRE pump start transient as evaluated by
 \cite{shi_development_2016} is seen in Figure \ref{fig:shi_msre_ps}. The most
-notable aspect of Figure \ref{fig:shi_msre_ps} is how the model understimated
+notable aspect of Figure \ref{fig:shi_msre_ps} is how the model underestimated
 the reactivity peak and the trailing reactivity tail but captured the
-overall behavior of the transient. This behavior is consistant with the
+overall behavior of the transient. This behavior is consistent with the
 general behavior of PRK based approaches.
 
 \begin{figure}[H]
@@ -853,7 +853,7 @@ Details of the method and
 the governing equations can be found in \cite{merle-lucotte_physical_2015}.
 \par Thermal system: No published examples of the IPK method being used
 to analyze transients in a thermal system were found. This does not
-necessarily indicate, however, that IPK is illsuited for thermal CFR
+necessarily indicate, however, that IPK is ill-suited for thermal CFR
 analysis.
 \par Fast system: The results of two simulated extracted power transients
 in the MSFR are shown in Figure \ref{fig:lucotte_ipk}. 
@@ -861,17 +861,17 @@ In each transient the extracted power on the secondary side is changed by
 50\%, one less and one more, and each is simulated with the IPK method and with a
 standard PRK method using a flow-informed corrected $\beta_{eff}$. The most striking
 feature of Figure \ref{fig:lucotte_ipk} is how well the IPK method seems to capture
-the reactivity oscilations that would be expected of such a transient while the
+the reactivity oscillations that would be expected of such a transient while the
 corrected PRK method misses them entirely and yet still manages to capture the
 overall behavior of the transients. These features highlight two important aspects
-oftraditional PRK
-based approches. First how they fail to capture DNP circulation effects and secondly
+of traditional PRK
+based approaches. First how they fail to capture DNP circulation effects and secondly
 how, with a correction for the baseline reactivity lost by having a flowing fuel,
 PRK based approaches can predict the final outcomes of transients involving
 circulating DNPs. Again it is illustrated how the choice of a modelling method
 depends on the information needed from the model. If peak values are needed,
-traditional PRK based approaches are inaduquate for the task. If overall behavior
-and endstates are required, PRK based approaches may be entirely adequate.
+traditional PRK based approaches are inadequate for the task. If overall behavior
+and end-states are required, PRK based approaches may be entirely adequate.
 
 \begin{figure}[H]
    \centering
@@ -888,7 +888,7 @@ using a PRK model derived in the presence of fuel motion
 and weighted with a given weighting function. A complete derivation of such a
 model using the adjoint flux and adjoint delayed-neutron-emissivities can be
 found in \cite{dulla_models_2005}.
-\par Theraml system: In Figure 
+\par Thermal system: In Figure 
 \ref{fig:dulla_4x_flow} a simulated flow induced transient in the MSRE
 is shown in which the fluid flow velocity is increased by a factor
 of four beginning at nominal power.
@@ -897,17 +897,17 @@ to a DPK model in which the parameters have been adjoint weighted without fuel
 flow, ``standard pk (b)" refers to a DPK model in which the parameters have
 been adjoint weighted with fuel flow, ``reformulated pk" refers to the re-derived
 point kinetics model found in \cite{dulla_models_2005}, and ``reference" refers
-to an MGD solution. The most noticable features of this figure are how poorly the
+to an MGD solution. The most noticeable features of this figure are how poorly the
 DPK approaches capture the transient and how even the reformulated MPK approach
-fails to capture the reactivity oscilations from DNP circulation. That said, the
+fails to capture the reactivity oscillations from DNP circulation. That said, the
 MPK based approach does show the expected behavior for PRK based approaches in that
 it misses the maximums and minimums but captures the overall behavior of the
 transient. The DPK approaches fail as the transient is driven by spatial effects
-arrising from a change in flow rate. The updated $\beta$ values in the DPK equations
+arising from a change in flow rate. The updated $\beta$ values in the DPK equations
 are unable to account for previous values of $\beta$.
 \par Fast system: No published examples of an MPK based approach being used
 to analyze transients in a fast system were found. This does not
-necessarily indicate, however, that MPK based approaches are illsuited for fast
+necessarily indicate, however, that MPK based approaches are ill-suited for fast
 CFR analysis.
 
 \begin{figure}[H]
@@ -922,7 +922,7 @@ CFR analysis.
 Quasi-statics represents an attempt to
 reach a compromise between MGD and the various implementations of PRK. While
 MGD uses many fewer approximations than PRK and is more capable of 
-capturing shape or flow-dependent transients and transients occuring
+capturing shape or flow-dependent transients and transients occurring
 at low power,
 it is much more computationally intensive than PRK. In quasi-static
 implementations, of which there are three mentioned in Tables \ref{tbl:codes1}
@@ -960,10 +960,10 @@ seen in Figure \ref{fig:rineiski_msre_ps} is the same MSRE pump start transient
 described in Section \ref{sec:models}. Whether or not the deviations from the
 experimental values seen in Figure \ref{fig:rineiski_msre_ps} are due to the
 shortcomings of the PRK portions of the quasi-static scheme employed or are
-simply the result of computational error limitations is uknown. What is known,
+simply the result of computational error limitations is unknown. What is known,
 and what can be easily seen, is that the quasi-static scheme employed captured
 both the overall behavior of the transient as well as some aspects of the
-reactivity osscilations.
+reactivity oscillations.
 
 \begin{equation}
     \label{eq:spk_static}
@@ -993,7 +993,7 @@ reactivity osscilations.
 \subsubsection{Fast system} \label{sssec:qs_fast}
 No published examples of a quasi-static scheme employed to analyze a fast
 CFR system were found. This fact  does not necessarily indicate, however, that
-quasi-statics are illsuited for fast CFR kinetics analysis.
+quasi-statics are ill-suited for fast CFR kinetics analysis.
 
 \subsection{Fission matrix}
 Typically, fission matrices are considered to be tools to accelerate the fission
@@ -1033,7 +1033,7 @@ approaches presented so far. However, this high degree of accuracy does not
 make MGD based approaches the best approaches to use in all situations.
 MGD based
 approaches suffer from high computational costs and a general complexity of
-user-input. This, in turn, makes MGD based approaches illsuited to tasks
+user-input. This, in turn, makes MGD based approaches ill-suited to tasks
 requiring a large number of transient simulations such as parametric safety
 analysis and parametric design space analysis.
 For situations in which computational speed is necessary and the shortcomings
@@ -1122,7 +1122,7 @@ produces similar transient
 behavior as seen in Figure \ref{fig:fiorina_msfr_ulof} for which
 \cite{fiorina_modelling_2014} used an MGD method to produce, despite the two
 studies using differing pump coast down time constants.
-\par DPK methods may effectivley capture transient evolutions at power and
+\par DPK methods may effectively capture transient evolutions at power and
  with a loss
 of flow, but as shown in Figure \ref{fig:shi_msre_ps} they may fail to
 adequately capture reactivity oscillations in transients occurring at low
@@ -1140,7 +1140,7 @@ transient, fails to capture the strong oscillations in power caused by
 re-circulation of DNP bearing fuel salt. The IPK method, on the other hand,
 seems to capture DNP-induced reactivity oscillations well, even at nominal
 power levels. While Figure \ref{fig:lucotte_ipk} shows the oscillations that
-can be catpured using the
+can be captured using the
 IPK method at higher reactor powers, because of scale effects
 it misses the more dramatic oscillations that IPK captures at the low power
 version of the same transient. These oscillations can be seen in Figure
@@ -1167,7 +1167,7 @@ Considering the high computational cost of MGD based approaches, in the likely
 to capture
 specific transient responses of interest, the implementation of time-adaptive
 quasi-static schemes into system codes will be necessary for completion of tasks
-of a parametic nature. This will allow for
+of a parametric nature. This will allow for
  future
 risk-informed transient analysis of CFRs in which many hundreds to thousands
 of transient calculations will be needed to be run. In the mean time, MGD
@@ -1431,17 +1431,17 @@ to establish the range of transients in which PRK based approaches can produce
 acceptable transient simulation results for similar reactor designs.
 For transients which lie outside the
 abilities of PRK based approaches, quasi-static schemes, those with time-adaptive
-stepping, can be used for modelling while carraying with them the added benefit
+stepping, can be used for modelling while carrying with them the added benefit
 of reduced computational cost. In this way parametric analysis of reactor operational
-and safety characteriscts can be carried out in a resonable timeframe.
-This, however, would require the existance of a
+and safety characteristics can be carried out in a reasonable time frame.
+This, however, would require the existence of a
 user-friendly, time-adaptive, and general-purpose quasi-static code. It is 
 thus recommended that the academic community, perhaps in partnership with
 government labs and private organizations, create such a high quality quasi-static
 based code. This code would ideally be reactor agnostic, at least with respect to
 CFRs, feature more than one PRK based approach with the IPK based approach as an
 option, be open source, be written in a modern coding language such as C++, 
-be well documented, be verrified against existing MGD based approaches, and
+be well documented, be verified against existing MGD based approaches, and
 be validated against the available MSRE operational data.
 
 \section{Acknowledgements} \label{sec:ack}
