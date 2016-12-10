@@ -186,13 +186,17 @@ where they may decay in any number of places with varying degrees of
 neutronic importance, perhaps even zero neutronic importance. This
 displacement is particuarly challenging for PRK based approaches
 in that PRK, by its nature, ignores spatial effects of the
-neutron flux on transient evolution. 
-\par It is this movement of the DNPs that CFR kinetics models generally
-attempt to account for. Approaches for doing so range from solving the 
+neutron flux on transient evolution. While MGD would then naturally
+seem a better choice for capturing the effects of DNP movement, not
+only is it much more computationally expensive than PRK based approaches
+the additional level of detail it provides may not be required considering
+the type of analysis that may be needed. 
+\par Approaches for capturing DNP movement in CFR kinetics codes 
+range from solving the 
 time-resolved multi-group neutron diffusion equations with advective and
 diffusive terms for fluid motion included on the DNP balance equations
 all the way to adding
-source and sink terms to the point reactor kinetics equations to account
+source and sink terms to the PRK equations to account
 for out-of-core decay of DNPs. Considering the tight interplay between the
 fluid motion and the neutronic behavior in a CFR, many CFR kinetics approaches
 include coupling neutronics calculations, loosely or tightly, 
