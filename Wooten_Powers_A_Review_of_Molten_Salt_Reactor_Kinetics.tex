@@ -647,6 +647,48 @@ This includes advective effects, the second term in the neutron flux equation
     (\nu \Sigma_{f})_{g} \phi_{g} - \lambda_{i} C_{i}
 \end{equation}
 
+\begin{landscape}
+\begin{table}[H]
+    \caption{A selected listing of MGD based computational tools for CFR
+                kinetics modelling found in the literature dated later than
+                1990. Please see appendix
+                \ref{app:tools} for an explanation of this table as well as 
+                tables \ref{tbl:codes1} through \ref{tbl:codes5} for the
+                balance of the computational tools data. Additional MGD based
+                computational tools can be found in appendix \ref{app:tools} in
+                Table \ref{tbl:mgd2}.}
+    \label{tbl:mgd}
+    \begin{center}
+        \begin{tabular}{|c c c c c|}
+            \hline
+                Reference &
+                \cite{aufiero_development_2014} &
+                \cite{fiorina_modelling_2014} &
+                \cite{kophazi_development_2009} &
+                \cite{krepel_dyn3d-msr_2007} \\
+                Author & Aufiero & Fiorina & Kophazi & Krepel \\
+                Year & 2014 & 2014 & 2009 & 2007\\
+                Code Name & None & None \tabelfootnote{Code detailed is the
+                                                           PoliMi version} &
+                            DT-MSR & DYN3D-MSR\\
+                Reactor Analyzed & MSFR & MSFR & MSRE & MSRE\\
+                General Reactor Input & No & No & Yes & Yes \\
+                Precursor Treatment & Full Flow & 2D, r-z & Axial Flow &
+                    Full Flow \\
+                Precursor Diffusion & Yes & Yes & No & No \\
+                N. Dimension & 3D & 2D, r-z & 3D, r-z & 3D\\
+                N. Energy Dim. & 6G & 6G & 6G & 2G\\
+                Xs(T) & Log & Log & Interpolation & Uk.\\
+                TH Eqs & Yes & Yes & Yes & Yes\\
+                Validation & Yes \tablefootnote{Against the codes found in
+                                                  \cite{fiorina_modelling_2014}}
+                           & No & Benchmark-MSRE & Benchmark-MSRE\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
+
 \subsubsection{Thermal system} \label{sssec:mgd_ts}
 Representing MGD approaches for the evaluation of thermal systems the DYN3D-MSR
 code, as presented in \cite{krepel_dyn3d-msr_2007}, is chosen. While DYN3D-MSR is
