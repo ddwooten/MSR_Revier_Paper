@@ -653,9 +653,7 @@ This includes advective effects, the second term in the neutron flux equation
                 1990. Please see appendix
                 \ref{app:tools} for an explanation of this table as well as 
                 tables \ref{tbl:codes1} through \ref{tbl:codes5} for the
-                balance of the computational tools data. Additional MGD based
-                computational tools can be found in appendix \ref{app:tools} in
-                Table \ref{tbl:mgd2}.}
+                balance of the computational tools data.}
     \label{tbl:mgd}
     \begin{center}
         \begin{tabular}{|c c c c c|}
@@ -668,14 +666,14 @@ This includes advective effects, the second term in the neutron flux equation
                 Author & Aufiero & Fiorina & Kophazi & Krepel \\
                 Year & 2014 & 2014 & 2009 & 2007\\
                 Code Name & None & None \tablefootnote{Code detailed is the
-                                                           PoliMi version} &
-                            DT-MSR & DYN3D-MSR\\
+                                                           PoliMi version} 
+                          & DT-MSR & DYN3D-MSR\\
                 Reactor Analyzed & MSFR & MSFR & MSRE & MSRE\\
                 General Reactor Input & No & No & Yes & Yes \\
                 Precursor Treatment & Full Flow & 2D, r-z & Axial Flow &
                     Full Flow \\
                 Precursor Diffusion & Yes & Yes & No & No \\
-                N. Dimension & 3D & 2D, r-z & 3D, r-z & 3D\\
+                N. Dimension & 3D & 2D, r-z & 3D & 3D\\
                 N. Energy Dim. & 6G & 6G & 6G & 2G\\
                 Xs(T) & Log & Log & Interpolation & Uk.\\
                 TH Eqs & Yes & Yes & Yes & Yes\\
@@ -815,6 +813,44 @@ While differing researchers
 tend to implement each given method in a slightly different way, methods are
 grouped by similar characteristics to avoid a meaningless proliferation of
 approaches.
+
+\begin{table}[H]
+    \caption{A selected listing of PRK based computational tools for CFR
+                kinetics modelling found in the literature dated later than
+                1990. Please see appendix
+                \ref{app:tools} for an explanation of this table as well as 
+                tables \ref{tbl:codes1} through \ref{tbl:codes5} for the
+                balance of the computational tools data.}
+    \label{tbl:prk}
+    \begin{center}
+        \begin{tabular}{|c c c c c|}
+            \hline
+                Reference &
+                \cite{guo_simulations_2013} &
+                \cite{merle-lucotte_physical_2015} &
+                \cite{shi_development_2016} &
+                \cite{zanetti_extension_2015} \\ 
+                Author & Guo & Merle-Lucotte & Shi & Zanetti \\
+                Year & 2013 & 2015 & 2016 & 2015 \\
+                Code Name & None & None \tablefootnote{The authors detail two
+                                                          PRK based
+                                                          approaches. Both are
+                                                          described here.}
+                          & RELAP5 & TRACE \\
+                Reactor Analyzed & MSRE, MOSART & MSFR & MSRE, MSBR, TMSR-LF 
+                                 & MSRE \\
+                General Reactor Input & Uk. & Uk. & Yes & Yes \\
+                Precursor Treatment & DPK & CPK, IPK & DPK & Full Flow \\
+                Precursor Diffusion & No & No, No & No & No \\
+                N. Dimension & 0D & 0D, 3D & 0D & 0D \\
+                N. Energy Dim. & 0 & 0, 0 & 0 & 0 \\
+                Xs(T) & Uk. & Uk. & Uk. & Yes \\
+                TH Eqs & No & Uk. & Yes & Yes \\
+                Validation & MSRE & No & MSRE & MSRE \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 
 \subsubsection{Decay point reactor kinetics} \label{sssec:dpk}
 In this paper,
@@ -982,6 +1018,55 @@ updates, or at least in the presence of the perturbation. Without an adaptive
 updating scheme, the requirement of frequent shape updates through an MGD
 calculation can strongly reduce the computational savings offered by
 quasi-statics.
+
+\begin{table}[H]
+    \caption{A selected listing of quasi-static based computational tools for
+                CFR kinetics modelling found in the literature dated later than
+                1990. Please see appendix
+                \ref{app:tools} for an explanation of this table as well as 
+                tables \ref{tbl:codes1} through \ref{tbl:codes5} for the
+                balance of the computational tools data. For the ``Precurssor
+                Treatment" row the quasi-static schemes in Table \ref{tbl:qs}
+                are given two entries: the first for the treatment used in the
+                MGD portion of the scheme and the second for the treatment used
+                in the PRK portion of the scheme.}
+    \label{tbl:qs}
+    \begin{center}
+        \begin{tabular}{|c c c c|}
+            \hline
+                Reference &
+                \cite{dulla_models_2005} &
+                \cite{rineiski_kinetics_2005} &
+                \cite{wu_coupled_2016} \\ 
+                Author & Dulla & Rineiski & Wu \\
+                Year & 2005 & 2005 & 2016\\
+                Code Name & DYNAMOSS \tablefootnote{While the author cites
+                                                    \ref{dulla_models_2005} as
+                                                    the source of this name it
+                                                    appears nowhere in 
+                                                    \ref{dulla_models_2005}.
+                                                    Rather, the code is named
+                                                    in later works.}
+                          & SIMMER-III & VIOLET\_MSR \\
+                Reactor Analyzed & MSRE, MSBR & MSRE & MSRE \\
+                General Reactor Input & Uk. & Yes & Yes \\
+                Precursor Treatment & Axial Flow, MPK
+                                                  \tablefootnote{Importance
+                                                                  weighted
+                                                                  parameters}
+                                    & Full Flow, MPK & Full Flow, Uk.\\
+                Precursor Diffusion & No & No, No & No \\
+                N. Dimension & 2D, r-z & 3D & 3D \\
+                N. Energy Dim. & MG, 0 & MG, 0 & Uk. \\
+                Xs(T) & None \tablefootnote{To the best of the author's
+                                               knowledge}
+                      & Uk. & Uk. \\
+                TH Eqs & No & Yes & Yes \\
+                Validation & Benchmark-MSRE & Benchmark-MSRE & MSRE\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 
 \subsubsection{Thermal system} \label{sssec:qs_therm}
 Representing quasi-static approaches for the evaluation of thermal systems
@@ -1515,7 +1600,10 @@ capability or if it is reactor specific; tools which in theory could be used for
 any reactor but do not have a general meshing tool are not considered generic.
 The ``Precursor Treatment" row specifies methods used to
 treat the precursor drift; whether that was a variant of the PRK models
-or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement.
+or 1D axial or 2D r-z, or 3D full flow modelling of the DNP movement. For
+quasi-static based tools two entires are given for the ``Precursor Treatment".
+The first is for the MGD based portion of the scheme while the second is for the
+PRK based portion of the scheme.
 The ``Precursor Diffusion" row indicates if turbulent diffusion was included in
 modeling the DNP distributing.
 The ``N.Method" row indicates the computational method used to model
@@ -1583,17 +1671,18 @@ summarized by \cite{delpech_benchmark_2003}.
                 Reactor Analyzed & MSFR & MSRE, MSBR & MSFR & MSRE, MOSART &
                     MSRE, MSBR, MSFR\\
                 General Reactor Input & No & Uk. & No & Uk. & No\\
-                Precursor Treatment & Full Flow & MPK \tablefootnote{
-                    Importance weighted parameters} \tablefootnote{Quasi-Static
-                    schemes are given two precursor treatments, first their
-                    MGD treatment is given, second their PRK treatment is given}
+                Precursor Treatment & Full Flow & Axial Flow, MPK
+                                                              \tablefootnote{
+                                                              Importance
+                                                              weighted
+                                                              parameters}
                     & 2D, r-z &
                     DPK & DPK, Full Flow\\
                 Precursor Diffusion & Yes & No & Yes & No & No, Yes\\
                 Precursor Groups & 8 & 6 & 8 & 6 & 6, 8\\
-                N. Method & MGD & Quasi-Statics & MGD & PRK & PRK, MGD\\
+                N. Method & MGD & Quasi-statics & MGD & PRK & PRK, MGD\\
                 N. Dimension & 3D & 2D, r-z & 2D, r-z & 0D & 0D, 3D\\
-                N. Energy Dim. & 6G & MG & 6G & 0 & 0, MG\\
+                N. Energy Dim. & 6G & MG, 0 & 6G & 0 & 0, MG\\
                 Xs(T) & Log & None\tablefootnote{To the best of
                     the author's knowledge} & Log & Uk. & Various\\
                 TH Mass Eq & Yes & No & Yes & No & No, Yes\\
@@ -1638,8 +1727,12 @@ summarized by \cite{delpech_benchmark_2003}.
                     approach. Both are presented in that order} & None \\
                 Reactor Analyzed & MSRE & MSRE, MSBR & MSRE & Slab & MSFR \\
                 General Reactor Input & Yes & Yes & Yes & Yes & No \\
-                Precursor Treatment & Axial Flow & Axial Flow &
-                    Full Flow\textsuperscript{6} & MPK\textsuperscript{4}, MGD &
+                Precursor Treatment & Axial Flow & Axial Flow 
+                                    & Full Flow \tablefootnote{To the best of
+                                                                the author's 
+                                                                knowledge} 
+                                    & MPK \tablefootnote{Importance weighted
+                                                            parameters}, MGD &
                     Full Flow\\
                 Precursor Diffusion & No & No & No & No, No & Uk. \\
                 Precursor Groups & 6 & Arbitrary & Arbitrary & 6, 6 & N/A \\
@@ -1687,21 +1780,21 @@ summarized by \cite{delpech_benchmark_2003}.
                     \cite{wang_development_2003}, \cite{rineiski_kinetics_2005},
                     \cite{wang_molten_2006},
                     \cite{rineiski_safety-related_2006} \\
-                Code Name & Cinsf1D & None\tablefootnote{The authors provide
-                    two PRK based approaches. Both are detailed here, one
+                Code Name & Cinsf1D & None\tablefootnote{The authors detail
+                    two PRK based approaches. Both are described here, one
                     after the other} & None & COUPLE \tablefootnote{COUPLE
                     has both an MGD solver and a PRK solver, both methods
                     are detailed here} & SIMMER-III \\
                 Reactor Analyzed & AMSTER & MSFR & MOSART & MOSART & MSRE\\
                 General Reactor Input & Uk. & Uk. & No & Yes & Yes \\
                 Precursor Treatment & Axial Flow & CPK, IPK & Full Flow &
-                   Full Flow, MPK\textsuperscript{4} & Full Flow,
-                   MPK\textsuperscript{4} \\
+                   Full Flow, MPK & Full Flow,
+                   MPK \\
                 Precursor Diffusion & No & No, No & No & No & No \\
                 Precursor Groups & 6 & 7, 7 &  Uk. & Arbitrary & 1 \\
-                N. Method & MGD & PRK, PRK & MGD & MGD, PRK & Quasi-Statics \\
+                N. Method & MGD & PRK, PRK & MGD & MGD, PRK & Quasi-statics \\
                 N. Dimension & 1D & 0D, 3D & 2D, r-z & 3D & 3D\\
-                N. Energy Dim. & 2G & 0, 0 & Uk. & MG, 0 & MG \\
+                N. Energy Dim. & 2G & 0, 0 & Uk. & MG, 0 & MG, 0 \\
                 Xs(T) & Interpolation & Uk. & Uk. & Uk. & Uk.\\
                 TH Mass Eq & No & Uk. & Yes & Yes & Yes\\
                 TH Energy Eq & Yes & Yes & Yes & Yes & Yes\\
@@ -1709,8 +1802,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 Turbulence Treatment & N/A & Uk. & Stream Function/Vorticity &
                     RANKS, k-$\epsilon$ & Uk.\\
                 Density Treatment & N/A & Uk. & Boussinesq & Uk. & Uk.\\
-                Spatial Discretization & FDM & Uk. & FVM & FVM
-                    \textsuperscript{5} & Uk.\\
+                Spatial Discretization & FDM & Uk. & FVM & FVM & Uk.\\
                 Time Discretization & Uk. & Uk. & IEM & FID & Uk.\\
                 Validation & Benchmark-MSRE & No & No & No & Benchmark-MSRE\\
             \hline
@@ -1743,7 +1835,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 Precursor Treatment & DPK & DPK & Full Flow, Uk. & Full Flow \\
                 Precursor Diffusion & No & No & No & No \\
                 Precursor Groups & Arbitrary & 6 & 6 & 6 \\
-                N. Method & PRK & PRK & Quasi-Statics & MGD \\
+                N. Method & PRK & PRK & Quasi-statics & MGD \\
                 N. Dimension & 0D & 2D, r-z & 3D & 2D, r-z \\
                 N. Energy Dim. & 0 & 0 & Uk. & 2G\\
                 Xs(T) & Uk. & Interpolation & Uk. & Uk. \\
@@ -1800,7 +1892,7 @@ summarized by \cite{delpech_benchmark_2003}.
                 Validation & No & MSRE & TWIGL\tablefootnote{See
                     \cite{zhang_development_2009} for an explanation} &
                     2D TWIGL\tablefootnote{See \cite{zhuang_studies_2015} for
-                    an explanation}, 3D LMW\textsuperscript{12}, MSRE\\
+                    an explanation}, 3D LMW \tablefootnote{see \cite{zhuang_studies_2015} for an explanation}, MSRE\\
             \hline
         \end{tabular}
     \end{center}
