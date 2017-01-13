@@ -606,14 +606,15 @@ this transient attempt to match.
 
 \subsection{Multi-group diffusion} \label{ssec:mgd}
 In terms of fidelity, within the modelling approaches considered for this
-work, multi-group diffusion (MGD) approaches are the gold standard because they
+work, MGD based approaches are the gold standard because they
 make the fewest assumptions and simplifications out of any of the models.
 This increases their computational cost, however, making these methods
 the most computationally expensive of all the approaches considered, at least
 those with computational cost data available. In turn this makes MGD based
 approaches poor candidates for tasks involving large number of transient
 simulations, e.g. parametric safety analysis and parametric design space
-analysis. 
+analysis. \textcolor{red}{In Table \ref{tbl:mgd} a selected group of MGD based computational
+tools which exhibit desirable characteristics are presented.}
 \par Which ever way the multi-group
 diffusion problem is solved its structure allows, though not all implementations
 include all of the physics, for the direct incorporation
@@ -1041,10 +1042,10 @@ quasi-statics.
                 Author & Dulla & Rineiski & Wu \\
                 Year & 2005 & 2005 & 2016\\
                 Code Name & DYNAMOSS \tablefootnote{While the author cites
-                                                    \ref{dulla_models_2005} as
+                                                    \cite{dulla_models_2005} as
                                                     the source of this name it
                                                     appears nowhere in 
-                                                    \ref{dulla_models_2005}.
+                                                    \cite{dulla_models_2005}.
                                                     Rather, the code is named
                                                     in later works.}
                           & SIMMER-III & VIOLET\_MSR \\
@@ -1299,6 +1300,51 @@ of transient calculations will be needed to be run. In the mean time, MGD
 approaches will likely be the first method that any investigation into CFR kinetics
 should turn to, from which an appropriate quasi-static or PRK method can be
 compared to and accepted for use.
+
+\begin{landscape}
+\begin{table}[H]
+    \caption{A selected listing of computational tools for CFR
+                kinetics modelling found in the literature dated later than
+                1990. Please see appendix
+                \ref{app:tools} for an explanation of this table as well as 
+                tables \ref{tbl:codes1} through \ref{tbl:codes5} for the
+                balance of the computational tools data.}
+    \label{tbl:select_codes}
+    \begin{center}
+        \begin{tabular}{|c c c c c c|}
+            \hline
+                Reference &
+                \cite{aufiero_development_2014} &
+                \cite{laureau_coupled_2015} &
+                \cite{merle-lucotte_physical_2015} &
+                \cite{shi_development_2016} &
+                \cite{wu_coupled_2016} \\
+                Author & Aufiero & Laureau & Merle-Lucotte & Shi & Wu \\
+                Year & 2014 & 2015 & 2015 & 2016 & 2016 \\
+                Code Name & None & None & None \tablefootnote{The authors detail
+                                                                two PRK based
+                                                                approaches. Both
+                                                                are described
+                                                                here}
+                          & RELAP5 & VIOLET\_MSR \\
+                Reactor Analyzed & MSFR & MSFR & MSFR & MSRE, MSBR, TMSR-LF
+                                 & MSRE \\
+                General Reactor Input & No & No & Uk. & Yes & Yes \\
+                Precursor Treatment & Full Flow & Full Flow & CPK, IPK 
+                                    & DPK & Full Flow \\
+                Precursor Diffusion & Yes & Uk. & No & No & No\\
+                N. Dimension & 3D & 3D & 0D, 3D & 0D & 2D, r-z \\
+                N. Energy Dim. & 6G & CE & 0, 0 & 0 & 2G \\
+                Xs(T) & Log & OTFDB & Uk. & Uk. & Uk.\\
+                TH Eqs & Yes & Yes & Uk. & Yes & Yes \\
+                Validation & Yes \tablefootnote{Against the codes found in
+                                                  \cite{fiorina_modelling_2014}}
+                           & No & No & MSRE & No \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{landscape}
 
 \section{Assumptions} \label{sec:asm}
 While the choice of a particular model to simulate CFR kinetics brings
