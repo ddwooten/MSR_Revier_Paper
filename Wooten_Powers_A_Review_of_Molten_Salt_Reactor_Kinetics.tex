@@ -481,8 +481,14 @@ However,
 this reduction in $\beta_{eff}$ does not act equally upon all DNP groups. Table
 \ref{tbl:dulla_flow_regimes_beta} shows that, regardless of the flow regime chosen,
 the reactivity contribution of longer half-life DNP groups is
-reduced more than that of shorter half-life DNP groups. In the case of slug
-flow in a MOSART-like system, the longest lived DNP group experiences a 68\%
+reduced more than that of shorter half-life DNP groups. In the case of uniform
+\footnote{In \cite{dulla_interactions_2007} the term ``slug flow" is used to
+indicate a uniform fluid velocity profile - not a liquid-vapor mixture with
+large pockets of vapor seperated by ``slugs" of liquid as the term is commonly
+used to mean. For clarity the less amibiguous term ``uniform" is used in this
+paper when referring to fluid velocity profiles termmed ``slug flow" in the
+aforementioned work.}
+in a MOSART-like system, the longest lived DNP group experiences a 68\%
 reduction in reactivity contribution, while the shortest lived DNP group
 experiences less than a 1\% reduction. These effects are driven by the increased
 chance a long-lived DNP has of being swept into the primary loop before it can
@@ -491,10 +497,10 @@ before it even has the chance to leave.
 
 \subsection{$k_{eff}$} \label{ssec:keff}
 Given the reactivity reduction associated with increased fluid flow
-velocity in CFRs, it would seem to follow
+velocity in CFRs, it would follow
 that there would be a commensurate reduction in the multiplication factor of
 the system. This is certainly the case as the neutron multiplication factor
-of a CFR is reduced by a given amount given a fluid flow condition
+of a CFR is reduced by an amount given a fluid flow condition
 when compared against the multiplication factor for the static fuel case.
 This steady state reduction is easily accounted for in steady state
 criticality codes by adding a pre-calculated reactivity
@@ -522,15 +528,23 @@ fluid flow velocity.
 \begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_14}
-   \caption{Figure 14 from \cite{zhang_development_2009-1}. Values produced for a hypothetical
-   MSR as described in Figure \ref{fig:zhang_2d_flux}.}
+   \caption{Figure 14 from \cite{zhang_development_2009-1} showing the
+   effective multiplication factor of the core as a function of the inflow fluid
+   velocity while both fluid inlet temperature and out-of-core residence time 
+   are held constant. Values produced for a hypothetical
+   MSR as described in Figure \ref{fig:zhang_2d_flux}. In this work ``resident
+   time" indicates the time spent out of the core by the fuel salt - not the
+   time spent in the core.}
    \label{fig:zhang_velocity_keff}
 \end{figure}
 
 \begin{figure}[H]
    \centering
    \includegraphics[width=0.8\textwidth]{Zhang_Development_2009-1_Fig_18}
-   \caption{Figure 18 from \cite{zhang_development_2009-1}. Values produced for a hypothetical MSR
+   \caption{Figure 18 from \cite{zhang_development_2009-1} showing the effective
+   multiplication factor of the core as a function of the out-of-core residence
+   time while both fluid inlet temperature and inlet velocity are held constant.
+   Values produced for a hypothetical MSR
    as described in Figure \ref{fig:zhang_2d_flux}.} 
    \label{fig:zhang_residence_time_keff}
 \end{figure}
@@ -841,13 +855,13 @@ fuel residence time in the primary loop.
 \end{equation}
 
 In addition to approximating the loss of DNPs from the core due to fluid
-flow effects, all DNP implementations presented in this paper include
+flow effects, all DPK implementations presented in this paper include
 a bias reactivity subtracted from the numerator in the first right-hand-side
 term of Equation \ref{eq:prk}, or a one-time corrected $\beta_{eff}$ to account
 for the reduction of the contribution of DNPs to neutron multiplication in
 going from a static fuel to a flowing fuel.
 
-\par \textcolor{red}{Thermal System:} Representing DPK approaches for the evaluation of thermal
+\par \textit{Thermal System:} Representing DPK approaches for the evaluation of thermal
 systems is a modified version of RELAP5 \cite{shi_development_2016} in
 which both the reactor kinetics and thermohydraulics modules were modified
 to better model CFRs. Figure \ref{fig:shi_msre_ps} 
@@ -866,7 +880,7 @@ general behavior of PRK approaches.
    \label{fig:shi_msre_ps}
 \end{figure}
 
-\par \textcolor{red}{Fast System:} Representing DPK approaches for the evaluation of fast
+\par \textit{Fast System:} Representing DPK approaches for the evaluation of fast
 systems is a DPK implementation \cite{guerrieri_investigation_2013}
 modelling the ULOF transient in the MSFR. The evolution of this transient is
 seen in Figure \ref{fig:guerrieri_msfr_ulof}. The primary pumps are
@@ -900,11 +914,11 @@ meshes exchange information to update one another with the moving mesh advancing
 its cells in space according to the flow characteristics of the system.
 Details of the method and
 the governing equations can be found elsewhere \cite{merle-lucotte_physical_2015}.
-\par \textcolor{red}{Thermal system:} No published examples of the IPK method being used
+\par \textit{Thermal system:} No published examples of the IPK method being used
 to analyze transients in a thermal system were found. This does not
 necessarily indicate, however, that IPK is ill-suited for thermal CFR
 analysis.
-\par \textcolor{red}{Fast system:} The results of two simulated extracted power transients
+\par \textit{Fast system:} The results of two simulated extracted power transients
 in the MSFR are shown in Figure \ref{fig:lucotte_ipk}. 
 In each transient the extracted power on the secondary side is changed by
 50\%, one less and one more, and each is simulated with the IPK method and with a
@@ -937,7 +951,7 @@ using a PRK model derived in the presence of fuel motion
 and weighted with a given weighting function. A complete derivation of such a
 model using the adjoint flux and adjoint delayed-neutron-emissivities can be
 found in the literature \cite{dulla_models_2005}.
-\par \textcolor{red}{Thermal system:} Figure 
+\par \textit{Thermal system:} Figure 
 \ref{fig:dulla_4x_flow} shows a simulated flow-induced transient in the MSRE
 in which the fluid flow velocity is increased by a factor
 of four beginning at nominal power.
@@ -954,7 +968,7 @@ it misses the maximums and minimums but captures the overall behavior of the
 transient. The DPK approaches fail as the transient is driven by spatial effects
 arising from a change in flow rate. The updated $\beta$ values in the DPK equations
 are unable to account for previous values of $\beta$.
-\par \textcolor{red}{Fast system:} No published examples of an MPK based approach being used
+\par \textit{Fast system:} No published examples of an MPK based approach being used
 to analyze transients in a fast system were found. This does not
 necessarily indicate, however, that MPK based approaches are ill-suited for fast
 CFR analysis.
@@ -1052,9 +1066,9 @@ Movable DNPs are represented by
 Equation \ref{eq:spk_move}. A unifying equation, Equation \ref{eq:spk_uni},
 links the two aforementioned equations.
 Additional details can be found elsewhere \cite{rineiski_kinetics_2005}. The transient
-seen in Figure \ref{fig:rineiski_msre_ps} is the same MSRE pump start transient
+seen in Figure \ref{fig:wang_msre_ps} is the same MSRE pump start transient
 described above. Whether or not the deviations from the
-experimental values seen in Figure \ref{fig:rineiski_msre_ps} are due to the
+experimental values seen in Figure \ref{fig:wang_msre_ps} are due to the
 shortcomings of the PRK portions of the quasi-static scheme employed or are
 simply the result of computational error limitations is unknown. 
 However, the quasi-static scheme employed captured
@@ -1080,10 +1094,14 @@ reactivity oscillations.
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=0.8\textwidth]{Rineiski_Kinetics_2005_Fig_2}
-   \caption{Figure 2 from \cite{rineiski_kinetics_2005} showing the experimental and simulated
-   response of the MSRE to the pump start-up and pump coast down transients.} 
-   \label{fig:rineiski_msre_ps}
+   \includegraphics[width=0.8\textwidth]{Wang_Development_2003_Fig_7}
+   \caption{Figure 7 from \cite{wang_development_2003} showing the experimental and simulated
+   response of the MSRE to the pump start-up and pump coast down transients.
+   While \cite{rineiski_kinetics_2005} has a more complete description of how
+   SIMMER-III handles DNPs, \cite{wang_development_2003} has a higher quality
+   figure of the same transients using the same code and so it is used here
+   rather than the figure from \cite{rineiski_kinetics_2005}.} 
+   \label{fig:wang_msre_ps}
 \end{figure}
 
 \subsubsection{Fast system} \label{sssec:qs_fast}
@@ -1104,7 +1122,7 @@ to update the neutron flux and power distribution in the modeled system. At
 this time, no published data exists concerning the computational cost
 of such an approach. In Figure \ref{fig:laureau_msfr}, a 300 pcm reactivity
 insertion transient in the MSFR can be seen as modeled by this new approach. The
-slight bump in power seen at about \textcolor{red}{3 seconds} is due to DNP-rich fuel salt
+slight bump in power seen at about \textcolor{red}{1 second} is due to DNP-rich fuel salt
 re-circulation from the initial power spike. While no published transients
 involving a 300 pcm reactivity insertion in the MSFR could be found to compare
 against Figure \ref{fig:laureau_msfr}, the method used appears to
@@ -1135,7 +1153,7 @@ analysis and parametric design space analysis.
 For situations in which computational speed is necessary and the shortcomings
 of PRK based approaches are unacceptable, quasi-statics based approaches
 show simulation capability comparable to MGD approaches as seen in
-Figure \ref{fig:rineiski_msre_ps}, while promising at
+Figure \ref{fig:wang_msre_ps}, while promising at
 least modest computational cost savings. \cite{dulla_models_2005} showcases
 a variety of transients in a critical and sub-critical MSRE configuration with
 differing numbers of shape recalculations in the quasi-static scheme presented 
@@ -1300,6 +1318,8 @@ Tables \ref{tbl:codes1} through \ref{tbl:codes5} for more computational tools an
                 Precursor Treatment & Full Flow & Full Flow & CPK, IPK 
                                     & DPK & Full Flow, Uk. \\
                 Precursor Diffusion & Yes & Uk. & No & No & No\\
+                N. Method & MGD & Transient Fission Matrix & PRK & PRK &
+                            Quasi-statics \\     
                 N. Dimension & 3D & 3D & 0D, 3D & 0D & 2D, r-z \\
                 N. Energy Dim. & 6G & CE & 0, 0 & 0 & 2G \\
                 Xs(T) & Log & OTFDB & Uk. & Uk. & Uk.\\
@@ -1392,7 +1412,7 @@ Just as there is a choice of assumptions to be made with respect to the
 modelling of DNP distributions in CFRs, there are choices to be
 made with respect to the modelling of the thermohydraulics. One of the most
 common assumptions made in many of the works examined in this paper is 
-slug flow for the velocity profile in the channel-type CFRs. This is a
+a uniform profile for the velocity profile in the channel-type CFRs. This is a
 particularly common assumption for those approaches which do not explicitly
 model the fuel salt flow in the core but rather ignore thermohydraulics
 all together or employ an energy balance to account for temperature effects
@@ -1441,7 +1461,7 @@ summarized by Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
    shown in the upper right corner. Please refer to
    Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf} for an
    explanation of the flow regimes seen here. In this figure, circles correspond
-   to a ``slug" (flat) flow regime, asterisks to a ``parabolic" flow regime,
+   to a ``slug" (uniform) flow regime, asterisks to a ``parabolic" flow regime,
    stars to an
    ``ADF" flow regime, squares to an ``SOD" flow regime, and triangles to an
    ``SOI" flow regime.} 
@@ -1453,7 +1473,10 @@ summarized by Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.
     ``Slug"
         refers to a uniform velocity profile across the reactor core.
         The other flow regimes seen in this table are explained in
-        Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}.} 
+        Figures \ref{fig:dulla_flow_map} and \ref{fig:dulla_flow_adf}. This
+        table shows the reactivity change in a simulated MSRE corresponding to
+        different fluid fuel flow patterns. The reactivity change is given both
+        overall and broken down into contributions from each DNP group.} 
     \label{tbl:dulla_flow_regimes_beta}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
@@ -1559,7 +1582,7 @@ approaches. Furthermore, the differences between various flow regimes assumed
 in channel-type reactors are found to have non-negligible impacts on kinetics
 analysis and transient modeling, indicating that at least loose coupling with
 a thermohydraulics code may greatly improve the performance of kinetics models
-for CFRs currently employing the slug flow assumption for their velocity field.
+for CFRs currently employing the uniform flow assumption for their velocity field.
 \par Of the approaches reviewed for 
 kinetics analysis in CFRs, it is recommended that MGD approaches be used
 to establish the range of transients in which PRK based approaches can produce
@@ -1718,7 +1741,7 @@ summarized by \cite{delpech_benchmark_2003}.
                    RANS, k-$\epsilon$ & N/A & N/A; RANS, k-$\epsilon$\\
                 Density Treatment & Boussinesq & N/A & Compressible & N/A &
                    N/A, Compressible\\
-                Spatial Discretization & FVM & FVM & Uk. & N/A & N/A, FVM\\
+                Spatial Discretization & FVM & FVM & Uk. & N/A & N/A, FEM\\
                 Time Discretization & ESDIRK & IDE & Uk. & Uk. & Uk.\\
                 Validation & Verified\tablefootnote{Against the codes found in
                     \cite{fiorina_modelling_2014}} & Benchmark-MSRE & No &
