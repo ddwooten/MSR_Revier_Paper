@@ -192,7 +192,7 @@ source and sink terms to point reactor kinetics (PRK) equations to account
 for out-of-core decay of DNPs. Considering the tight interplay between the
 fluid motion and the neutronic behavior in a CFR, many CFR kinetics approaches
 include coupling neutronics calculations, loosely or tightly, 
-with thermohydraulics simulations. This paper present a review and discussion of the
+with thermohydraulics simulations. This paper presents a review and discussion of the
 unique physical phenomena tied to CFR kinetics modeling in Section 2. Section 3 contains
 an extended discussion of the various proposed models for CFR
 kinetics analysis along with sample transient simulations for
@@ -336,7 +336,7 @@ as shown in Figure \ref{fig:dulla_msre_dnp_displacement}, these effects also
 reduce the neutronic importance of DNPs, as shown in Figure
 \ref{fig:dulla_msre_dnp_importance}. This phenomenon is difficult
 for PRK based approaches to capture. This importance reduction is due to two
-effects: DNP decay out of core and in-core DNP decays in a region of low
+effects: DNP decay out of core and in-core DNP decays in regions of low
 importance. In Figure \ref{fig:dulla_msre_dnp_displacement}, the peaks in DNP
 distribution seen at the lower and upper axial regions of the reactor are
 due to fluid fuel holdup in the lower and upper plenna respectively.
@@ -605,15 +605,16 @@ the most computationally expensive of all the approaches considered.
 In turn, this makes MGD based
 approaches poor candidates for tasks involving large number of transient
 simulations, such as parametric safety analysis and parametric design space
-analysis. \textcolor{red}{In Table \ref{tbl:mgd} a selected group of MGD based computational
-tools which exhibit desirable characteristics is presented.}
+analysis. In Table \ref{tbl:mgd} a selected group of MGD based computational
+tools which exhibit desirable characteristics is presented.
 \par MGD allows for the direct incorporation
 of fluid flow effects on both the neutron flux and the DNP concentration as
 seen in Equation \ref{eq:mgd} and \ref{eq:mgd_dnp}.
 This includes advective effects, the second term in the neutron flux equation 
  and the first term in the DNP distribution equation, and diffusive effects on
- the DNP distribution, the second term. In Equation \ref{eq:mgd_dnp}
- $Sc_{T}$ is the turbulent Schmidt number and $nu_{T}$ is the eddy viscosity. 
+ the DNP distribution, the second term in equation \ref{eq:mgd_dnp}.
+ In Equation \ref{eq:mgd_dnp}
+ $Sc_{T}$ is the turbulent Schmidt number and $\nu_{T}$ is the eddy viscosity. 
 
 \begin{equation}
 \label{eq:mgd}
@@ -678,7 +679,7 @@ This includes advective effects, the second term in the neutron flux equation
 
 \subsubsection{Thermal system} \label{sssec:mgd_ts}
 Representing MGD approaches for the evaluation of thermal systems, the DYN3D-MSR
-code \cite{krepel_dyn3d-msr_2007} is chosen. While DYN3D-MSR is
+code from \cite{krepel_dyn3d-msr_2007} is chosen. While DYN3D-MSR is
 capable of modelling DNP distributions in 3D, 
 the radial DNP distribution is assumed to be constant
 due to the MSRE's channel guided flow. \cite{krepel_dyn3d-msr_2007} 
@@ -798,11 +799,11 @@ sections, various PRK based methods will be discussed.
 While different researchers
 tend to implement each method in slightly different ways, methods are
 grouped by similar characteristics.  
-\textcolor{red}{Table \ref{tbl:prk} presents a selected group of PRK computational
+Table \ref{tbl:prk} presents a selected group of PRK computational
 tools that exhibit desirable characteristics. 
 See Appendix \ref{app:tools} for an explanation of this table, and  
 Tables \ref{tbl:codes1} through \ref{tbl:codes5} for more computational tools
-and more detailed information.}
+and more detailed information.
 
 \begin{table}[H]
     \caption{A selected listing of PRK computational tools for CFR
@@ -862,10 +863,10 @@ for the reduction of the contribution of DNPs to neutron multiplication in
 going from a static fuel to a flowing fuel.
 
 \par \textit{Thermal System:} Representing DPK approaches for the evaluation of thermal
-systems is a modified version of RELAP5 \cite{shi_development_2016} in
+systems is a modified version of RELAP5 from \cite{shi_development_2016} in
 which both the reactor kinetics and thermohydraulics modules were modified
 to better model CFRs. Figure \ref{fig:shi_msre_ps} 
-shows the MSRE pump start transient as evaluated by this code \cite{shi_development_2016}.
+shows the MSRE pump start transient as evaluated by this code.
 The model underestimated
 the reactivity peak and the trailing reactivity tail but captured the
 overall behavior of the transient, which is consistent with the
@@ -881,12 +882,12 @@ general behavior of PRK approaches.
 \end{figure}
 
 \par \textit{Fast System:} Representing DPK approaches for the evaluation of fast
-systems is a DPK implementation \cite{guerrieri_investigation_2013}
+systems is a DPK implementation from \cite{guerrieri_investigation_2013}
 modelling the ULOF transient in the MSFR. The evolution of this transient is
 seen in Figure \ref{fig:guerrieri_msfr_ulof}. The primary pumps are
 assumed to coast down exponentially with a time constant of 2 seconds to 5\%
- of their nominal flow, as natural circulation cannot be modeled in the set-up
-\cite{guerrieri_investigation_2013}. In Figure 
+ of their nominal flow, as natural circulation cannot be modeled in the set-up 
+from \cite{guerrieri_investigation_2013}. In Figure 
 \ref{fig:guerrieri_msfr_ulof}, 
 ``EQL" refers to the equilibrium fuel composition of the
 MSFR, while the various ``BOL" indicators refer to postulated beginning of life (BOL) fuel
@@ -907,13 +908,13 @@ compositions for the MSFR.
 are those PRK based methods developed to address the
 movement of DNPs through the use of a moving mesh. In
 \cite{merle-lucotte_physical_2015}, a fixed mesh over the system geometry
-is used on parameters
+is used on which parameters
 such as reactivity and fission power are calculated, while a ``moving" mesh is
 used to track DNPs and the temperature of the flowing fluid. The two
 meshes exchange information to update one another with the moving mesh advancing
 its cells in space according to the flow characteristics of the system.
 Details of the method and
-the governing equations can be found elsewhere \cite{merle-lucotte_physical_2015}.
+the governing equations can be found in \cite{merle-lucotte_physical_2015}.
 \par \textit{Thermal system:} No published examples of the IPK method being used
 to analyze transients in a thermal system were found. This does not
 necessarily indicate, however, that IPK is ill-suited for thermal CFR
@@ -1000,7 +1001,7 @@ be caught in greater detail and used to update the PRK method, which then
 simulates the transient until the next MGD update.
 \par The time at which these updates occur is key to the computational
  cost savings of
-quasi-statics. As observed elsewhere \cite{dulla_models_2005}, transients that induce
+quasi-statics. As observed elsewhere such as in \cite{dulla_models_2005}, transients that induce
 large shape perturbations on the flux will likely require many more MGD
 updates. Without an adaptive
 updating scheme, the requirement of frequent shape updates through an MGD
@@ -1065,7 +1066,7 @@ source operator, and $\Psi(x,t)$ is the neutron flux shape function.
 Movable DNPs are represented by
 Equation \ref{eq:spk_move}. A unifying equation, Equation \ref{eq:spk_uni},
 links the two aforementioned equations.
-Additional details can be found elsewhere \cite{rineiski_kinetics_2005}. The transient
+Additional details can be found elsewhere in \cite{rineiski_kinetics_2005}. The transient
 seen in Figure \ref{fig:wang_msre_ps} is the same MSRE pump start transient
 described above. Whether or not the deviations from the
 experimental values seen in Figure \ref{fig:wang_msre_ps} are due to the
@@ -1122,7 +1123,7 @@ to update the neutron flux and power distribution in the modeled system. At
 this time, no published data exists concerning the computational cost
 of such an approach. In Figure \ref{fig:laureau_msfr}, a 300 pcm reactivity
 insertion transient in the MSFR can be seen as modeled by this new approach. The
-slight bump in power seen at about \textcolor{red}{1 second} is due to DNP-rich fuel salt
+slight bump in power seen at about 1 second is due to DNP-rich fuel salt
 re-circulation from the initial power spike. While no published transients
 involving a 300 pcm reactivity insertion in the MSFR could be found to compare
 against Figure \ref{fig:laureau_msfr}, the method used appears to
@@ -1284,9 +1285,9 @@ risk-informed transient analysis of CFRs in which many hundreds to thousands
 of transient calculations will be needed to be run. In the mean time, MGD
 approaches will likely be the first method that any investigation into CFR kinetics
 should turn to, from which an appropriate quasi-static or PRK method can be
-compared to and accepted for use. \textcolor{red}{Table \ref{tbl:select_codes} summarizes a selected group
+compared to and accepted for use. Table \ref{tbl:select_codes} summarizes a selected group
 of computational tools exhibiting desirable characteristics and implementing
-a range of approaches.} See Appendix \ref{app:tools} for an explanation of this table and 
+a range of approaches. See Appendix \ref{app:tools} for an explanation of this table and 
 Tables \ref{tbl:codes1} through \ref{tbl:codes5} for more computational tools and more detailed information
 
 \begin{landscape}
@@ -1539,7 +1540,9 @@ results.
    \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_5_A}
    \caption{Experimental and
    simulated results of a 24 pcm reactivity insertion in the MSRE during
-    1 MWth operation, as reproduced from Figure 2.5a from \cite{zanetti_development_2016}.} 
+    1 MWth operation, as reproduced from Figure 7a in 
+    \cite{zanetti_extension_2015} which can also be found
+    in \cite{zanetti_development_2016} as 2.5a} 
    \label{fig:zanetti_sec_1mw}
 \end{figure}
 
@@ -1547,7 +1550,8 @@ results.
    \centering
    \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_6_A}
    \caption{Experimental and
-   simulated results of a 19 pcm reactivity insertion in the MSRE during 5 MWth operation, as reproduced from Figure 2.6a from \cite{zanetti_development_2016}.} 
+   simulated results of a 19 pcm reactivity insertion in the MSRE during 5 MWth operation, as reproduced from Figure 6a in \cite{zanetti_extension_2015} which
+   can also be found as Figure 2.6a from \cite{zanetti_development_2016}.} 
    \label{fig:zanetti_sec_5mw}
 \end{figure}
 
@@ -1555,7 +1559,9 @@ results.
    \centering
    \includegraphics[width=0.8\textwidth]{Zanetti_Development_2016_Fig_2_7_A}
    \caption{Experimental and simulated
-   results of a 13 pcm reactivity insertion in the MSRE during 8 MWth operation, as reproduced from Figure 2.5a from \cite{zanetti_development_2016}.} 
+   results of a 13 pcm reactivity insertion in the MSRE during 8 MWth operation,
+   as reproduced from Figure 5a in \cite{zanetti_extension_2015} which can 
+   also be found as Figure 2.5a from \cite{zanetti_development_2016}.} 
    \label{fig:zanetti_sec_8mw}
 \end{figure}
 
