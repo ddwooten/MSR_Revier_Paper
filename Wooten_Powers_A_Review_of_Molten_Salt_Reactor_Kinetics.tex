@@ -1,4 +1,4 @@
-\documentclass[review]{elsarticle}
+\documentclass[draft]{elsarticle}
 
 \usepackage{lineno,hyperref}
 \modulolinenumbers[5]
@@ -339,7 +339,7 @@ for PRK based approaches to capture. This importance reduction is due to two
 effects: DNP decay out of core and in-core DNP decays in regions of low
 importance. In Figure \ref{fig:dulla_msre_dnp_displacement}, the peaks in DNP
 distribution seen at the lower and upper axial regions of the reactor are
-due to fluid fuel holdup in the lower and upper plenna respectively.
+due to fluid fuel holdup in the lower and upper plena respectively.
 In \cite{dulla_models_2005}, a multi-group
 diffusion scheme modeling the MSRE was used to produce the results shown
 in Figures
@@ -1230,10 +1230,10 @@ the same, with DPK splitting the difference in the final averaged fuel salt
 temperature between SM and the PM methods roughly in half. Displaying
 a similar trend of precision relative to more detailed methods, the DPK method
  used to produce
-the transient simulation seen in Figure \ref{fig:guerrieri_msfr_ulof} \cite{guerrieri_investigation_2013}
+the transient simulation seen in Figure \ref{fig:guerrieri_msfr_ulof}
 produces similar transient
 behavior as seen from the MGD method in Figure \ref{fig:fiorina_msfr_ulof} 
-\cite{fiorina_modelling_2014} despite the two
+despite the two
 studies using differing pump coast down time constants.
 \par DPK methods may effectively capture transient evolutions at power and
  with a loss
@@ -1280,7 +1280,7 @@ that even the most rigorous PRK approaches will fail
 to capture
 specific transient responses of interest, the implementation of time-adaptive
 quasi-static schemes into system codes may prove necessary for completion of tasks
-of a parametric nature. This will enable `future
+of a parametric nature. This will enable future
 risk-informed transient analysis of CFRs in which many hundreds to thousands
 of transient calculations will be needed to be run. In the mean time, MGD
 approaches will likely be the first method that any investigation into CFR kinetics
@@ -1376,7 +1376,7 @@ in the DNP modeling for the MOSART reactor.
    hypothetical MSR core with thermal power of 2.4 GW, inflow fluid flow
    velocity of 0.5
    $\frac{m}{s}$, and residence time out-of-core of 3.94 s. Dimensions are 
-   given elsewhere. \cite{cheng_development_2014}
+   given elsewhere in \cite{cheng_development_2014}.
    The left image shows the fourth
    DNP group concentration in-core without any fluid flow effects. The center
    image
@@ -1390,14 +1390,15 @@ Equation \ref{eq:mgd_dnp}. However,
 very little data exists on turbulent mass transport in many common
 CFR fuel fluids \cite{aufiero_calculating_2014}, mostly molten fluoride or chloride salts. This leaves the
 actual value of $Sc_{T}$ quite uncertain. Figure \ref{fig:aufiero_sc}
-\cite{aufiero_calculating_2014} shows a parametric analysis of the impact of the
+shows a parametric analysis of the impact of the
 turbulent Schmidt number on $\beta_{eff}$ for the MSFR. 
 Over 2 orders of magnitude for $Sc_{T}$, the changes in
 $\beta_{eff}$ only
 affected reactivity by about 20 pcm.
 Another phenomenon that can affect DNP distributions
-is molecular diffusion; however, independent studies \cite{aufiero_calculating_2014}
-\cite{cheng_development_2014} agree that molecular diffusion effects can be ignored because they are so much smaller
+is molecular diffusion; however, independent studies 
+\cite{aufiero_calculating_2014} and \cite{cheng_development_2014} agree that 
+molecular diffusion effects can be ignored because they are so much smaller
 than turbulent diffusion and advective flow effects on DNP distributions.
 
 \begin{figure}[H]
@@ -1413,13 +1414,13 @@ Just as there is a choice of assumptions to be made with respect to the
 modelling of DNP distributions in CFRs, there are choices to be
 made with respect to the modelling of the thermohydraulics. One of the most
 common assumptions made in many of the works examined in this paper is 
-a uniform profile for the velocity profile in the channel-type CFRs. This is a
+a uniform profile for the fluid velocity profile in the channel-type CFRs. This is a
 particularly common assumption for those approaches which do not explicitly
 model the fuel salt flow in the core but rather ignore thermohydraulics
 all together or employ an energy balance to account for temperature effects
 on reactivity. An exhaustive evaluation
-of this assumption, as compared with other flow profiles, may be found elsewhere \cite{dulla_interactions_2007}.
-The power evolution through an average velocity change, the profile for which
+of this assumption, as compared with other flow profiles, may be found in \cite{dulla_interactions_2007}.
+The power evolution through an average fluid velocity change, the profile for which
 is found
 in the upper right-hand corner, can be seen in Figure 
 \ref{fig:dulla_flow_regimes}. Figure \ref{fig:dulla_flow_regimes}
@@ -1567,11 +1568,10 @@ results.
 
 \section{Conclusion} \label{sec:conc}
 This paper summarizes and assesses the key physical phenomenon affected
- by fluid fuel
-flow in CFRs, with specific emphasis on the effects on reactor kinetics of fluid fuel flow
-on the DNP distribution.
-Current models and codes used for
-CFR kinetics calculations are reviewed, with results for sample transients provided for
+by fluid fuel flow in CFRs, with specific emphasis on the effects on reactor
+kinetics from fluid fuel flow effects on the DNP distribution. Current models and
+codes used for CFR kinetics calculations are reviewed, with results for sample 
+transients provided for
 fast and thermal systems as produced by representative codes from each major
 modelling group. While MGD models offer the best accuracy of the
 approaches reviewed, PRK models can also
@@ -1635,7 +1635,7 @@ is considered
 the primary work, with others listed in the ``Used In" row. The ``Author" and ``Year"
 rows included in some tables reference the first author and the publishing year
 of the reference given in the ``Reference" row. In these tables the ``TH Eqs"
-row indicates wheather or not the computational tool solves
+row indicates whether or not the computational tool solves
 equations for the mass and energy and momentum transfer for the working fluid in
 the given system. The
 ``Reactor Analyzed" row indicates reactor design(s) modeled in
