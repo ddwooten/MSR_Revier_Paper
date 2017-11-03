@@ -1,5 +1,8 @@
 \documentclass[draft]{elsarticle}
 
+% bold symbol shortcut
+\def\bm#1{\boldsymbol{#1}}
+
 \usepackage{lineno,hyperref}
 \modulolinenumbers[5]
 
@@ -449,19 +452,83 @@ core of the reactor.
 \end{figure}
 
 \subsection{$\beta_{eff}$} \label{ssec:beta}
-{\color{red}Before addressing the effects on $\beta_{eff}$ due to fuel circulation the 
-deffinition of $\beta_{eff}$ in circulating systems should be established.
-In \cite{dulla_models_2005} an extensive derivation of $\beta_{eff}$ and many
-other neutronics parameters in the presence of a circulating fuel is presented. A condensced portion of this derivation is given in equations \ref{eq:X} through
-\ref{eq:Y}. The arrived upon definition of $\beta_{eff}$ and the expression
-for $\beta_{eff}^{i}$ is given by equations \ref{eq:W} and \ref{eq:Z}.
-    
+{\color{red} 
+In \cite{dulla_models_2005} an extensive derivation of $\beta_{eff}$,
+the effective delayed neutron fraction, and many
+other neutronics parameters in the presence of a circulating fuel is presented.
+A condenced portion of this derivation is given in equations \ref{eq:mp} through
+\ref{eq:beta} which can all be found in \cite{dulla_models_2005}. Begining with 
+the definitions of the prompt and delayed multiplication operators in equations
+\ref{eq:mp} and \ref{eq:mi} respectivley where $v(E)$ is the neutron velocity
+function, $\beta$ is the delayed neutron fraction, $\chi_{p}(E)$ is the prompt
+neutron emission spectrum, $\nu$ is the number of neutrons produced per
+fission, $\Sigma_{f}$ is the macroscopic fission cross section, $\beta_{i}$ is
+the delayed neutron fraction in DNP group $i$ - all uses of the lowercase $i$
+denote a belonging to DNP group $i$ - and $\chi_{i}(E)$ is the delayed
+neutron emission spectrum.    
+
+\begin{equation}
+\label{eq:mp}
+\hat{M}_{p}(t) = v(E)(1-\beta)\frac{\chi_{p}(E)}{4\pi} \int dV \int dE^{\prime} 
+    \oint d\Omega^{\prime} \nu(\boldsymbol{r},E\prime,t)  
+    \Sigma_{f}(\boldsymbol{r},E^{\prime},t)
+\end{equation}
+
+\begin{equation}
+\label{eq:mi}
+\hat{M}_{i}(t) = v(E)\beta_{i}\frac{\chi_{i}(E)}{4\pi} \int dV \int dE^{\prime} 
+    \oint d\Omega^{\prime} \nu(\boldsymbol{r},E\prime,t)  
+    \Sigma_{f}(\boldsymbol{r},E^{\prime},t)
+\end{equation}
+
+The delayed neutron emissivity is defined by equation \ref{eq:dne} where
+$\lambda_{i}$ is the decay constant and $C_{i}(\boldsymbol{r},t)$ is the DNP
+distribution.
+
+\begin{equation}
+\label{eq:dne}
+\epsilon_{i}(\boldsymbol{r},E,t) = \lambda_{i} C_{i}(\boldsymbol{r},t)
+    \frac{\chi_{i}(E)}{4\pi}
+\end{equation}
+
+The convolution operator $\langle f^{\dagger} \mid f \rangle$ is defined by
+equaiton \ref{eq:co} where the $\dagger$ superscript indicates the solution
+from the adjoint problem.
+
+\begin{equation}
+\label{eq:co}
+\langle f^{\dagger} \mid f \rangle = \int dV \int dE \oint d\Omega f^{\dagger}f
+\end{equation}
+
+The total importance of all neutrons is given by $\mathcal{F}$ as defined in
+equation \ref{eq:ti} where the summation is over all DNP groups and 
+$N_{0}^{\dagger}$ is the adjoint neutron density solution where 0 indicates 
+a reference solution for a given flow regime causing displacement of the DNPs.
+
+\begin{equation}
+\label{eq:ti}
+\mathcal{F} = \sum \limits_{i}^{I} \langle N_{0}^{\dagger} \mid e_{i} \rangle +
+    \langle N_{0}^{\dagger} \mid \hat{M}_{p} \eta \rangle
+\end{equation}
+
+The value of $\beta_{eff}^{i}$ is given by equation \ref{eq:bi} while equation
+\ref{eq:beta} gives the deffintion of $\beta_{eff}$.
+
+\begin{equation}
+\label{eq:bi}
+\beta_{eff}^{i} = \frac{ \langle \epsilon_{i,0}^{\dagger} \mid \hat{M}_{i}
+    \eta \rangle }{\mathcal{F}}
+\end{equation}
+
+\begin{equation}
+\label{eq:beta}
+\beta_{eff} = \sum \limits_{i}^{I} \beta_{eff}^{i}
+\end{equation}
+
 }
+
 Just as DNP concentrations in-core are reduced by fuel flow, so too is their
-contribution to the effective delayed neutron fraction, $\beta_{eff}$. An
-expression for which can be seen in equation \ref{eq:beta_eff} while an
-expression for the component groups, $\beta_{eff}^{i}$ is seen in equation
-\ref{eq:betta_eff_i}.
+contribution to $\beta_{eff}$.
 Table \ref{tbl:mattioda_beta_reduction} shows 
 that $\beta_{eff}$ is reduced both by a higher fluid flow velocity and
 by a longer out-of-core residence time.
